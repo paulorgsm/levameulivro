@@ -128,7 +128,6 @@ nav{
     font-weight: 700;
     font-size: 44px;
     line-height: 56px;
-    text-align:;
     color:#EB4335 ;
     margin: 5px 0px;
 }
@@ -182,18 +181,31 @@ nav{
     color: white;
     margin: auto;
 }
+.formsCadastros{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-top:1px solid #000000;
+    text-align: center;
+    margin: 0 auto; 
+    /* max-width: 578px; */
+   
+}
 .forms{
     height: 977px;
-    width: 100%;
+    width: 1200px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    border-top:1px solid #000000;
-    max-width: 578px;
-    margin: 0 auto;
     text-align: center;
+    margin: 0 auto;
+}
+.forms p{
+    padding-bottom: 23px;
+    text-align: justify;
 }
 
-.forms h2{
+.formsCadastros h2{
     font-family: sans-serif;
     height: 55px;
     color: #F62CBC;
@@ -201,4 +213,49 @@ nav{
     margin:48px auto;
     font-size: 48px;
     font-weight: 700;
+}
+
+.form1 form{
+    display: flex;
+    flex-direction: column;
+    width: 471px;
+    height: 370px;
+    align-items: baseline;
+    text-align: start;
+}
+.form1 form input{
+    border-radius: 10px;
+    background-color:#E0E0E0; 
+    width: 200px;
+    height: 40px;
+    border: none;
+    margin: 7px 28px 21px auto ;
+}
+
+
+.form1 form select{
+    border-radius: 10px;
+    background-color:#E0E0E0;
+}
+.agregadorInput{
+    width: 468px;
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+.agregadorLabelInput{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.form2{
+    width: 474px;
+    height: 703px;
+    background-color: coral;
+}
+
+input ::placeholder{
+    padding-right: 17px ;
 }
