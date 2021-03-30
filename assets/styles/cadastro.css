@@ -17,8 +17,6 @@
 .divInput{
     height: 100px;
      margin: 20px auto ;
-    
-
 }
 
 .login{
@@ -30,6 +28,7 @@
 .campoLogin{
     margin-top: 10px;
     display: block;
+    flex-wrap: wrap;
 }
 
 .login span{
@@ -84,4 +83,122 @@ nav{
 }
 #comprarLi{
     color:#FEEE08 ;
+}
+.cadChamada{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-bottom: 68px;
+}
+
+.cadastroChamada{
+    width: 960px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cadastroChamada p{
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #4285F4;
+}
+.cads{
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+}
+.finalizeCad{
+    width: 478px;
+    height: 192px;
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+.finalizeCad h2{
+    height: 56px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 56px;
+    text-align:;
+    color:#EB4335 ;
+    margin: 5px 0px;
+}
+.finalizeCad p{
+    font-family: sans-serif;
+    size: 18px;
+    line-height: 26px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.finalizeCad button{
+    border-radius:10px ;
+    width: 216px;
+    height: 46px;
+    background: #EB4335;;
+    border-color: #EB4335;;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    color: white;
+    margin: auto;
+}
+
+.finalizeDepois{
+    width: 382px;
+    height: 192px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 100px;
+    
+}
+.finalizeDepois h2{
+    font-family: sans-serif;
+    font-weight: 700;
+    line-height: 56px;
+    font-size: 44px;
+    text-align: center;
+    color: #3146DE;
+}
+.finalizeDepois button{
+    border-radius:10px ;
+    width: 216px;
+    height: 46px;
+    background: #2F80ED;
+    border-color: #2F80ED;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    color: white;
+    margin: auto;
+}
+.forms{
+    height: 977px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-top:1px solid #000000;
+    max-width: 578px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.forms h2{
+    font-family: sans-serif;
+    height: 55px;
+    color: #F62CBC;
+    text-align: center;
+    margin:48px auto;
+    font-size: 48px;
+    font-weight: 700;
 }
