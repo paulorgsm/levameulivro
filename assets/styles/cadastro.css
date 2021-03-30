@@ -199,6 +199,7 @@ nav{
     flex-wrap: wrap;
     text-align: center;
     margin: 0 auto;
+    
 }
 .forms p{
     padding-bottom: 23px;
@@ -214,8 +215,11 @@ nav{
     font-size: 48px;
     font-weight: 700;
 }
-
-.form1 form{
+.form1{
+    width:473px ;
+    margin: 0 136px 0 0;
+}
+.forms form{
     display: flex;
     flex-direction: column;
     width: 471px;
@@ -223,7 +227,7 @@ nav{
     align-items: baseline;
     text-align: start;
 }
-.form1 form input{
+.forms form input{
     border-radius: 10px;
     background-color:#E0E0E0; 
     width: 200px;
@@ -231,7 +235,6 @@ nav{
     border: none;
     margin: 7px 28px 21px auto ;
 }
-
 
 .form1 form select{
     border-radius: 10px;
@@ -248,14 +251,26 @@ nav{
     flex-direction: column;
     
 }
+input ::placeholder{
+    padding-right: 17px ;
+}
 
+.forms button{
+    width: 216px;
+    height: 46px;
+    background: #F62CBC;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 10px;
+    border:none;
+    margin-right: 600px;
+}
 
 .form2{
     width: 474px;
-    height: 703px;
-    background-color: coral;
-}
+    height: 595px;
+} 
 
-input ::placeholder{
-    padding-right: 17px ;
+.form2 form input {
+    width: 428px;
 }
