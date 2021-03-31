@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="estilos/style.css">
+    <title>Login - Cadastro</title>
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div>
+        <h2 class="entrar-no-time">Pronto para entrar no time? Então...</h2>
+    </div>
+    <section class="form">
+        <div>
+            <div class="login">
+                <h1>Faça Seu Login</h1>
+                <h2>se já tiver cadastro</h2>
+            </div>
+            <div>
+                <form action="/login" method="POST">
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail...">
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha...">
+                </form>
+            </div>
+            <div class="opcoes">
+                <span>
+                    <input type="checkbox" name="lembrar login">
+                    <label for="lembrar login">Lembrar de mim</label>
+                    <a href="#">Esqueci minha senha</a>
+                </span>
+            </div>
+            <div class="entrar">
+                <button type="submit">ENTRAR</button>
+            </div>
+        </div>
+
+        <!--FIM DO LOGIN-->
+
+        <!-- OU -->
+
+        <div class="ou">
+            <h2>ou</h2>
+        </div>
+
+        <!-- CADASTRO -->
+
+        <div>
+            <div class="cadastro">
+                <h1>Crie Sua Conta</h1>
+                <h2>se ainda não tiver cadastro</h2>
+            </div>
+            <div>
+                <form action="/login" method="POST">
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu primeiro nome...">
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail...">
+                    <input type="password" name="senha" id="senha" placeholder="Agora crie uma senha...">
+                    <input type="password" name="senha" id="senha" placeholder="Confirme sua senha...">
+                </form>
+
+            </div>
+            <div class="opcoes">
+                <div class="opcoes-termos">
+                    <div>
+                        <input type="checkbox" name="termos do site">
+                        <label for="termos do site">Li e concordo com os</label>
+                        <a href="#">Termos do Site</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cadastrar">
+                <button type="submit">CADASTRAR</button>
+            </div>
+        </div>
+
+        <!--FIM DO CADASTRO-->
+    </section>
+
+
+
+</body>
+
+</html>
