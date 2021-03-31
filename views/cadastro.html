@@ -65,7 +65,7 @@
             <h2>Finalizando Cadastro</h2>
             <div class="forms">
                 <div>
-                    <p> Passo 1: INClUIR DADOS PESSOAIS</p> 
+                    <p> Passo 1: INClUIR DADOS PESOOAIS</p> 
                 </div>
                    
                  <div class="form1">
@@ -73,90 +73,101 @@
                     " method="POST">
                         <div class="agregadorInput">
                             <div class= agregadorLabelInput>
-                                <label for="primeiroNome">Primeiro Nome:</label>
+                                <label for="primeiroNome">Primeiro Nome</label>
                                 <input type="text" name="primeiroNome" id="primeiroNome" placeholder="Digite seu nome">
                             </div>
                         
                             <div class="agregadorLabelInput">
-                                <label for="sobrenome">Sobrenome:</label>
+                                <label for="sobrenome">Sobrenome</label>
                                 <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome">
                             </div> 
                         </div>
                         <div class="agregadorLabelInput">
-                            <label for="email">E-mail:</label>
+                            <label for="email">E-mail</label>
                             <input type="text" name="email"     id="email" placeholder="levameulivro@gmail.com">
                         </div>                   
                     
                         <div class="agregadorInput">
                             <div class="agregadorLabelInput">
-                                <label for="cpf">CPF:</label>
+                                <label for="cpf">CPF</label>
                                 <input type="text" name="cpf" id="cpf" placeholder="Digite seu cpf">
                             </div>
                             <div class="agregadorLabelInput">
-                                <label for="contato">Celular/telefone:</label>
+                                <label for="contato">Celular/telefone</label>
                                 <input type="text" name="contato" id="contato"placeholder="Não esqueça do DDD">
                             </div>
                             
                         </div>
                         <div class="agregadorInput">
                             <div class="agregadorLabelInput">
-                                <label for="nascimento">Data de nascimento:</label>
+                                <label for="nascimento">Data de nascimento</label>
                                 <input type="text" name="nascimento" id="contato"placeholder="DD/MM/AAAA">
                             </div>
                             <div class="agregadorLabelInput">
-                                <label for="genero">Gênero:</label>
+                                <label for="genero">Gênero</label>
                                 <select name="genero" id="genero" placeholder="Escolha uma opção"> <option value="fem">Mulher cisgênero</option>
                                 <option value="masc">Homen cisgênero</option>
                                 <option value="mulherTrans">Mulher Transgênero</option>
                                 <option value="homenTrans">Homen Transgênero</option>
                                 <option value="naoResponder">Prefiro não responder</option>
                                 <option value="outros">Outros</option></select>
-                                </div>                         
+                            </div>                         
                         </div>        
-                        <a href=""> <img src="../assets/images/carregarFoto.svg" alt=""> Incluir/Mudar minha foto</a>
                  </form>
                  <button type="submit" >SALVAR DADOS</button>
                 </div>
                 <div class="form2">
-                    <div>
-                        <p> Passo 2: INClUIR ENDEREÇO</p> 
-                    </div>
                     <form action="/cadastro
                     " method="POST">
                     <div class="agregadorLabelInput">
-                        <label for="cep">Digite seu CEP:</label>
+                        <label for="cep">Digite seu CEP</label>
                         <input type="text" name="cep" id="cep" placeholder="Digite seu CEP">
                     </div> 
                     <div class="agregadorLabelInput">
-                        <label for="logradouro">Logradouro:</label>
+                        <label for="logradouro">Logradouro</label>
                         <input type="text" name="logradouro" id="logradouro" placeholder="Por exemplo: Rua João Da Silva">
                     </div> 
                     <div class="agregadorLabelInput">
-                        <label for="num">Número:</label>
+                        <label for="num">Número</label>
                         <input type="text" name="num" id="num" placeholder="Digite aqui">
                     </div>  
                     <div class="agregadorLabelInput">
-                        <label for="bairro">Bairro:</label>
+                        <label for="bairro">Bairro</label>
                         <input type="text" name="bairro" id="bairro" placeholder="Por exemplo: Bairro Copacabana">
                     </div>  
                     <div class="agregadorLabelInput">
-                        <label for="complemento">Complemento:</label>
+                        <label for="complemento">Complemento</label>
                         <input type="text" name="complemento" id="complemento" placeholder="Por exemplo: Apartamento 121 Bloco D">
                     </div> 
                     <div class="agregadorInput">
                         <div class="agregadorLabelInput">
-                            <label for="cidade">Cidade:</label>
+                            <label for="cidade">Cidade</label>
                             <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade">
                         </div>
                         <div class="agregadorLabelInput">
-                            <label for="estado">Estado:</label>
-                            <input type="text" name="estado" id="estado"placeholder="Digite seu Estado">
+                            <label for="estados">Estados</label>
+                            <input type="text" name="estados" id="estados"placeholder="Digite seu Estado">
                         </div>
                 </div>
             </form>
              </div>
-             <button class="salvarEnd" type="submit" >SALVAR ENDEREÇO</button>
+             <button type="submit" >SALVAR ENDEREÇO</button>
         </section>
     </main>
+    <footer class="footer">
+        <div class="descricaoSobre"><h2>SOBRE O <strong>LEVA MEU LIVRO</strong></h2>
+        <span>Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois divoltis porris, paradis. Per aumento de cachacis, eu reclamis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.
+        </span>
+        <span><a class="leiaMais" href="#" >LEIA MAIS</a></span>
+        </div>
+
+        <div class="redesSociais">
+        <h2>REDES <strong>SOCIAIS</strong></h2>
+     <span><img  src="../assets/images/facebook.svg" alt="não encontrada"><img  src="../assets/images/redesSociais.svg" alt="não encontrada"></span>
+       </div>
+     </footer>
+     <footer2 class="footer2">
+        <div class="direitos"> LEVA MEU LIVRO ©  | 2021 - Todos os direitos reservados   </div>
+     </footer2>
 </body>
 </html>
