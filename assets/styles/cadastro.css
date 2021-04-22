@@ -9,9 +9,11 @@
 .conteudoHeader{
     width: 1200px;
     margin:10px auto;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+ 
 }
 
 .divInput{
@@ -199,6 +201,8 @@ nav{
     flex-wrap: wrap;
     text-align: center;
     margin: 0 auto;
+    padding-left: 140px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
     
 }
 .forms p{
