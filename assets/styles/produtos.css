@@ -60,7 +60,7 @@ body{
     background: #4285F4;
 }
 nav{
-    width: 1122px;
+    max-width: 1122px;
     display: flex;
     margin:auto;
     align-items: center;
