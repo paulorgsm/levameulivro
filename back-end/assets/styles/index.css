@@ -1,0 +1,186 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px auto;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1040px;;
+    
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+    max-width: 252px;
+}
+
+.login > div> span {
+    display: block;
+    margin-right: 20px;
+    text-align: center;
+    color: red;
+    font-size: 16px;
+}
+
+.imagem-login {
+    width: 40px;
+}
+
+nav > ul > li > a > span {
+    color: yellow;
+}
+
+nav {
+    background: #4285F4;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 20px;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    
+}
+
+a {
+    color: white;
+    margin-left: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    letter-spacing: 1.5px;
+}
+
+.bem-vindex {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    color: #4285F4;
+    font-weight: 600;
+}
+
+.bem-vindex > article > span {
+    font-size: 28px;
+}
+
+.section-main {
+    display: flex;
+    justify-content: center;
+}
+
+.article-cadastro {
+    display: block;
+    padding-top: 20px;
+}
+
+.article-cadastro > span {
+    color: #EB4335;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.article-cadastro > p {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    padding: 3px;
+}
+
+.article-cadastro > div {
+    display: flex;
+    justify-content: center;
+
+}
+
+.article-cadastro > div > h4 {
+    margin-top: 25px;
+    border-radius: 10px;
+    background: #EB4335;
+    padding: 11px;
+    color: white;
+    font-weight: 500;
+}
+
+.article {
+    display: block;
+    padding-top: 17px;
+    margin-left: 170px;
+
+}
+
+.article > span {
+    display: block;
+    text-align: center;
+    color: #3146DE;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.article > div > h4 {
+    margin-top: 25px;
+    border-radius: 10px;
+    background: #3146DE;
+    padding: 11px;
+    color: white;
+    font-weight: 500;
+}
+
+.article > div {
+    display: flex;
+    justify-content: center;
+
+}
+
+/* .carrosel {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.text {
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+}
+
+.card {
+    display: flex;
+    margin-left: -10px;
+}
+
+.card > article {
+    display: flex;
+    border: solid 1px red;
+    padding: 10px;
+    margin-left: 5px;
+    
+}
+
+.card > article > div {
+    display: flex;
+
+}
+
+.card > article > div > p {
+    display: flex;
+    align-items: center;
+} */
+
+
+
+
+
