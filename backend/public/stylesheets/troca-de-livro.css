@@ -248,6 +248,7 @@ button, select, option{
     background-color:#828282;
     outline: none;
     border-radius: 20px;
+    border: none;
     box-shadow: inset #34A853;
     transition: .2s;
 }
@@ -314,6 +315,7 @@ input{
 
 .container input{
     border-radius: 10px;
+    border: none;
     background: #E0E0E0;
 }
 
