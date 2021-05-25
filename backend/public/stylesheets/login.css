@@ -109,6 +109,7 @@ form input{
     margin: 20px;
     border-radius: 10px;
     background-color: #E0E0E0 ;
+    border: none;
 }
 
 .opcoes{
@@ -137,7 +138,11 @@ button{
     line-height: 26px;
     border: none;
 }
-
+.inputQuadrado{
+    width:18px;
+    height: 18px;
+    margin-right: 0px;
+}
 .entrar button{
     background-color:#EB4335 ;
 }

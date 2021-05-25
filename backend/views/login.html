@@ -62,9 +62,21 @@
                 <form action="/login" method="POST">
                     <input type="email" name="email" id="email" placeholder="Digite seu e-mail...">
                     <input type="password" name="senha" id="senha" placeholder="Digite sua senha...">
+                    <div class="opcoes">
+                        <div>
+                            <div class="inputQuadrado"><input  type="checkbox" name="lembrar login"></div>
+                            <div><label for="lembrar login">Lembrar de mim</label></div>
+                            
+                            <a href="#">Esqueci minha senha</a>
+                        </div>
+                    </div>
+                    <div class="entrar">
+                        <button type="submit">ENTRAR</button>
+                    </div>
+                </div>
                 </form>
             </div>
-            <div class="opcoes">
+<!--             <div class="opcoes">
                 <span>
                     <input type="checkbox" name="lembrar login">
                     <label for="lembrar login">Lembrar de mim</label>
@@ -74,7 +86,7 @@
             <div class="entrar">
                 <button type="submit">ENTRAR</button>
             </div>
-        </div>
+        </div> -->
 
         <!--FIM DO LOGIN-->
 
@@ -92,28 +104,27 @@
                 <h2>se ainda não tiver cadastro</h2>
             </div>
             <div>
-                <form action="/cadastro" method="POST">
+                <form action="/login" method="POST">
                     <input type="text" name="nome" id="nome" placeholder="Digite seu primeiro nome...">
                     <input type="email" name="email" id="email" placeholder="Digite seu e-mail...">
                     <input type="password" name="senha" id="senha" placeholder="Agora crie uma senha...">
                     <input type="password" name="senha" id="senha" placeholder="Confirme sua senha...">
+                    <div class="opcoes">
+                        <div class="opcoes-termos">
+                            <div>
+                                <input class="inputQuadrado" type="checkbox" name="termos do site">
+                                <label for="termos do site">Li e concordo com os</label>
+                                <a href="#">Termos do Site</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cadastrar">
+                        <button type="submit">CADASTRAR</button>
+                    </div>
+                </div>
                 </form>
 
             </div>
-            <div class="opcoes">
-                <div class="opcoes-termos">
-                    <div>
-                        <input type="checkbox" name="termos do site">
-                        <label for="termos do site">Li e concordo com os</label>
-                        <a href="#">Termos do Site</a>
-                    </div>
-                </div>
-            </div>
-            <div class="cadastrar">
-                <button type="submit">CADASTRAR</button>
-            </div>
-        </div>
-
         <!--FIM DO CADASTRO-->
     </section>
 
