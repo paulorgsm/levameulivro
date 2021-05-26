@@ -14,7 +14,7 @@ const CadastroController = {
 
         if (senha[0] == senha[1]) {
             
-            contaService.criarConta(nome, email, senha)
+            contaService.criarConta(nome, email, senha[0])
 
             res.redirect('/entrar-no-time')
         } else {

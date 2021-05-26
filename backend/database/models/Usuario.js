@@ -11,9 +11,6 @@ module.exports = (sequelize, DataTypes) => sequelize.define("Usuario",
         senha: {
             type: DataTypes.STRING(100)
         },
-        sobrenome: {
-            type: DataTypes.STRING(100)
-        },
         email: {
             type: DataTypes.STRING(100)
         },

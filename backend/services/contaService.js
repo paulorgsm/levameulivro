@@ -6,7 +6,7 @@ const contaService = {
         db.Usuario.create({
             nome: nome,
             email: email, 
-            senha: bcrypt.hashSync(senha)
+            senha: bcrypt.hashSync(senha, 10)
         })
     }
 }
