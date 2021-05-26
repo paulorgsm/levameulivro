@@ -7,7 +7,7 @@ var path = require('path');
 var indexRouter = require('./routes/index');
 var homeRouter = require('./routes/home');
 var produtosRouter = require('./routes/produtos');
-var loginRouter = require('./routes/login');
+var entrarNoTimeRouter = require('./routes/entrarNotime');
 var trocaRouter = require('./routes/trocaDelivro');
 var cadastroRouter = require('./routes/cadastro')
 var buscaRouter = require('./routes/busca')
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/', homeRouter);
 app.use('/', produtosRouter);
-app.use('/', loginRouter);
+app.use('/', entrarNoTimeRouter);
 app.use('/', trocaRouter);
 app.use('/', cadastroRouter);
 app.use('/', buscaRouter);
