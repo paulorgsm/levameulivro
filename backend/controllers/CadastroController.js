@@ -16,7 +16,7 @@ const CadastroController = {
             
             contaService.criarConta(nome, email, senha[0])
 
-            res.redirect('/entrar-no-time')
+            res.redirect('/cadastro')
         } else {
             
             res.send('As senhas não se conferem!')
