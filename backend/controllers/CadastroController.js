@@ -8,19 +8,30 @@ const CadastroController = {
         
         res.sendFile(viewCadastro)
     },
-    criarConta: (req, res) => {
-        
-        const {nome, email, senha} = req.body;
+    iniciarConta: (req, res) => {
+
+        const { nome, email, senha } = req.body;
 
         if (senha[0] == senha[1]) {
-            
-            contaService.criarConta(nome, email, senha[0])
+            req.session.conta = {
+                nome: nome,
+                email: email,
+                senha: senha[0]
+            }
 
             res.redirect('/cadastro')
         } else {
-            
-            res.send('As senhas não se conferem!')
+            res.send('As senhas não são iguais')
         }
+    },
+    criarConta: (req, res) => {
+        const { nome, email, senha } = req.session.conta;
+
+        const { sobrenome, cpf, contato, nascimento, genero } = req.body;
+
+        contaService.criarUsuario(nome, email, senha, sobrenome, cpf, contato, nascimento, genero);
+
+        res.redirect('/entrar-no-time')
     }
 }
 
