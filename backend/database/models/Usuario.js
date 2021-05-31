@@ -6,13 +6,16 @@ module.exports = (sequelize, DataTypes) => sequelize.define("Usuario",
             primaryKey: true
         },
         nome: {
-            type: DataTypes.STRING(100)
+            type: DataTypes.STRING(100),
+            allowNull: false
         },
         senha: {
-            type: DataTypes.STRING(100)
+            type: DataTypes.STRING(100),
+            allowNull: false
         },
         email: {
-            type: DataTypes.STRING(100)
+            type: DataTypes.STRING(100),
+            allowNull: false
         },
         sobrenome: {
             type: DataTypes.STRING(100)
@@ -34,7 +37,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define("Usuario",
         }
     },
     {
-        tableName: 'usuarios',
+        //tableName: 'usuarios',
         timestamps: false,
     }
 )

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => sequelize.define(
-    "entrega",
+    "Entrega",
     {
         id:{
             type: DataTypes.INTEGER,
@@ -7,14 +7,16 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
             primaryKey: true
         },
         rastreio:{
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         recebido:{
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         }
     },
     {
-        
+        tableName: "entrega",
         timestamps: false,
     }
 )

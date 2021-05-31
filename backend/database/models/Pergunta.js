@@ -8,14 +8,16 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
         },
 
         pergunta: {
-            type: DataTypes.STRING(300)
+            type: DataTypes.STRING(300),
+            allowNull: false
         },
         resposta: {
-            type: DataTypes.STRING(300)
+            type: DataTypes.STRING(300),
+            allowNull: false
         }
     },
     {
-        tableName: 'perguntas',
+        //tableName: 'perguntas',
         timestamps: false,
     }
     
