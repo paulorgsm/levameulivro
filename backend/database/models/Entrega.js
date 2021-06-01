@@ -25,17 +25,17 @@ module.exports = (sequelize, DataTypes) => {
     }
     
  );
-    Livro.associate = function (models){
-        Livro.hasOne(models.Troca,{
+    Entrega.associate = function (models){
+        Entrega.hasOne(models.Livro,{
              foreignKey: "id_livro_troca",
-             as: "id"
+             as: "entregas"
         })
     },
 
     Entrega.associate = function (models){
         Entrega.belongsTo(models.Troca,{
              foreignKey: "id_troca",
-             as: "id"
+             as: "trocas"
         })
     }
     return Entrega;

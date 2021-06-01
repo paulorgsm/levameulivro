@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     Endereco.associate = function (models){
         Endereco.belongsTo(models.Usuario,{
              foreignKey: "id_usuario",
-             as: "id"
+             as: "usuario_endereco"
         })
     }
     return Endereco;
