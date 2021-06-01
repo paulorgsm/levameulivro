@@ -14,11 +14,30 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
         resposta: {
             type: DataTypes.STRING(300),
             allowNull: false
+        },
+        id_usuario: {
+            type: DataTypes.STRING(300),
+            allowNull: false
+        },
+        id_livro: {
+            type: DataTypes.STRING(300),
+            allowNull: false
         }
     },
     {
         //tableName: 'perguntas',
         timestamps: false,
+    },
+    Pergunta.associate = function (models){
+        Pergunta.belongsTo(models.Livro,{
+             foreignKey: "id_livro",
+             as: "pergunta_livro"
+        })
+    },
+    Pergunta.associate = function (models){
+        Pergunta.belongsTo(models.Usuario,{
+             foreignKey: "id_usuario",
+             as: "pergunta_usuario"
+        })
     }
-    
 )

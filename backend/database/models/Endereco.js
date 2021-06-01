@@ -21,12 +21,20 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
         },
         estado:{
             type: DataTypes.STRING(2)
+        },
+        id_usuario:{
+            type: DataTypes.STRING(2)
         }
     },
     {
         //tableName: 'enderecos',
         timestamps: false,
+    },
+    Endereco.associate = function (models){
+        Endereco.belongsTo(models.Usuario,{
+             foreignKey: "id_usuario",
+             as: "id"
+        })
     }
-    
-
+ 
 )

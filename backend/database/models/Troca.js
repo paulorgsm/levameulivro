@@ -1,3 +1,5 @@
+const Usuario = require("./Usuario")
+
 module.exports = (sequelize, DataTypes)=> sequelize.define(
     "Troca",
     {
@@ -19,5 +21,24 @@ module.exports = (sequelize, DataTypes)=> sequelize.define(
     {
         tableName: 'troca',
         timestamps: false,
+    },
+    Troca.associate = function (models){
+        Troca.belongsTo(models.Usuario,{
+             foreignKey: "id_usuario",
+             as: "id"
+        })
+    },
+    Troca.associate = function (models){
+        Troca.belongsTo(models.Livro,{
+             foreignKey: "id_livro_troca",
+             as: "trocas"
+        })
+    },
+    Troca.associate = function (models){
+        Troca.hasOne(models.Entrega,{
+             foreignKey: "id_troca",
+             as: "entregas"
+        })
     }
 )
+

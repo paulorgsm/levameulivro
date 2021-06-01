@@ -68,5 +68,17 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
     {
         //tableName: 'livros',
         timestamps: false,
+    },
+    Livro.associate = function (models){
+        Livro.hasOne(models.Troca,{
+             foreignKey: "id_livro_troca",
+             as: "pergunta_livro"
+        })
+    },
+    Livro.associate = function (models){
+        Livro.hasOne(models.Pergunta,{
+             foreignKey: "id_livro",
+             as: "trocas"
+        })
     }
 )

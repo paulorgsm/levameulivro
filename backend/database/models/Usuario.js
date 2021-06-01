@@ -39,5 +39,37 @@ module.exports = (sequelize, DataTypes) => sequelize.define("Usuario",
     {
         //tableName: 'usuarios',
         timestamps: false,
-    }
+    },
+
+    Usuario.associate = function (models){
+        Usuario.hasMany(models.Troca,{
+             foreignKey: "id_usuario",
+             as: 'troca'
+            
+        })
+    },
+    Usuario.associate = function (models){
+        Usuario.hasMany(models.Livro,{
+             foreignKey: "usuario_id",
+             as: 'livro'
+            
+        })
+    },
+    Usuario.associate = function (models){
+        Usuario.hasMany(models.Endereco,{
+             foreignKey: "id_usario",
+             as: 'endereco'
+            
+        })
+    },
+    Usuario.associate = function (models){
+        Usuario.hasMany(models.Pergunta,{
+             foreignKey: "id_usario",
+             as: 'pergunta_usuario'
+            
+        })
+    },
 )
+
+
+
