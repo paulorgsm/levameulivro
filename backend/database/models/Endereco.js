@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
     "Endereco",
     {
         cep:{
-         type: DataTypes.INTERGER(8)
+         type: DataTypes.INTEGER(8)
         },
         logradouro:{
             type: DataTypes.STRING(200)

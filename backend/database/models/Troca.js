@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes)=> sequelize.define(
 
     },
     {
-        tableName: 'troca',
+        //tableName: 'trocas',
         timestamps: false,
     },
     Troca.associate = function (models){

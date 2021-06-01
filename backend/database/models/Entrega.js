@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
         }
     },
     {
-        tableName: "entrega",
+        //tableName: "entregas",
         timestamps: false,
     },
     Livro.associate = function (models){
