@@ -5,16 +5,18 @@ const contaService = {
     criarUsuario: (nome, email, senha, sobrenome, cpf, celular, data_nasc, sexo) => {
         
         switch(sexo) {
-            case "masc": 
+            case "fem": 
                 sexo = 1;
-            case "mulherTrans":
+            case "masc": 
                 sexo = 2;
-            case"homenTrans":
+            case "mulherTrans":
                 sexo = 3;
-            case"naoResponder":
+            case"homenTrans":
                 sexo = 4;
-            case "outros":
+            case"naoResponder":
                 sexo = 5;
+            case "outros":
+                sexo = 6;
         }
         
         var arrData =  data_nasc.split('/');
