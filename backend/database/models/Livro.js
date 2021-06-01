@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataTypes) => sequelize.define(
-    "Livro",
+module.exports = (sequelize, DataTypes) =>{ 
+    const Livro= sequelize.define( "Livro",
     {
         id:{
             type: DataTypes.INTEGER,
@@ -68,17 +68,20 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
     {
         //tableName: 'livros',
         timestamps: false,
-    },
+    }
+    
+    );
     Livro.associate = function (models){
         Livro.hasOne(models.Troca,{
-             foreignKey: "id_livro_troca",
-             as: "pergunta_livro"
+            foreignKey: "id_livro_troca",
+            as: "pergunta_livro"
         })
     },
     Livro.associate = function (models){
         Livro.hasOne(models.Pergunta,{
-             foreignKey: "id_livro",
-             as: "trocas"
+            foreignKey: "id_livro",
+            as: "trocas"
         })
     }
-)
+    return Livro;
+};

@@ -1,4 +1,5 @@
-module.exports = (sequelize, DataTypes) => sequelize.define("Usuario",
+module.exports = (sequelize, DataTypes) => {
+    const Usuario =sequelize.define("Usuario",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -39,37 +40,38 @@ module.exports = (sequelize, DataTypes) => sequelize.define("Usuario",
     {
         //tableName: 'usuarios',
         timestamps: false,
-    },
+    }
 
+   
+    );
     Usuario.associate = function (models){
         Usuario.hasMany(models.Troca,{
-             foreignKey: "id_usuario",
-             as: 'troca'
+            foreignKey: "id_usuario",
+            as: 'troca'
             
         })
-    },
+    }
     Usuario.associate = function (models){
         Usuario.hasMany(models.Livro,{
-             foreignKey: "usuario_id",
-             as: 'livro'
+            foreignKey: "usuario_id",
+            as: 'livro'
             
         })
-    },
+    }
     Usuario.associate = function (models){
         Usuario.hasMany(models.Endereco,{
-             foreignKey: "id_usario",
-             as: 'endereco'
+            foreignKey: "id_usario",
+            as: 'endereco'
             
         })
-    },
+    }
     Usuario.associate = function (models){
         Usuario.hasMany(models.Pergunta,{
-             foreignKey: "id_usario",
-             as: 'pergunta_usuario'
+            foreignKey: "id_usario",
+            as: 'pergunta_usuario'
             
         })
-    },
-)
+    }
+    return Usuario;
 
-
-
+}

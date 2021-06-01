@@ -1,40 +1,42 @@
-module.exports = (sequelize, DataTypes) => sequelize.define(
-    "Endereco",
-    {
-        cep:{
-         type: DataTypes.INTEGER(8)
+module.exports = (sequelize, DataTypes) => {
+    const Endereco =sequelize.define(
+        "Endereco",
+        {
+            cep:{
+             type: DataTypes.INTEGER(8)
+            },
+            logradouro:{
+                type: DataTypes.STRING(200)
+            },
+            numero:{
+                type: DataTypes.STRING(20)
+            },
+            bairro:{
+                type: DataTypes.STRING(150)
+            },
+            complemento:{
+                type: DataTypes.STRING(250)
+            },
+            cidade:{
+                type: DataTypes.STRING(200)
+            },
+            estado:{
+                type: DataTypes.STRING(2)
+            },
+            id_usuario:{
+                type: DataTypes.STRING(2)
+            }
         },
-        logradouro:{
-            type: DataTypes.STRING(200)
-        },
-        numero:{
-            type: DataTypes.STRING(20)
-        },
-        bairro:{
-            type: DataTypes.STRING(150)
-        },
-        complemento:{
-            type: DataTypes.STRING(250)
-        },
-        cidade:{
-            type: DataTypes.STRING(200)
-        },
-        estado:{
-            type: DataTypes.STRING(2)
-        },
-        id_usuario:{
-            type: DataTypes.STRING(2)
-        }
-    },
-    {
-        //tableName: 'enderecos',
-        timestamps: false,
-    },
+        {
+            //tableName: 'enderecos',
+            timestamps: false,
+        }     
+    );
     Endereco.associate = function (models){
         Endereco.belongsTo(models.Usuario,{
              foreignKey: "id_usuario",
              as: "id"
         })
     }
- 
-)
+    return Endereco;
+};

@@ -1,5 +1,5 @@
-module.exports = (sequelize, DataTypes) => sequelize.define(
-    "Pergunta",
+module.exports = (sequelize, DataTypes) => { 
+    const Pergunta =sequelize.define( "Pergunta",
     {
         id:{
             type: DataTypes.INTEGER,
@@ -27,17 +27,21 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
     {
         //tableName: 'perguntas',
         timestamps: false,
-    },
+    }
+    );
     Pergunta.associate = function (models){
         Pergunta.belongsTo(models.Livro,{
              foreignKey: "id_livro",
              as: "pergunta_livro"
         })
     },
+
     Pergunta.associate = function (models){
         Pergunta.belongsTo(models.Usuario,{
              foreignKey: "id_usuario",
              as: "pergunta_usuario"
         })
     }
-)
+
+    return Pergunta;
+};

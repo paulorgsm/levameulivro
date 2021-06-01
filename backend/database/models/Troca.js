@@ -1,7 +1,7 @@
 const Usuario = require("./Usuario")
 
-module.exports = (sequelize, DataTypes)=> sequelize.define(
-    "Troca",
+module.exports = (sequelize, DataTypes)=>  { 
+    const Troca = sequelize.define("Troca",
     {
         id:{
             type: DataTypes.INTEGER,
@@ -21,7 +21,9 @@ module.exports = (sequelize, DataTypes)=> sequelize.define(
     {
         //tableName: 'trocas',
         timestamps: false,
-    },
+    }
+    
+    );
     Troca.associate = function (models){
         Troca.belongsTo(models.Usuario,{
              foreignKey: "id_usuario",
@@ -40,5 +42,6 @@ module.exports = (sequelize, DataTypes)=> sequelize.define(
              as: "entregas"
         })
     }
-)
+    return Troca;
 
+}
