@@ -2,8 +2,19 @@ const bcrypt = require('bcrypt');
 const db = require('../database/models')
 
 const contaService = {
-    criarUsuario: (nome, email, senha, sobrenome, cpf, celular, data_nasc, sexo) => {
+    criarConta: async (nome, email, senha) => {
         
+        const usuario = await db.Usuario.create({
+            nome: nome,
+            email: email, 
+            senha: bcrypt.hashSync(senha, 10),
+            saldo: 0
+        })
+
+        return usuario
+    },
+    adicionarDados: async (id, sobrenome, cpf, celular, data_nasc, sexo) => {
+
         switch(sexo) {
             case "fem": 
                 sexo = 1;
@@ -20,20 +31,20 @@ const contaService = {
         }
         
         var arrData =  data_nasc.split('/');
-
+            
         var stringFormatada = arrData[2] + '-' + arrData[1] + '-' + arrData[0];
-        
-        db.Usuario.create({
-            nome: nome,
-            email: email, 
-            senha: bcrypt.hashSync(senha, 10),
+
+        await db.Usuario.update({
             sobrenome: sobrenome,
             cpf: cpf,
-            celular: celular, 
+            celular: celular,
             data_nasc: stringFormatada,
             sexo: sexo,
-            saldo: 0, 
-        })
+            },
+            {
+               where: {id: id}
+            }
+        )
     }
 }
 

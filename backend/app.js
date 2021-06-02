@@ -10,7 +10,7 @@ var produtosRouter = require('./routes/produtos');
 var entrarNoTimeRouter = require('./routes/entrarNotime');
 var trocaRouter = require('./routes/trocaDelivro');
 var cadastroRouter = require('./routes/cadastro');
-var cadastro2Router = require('./routes/cadastro2');
+var cadastro2Router = require('./routes/cadastro2')
 var buscaRouter = require('./routes/busca');
 
 var app = express();

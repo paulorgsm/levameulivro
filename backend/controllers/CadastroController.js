@@ -1,6 +1,7 @@
 const path = require("path")
 const contaService = require("../services/contaService")
 const viewCadastro = path.join(__dirname, "../views/cadastro.html");
+const db = require('../database/models')
 
 
 const CadastroController = {
@@ -8,30 +9,27 @@ const CadastroController = {
         
         res.sendFile(viewCadastro)
     },
-    iniciarConta: (req, res) => {
-
+    criarConta: async (req, res) => {
+        
         const { nome, email, senha } = req.body;
-
-        if (senha[0] == senha[1]) {
-            req.session.conta = {
-                nome: nome,
-                email: email,
-                senha: senha[0]
-            }
-
-            res.redirect('/cadastro')
-        } else {
-            res.send('As senhas não são iguais')
+        
+        if (senha[0] != senha[1]) {
+            res.send('As senhas não são iguais!')
         }
+        
+        const { id } = await contaService.criarConta(nome, email, senha[0]);
+
+        req.session.teste = id;
+        
+        res.redirect('/cadastro');
     },
-    criarConta: (req, res) => {
-        const { nome, email, senha } = req.session.conta;
+    adicionarDados: async (req, res) => {
 
-        const { sobrenome, cpf, contato, nascimento, genero } = req.body;
+        const { sobrenome, cpf, contato, nascimento, genero } = req.body
+        
+        await contaService.adicionarDados(req.session.teste, sobrenome, cpf, contato, nascimento, genero)
 
-        contaService.criarUsuario(nome, email, senha, sobrenome, cpf, contato, nascimento, genero);
-
-        res.redirect('/entrar-no-time')
+        res.redirect('/cadastro')
     }
 }
 
