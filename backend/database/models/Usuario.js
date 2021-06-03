@@ -60,14 +60,14 @@ module.exports = (sequelize, DataTypes) => {
     }
     Usuario.associate = function (models){
         Usuario.hasMany(models.Endereco,{
-            foreignKey: "id_usario",
+            foreignKey: "id_usuario",
             as: 'usuario_endereco'
             
         })
     }
     Usuario.associate = function (models){
         Usuario.hasMany(models.Pergunta,{
-            foreignKey: "id_usario",
+            foreignKey: "id_usuario",
             as: 'pergunta_usuario'
             
         })
