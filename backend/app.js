@@ -10,7 +10,8 @@ var produtosRouter = require('./routes/produtos');
 var entrarNoTimeRouter = require('./routes/entrarNotime');
 var trocaRouter = require('./routes/trocaDelivro');
 var cadastroRouter = require('./routes/cadastro');
-var cadastro2Router = require('./routes/cadastro2')
+var cadastro2Router = require('./routes/cadastro2');
+var cadastro3Router = require('./routes/cadastro3')
 var buscaRouter = require('./routes/busca');
 
 var app = express();
@@ -38,6 +39,7 @@ app.use('/', entrarNoTimeRouter);
 app.use('/', trocaRouter);
 app.use('/', cadastroRouter);
 app.use('/', cadastro2Router);
+app.use('/', cadastro3Router);
 app.use('/', buscaRouter);
 
 // catch 404 and forward to error handler
