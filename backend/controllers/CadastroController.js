@@ -30,6 +30,14 @@ const CadastroController = {
         await contaService.adicionarDados(req.session.teste, sobrenome, cpf, contato, nascimento, genero)
 
         res.redirect('/cadastro')
+    },
+    adicionarEndereco: async (req, res) => {
+
+        const { cep, logradouro, num, bairro, complemento, cidade, estados } = req.body
+
+        await contaService.adicionarEndereco(cep, logradouro, num, bairro, complemento, cidade, estados, req.session.teste)
+
+        res.redirect('/cadastro')
     }
 }
 
