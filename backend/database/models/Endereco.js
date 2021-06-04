@@ -2,6 +2,11 @@ module.exports = (sequelize, DataTypes) => {
     const Endereco =sequelize.define(
         "Endereco",
         {
+            id: {
+                type: DataTypes.INTEGER,
+                autoIncrement: true,
+                primaryKey: true
+            },
             cep:{
              type: DataTypes.INTEGER(8)
             },
