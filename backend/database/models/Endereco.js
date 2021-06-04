@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true
             },
             cep:{
-             type: DataTypes.INTEGER(8)
+             type: DataTypes.STRING(8)
             },
             logradouro:{
                 type: DataTypes.STRING(200)
@@ -29,7 +29,8 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(2)
             },
             id_usuario:{
-                type: DataTypes.STRING(2)
+                type: DataTypes.INTEGER,
+                allowNull: false
             }
         },
         {
