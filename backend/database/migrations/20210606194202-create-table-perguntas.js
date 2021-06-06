@@ -20,7 +20,7 @@ module.exports = {
       },
 
       id_usuario: {
-        type: Sequelize.STRING(300),
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'usuarios',
@@ -29,7 +29,7 @@ module.exports = {
       },
 
       id_livro: {
-        type: Sequelize.STRING(300),
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'livros',
