@@ -45,6 +45,7 @@ module.exports = {
             },
 
             saldo: {
+                type: Sequelize.STRING(100)
             },
 
             createdAt: {
