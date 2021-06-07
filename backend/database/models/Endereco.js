@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             //tableName: 'enderecos',
-            timestamps: false,
+           
         }     
     );
     Endereco.associate = function (models){

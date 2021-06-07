@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
         }
     },
     {
-        //tableName: "entregas",
-        timestamps: false,
+        tableName: "entrega",
+        
     }
     
  );
@@ -33,10 +33,19 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     Entrega.associate = function (models){
-        Entrega.belongsTo(models.Troca,{
+        Entrega.belongsTo(models.Troca, {
              foreignKey: "id_troca",
-             as: "trocas"
+             as: "trocas",
+            
         })
+
+      /*   Entrega.associate = function (models){
+            Entrega.belongsTo(models.Troca, models.livro,{
+                 foreignKey: "id_troca",
+                 as: "trocas",
+                 foreignKey: "id_livro_troca",
+                 as: "entregas"
+            }) */
     }
     return Entrega;
 };
