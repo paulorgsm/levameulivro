@@ -37,7 +37,7 @@ module.exports = {
             },
 
             data_nasc: {
-                type: Sequelize.DATE
+                type: Sequelize.DATEONLY
             },
 
             sexo: {
