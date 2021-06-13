@@ -9,7 +9,8 @@ var homeRouter = require("./routes/home");
 var produtosRouter = require("./routes/produtos");
 var entrarNoTimeRouter = require("./routes/entrarNotime");
 var trocaRouter = require("./routes/trocaDelivro");
-var cadastroRouter = require("./routes/cadastro");
+var usuarioRouter = require("./routes/usuario");
+var enderecoRouter = require("./routes/endereco");
 var buscaRouter = require("./routes/busca");
 var livroRouter = require("./routes/livro");
 
@@ -37,8 +38,9 @@ app.use("/", homeRouter);
 app.use("/", produtosRouter);
 app.use("/", entrarNoTimeRouter);
 app.use("/", trocaRouter);
+app.use("/endereco", enderecoRouter);
 app.use("/livros", livroRouter);
-app.use("/cadastro", cadastroRouter);
+app.use("/usuario", usuarioRouter);
 app.use("/", buscaRouter);
 
 // catch 404 and forward to error handler
