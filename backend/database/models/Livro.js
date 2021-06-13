@@ -78,7 +78,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     Livro.associate = function (models) {
         Livro.belongsTo(models.Usuario, {
-            foreignKey: "id_usuario",
+            foreignKey: "usuario_id",
             as: "id"
         })
     },
