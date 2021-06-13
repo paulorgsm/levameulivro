@@ -76,6 +76,12 @@ module.exports = (sequelize, DataTypes) => {
             as: "pergunta_livro"
         })
     },
+    Livro.associate = function (models) {
+        Livro.belongsTo(models.Usuario, {
+            foreignKey: "id_usuario",
+            as: "id"
+        })
+    },
         Livro.associate = function (models) {
             Livro.hasOne(models.Pergunta, {
                 foreignKey: "id_livro",
