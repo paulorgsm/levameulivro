@@ -5,7 +5,7 @@ const EnderecoController = {
     const { cep, logradouro, num, bairro, complemento, cidade, estados } =
       req.body;
 
-    const { id } = req.session.teste;
+    const { id_usuario } = req.session;
 
     await enderecoService.criarEndereco(
       cep,
@@ -15,7 +15,7 @@ const EnderecoController = {
       complemento,
       cidade,
       estados,
-      id
+      id_usuario
     );
 
     res.redirect("/cadastro");

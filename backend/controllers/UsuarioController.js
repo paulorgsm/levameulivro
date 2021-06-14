@@ -10,17 +10,19 @@ const UsuarioController = {
 
     const { id } = await usuarioService.criarUsuario(nome, email, senha[0]);
 
-    req.session.teste = id;
+    req.session.id_usuario = id;
+
+    console.log(req.session.id_usuario);
 
     res.redirect("/cadastro");
   },
   adicionarDadosPessoais: async (req, res) => {
     const { sobrenome, cpf, contato, nascimento, genero } = req.body;
 
-    const { id } = req.session.teste;
+    const { id_usuario } = req.session;
 
     await usuarioService.adicionarOutrosDados(
-      id,
+      id_usuario,
       sobrenome,
       cpf,
       contato,
