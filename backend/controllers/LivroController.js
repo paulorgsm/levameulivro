@@ -1,7 +1,7 @@
 const livroService = require("../services/livroService");
 
 const LivroController = {
-  adicionarLivro: async (req, res) => {
+  criar: async (req, res) => {
     const {
       autor,
       nome_livro,

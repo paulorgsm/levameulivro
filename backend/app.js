@@ -4,15 +4,22 @@ var path = require("path");
 const session = require("express-session");
 /* var logger = require('morgan');
  */
-var indexRouter = require("./routes/index");
-var homeRouter = require("./routes/home");
-var produtosRouter = require("./routes/produtos");
-var entrarNoTimeRouter = require("./routes/entrarNotime");
-var trocaRouter = require("./routes/trocaDelivro");
-var usuarioRouter = require("./routes/usuario");
-var enderecoRouter = require("./routes/endereco");
-var buscaRouter = require("./routes/busca");
-var livroRouter = require("./routes/livro");
+
+/* Rotas temporárias */
+var vbuscaRouter = require("./routes/vbusca");
+var vcadastroRouter = require("./routes/vcadastro");
+var vhomeRouter = require("./routes/vhome");
+var vloginRouter = require("./routes/vlogin");
+var vprodutosRouter = require("./routes/vprodutos");
+var vtrocaDeLivroRouter = require("./routes/vtrocaDelivro");
+
+/* Rotas definitivas */
+const enderecoRouter = require("./routes/endereco");
+const entregaRouter = require("./routes/entrega");
+const livroRouter = require("./routes/livro");
+const perguntaRouter = require("./routes/pergunta");
+const trocaRouter = require("./routes/troca");
+const usuarioRouter = require("./routes/usuario");
 
 var app = express();
 
@@ -33,15 +40,21 @@ app.use(
 /* app.use(cookieParser()); */
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/", homeRouter);
-app.use("/", produtosRouter);
-app.use("/", entrarNoTimeRouter);
-app.use("/", trocaRouter);
-app.use("/endereco", enderecoRouter);
+/* Rotas temporárias */
+app.use("/busca", vbuscaRouter);
+app.use("/cadastro", vcadastroRouter);
+app.use("/", vhomeRouter);
+app.use("/login", vloginRouter);
+app.use("/produtos", vprodutosRouter);
+app.use("/troca-de-livro", vtrocaDeLivroRouter);
+
+/* Rotas definitivas */
+app.use("/enderecos", enderecoRouter);
+app.use("/entregas", entregaRouter);
 app.use("/livros", livroRouter);
-app.use("/usuario", usuarioRouter);
-app.use("/", buscaRouter);
+app.use("/perguntas", perguntaRouter);
+app.use("/trocas", trocaRouter);
+app.use("/usuarios", usuarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

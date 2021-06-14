@@ -1,13 +1,7 @@
-const path = require("path");
-const viewCadastro = path.join(__dirname, "../views/cadastro.html");
 const usuarioService = require("../services/usuarioService");
-const enderecoService = require("../services/enderecoService");
 
-const CadastroController = {
-  index: (req, res) => {
-    res.sendFile(viewCadastro);
-  },
-  criarConta: async (req, res) => {
+const UsuarioController = {
+  criar: async (req, res) => {
     const { nome, email, senha } = req.body;
 
     if (senha[0] != senha[1]) {
@@ -36,25 +30,6 @@ const CadastroController = {
 
     res.redirect("/cadastro");
   },
-  adicionarEndereco: async (req, res) => {
-    const { cep, logradouro, num, bairro, complemento, cidade, estados } =
-      req.body;
-
-    const { id } = req.session.teste;
-
-    await enderecoService.criarEndereco(
-      cep,
-      logradouro,
-      num,
-      bairro,
-      complemento,
-      cidade,
-      estados,
-      id
-    );
-
-    res.redirect("/cadastro");
-  },
 };
 
-module.exports = CadastroController;
+module.exports = UsuarioController;
