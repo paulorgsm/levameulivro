@@ -1,43 +1,40 @@
 module.exports = (sequelize, DataTypes) => {
-    const Entrega = sequelize.define( "Entrega",
+  const Entrega = sequelize.define(
+    "Entrega",
     {
-        id:{
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        rastreio:{
-            type: DataTypes.STRING(50),
-            allowNull: false
-        },
-        recebido:{
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        id_troca:{
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      rastreio: {
+        type: DataTypes.STRING(50),
+        allowNull: false,
+      },
+      recebido: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
+      id_troca: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {
-        tableName: "entrega",
-        
+      tableName: "entrega",
     }
-    
- );
-    Entrega.associate = function (models){
-        Entrega.hasOne(models.Livro,{
-             foreignKey: "id_livro_troca",
-             as: "entregas"
-        })
-    },
-
-    Entrega.associate = function (models){
-        Entrega.belongsTo(models.Troca, {
-             foreignKey: "id_troca",
-             as: "trocas",
-            
-        })
+  );
+  (Entrega.associate = function (models) {
+    Entrega.hasOne(models.Livro, {
+      foreignKey: "id_livro_troca",
+      as: "entregas",
+    });
+  }),
+    (Entrega.associate = function (models) {
+      Entrega.belongsTo(models.Troca, {
+        foreignKey: "id_troca",
+        as: "trocas",
+      });
 
       /*   Entrega.associate = function (models){
             Entrega.belongsTo(models.Troca, models.livro,{
@@ -46,6 +43,6 @@ module.exports = (sequelize, DataTypes) => {
                  foreignKey: "id_livro_troca",
                  as: "entregas"
             }) */
-    }
-    return Entrega;
+    });
+  return Entrega;
 };
