@@ -58,22 +58,23 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
   Usuario.associate = function (models) {
-    Usuario.hasMany(models.Livro, {
+    Usuario.hasMany(models.Livro, models.Endereco, models.Pergunta, {
       foreignKey: "usuario_id",
       as: "livro",
-    });
+    },
+    );
   };
-  Usuario.associate = function (models) {
-    Usuario.hasMany(models.Endereco, {
-      foreignKey: "id_usuario",
-      as: "usuario_endereco",
-    });
-  };
-  Usuario.associate = function (models) {
-    Usuario.hasMany(models.Pergunta, {
-      foreignKey: "id_usuario",
-      as: "pergunta_usuario",
-    });
-  };
+    Usuario.associate = function (models) {
+      Usuario.hasMany(models.Endereco, {
+        foreignKey: "id_usuario",
+        as: "usuario_endereco",
+      }); 
+    };
+    Usuario.associate = function (models) {
+      Usuario.hasMany(models.Pergunta, {
+        foreignKey: "id_usuario",
+        as: "pergunta_usuario",
+      });
+    };
   return Usuario;
 };
