@@ -1,3 +1,5 @@
+const Usuario = require("./Usuario");
+
 module.exports = (sequelize, DataTypes) => {
   const Pergunta = sequelize.define("Pergunta", {
     id: {
@@ -21,24 +23,24 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
 
-    id_livro: {
+    id_livro_pergunta: {
       type: DataTypes.STRING(300),
       allowNull: false,
     },
   });
 
-  (Pergunta.associate = function (models) {
+   Pergunta.associate = function  (models) {
     Pergunta.belongsTo(models.Livro, {
-      foreignKey: "id_livro",
+      foreignKey: "id_livro_pergunta",
       as: "pergunta_livro",
     });
-  }),
-    (Pergunta.associate = function (models) {
+  };
+  /*   (Pergunta.associate = function (models) {
       Pergunta.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
         as: "pergunta_usuario",
       });
-    });
-
+    }); 
+ */
   return Pergunta;
 };
