@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   Troca.associate = function (models) {
     Troca.belongsTo(models.Usuario,{
       foreignKey: "id_usuario",
-      as: "id_troca",
+      as: "usuarios",
       
     });
     Troca.belongsTo( models.Livro,{
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     });
     Troca.hasOne(models.Endereco, {
       foreignKey: "id_endereco",
-      as: "endereco_troca",
+      as: "enderecos",
     });
   };
   return Troca;

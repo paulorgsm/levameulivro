@@ -32,11 +32,11 @@ module.exports = (sequelize, DataTypes) => {
    Pergunta.associate = function  (models) {
     Pergunta.belongsTo(models.Livro, {
       foreignKey: "id_livro",
-       as: "pergunta_livro",
+       as: "livros",
     });
      Pergunta.belongsTo(models.Usuario, {
       foreignKey: "id_usuario",
-      as: "pergunta_usuario",
+      as: "perguntas",
     }); 
   };
   

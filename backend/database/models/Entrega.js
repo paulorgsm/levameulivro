@@ -31,9 +31,9 @@ module.exports = (sequelize, DataTypes) => {
 
     Entrega.belongsTo(models.Endereco, {
       foreignKey: "id_endereco",
-      as: "endereco",
+      as: "enderecos",
     });
-    
+
     Entrega.belongsTo(models.Troca, {
       foreignKey: "id_troca",
       as: "trocas",

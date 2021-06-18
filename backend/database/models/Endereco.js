@@ -44,11 +44,11 @@ module.exports = (sequelize, DataTypes) => {
     });
     Endereco.belongsTo(models.Troca, {
       foreignKey: "id_endereco",
-      as: "endreco_troca",
+      as: "trocas",
     });
     Endereco.hasOne(models.Entrega, {
       foreignKey: "id_endereco",
-      as: "endereco",
+      as: "enderecos",
     });
   };
   return Endereco;

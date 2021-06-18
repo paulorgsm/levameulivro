@@ -65,12 +65,12 @@ module.exports = (sequelize, DataTypes) => {
 
   Livro.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
-        as: "livro_id",
+        as: "livros",
   });
    
     Livro.hasMany(models.Pergunta, {
         foreignKey: "id_livro",
-        as: "pergunta_livro",
+        as: "perguntas",
       });
       Livro.belongsTo(models.Entrega, {
         foreignKey: "id_livro",
