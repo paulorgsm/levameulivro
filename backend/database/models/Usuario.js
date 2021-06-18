@@ -52,18 +52,28 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-/*   Usuario.associate = function (models) {
-    Usuario.hasMany(models.Livro, models.Endereco, models.Pergunta,models.Troca, {
-      foreignKey: "usuario_id",
-      as: "livro",
+Usuario.associate = function (models) {
+    Usuario.hasMany(models.Livro, {
+      foreignKey: "id_usuario",
+      as: "livro_id",
+    });
+     Usuario.hasMany(models.Endereco,  {
+      
       foreignKey: "id_usuario",
       as: "usuario_endereco",
+    
+    });
+    Usuario.hasMany( models.Pergunta,{
+    
       foreignKey: "id_usuario",
       as: "pergunta_usuario",
-      foreignKey: "id_usuario",
-      as: "troca",
+      
     });
-  }; */
+    Usuario.hasMany(models.Troca, {
+      foreignKey: "id_usuario",
+      as: "id_troca",
+    });
+  }; 
 
   return Usuario;
 };

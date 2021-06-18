@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
 
-    id_livro_pergunta: {
+    id_livro: {
       type: DataTypes.STRING(300),
       allowNull: false,
     },
@@ -31,16 +31,14 @@ module.exports = (sequelize, DataTypes) => {
 
    Pergunta.associate = function  (models) {
     Pergunta.belongsTo(models.Livro, {
-      foreignKey: "id_livro_pergunta",
-      as: "pergunta_livro",
+      foreignKey: "id_livro",
+       as: "pergunta_livro",
     });
-  };
-  /*   (Pergunta.associate = function (models) {
-      Pergunta.belongsTo(models.Usuario, {
-        foreignKey: "id_usuario",
-        as: "pergunta_usuario",
-      });
+     Pergunta.belongsTo(models.Usuario, {
+      foreignKey: "id_usuario",
+      as: "pergunta_usuario",
     }); 
- */
+  };
+  
   return Pergunta;
 };

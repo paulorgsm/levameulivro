@@ -60,23 +60,25 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  (Livro.associate = function (models) {
+  Livro.associate = function (models) {
     Livro.hasOne(models.Troca, {
-      foreignKey: "id_livro_troca",
-      as: "pergunta_livro",
+      foreignKey: "id_livro",
+      as: "trocas",
     });
-  }),
-    (Livro.associate = function (models) {
-      Livro.belongsTo(models.Usuario, {
+
+  Livro.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
-        as: "id",
-      });
-    }),
-    (Livro.associate = function (models) {
-      Livro.hasOne(models.Pergunta, {
+        as: "livro_id",
+  });
+   
+    Livro.hasMany(models.Pergunta, {
         foreignKey: "id_livro",
-        as: "trocas",
+        as: "pergunta_livro",
       });
-    });
+      Livro.belongsTo(models.Entrega, {
+        foreignKey: "id_livro",
+        as: "entregas_livro",
+      })
+   };
   return Livro;
 };
