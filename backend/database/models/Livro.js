@@ -44,9 +44,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(200),
       allowNull: false,
     },
-    saldo_usuario: {
-      type: DataTypes.INTEGER(),
-    },
     id_usuario: {
       type: DataTypes.INTEGER,
     },
@@ -77,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       Livro.belongsTo(models.Entrega, {
         foreignKey: "id_livro",
-        as: "entregas_livro",
+        as: "entregas",
       })
    };
   return Livro;

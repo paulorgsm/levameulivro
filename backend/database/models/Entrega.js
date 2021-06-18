@@ -26,22 +26,19 @@ module.exports = (sequelize, DataTypes) => {
   Entrega.associate = function (models) {
     Entrega.hasOne(models.Livro, {
       foreignKey: "id_livro",
-      as: "entregas_livro",
+      as: "entregas",
     });
 
-    Entrega.hasOne(models.Endereco, {
+    Entrega.belongsTo(models.Endereco, {
       foreignKey: "id_endereco",
-      as: "endereco_entrega",
+      as: "endereco",
     });
-
+    
     Entrega.belongsTo(models.Troca, {
       foreignKey: "id_troca",
       as: "trocas",
       
     });
   };
-
-
-
   return Entrega;
 };
