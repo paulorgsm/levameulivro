@@ -17,28 +17,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    id_endereco: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
   });
   Troca.associate = function (models) {
-    Troca.belongsTo(models.Usuario,{
+    Troca.belongsTo(models.Usuario, {
       foreignKey: "id_usuario",
       as: "usuarios",
-      
     });
-    Troca.belongsTo( models.Livro,{
+    Troca.belongsTo(models.Livro, {
       foreignKey: "id_livro",
       as: "trocas",
     });
     Troca.hasOne(models.Entrega, {
       foreignKey: "id_troca",
       as: "entregas",
-    });
-    Troca.hasOne(models.Endereco, {
-      foreignKey: "id_endereco",
-      as: "enderecos",
     });
   };
   return Troca;

@@ -7,7 +7,7 @@ const usuarioService = {
       nome: nome,
       email: email,
       senha: bcrypt.hashSync(senha, 10),
-      saldo: "0",
+      saldo: 0,
     });
 
     return usuario;

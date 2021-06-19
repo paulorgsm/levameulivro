@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     data_nasc: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
     },
 
     sexo: {
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     saldo: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.INTEGER,
     },
   });
 
