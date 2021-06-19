@@ -17,7 +17,7 @@ const UsuarioController = {
     res.redirect("/cadastro");
   },
   adicionarDadosPessoais: async (req, res) => {
-    const { sobrenome, cpf, contato, nascimento, genero } = req.body;
+    const { sobrenome, cpf, celular, data_nasc, sexo } = req.body;
 
     const { id_usuario } = req.session;
 
@@ -25,9 +25,9 @@ const UsuarioController = {
       id_usuario,
       sobrenome,
       cpf,
-      contato,
-      nascimento,
-      genero
+      celular,
+      data_nasc,
+      sexo
     );
 
     res.redirect("/cadastro");
