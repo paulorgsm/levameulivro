@@ -1,4 +1,4 @@
-const enderecoService = require("../services/enderecoService");
+const enderecoService = require("../services/EnderecoService");
 
 const EnderecoController = {
   criar: async (req, res) => {

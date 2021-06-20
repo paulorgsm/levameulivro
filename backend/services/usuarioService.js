@@ -2,15 +2,13 @@ const bcrypt = require("bcrypt");
 const db = require("../database/models");
 
 const usuarioService = {
-  getAllUsuario: async () => {
+  getAll: async () => {
     const usuarioList = await db.Usuario.findAll();
 
     return usuarioList;
   },
-  getUsuarioById: async (id) => {
-    const usuario = await db.Usuario.findOne({
-      where: { id: id },
-    });
+  getById: async (id) => {
+    const usuario = await db.Usuario.findByPk(id);
 
     return usuario;
   },

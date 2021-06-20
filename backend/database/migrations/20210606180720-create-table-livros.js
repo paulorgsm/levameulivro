@@ -76,11 +76,6 @@ module.exports = {
         allowNull: false,
       },
 
-      data_cad: {
-        type: Sequelize.DATEONLY,
-        allowNull: false,
-      },
-
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,

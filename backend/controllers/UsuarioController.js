@@ -1,15 +1,15 @@
-const usuarioService = require("../services/usuarioService");
+const usuarioService = require("../services/UsuarioService");
 
 const UsuarioController = {
   indexAll: async (req, res) => {
-    const usuarioList = await usuarioService.getAllUsuario();
+    const usuarioList = await usuarioService.getAll();
 
     return res.json(usuarioList);
   },
   indexById: async (req, res) => {
     const { id } = req.params;
 
-    const usuario = await usuarioService.getUsuarioById(id);
+    const usuario = await usuarioService.getById(id);
 
     return res.json(usuario);
   },

@@ -1,4 +1,4 @@
-const trocaService = require("../services/trocaService");
+const trocaService = require("../services/TrocaService");
 
 const TrocaController = {
   criar: async (req, res) => {

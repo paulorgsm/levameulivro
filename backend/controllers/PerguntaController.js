@@ -1,4 +1,4 @@
-const perguntaService = require("../services/perguntaService");
+const perguntaService = require("../services/PerguntaService");
 
 const perguntaController = {
   criar: async (req, res) => {

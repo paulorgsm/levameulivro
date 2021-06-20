@@ -1,4 +1,4 @@
-const entregaService = require("../services/entregaService");
+const entregaService = require("../services/EntregaService");
 
 const EntregaController = {
   criar: async (req, res) => {
