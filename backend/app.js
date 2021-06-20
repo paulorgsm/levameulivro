@@ -5,14 +5,6 @@ const session = require("express-session");
 /* var logger = require('morgan');
  */
 
-/* Rotas temporárias */
-var vbuscaRouter = require("./routes/vbusca");
-var vcadastroRouter = require("./routes/vcadastro");
-var vhomeRouter = require("./routes/vhome");
-var vloginRouter = require("./routes/vlogin");
-var vprodutosRouter = require("./routes/vprodutos");
-var vtrocaDeLivroRouter = require("./routes/vtrocaDelivro");
-
 /* Rotas definitivas */
 const enderecoRouter = require("./routes/endereco");
 const entregaRouter = require("./routes/entrega");
@@ -39,14 +31,6 @@ app.use(
 );
 /* app.use(cookieParser()); */
 app.use(express.static(path.join(__dirname, "public")));
-
-/* Rotas temporárias */
-app.use("/busca", vbuscaRouter);
-app.use("/cadastro", vcadastroRouter);
-app.use("/", vhomeRouter);
-app.use("/login", vloginRouter);
-app.use("/produtos", vprodutosRouter);
-app.use("/troca-de-livro", vtrocaDeLivroRouter);
 
 /* Rotas definitivas */
 app.use("/enderecos", enderecoRouter);
