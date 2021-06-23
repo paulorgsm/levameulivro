@@ -8,6 +8,11 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
 
+    id_endereco: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+
     id_usuario: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -22,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
     Troca.hasOne(models.Entrega, {
       foreignKey: "id_troca",
       as: "entregas",
+    });
+
+    Troca.belongsTo(models.Usuario, {
+      foreignKey: "id_endereco",
+      as: "enderecos",
     });
 
     Troca.belongsTo(models.Usuario, {

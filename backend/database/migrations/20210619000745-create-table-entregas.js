@@ -26,15 +26,6 @@ module.exports = {
         },
       },
 
-      id_endereco: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: "enderecos",
-          key: "id",
-        },
-      },
-
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
