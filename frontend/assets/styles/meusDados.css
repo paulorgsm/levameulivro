@@ -53,7 +53,7 @@ body{
     border-right: none;
     border-color: #4285F4;
     width: 400px;
-    height: 48px;
+    height: 42px;
     color: #4285F4;
 
 }
@@ -141,177 +141,213 @@ strong {
     color: #FEEE08;
 }
 
-.sessao{
-    max-width: 1143px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+/* corpo da página */
+.secao{
+    width: 100%;
+}
+.paragrafo{
+    width: 960px;
     margin: 40px auto;
-}
-
-
-.negrito{
-    color: #000;
-    font-weight: 700;
-}
-.mostrarInfoLivro{
-    display: flex;
-    width: 1200px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 40px auto;
-}
-
-.produtoFoto{
-    max-width: 250px;
-    height: 370px;
-    margin-bottom: 14px;
-}
-.fotosMostruario{
-    display: flex;
-    max-width: 128px;
-    height: 30px;
-    justify-content: space-between; 
-    margin: auto;   
-}
-.informacoesLivro{
-    width: 800px;
-    height: 415px;
-    margin-left: 93px;
-}
-
-.informacoesLivro h1{
-    font-size: 24px;
-    font-weight: 700;
-    align-items: center;
-}
-
-.infosLivros{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.infosIcones{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 568px;
-    justify-content: space-between;
-    margin-top: 24px;
-    margin-bottom: 30px;
-    font-size: 12px;
-}
-
-.txtInfoDono{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-}
-.imgsIcones{
-    width: 24px;
-    margin: 3px;
-}
-
-#alinhaSalvar{
-    align-self: center;
-}
-.centralizar{
-text-align: center;
-}
-.marginInfoLivro{
-    margin-top: 38px;
-}
-.marginInfoLivro2{
-    margin-right: 100px;
-}
-
-.txtVerde{
-    color: #219653;
-    font-weight: 700;
-}
-.btn{
-    border-radius: 10px;
-    height: 46px;
-    color: white;
-    border-style: none;
-    margin-top: 30px;
-    font-weight: 700;
-    line-height: 26px;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    
-}
-
-.btnLaranja{
-    background-color: #EB4335;
-    width: 216px;
-}
-
-.btnRosa{
-    background-color: #F62CBC;
-    width: 278px;
-    margin-left: 73px;
-}
-
-.border{
-    border-bottom:1px solid #4285F4;
-    width: 577px;
-    margin: auto;
-    align-items: center;
-}
-
-.txtAzul{
-    color: #4285F4;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 40px;
-}
-
-.txt{
-    font-size: 16px;
-    line-height: 22px;
-    margin-bottom:30px ;
-}
-
-.form{
-    display: flex;
-    width: 1143px;
-    align-items: center;
-    margin: auto;
-}
-#contato{
-    width: 1050px;
-    height: 150px;
-    border-radius: 20px;
-    border: 1px solid #4285F4;
-    background-color: #f2f2f2;
     justify-content: center;
-    margin: auto;
 }
 
-.btnAzul{
-    width: 216px;
-    height: 46px;
-    background-color: #4285F4;
-    margin-left: 47px;
+.paragrafo p{
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #4285F4;
+}
+
+.meusDados{
+    width: 600px;
+    height: 192px;
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+.meusDados h2{
+    height: 48px;
+    font-family: sans-serif;
     font-weight: 700;
+    font-size: 44px;
+    line-height: 56px;
+    color:#EB4335 ;
+    margin: auto 30px;
+    text-align: center;
+}
+.meusDados img{
+    margin-left: 150px;
+}
+
+.meusDadosPrincipal{
+    width: 530px;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formsCadastros{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-top:1px solid #000000;
+    text-align: center;
+    margin: 0 auto; 
+    /* max-width: 578px; */
+   
+}
+.forms{
+    height: 750px;
+    width: 530px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 auto;  
     
 }
-
-.perguntas{
-    margin-top: 25px;
-    margin-left: 28px;
-}
-.perguntasSub{
-    margin-left:  28px;
+.forms p{
+    padding-bottom: 23px;
+    text-align: justify;
+    font-weight: bolder;
 }
 
-.resposta{
-    margin-top: 18px;
-    margin-left: 1px;
+.formsCadastros h2{
+    font-family: sans-serif;
+    height: 55px;
+    color: #F62CBC;
+    text-align: center;
+    margin: 48px auto;
+    font-size: 48px;
+    font-weight: 700;
 }
- /* css footer */
+.form1{
+    width:473px ;
+    margin: 0 136px 0 0;
+}
+.forms form{
+    display: flex;
+    flex-direction: column;
+    width: 471px;
+    height: 370px;
+    align-items: baseline;
+    text-align: start;
+}
+.forms form input{
+    border-radius: 10px;
+    background-color:#E0E0E0; 
+    width: 200px;
+    height: 40px;
+    border: none;
+    margin: 7px 28px 21px auto ;
+}
+
+.form1 form select{
+    border-radius: 10px;
+    background-color:#E0E0E0;
+}
+.agregadorInput{
+    width: 468px;
+    display: flex;
+    flex-wrap: wrap;
+ 
+}
+.agregadorLabelInput{
+    display: flex;
+    flex-direction: column;
+    
+}
+input ::placeholder{
+    padding-right: 17px ;
+}
+
+ .button1{
+    width: 216px;
+    height: 46px;
+    background: #eb4335;
+    font-family: sans-serif;
+    color: white;
+    border-radius: 10px;
+    border:none;
+    margin-right: 600px;
+}
+.carregarFoto{
+    margin-top: 21px;
+    margin-bottom: 21px;
+    display: flex;
+}
+.carregarFoto > div> p{
+    font-size: 16px;
+    padding-bottom: 0;
+    margin-left: 8px;
+}
+.meusDadosPrincipal p {
+    padding-bottom: 23px;
+    text-align: justify;
+    font-weight: bolder;
+}
+.padding{
+    padding-left: 80px;
+}
+
+.retangulo{
+    background: #F2F2F2;
+    border-radius: 10px;
+    height: 161px;
+    display: flex;
+
+}
+.check{
+    width:45px ;
+}
+.check > input{
+    width: 27px;
+    height: 29px;
+}
+.input:checked{
+    background-color: #FCBC05;
+    width: 25px;
+    height: 25px;
+}
+
+.endereco{
+    width: 461px;
+    height: 142px;
+    margin: auto;
+}
+.endereco p{
+    padding-bottom: 5px;
+    font-weight: 100;
+}
+.btns-endereco{
+    margin-top: 2.1%;
+    display: block;
+    width: 190px;
+    height: 40px;
+    margin-top: 39px;
+}
+.btn-editar{
+    width: 90px;
+    height: 35px;
+    border: none;
+    margin-right: none;
+    border-radius: 5px;
+    background: #E0E0E0;
+}
+
+.btn-apagar{
+    width: 90px;
+    height: 35px;
+    border: none;
+    margin-left: none;
+    margin-left: -3%;
+    border-radius: 5px;
+    background: #E0E0E0;
+}
+
+
+/* footer */
 .footer {
     margin-top: 70px;
     width: auto;

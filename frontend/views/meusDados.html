@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <link rel="stylesheet" href="../assets/styles/meusDados.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>Meus Dados</title>
+</head>
+<body>
+    <header class="header">
+        <div class="conteudoHeader">
+            <div>
+                <img class="logo" src="../assets/img/logo.svg" alt="Logo-Tipo">
+            </div>
+    
+            <div class="divInput">
+                <input class="buscar" type="text"  placeholder="Busque por livro, autor,tag" />
+                <div class="container">
+                    <input type="checkbox">
+                    <class="checkmark"> Apenas disponíveis
+                </div>
+                <button type="submit" class="submit"><i class="fa fa-search"></i></button>    
+            </div>
+                <div class="login">
+                    <div class="campoLogin">
+                        <span>Oi, Seja Bem-vindx!</span>
+                        
+                    <span>ENTRE / REGISTRE-SE</span>
+                    </div>
+                <img  src="../assets/img/login.svg" alt="">
+            </div>
+         </div>
+         <div class="infoHeader">
+            <nav>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">QUEM SOMOS</a></li>
+                    <li><a id="comprarLi" href="">COMPRAR PONTOS</a></li>
+                    <li><a href="">QUEM SOMOS</a></li>
+                    <li><a href="">FALE CONOSCO</a></li>
+                    <li><a href="">DOE/APOIE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="secao">
+            <div class="paragrafo">
+                <p>Aeee! Seja Bem-Vindx ao Nosso Clube!</p>
+            </div>
+            <div class="meusDados">
+                <img src="../assets/img/meusDados.svg" alt="">
+                <h2>Meus Dados</h2>                    
+            </div>
+            <div class="meusDadosPrincipal">
+                             
+                <div class="forms">
+                    <div>
+                        <p>ALTERAR DADOS PESSOAIS</p>
+                    </div>
+                    
+                    <form action="/cadastro
+                    " method="POST">
+                        <div class="agregadorInput">
+                            <div class= agregadorLabelInput>
+                                <label for="primeiroNome">Primeiro Nome</label>
+                                <input type="text" name="primeiroNome" id="primeiroNome" placeholder="Digite seu nome">
+                            </div>
+                        
+                            <div class="agregadorLabelInput">
+                                <label for="sobrenome">Sobrenome</label>
+                                <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome">
+                            </div> 
+                        </div>
+                        <div class="agregadorInput">
+                            <div class="agregadorLabelInput">
+                                <label for="email">E-mail</label>
+                                <input type="text" name="email"     id="email" placeholder="levameulivro@gmail.com">
+                            </div>  
+                        
+                            <div class="agregadorLabelInput">
+                                <label for="sobrenome">senha</label>
+                                <input type="text" name="sobrenome" id="sobrenome" placeholder="********">
+                            </div> 
+                        </div>                  
+                        <div class="agregadorInput">
+                            <div class="agregadorLabelInput">
+                                <label for="cpf">CPF</label>
+                                <input type="text" name="cpf" id="cpf" placeholder="Digite seu cpf">
+                            </div>
+                            <div class="agregadorLabelInput">
+                                <label for="contato">Celular/telefone</label>
+                                <input type="text" name="contato" id="contato"placeholder="Não esqueça do DDD">
+                            </div>
+                        </div>
+                        <div class="agregadorInput">
+                            <div class="agregadorLabelInput">
+                                <label for="nascimento">Data de nascimento</label>
+                                <input type="text" name="nascimento" id="contato"placeholder="DD/MM/AAAA">
+                            </div>
+                            <div class="agregadorLabelInput">
+                                <label for="genero">Gênero</label>
+                                <select name="genero" id="genero" placeholder="Escolha uma opção"> <option value="fem">Mulher cisgênero</option>
+                                <option value="masc">Homen cisgênero</option>
+                                <option value="mulherTrans">Mulher Transgênero</option>
+                                <option value="homenTrans">Homen Transgênero</option>
+                                <option value="naoResponder">Prefiro não responder</option>
+                                <option value="outros">Outros</option></select>
+                            </div>                         
+                        </div>    
+                        <div class="carregarFoto">
+                            <img src="../assets/img/carregarFoto.svg" alt="">
+                            <div>
+                                <p>Incluir/Mudar minha foto</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="button1" type="submit" >SALVAR DADOS</button>
+                        </div>
+                    </form>
+                    <div class="forms padding">
+                        <p>ALTERAR / INCLUIR ENDEREÇO:</p>
+                        <div class="retangulo">
+                            <div class="check">
+                                <input  type="checkbox">
+                            </div>
+                            <div class="endereco">
+                                <p><strong>Endereço:</strong> Estr. dos Bandeirantes, 6700, </p>
+                                <p> Bairro Jacarepaguá. Rio de Janeiro - RJ. </p>
+                                <p> CEP: 22780-086 </p>
+                                <span class="btns-endereco">
+                                    <button type="submit" class="btn-editar">
+                                        <span class="material-icons">edit_note</span> editar</button>
+                                    <button type="reset" class="btn-apagar">
+                                        <span class="material-icons">delete</span> apagar
+                                    </button>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+           
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="descricaoSobre"><h2>SOBRE O <strong>LEVA MEU LIVRO</strong></h2>
+        <span>Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois divoltis porris, paradis. Per aumento de cachacis, eu reclamis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.
+        </span>
+        <span><a class="leiaMais" href="#" >LEIA MAIS</a></span>
+        </div>
+
+        <div class="redesSociais">
+        <h2>REDES <strong class="social">SOCIAIS</strong></h2>
+     <span><img  src="../assets//img/facebook.svg" alt="não encontrada"><img  src="../assets//img/redesSociais.svg" alt="não encontrada"></span>
+       </div>
+     </footer>
+     <footer2 class="footer2">
+        <div class="direitos"> LEVA MEU LIVRO ©  | 2021 - Todos os direitos reservados   </div>
+     </footer2>
+</body>
+</html>
