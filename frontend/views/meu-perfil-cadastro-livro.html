@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <link rel="stylesheet" href="../assets/styles/meu-perfil-cadastro-livro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Meu Perfil - Cadastrar Livros</title>
+</head>
+<body>
+    <header class="header">
+        <div class="conteudoHeader">
+            <div class="headerLogo">
+                <img  src="../assets/img/logo.svg" alt="não encontrada">
+            </div>
+    
+            <div class="divInput">
+                <input class="buscar" type="text"  placeholder="Busque por livro, autor,tag" />
+<!--                 <div class="container">
+                    <input type="checkbox"> 
+                    <class="checkmark"> Apenas disponíveis
+                </div> 
+                <button type="submit" class="submit"><i class="fa fa-search"></i></button>    --> 
+            </div>
+                <div class="login">
+                    <div class="campoLogin">
+                        <span>Oi, Seja Bem-vindx!</span>
+                        
+                    <span>ENTRE / REGISTRE-SE</span>
+                    </div>
+                <img  src="../assets/img//login.svg" alt="">
+            </div>
+         </div>
+         <div class="infoHeader">
+            <nav>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">COMO FUNCIONA?</a></li>
+                    <li><a id="comprarLi" href="">COMPRAR PONTOS</a></li>
+                    <li><a href="">QUEM SOMOS</a></li>
+                    <li><a href="">FALE CONOSCO</a></li>
+                    <li><a href="">DOE/APOIE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="meuPerfil">
+            <div class="meuPerfilGeral">
+                <p>Aeee! Seja Bem-Vindx ao Nosso Clube!</p>
+            </div>
+            
+            <div class="cadLivro">
+                <img src="/frontend/assets/img/icon-livro.svg" alt="Ícone Livro">
+                <h1>Cadastrar Meus Livros</h1>
+            </div>
+
+            <div class="botoes">
+                <button type="submit" class="btn-incluir">
+                    <img src="/frontend/assets/img/imgPlus.svg" alt="">
+                    Incluir Novo Livro</button>
+
+                <label for="organizar"></label>
+                <select name="organizar" id="organizar" class="btn-filtro">
+                    <option value="mais-novos" class="btn-org">Mais Novos</option>
+                    <option value="mais-antigos" class="btn-org">Mais Antigos</option>
+                    <option value="livros-novos" class="btn-org">Livros Novos</option>
+                    <option value="livros-usados" class="btn-org">Livros Usados</option>
+                </select>
+
+            </div>
+
+            <table class="cadTabela">
+                
+                <thead>
+                    <tr>
+                        <th>Imagem:</th>
+                        <th>Título:</th>
+                        <th>Autor:</th>
+                        <th>Ano:</th>
+                        <th>Mensagens:</th>
+                        <th>Ação:</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="/frontend/assets/img/imgCadLivro.svg" alt="">
+                        </td>
+                        <td>Harry Potter e a Pedra Filosofal</td>
+                        <td>J.K. Rowling</td>
+                        <td>2000</td>
+                        <td><a class="link-msg" href="#">02 para responder</a></td>
+                        <td>
+                            <div class="bg-acao">
+                            <img src="/frontend/assets/img/editar.svg" alt="">
+                            <p>editar</p>
+                            <img src="/frontend/assets/img/lixeira.svg" alt="">
+                            <p>apagar</p>
+                            </div>
+                        
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <div class="paginacao">
+                <div class="pag-nav">
+                    <img src="/frontend/assets/img/seta-pag.svg" alt="">
+                </div>
+                <div class="pag-nav-numb">
+                    <p>1</p>
+                </div>
+                <div class="pag-nav"></div>
+            </div>
+   
+
+            <section class="cadInfos">
+                <div class="total">
+                    <form class="parte1" action="" method="post">
+                        <h2>PREENCHA AS INFORMAÇÕES A SEGUIR:</h2>
+
+                        <div class="camposform">
+                            <div class="isbn">
+                                <label for="ISBN">Cadastrar ISBN ou ISSN:</label>
+                                <input type="text" name="ISBN" id="ISBN" placeholder="Digite o ISBN ou ISSN...">
+                            </div>
+
+                            <div class="titulo">
+                                <label for="titulo">Título do Livro:</label>
+                                <input type="text" name="titulo" id="titulo" placeholder="Digite o Nome do Livro...">
+                            </div>
+
+                            <div class="autor">
+                                <label for="autor">Autor(a) / Autores:</label>
+                                <input type="text" name="autor" id="autor" placeholder="Digite os Autores do Livro...">
+                            </div>
+
+                            <div class="elDuplo">
+
+                                <div class="divEnsino">
+                                    <label for="ensino">Nível de Ensino</label>
+                                    <select name="ensino" class="nivelEnsino" placeholder="Selecione uma opção...">
+                                        <option value="Exemplo 1">Exemplo 1</option>
+                                        <option value="Exemplo 2">Exemplo 2</option>
+                                        <option value="Exemplo 3">Exemplo 3</option>
+                                    </select>
+                                </div>
+
+                                <div class="divCurso">
+                                    <label for="curso">Matéria ou Curso:</label>
+                                    <select name="curso" class="campoCurso" placeholder="Selecione uma opção...">
+                                        <option value="Exemplo 1">Exemplo 1</option>
+                                        <option value="Exemplo 2">Exemplo 2</option>
+                                        <option value="Exemplo 3">Exemplo 3</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="editora">
+                                <label for="editora">Editora:</label>
+                                <input type="text" name="editora" id="editora" placeholder="Escreva o nome da Editora...">
+                            </div>
+
+
+                            <div class="elDuplo">
+                                <div class="ano">
+                                    <label for="ano">Ano da Publicação:</label>
+                                    <input type="text" name="ano" id="ano" placeholder="Inclua o Ano..">
+                                </div>
+
+                                <div class="paginas">
+                                    <label for="paginas">Nº de Páginas:</label>
+                                    <input type="text" name="paginas" id="paginas" placeholder="Digite o Nº de Páginas...">
+                                </div>
+                            </div>
+
+                            <div class="elDuplo">
+  
+                                    <div class="divEstado">
+                                        <label for="estado">Estado do Livro:</label>
+                                        <select name="estado" class="campoEstado" placeholder="Selecione uma opção...">
+                                            <option value="Exemplo 1">Exemplo 1</option>
+                                            <option value="Exemplo 2">Exemplo 2</option>
+                                            <option value="Exemplo 3">Exemplo 3</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="divIdioma">
+                                        <label for="idioma">Idioma:</label>
+                                        <select name="idioma" class="campoIdioma" placeholder="Selecione uma opção...">
+                                            <option value="Exemplo 1">Exemplo 1</option>
+                                            <option value="Exemplo 2">Exemplo 2</option>
+                                            <option value="Exemplo 3">Exemplo 3</option>
+                                        </select>
+                                    </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                        <div class="parte2">
+                            <div class="conservacao">
+                                <label for="conservacao">Conservação do Livro:</label>
+                                <textarea name="conservacao" id="conservacao"> Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!</textarea>
+                            </div>
+            
+                            <div class="sinopse">
+                                <label for="sinopse">Sinopse / Descrição do Livro:</label>
+                                <textarea name="sinopse" id="sinopse">Pegue da internet, do que está no livro, ou conte com suas próprias palavras do que se trata este livro...</textarea>
+                            </div>
+            
+                            <div class="enviaImg">
+                                <label>Cadastrar Imagens:</label>
+                                <input type="file" name="imglivro" accept=".png, .jpg, .jpeg" multiple>
+                            </div>
+            
+                            <div>
+                                <button type="submit" class="btn-enviar">SALVAR DADOS</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+            </section>
+    
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="descricaoSobre"><h2>SOBRE O <strong>LEVA MEU LIVRO</strong></h2>
+        <span>Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois divoltis porris, paradis. Per aumento de cachacis, eu reclamis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.
+        </span>
+        <span><a class="leiaMais" href="#" >LEIA MAIS</a></span>
+        </div>
+
+        <div class="redesSociais">
+        <h2>REDES <strong>SOCIAIS</strong></h2>
+     <span><img  src="../assets/img//facebook.svg" alt="não encontrada"><img  src="../assets/img//redesSociais.svg" alt="não encontrada"></span>
+       </div>
+     </footer>
+     <footer2 class="footer2">
+        <div class="direitos"> LEVA MEU LIVRO ©  | 2021 - Todos os direitos reservados   </div>
+     </footer2>
+</body>
+</html>
