@@ -7,7 +7,7 @@
 
 
 /* CSS DO HEADER */
-
+/* 
 
 .header{
     width: 100%;
@@ -100,7 +100,7 @@ nav{
     color:#FEEE08 ;
 }
 
-
+ */
 
 /* CORPO DA PAGINA */
 
@@ -168,6 +168,7 @@ button, select, option{
 .btns-endereco{
     margin-top: 2.1%;
     display: block;
+    border: none;
 }
 
 .passo-um button{
@@ -180,6 +181,7 @@ button, select, option{
     height: 35px;
     border: none;
     margin-right: none;
+    border: none;
 }
 
 .btn-apagar{
@@ -188,9 +190,11 @@ button, select, option{
     border: none;
     margin-left: none;
     margin-left: -3%;
+    border: none;
 }
 
 .btn-incluir{
+    border: none;
     width: 227.23px;
     font-size: 14px;
     line-height: 24px;
@@ -221,6 +225,7 @@ button, select, option{
 }
 
 .btn-solicitar-troca{
+    border: none;
     width: 227.23px;
     background: #EB4335;
     font-weight: bold;
@@ -241,6 +246,7 @@ button, select, option{
 }
 
 .btn-pessoalmente input[type="checkbox"]{
+    border: none;
     position: absolute;
     width: 30px;
     height: 15px;
@@ -253,6 +259,7 @@ button, select, option{
 }
 
 .btn-pessoalmente input[type="checkbox"]::before{
+    border: none;
     position: absolute;
     content: "";
     width: 15px;
@@ -322,6 +329,7 @@ input{
     line-height: 26px;
     color: #4F4F4F;
     padding-left: 12px;
+    border: none;
 }
 
 /* CEP */
@@ -488,11 +496,14 @@ input{
     font-size: 16px;
     line-height: 24px;
     color: #4F4F4F;
+    border: none;
+
  }
 
  /* BOTÃO SALVAR ENDEREÇO */
 
  .btn-salvar-endereco button{
+    border: none;
     width: 217.7px;
     height: 35px;
     background: #F62CBC;
@@ -504,6 +515,7 @@ input{
     border-radius: 10px;
     margin-left: 6%;
     margin-top: 2%;
+    margin-bottom: 25px;
  }
 
 /* CSS FOOTER */
