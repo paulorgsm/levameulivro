@@ -266,7 +266,6 @@ input ::placeholder{
     width: 216px;
     height: 46px;
     background: #eb4335;
-    font-family: sans-serif;
     color: white;
     border-radius: 10px;
     border:none;
@@ -321,19 +320,20 @@ input ::placeholder{
     font-weight: 100;
 }
 .btns-endereco{
-    margin-top: 2.1%;
+    
     display: block;
     width: 190px;
     height: 40px;
     margin-top: 39px;
+    display: flex;
 }
 .btn-editar{
     width: 90px;
     height: 35px;
     border: none;
-    margin-right: none;
     border-radius: 5px;
     background: #E0E0E0;
+    display: flex;
 }
 
 .btn-apagar{
@@ -347,6 +347,33 @@ input ::placeholder{
 }
 
 
+.padding {
+    padding-left: 80px;
+}
+
+.btn-incluir {
+    width: 227px;
+    height: 40px;
+    border: 1px solid #EB4335;
+    border-color: #eb4335;
+    border-radius: 10px;
+    color: #eb4335;
+    margin-top: 27px;
+    background: #F2F2F2;
+    display: flex;
+}
+.btn-incluir span{
+    align-self: auto;
+}
+.btn-apagar span{
+    margin: auto;
+}
+.material-icons1 {
+    margin: 6px 10px;
+}
+.material-icons2 {
+    margin: 13px 2px;
+}
 /* footer */
 .footer {
     margin-top: 70px;
