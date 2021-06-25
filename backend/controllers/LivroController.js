@@ -37,6 +37,10 @@ const LivroController = {
       sinopse,
     } = req.body;
 
+    const { filename } = req.file;
+
+    const foto_livro = `http://localhost:3000/uploads/livros/${filename}`;
+
     const livro = await livroService.createLivro(
       autor,
       nome_livro,
@@ -50,7 +54,8 @@ const LivroController = {
       nivel,
       id_usuario,
       isbn,
-      sinopse
+      sinopse,
+      foto_livro
     );
 
     return res.json(livro);

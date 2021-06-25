@@ -23,9 +23,10 @@ const livroService = {
     nivel,
     id_usuario,
     isbn,
-    sinopse
+    sinopse,
+    foto_livro
   ) => {
-    const livro = await db.Livro.create({
+    return await db.Livro.create({
       autor,
       nome_livro,
       editora,
@@ -39,9 +40,8 @@ const livroService = {
       id_usuario,
       isbn,
       sinopse,
+      foto_livro,
     });
-
-    return livro;
   },
   updateLivro: async (
     id,
@@ -57,9 +57,10 @@ const livroService = {
     nivel,
     id_usuario,
     isbn,
-    sinopse
+    sinopse,
+    foto_livro
   ) => {
-    const livro = await db.Livro.update(
+    return await db.Livro.update(
       {
         autor,
         nome_livro,
@@ -79,8 +80,6 @@ const livroService = {
         where: { id: id },
       }
     );
-
-    return livro;
   },
   destroyLivro: async (id) => {
     return await db.Livro.destroy({ where: { id: id } });
