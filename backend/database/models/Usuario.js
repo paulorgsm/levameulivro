@@ -44,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
     saldo: {
       type: DataTypes.INTEGER,
     },
+
+    foto_usuario: {
+      type: DataTypes.STRING(80),
+    },
   });
 
   Usuario.associate = function (models) {

@@ -76,6 +76,10 @@ module.exports = {
         allowNull: false,
       },
 
+      foto_livro: {
+        type: DataTypes.STRING(80),
+      },
+
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,

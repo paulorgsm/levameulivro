@@ -2,10 +2,16 @@ const enderecoService = require("../services/EnderecoService");
 
 const EnderecoController = {
   criar: async (req, res) => {
-    const { cep, logradouro, num, bairro, complemento, cidade, estados } =
-      req.body;
-
-    const { id_usuario } = req.session;
+    const {
+      cep,
+      logradouro,
+      num,
+      bairro,
+      complemento,
+      cidade,
+      estados,
+      id_usuario,
+    } = req.body;
 
     await enderecoService.criarEndereco(
       cep,

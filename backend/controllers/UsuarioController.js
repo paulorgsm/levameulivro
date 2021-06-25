@@ -2,14 +2,21 @@ const usuarioService = require("../services/UsuarioService");
 
 const UsuarioController = {
   indexAll: async (req, res) => {
-    const usuarioList = await usuarioService.getAll();
+    const usuario = await usuarioService.getAll();
 
-    return res.json(usuarioList);
+    return res.json(usuario);
   },
   indexById: async (req, res) => {
     const { id } = req.params;
 
     const usuario = await usuarioService.getById(id);
+
+    return res.json(usuario);
+  },
+  indexByIdAndAttribute: async (req, res) => {
+    const { id, attribute } = req.params;
+
+    const usuario = await usuarioService.getByIdAndAttribute(id, attribute);
 
     return res.json(usuario);
   },
@@ -40,10 +47,14 @@ const UsuarioController = {
     return res.json(usuario);
   },
   update: async (req, res) => {
+    const { id } = req.params;
+
+    const { filename } = req.file;
+
     const { nome, senha, email, sobrenome, cpf, celular, data_nasc, sexo } =
       req.body;
 
-    const { id } = req.params;
+    const foto_usuario = `http://localhost:3000/uploads/usuarios/${filename}`;
 
     const usuario = await usuarioService.updateUsuario(
       id,
@@ -54,7 +65,8 @@ const UsuarioController = {
       cpf,
       celular,
       data_nasc,
-      sexo
+      sexo,
+      foto_usuario
     );
 
     return res.json(usuario);

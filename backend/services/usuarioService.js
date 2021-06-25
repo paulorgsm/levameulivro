@@ -3,26 +3,26 @@ const db = require("../database/models");
 
 const usuarioService = {
   getAll: async () => {
-    const usuarioList = await db.Usuario.findAll();
-
-    return usuarioList;
+    return await db.Usuario.findAll();
   },
   getById: async (id) => {
-    const usuario = await db.Usuario.findByPk(id);
-
-    return usuario;
+    return await db.Usuario.findByPk(id);
+  },
+  getByIdAndAttribute: async (id, attribute) => {
+    return await db.Usuario.findByPk(id, { attributes: [attribute] });
   },
   createUsuario: async (nome, email, senha) => {
-    const usuario = await db.Usuario.create({
+    return await db.Usuario.create({
       nome: nome,
       email: email,
       senha: bcrypt.hashSync(senha, 10),
       saldo: 0,
     });
-
-    return usuario;
   },
   addOutrosDados: async (id, sobrenome, cpf, celular, data_nasc, sexo) => {
+    const arrData = data_nasc.split("/");
+    const stringFormatada = arrData[2] + "-" + arrData[1] + "-" + arrData[0];
+
     switch (sexo) {
       case "fem":
         sexo = 1;
@@ -38,11 +38,7 @@ const usuarioService = {
         sexo = 6;
     }
 
-    var arrData = data_nasc.split("/");
-
-    var stringFormatada = arrData[2] + "-" + arrData[1] + "-" + arrData[0];
-
-    const usuario = await db.Usuario.update(
+    return await db.Usuario.update(
       {
         sobrenome: sobrenome,
         cpf: cpf,
@@ -54,8 +50,6 @@ const usuarioService = {
         where: { id: id },
       }
     );
-
-    return usuario;
   },
   updateUsuario: async (
     id,
@@ -66,8 +60,12 @@ const usuarioService = {
     cpf,
     celular,
     data_nasc,
-    sexo
+    sexo,
+    foto_usuario
   ) => {
+    const arrData = data_nasc.split("/");
+    const stringFormatada = arrData[2] + "-" + arrData[1] + "-" + arrData[0];
+
     switch (sexo) {
       case "fem":
         sexo = 1;
@@ -83,34 +81,27 @@ const usuarioService = {
         sexo = 6;
     }
 
-    var arrData = data_nasc.split("/");
-
-    var stringFormatada = arrData[2] + "-" + arrData[1] + "-" + arrData[0];
-
-    const usuario = await db.Usuario.update(
+    return await db.Usuario.update(
       {
         nome: nome,
-        senha: senha,
+        senha: bcrypt.hashSync(senha, 10),
         email: email,
         sobrenome: sobrenome,
         cpf: cpf,
         celular: celular,
         data_nasc: stringFormatada,
         sexo: sexo,
+        foto_usuario: foto_usuario,
       },
       {
         where: { id: id },
       }
     );
-
-    return usuario;
   },
   destroyUsuario: async (id) => {
-    const usuario = await db.Usuario.destroy({
+    return await db.Usuario.destroy({
       where: { id: id },
     });
-
-    return usuario;
   },
 };
 

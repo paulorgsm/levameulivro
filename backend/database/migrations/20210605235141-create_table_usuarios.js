@@ -48,6 +48,10 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
 
+      foto_usuario: {
+        type: Sequelize.STRING(80),
+      },
+
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,

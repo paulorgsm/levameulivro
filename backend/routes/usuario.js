@@ -1,15 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/UsuarioController");
+const upload = require("../middlewares/UsuarioMulter");
 
-// CRUD
-router.post("/1", controller.create);
+router.post("/", controller.create);
 router.post("/2", controller.addDadosPessoais);
-router.get("/", controller.indexAll);
-router.put("/:id", controller.update);
+router.put("/:id", upload.single("foto_usuario"), controller.update);
 router.delete("/:id", controller.destroy);
-
-// CRUD DETALHADO
+router.get("/", controller.indexAll);
 router.get("/:id", controller.indexById);
+router.get("/:id/:attribute", controller.indexByIdAndAttribute);
 
 module.exports = router;

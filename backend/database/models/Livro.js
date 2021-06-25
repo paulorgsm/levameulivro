@@ -55,6 +55,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(500),
       allowNull: false,
     },
+    foto_livro: {
+      type: DataTypes.STRING(80),
+    },
   });
 
   Livro.associate = function (models) {
