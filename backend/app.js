@@ -1,11 +1,9 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
 const session = require("express-session");
-/* var logger = require('morgan');
- */
+const logger = require("morgan");
 
-/* Rotas definitivas */
 const enderecoRouter = require("./routes/endereco");
 const entregaRouter = require("./routes/entrega");
 const livroRouter = require("./routes/livro");
@@ -13,9 +11,9 @@ const perguntaRouter = require("./routes/pergunta");
 const trocaRouter = require("./routes/troca");
 const usuarioRouter = require("./routes/usuario");
 
-var app = express();
+const app = express();
 
-/* app.use(logger('dev')); */
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
@@ -33,7 +31,6 @@ app.set("view engine", "ejs");
 /* app.use(cookieParser()); */
 app.use(express.static(path.join(__dirname, "public")));
 
-/* Rotas definitivas */
 app.use("/enderecos", enderecoRouter);
 app.use("/entregas", entregaRouter);
 app.use("/livros", livroRouter);
