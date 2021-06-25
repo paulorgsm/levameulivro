@@ -1,67 +1,66 @@
-'use strict';
+"use strict";
 
 module.exports = {
-    up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('usuarios', {
-            id: {
-                type: Sequelize.DataTypes.INTEGER,
-                autoIncrement: true,
-                primaryKey: true
-            },
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable("usuarios", {
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
 
-            nome: {
-                type: Sequelize.DataTypes.STRING(100),
-                allowNull: false
-            },
+      nome: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
 
-            senha: {
-                type: Sequelize.DataTypes.STRING(100),
-                allowNull: false
-            },
+      senha: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
 
-            email: {
-                type: Sequelize.DataTypes.STRING(100),
-                allowNull: false
-            },
+      email: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
 
-            sobrenome: {
-                type: Sequelize.DataTypes.STRING(100)
-            },
+      sobrenome: {
+        type: Sequelize.STRING(100),
+      },
 
-            cpf: {
-                type: Sequelize.DataTypes.STRING(15)
-            },
+      cpf: {
+        type: Sequelize.STRING(15),
+      },
 
-            celular: {
-                type: Sequelize.DataTypes.STRING(15)
-            },
+      celular: {
+        type: Sequelize.STRING(15),
+      },
 
-            data_nasc: {
-                type: Sequelize.DataTypes.DATE
-            },
+      data_nasc: {
+        type: Sequelize.DATEONLY,
+      },
 
-            sexo: {
-                type: Sequelize.DataTypes.INTEGER
-            },
+      sexo: {
+        type: Sequelize.INTEGER,
+      },
 
-            saldo: {
-                type: Sequelize.DataTypes.STRING(100)
-            },
+      saldo: {
+        type: Sequelize.INTEGER,
+      },
 
-            createdAt: {
-                type: Sequelize.DATE,
-                allowNull: false,
-            },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
 
-            updatedAt: {
-                type: Sequelize.DATE,
-                allowNull: false,
-            },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+    });
+  },
 
-        });
-    },
-
-    down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('usuarios');
-    }
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable("usuarios");
+  },
 };

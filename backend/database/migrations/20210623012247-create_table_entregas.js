@@ -1,30 +1,29 @@
-'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('trocas', {
+    await queryInterface.createTable("entregas", {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
       },
 
-      id_usuario: {
+      rastreio: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+
+      recebido: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+      },
+
+      id_troca: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'usuarios',
-          key: 'id',
-        }
-      },
-
-      id_livro_troca: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'livros',
-          key: 'id',
-        }
+          model: "trocas",
+          key: "id",
+        },
       },
 
       createdAt: {
@@ -36,11 +35,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('trocas');
-  }
+    await queryInterface.dropTable("entrega");
+  },
 };

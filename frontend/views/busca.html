@@ -6,40 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/busca.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Busca</title>
 </head>
 
 <body>
 
-    <header>
-        <img src="../assets/img/logo.svg ">
-        <div id="divBusca">
-            <input type="text" id="txtBusca" placeholder="Buscar..." />
-            <img src="../assets/img/search.svg" id="btnBusca" alt="Buscar" />
-        </div>
-        <div class="login-principal">
-            <div class="login-registro">
-                <p>Oi, Seja Bem-vindx!</p>
-                <p class="strong-red"><strong>ENTRE / REGISTRE-SE</strong></p>
+    <header class="header">
+        <div class="conteudoHeader">
+            <div>
+                <img class="logo" src="../assets/img/logo.svg" alt="Logo-Tipo">
             </div>
 
-            <div class="login-img">
-                <img src="../assets/img/login.svg">
+            <div class="divInput">
+                <input class="buscar" type="text" placeholder="Busque por livro, autor,tag" />
+                <div class="container">
+                    <input type="checkbox">
+                    <class="checkmark"> Apenas disponíveis
+                </div>
+                <button type="submit" class="submit"><i class="fa fa-search"></i></button>
             </div>
+            <div class="login">
+                <div class="campoLogin">
+                    <span>Oi, Seja Bem-vindx!</span>
+
+                    <span>ENTRE / REGISTRE-SE</span>
+                </div>
+                <img src="../assets/img/login.svg" alt="">
+            </div>
+        </div>
+        <div class="infoHeader">
+            <nav>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">QUEM SOMOS</a></li>
+                    <li><a id="comprarLi" href="">COMPRAR PONTOS</a></li>
+                    <li><a href="">QUEM SOMOS</a></li>
+                    <li><a href="">FALE CONOSCO</a></li>
+                    <li><a href="">DOE/APOIE</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <nav>
-        <ul class="menu">
-            <li><a href="">HOME</a></li>
-            <li><a href="">COMO FUNCIONA?</a></li>
-            <li><a href=""><span class="cor-yellow">COMPRAR PONTOS</span></a></li>
-            <li><a href="">QUEM SOMOS</a></li>
-            <li><a href="">FALE CONOSCO</a></li>
-            <li><a href="">DOE/APOIE</a></li>
-        </ul>
-    </nav>
-
     <section class="section-busca">
         <article class="article-busca">
             <div class="strong-red ">
@@ -364,20 +373,24 @@
     </main>
 
     <footer class="footer">
-        <div class="descricaoSobre"><h2>SOBRE O <strong>LEVA MEU LIVRO</strong></h2>
-        <span>Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois divoltis porris, paradis. Per aumento de cachacis, eu reclamis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.
-        </span>
-        <span><a class="leiaMais" href="#" >LEIA MAIS</a></span>
+        <div class="descricaoSobre">
+            <h2>SOBRE O <strong>LEVA MEU LIVRO</strong></h2>
+            <span>Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois divoltis porris, paradis. Per aumento de
+                cachacis, eu reclamis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                interdum. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.
+            </span>
+            <span><a class="leiaMais" href="#">LEIA MAIS</a></span>
         </div>
 
         <div class="redesSociais">
-        <h2>REDES <strong class="social">SOCIAIS</strong></h2>
-     <span><img  src="../assets//img/facebook.svg" alt="não encontrada"><img  src="../assets//img/redesSociais.svg" alt="não encontrada"></span>
-       </div>
-     </footer>
-     <footer2 class="footer2">
-        <div class="direitos"> LEVA MEU LIVRO ©  | 2021 - Todos os direitos reservados   </div>
-     </footer2>
+            <h2>REDES <strong class="social">SOCIAIS</strong></h2>
+            <span><img src="../assets//img/facebook.svg" alt="não encontrada"><img src="../assets//img/redesSociais.svg"
+                    alt="não encontrada"></span>
+        </div>
+    </footer>
+    <footer2 class="footer2">
+        <div class="direitos"> LEVA MEU LIVRO © | 2021 - Todos os direitos reservados </div>
+    </footer2>
 
 </body>
 

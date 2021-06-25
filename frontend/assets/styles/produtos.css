@@ -2,7 +2,9 @@
     font-family: 'Roboto', sans-serif;
     src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 }
-
+*{
+    font-family: 'Roboto', sans-serif;
+}
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
@@ -28,7 +30,9 @@ body{
 
 .divInput{
     height: 100px;
-    margin: 20px auto ;
+     margin-top: 35px;
+     display: flex;
+     flex-direction: row;
 }
 
 .login{
@@ -43,9 +47,44 @@ body{
     flex-wrap: wrap;
 }
 
+.buscar{
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-right: none;
+    border-color: #4285F4;
+    width: 400px;
+    height: 48px;
+    color: #4285F4;
+
+}
+
+.container {
+    height: 42px;
+    width: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: #FCBC05;
+    border-style: solid;
+    color: #EB4335;
+    border-right: none;
+
+}
+
+  .submit {
+    height: 47px;
+    width: 47px;
+    border-left-color: green;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    border-bottom-color: #FCBC05;
+    border-top-color: #FCBC05;  
+    border-right-color: #FCBC05;
+    background-color: white;
+}
+
 .login span{
     text-align: center;
     margin: 10px;
+    font-family: sans-serif;
     color: #EB4335;
     font-weight: bold;
 }
@@ -60,7 +99,7 @@ body{
     background: #4285F4;
 }
 nav{
-    max-width: 1122px;
+    width: 1122px;
     display: flex;
     margin:auto;
     align-items: center;
@@ -69,6 +108,7 @@ nav{
 
 .infoHeader ul{
     width: 1122px;
+    font-family: sans-serif;
     color: white;
     justify-content: space-around;
     align-items: center;
@@ -84,6 +124,7 @@ nav{
 }
 
 .infoHeader li a{
+    font-family: sans-serif;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -92,6 +133,12 @@ nav{
 }
 #comprarLi{
     color:#FEEE08 ;
+
+}
+
+strong {
+    font-weight: bold;
+    color: #FEEE08;
 }
 
 .sessao{
@@ -109,6 +156,7 @@ nav{
 }
 .mostrarInfoLivro{
     display: flex;
+    width: 1200px;
     flex-wrap: wrap;
     align-items: center;
     margin: 40px auto;
@@ -263,6 +311,7 @@ text-align: center;
     margin-top: 18px;
     margin-left: 1px;
 }
+ /* css footer */
 .footer {
     margin-top: 70px;
     width: auto;
