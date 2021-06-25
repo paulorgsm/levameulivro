@@ -77,7 +77,7 @@ module.exports = {
       },
 
       foto_livro: {
-        type: DataTypes.STRING(80),
+        type: Sequelize.STRING(80),
       },
 
       createdAt: {

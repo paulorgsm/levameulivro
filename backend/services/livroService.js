@@ -75,6 +75,7 @@ const livroService = {
         id_usuario,
         isbn,
         sinopse,
+        foto_livro,
       },
       {
         where: { id: id },

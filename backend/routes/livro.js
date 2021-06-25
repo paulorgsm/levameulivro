@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/LivroController");
+const upload = require("../middlewares/LivroMulter");
 
 // CRUD
-router.post("/", controller.create);
+router.post("/", upload.single("foto_livro"), controller.create);
 router.get("/", controller.indexAll);
 router.put("/:id", controller.update);
 router.delete("/:id", controller.destroy);
