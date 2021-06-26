@@ -11,6 +11,9 @@ const usuarioService = {
   getByIdAndAttribute: async (id, attribute) => {
     return await db.Usuario.findByPk(id, { attributes: [attribute] });
   },
+  getBookByUserId: async (id) => {
+    return await db.Usuario.findByPk(id, { include: "livros" });
+  },
   createUsuario: async (nome, email, senha) => {
     return await db.Usuario.create({
       nome: nome,

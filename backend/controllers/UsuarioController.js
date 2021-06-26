@@ -1,3 +1,4 @@
+const livroService = require("../services/LivroService");
 const usuarioService = require("../services/UsuarioService");
 
 const UsuarioController = {
@@ -20,13 +21,15 @@ const UsuarioController = {
 
     return res.json(usuario);
   },
+  indexBookByUserId: async (req, res) => {
+    const { id } = req.params;
+
+    const usuario = await usuarioService.getBookByUserId(id);
+
+    return res.json(usuario);
+  },
   create: async (req, res) => {
     const { nome, email, senha } = req.body;
-
-    if (senha[0] != senha[1]) {
-      res.status(400).send("As senhas não são iguais!");
-      return;
-    }
 
     const usuario = await usuarioService.createUsuario(nome, email, senha[0]);
 

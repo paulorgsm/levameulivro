@@ -73,7 +73,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Livro.belongsTo(models.Usuario, {
       foreignKey: "id_usuario",
-      as: "livros",
+      as: "usuarios",
     });
   };
 
