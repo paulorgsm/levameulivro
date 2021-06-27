@@ -1,15 +1,6 @@
 const db = require("../database/models");
 
 const livroService = {
-  getAll: async () => {
-    return await db.Livro.findAll();
-  },
-  getById: async (id) => {
-    return await db.Livro.findByPk(id);
-  },
-  getByIdAndAttribute: async (id, attribute) => {
-    return await db.Livro.findByPk(id, { attributes: [attribute] });
-  },
   createLivro: async (
     autor,
     nome_livro,
@@ -84,6 +75,18 @@ const livroService = {
   },
   destroyLivro: async (id) => {
     return await db.Livro.destroy({ where: { id: id } });
+  },
+  getAll: async () => {
+    return await db.Livro.findAll();
+  },
+  getById: async (id) => {
+    return await db.Livro.findByPk(id);
+  },
+  getByIdAndAttribute: async (id, attribute) => {
+    return await db.Livro.findByPk(id, { attributes: [attribute] });
+  },
+  getUserByBookId: async (id) => {
+    return await db.Livro.findByPk(id, { include: "usuarios" });
   },
 };
 

@@ -11,6 +11,7 @@ router.delete("/:id", controller.destroy);
 
 // CRUD DETALHADO
 router.get("/:id", controller.indexById);
+router.get("/:id/usuarios", controller.indexUserByBookId);
 router.get("/:id/:attribute", controller.indexByIdAndAttribute);
 
 module.exports = router;

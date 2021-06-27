@@ -2,18 +2,6 @@ const bcrypt = require("bcrypt");
 const db = require("../database/models");
 
 const usuarioService = {
-  getAll: async () => {
-    return await db.Usuario.findAll();
-  },
-  getById: async (id) => {
-    return await db.Usuario.findByPk(id);
-  },
-  getByIdAndAttribute: async (id, attribute) => {
-    return await db.Usuario.findByPk(id, { attributes: [attribute] });
-  },
-  getBookByUserId: async (id) => {
-    return await db.Usuario.findByPk(id, { include: "livros" });
-  },
   createUsuario: async (nome, email, senha) => {
     return await db.Usuario.create({
       nome: nome,
@@ -105,6 +93,21 @@ const usuarioService = {
     return await db.Usuario.destroy({
       where: { id: id },
     });
+  },
+  getAll: async () => {
+    return await db.Usuario.findAll();
+  },
+  getById: async (id) => {
+    return await db.Usuario.findByPk(id);
+  },
+  getByIdAndAttribute: async (id, attribute) => {
+    return await db.Usuario.findByPk(id, { attributes: [attribute] });
+  },
+  getBookByUserId: async (id) => {
+    return await db.Usuario.findByPk(id, { include: "livros" });
+  },
+  getAddressByUserId: async (id) => {
+    return await db.Usuario.findByPk(id, { include: "enderecos" });
   },
 };
 

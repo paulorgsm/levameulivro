@@ -20,6 +20,13 @@ const LivroController = {
 
     return res.json(livro);
   },
+  indexUserByBookId: async (req, res) => {
+    const { id } = req.params;
+
+    const livro = await livroService.getUserByBookId(id);
+
+    return res.json(livro);
+  },
   create: async (req, res) => {
     const {
       autor,

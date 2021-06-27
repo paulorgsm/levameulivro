@@ -10,6 +10,7 @@ router.delete("/:id", controller.destroy);
 router.get("/", controller.indexAll);
 router.get("/:id", controller.indexById);
 router.get("/:id/livros", controller.indexBookByUserId);
+router.get("/:id/enderecos", controller.indexAddressByUserId);
 router.get("/:id/:attribute", controller.indexByIdAndAttribute);
 
 module.exports = router;

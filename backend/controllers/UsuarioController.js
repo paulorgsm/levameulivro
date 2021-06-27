@@ -2,32 +2,6 @@ const livroService = require("../services/LivroService");
 const usuarioService = require("../services/UsuarioService");
 
 const UsuarioController = {
-  indexAll: async (req, res) => {
-    const usuario = await usuarioService.getAll();
-
-    return res.json(usuario);
-  },
-  indexById: async (req, res) => {
-    const { id } = req.params;
-
-    const usuario = await usuarioService.getById(id);
-
-    return res.json(usuario);
-  },
-  indexByIdAndAttribute: async (req, res) => {
-    const { id, attribute } = req.params;
-
-    const usuario = await usuarioService.getByIdAndAttribute(id, attribute);
-
-    return res.json(usuario);
-  },
-  indexBookByUserId: async (req, res) => {
-    const { id } = req.params;
-
-    const usuario = await usuarioService.getBookByUserId(id);
-
-    return res.json(usuario);
-  },
   create: async (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -78,6 +52,39 @@ const UsuarioController = {
     const { id } = req.params;
 
     const usuario = await usuarioService.destroyUsuario(id);
+
+    return res.json(usuario);
+  },
+  indexAll: async (req, res) => {
+    const usuario = await usuarioService.getAll();
+
+    return res.json(usuario);
+  },
+  indexById: async (req, res) => {
+    const { id } = req.params;
+
+    const usuario = await usuarioService.getById(id);
+
+    return res.json(usuario);
+  },
+  indexByIdAndAttribute: async (req, res) => {
+    const { id, attribute } = req.params;
+
+    const usuario = await usuarioService.getByIdAndAttribute(id, attribute);
+
+    return res.json(usuario);
+  },
+  indexBookByUserId: async (req, res) => {
+    const { id } = req.params;
+
+    const usuario = await usuarioService.getBookByUserId(id);
+
+    return res.json(usuario);
+  },
+  indexAddressByUserId: async (req, res) => {
+    const { id } = req.params;
+
+    const usuario = await usuarioService.getAddressByUserId(id);
 
     return res.json(usuario);
   },
