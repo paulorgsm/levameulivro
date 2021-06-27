@@ -1,28 +1,32 @@
-const Usuario = require("./Usuario");
-
 module.exports = (sequelize, DataTypes) => {
-  const Troca = sequelize.define("Troca", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
+  const Troca = sequelize.define(
+    "Troca",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
 
-    id_endereco: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+      id_endereco: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
 
-    id_usuario: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+      id_usuario: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
 
-    id_livro: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      id_livro: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
-  });
+    {
+      tableName: "trocas",
+    }
+  );
   Troca.associate = function (models) {
     Troca.hasOne(models.Entrega, {
       foreignKey: "id_troca",
