@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Troca.belongsTo(models.Livro, {
       foreignKey: "id_livro",
-      as: "trocas",
+      as: "livros",
     });
   };
 
