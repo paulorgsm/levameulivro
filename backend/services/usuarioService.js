@@ -94,21 +94,6 @@ const usuarioService = {
       where: { id: id },
     });
   },
-  getAll: async () => {
-    return await db.Usuario.findAll();
-  },
-  getById: async (id) => {
-    return await db.Usuario.findByPk(id);
-  },
-  getByIdAndAttribute: async (id, attribute) => {
-    return await db.Usuario.findByPk(id, { attributes: [attribute] });
-  },
-  getBookByUserId: async (id) => {
-    return await db.Usuario.findByPk(id, { include: "livros" });
-  },
-  getAddressByUserId: async (id) => {
-    return await db.Usuario.findByPk(id, { include: "enderecos" });
-  },
 };
 
 module.exports = usuarioService;
