@@ -8,7 +8,7 @@ const UsuarioService = {
     const usuario = await db.Usuario.create({
       nome: nome,
       email: email,
-      senha: bcrypt.hash(senha, 10),
+      senha: bcrypt.hashSync(senha, 10),
       saldo: 0,
     });
 
@@ -77,7 +77,7 @@ const UsuarioService = {
       where: { email: email },
     });
 
-    const boolean = bcrypt.compare(usuario.dataValues.senha, senha);
+    const boolean = await bcrypt.compare(senha, usuario.dataValues.senha);
 
     if (boolean) {
       return jwt.sign({ id: usuario.dataValues.id }, process.env.JWT_KEY, {

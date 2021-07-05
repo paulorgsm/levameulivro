@@ -11,10 +11,10 @@ const UsuarioController = {
     if (exist) {
       return res
         .status(401)
-        .send({ mensage: "O usuario já existe no banco de dados" });
+        .send({ mensagem: "O usuario já existe no banco de dados" });
     }
 
-    const token = await UsuarioService.createUsuario(nome, email, senha[0]);
+    const token = await UsuarioService.createUsuario(nome, email, senha);
 
     return res
       .status(200)
@@ -25,7 +25,18 @@ const UsuarioController = {
 
     const token = req.headers.authorization.split(" ")[1];
 
-    const decoded = jwt.verify(token, process.env.JWT_KEY);
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_KEY,
+      function (err, decoded) {
+        if (err != null) {
+          return res
+            .status(401)
+            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
+        }
+        return decoded;
+      }
+    );
 
     const id_usuario = decoded.id;
 
@@ -49,7 +60,18 @@ const UsuarioController = {
   atualizarDados: async (req, res) => {
     const token = req.headers.authorization.split(" ")[1];
 
-    const decoded = jwt.verify(token, process.env.JWT_KEY);
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_KEY,
+      function (err, decoded) {
+        if (err != null) {
+          return res
+            .status(401)
+            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
+        }
+        return decoded;
+      }
+    );
 
     const id_usuario = decoded.id;
 
@@ -84,7 +106,18 @@ const UsuarioController = {
   deletarConta: async (req, res) => {
     const token = req.headers.authorization.split(" ")[1];
 
-    const decoded = jwt.verify(token, process.env.JWT_KEY);
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_KEY,
+      function (err, decoded) {
+        if (err != null) {
+          return res
+            .status(401)
+            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
+        }
+        return decoded;
+      }
+    );
 
     const id_usuario = decoded.id;
 
@@ -101,7 +134,7 @@ const UsuarioController = {
 
     const token = await UsuarioService.authUsuario(email, senha);
 
-    if (token == null) {
+    if (token === null) {
       return res.status(401).send({ mensagem: "Dados inválidos" });
     }
 
