@@ -1,40 +1,28 @@
+require("dotenv").config();
 const bcrypt = require("bcrypt");
 const db = require("../database/models");
+const jwt = require("jsonwebtoken");
 
-const usuarioService = {
+const UsuarioService = {
   createUsuario: async (nome, email, senha) => {
-    return await db.Usuario.create({
+    const usuario = await db.Usuario.create({
       nome: nome,
       email: email,
-      senha: bcrypt.hashSync(senha, 10),
+      senha: bcrypt.hash(senha, 10),
       saldo: 0,
+    });
+
+    return jwt.sign({ id: usuario.id }, process.env.JWT_KEY, {
+      expiresIn: "10min",
     });
   },
   addOutrosDados: async (id, sobrenome, cpf, celular, data_nasc, sexo) => {
-    const arrData = data_nasc.split("/");
-    const stringFormatada = arrData[2] + "-" + arrData[1] + "-" + arrData[0];
-
-    switch (sexo) {
-      case "fem":
-        sexo = 1;
-      case "masc":
-        sexo = 2;
-      case "mulherTrans":
-        sexo = 3;
-      case "homenTrans":
-        sexo = 4;
-      case "naoResponder":
-        sexo = 5;
-      case "outros":
-        sexo = 6;
-    }
-
     return await db.Usuario.update(
       {
         sobrenome: sobrenome,
         cpf: cpf,
         celular: celular,
-        data_nasc: stringFormatada,
+        data_nasc: data_nasc,
         sexo: sexo,
       },
       {
@@ -54,24 +42,6 @@ const usuarioService = {
     sexo,
     foto_usuario
   ) => {
-    const arrData = data_nasc.split("/");
-    const stringFormatada = arrData[2] + "-" + arrData[1] + "-" + arrData[0];
-
-    switch (sexo) {
-      case "fem":
-        sexo = 1;
-      case "masc":
-        sexo = 2;
-      case "mulherTrans":
-        sexo = 3;
-      case "homenTrans":
-        sexo = 4;
-      case "naoResponder":
-        sexo = 5;
-      case "outros":
-        sexo = 6;
-    }
-
     return await db.Usuario.update(
       {
         nome: nome,
@@ -80,7 +50,7 @@ const usuarioService = {
         sobrenome: sobrenome,
         cpf: cpf,
         celular: celular,
-        data_nasc: stringFormatada,
+        data_nasc: data_nasc,
         sexo: sexo,
         foto_usuario: foto_usuario,
       },
@@ -94,6 +64,28 @@ const usuarioService = {
       where: { id: id },
     });
   },
+  existUsuario: async (email) => {
+    const exist = await db.Usuario.findOne({ where: { email: email } });
+
+    if (exist === null) {
+      return false;
+    }
+    return true;
+  },
+  authUsuario: async (email, senha) => {
+    const usuario = await db.Usuario.findOne({
+      where: { email: email },
+    });
+
+    const boolean = bcrypt.compare(usuario.dataValues.senha, senha);
+
+    if (boolean) {
+      return jwt.sign({ id: usuario.dataValues.id }, process.env.JWT_KEY, {
+        expiresIn: "1h",
+      });
+    }
+    return null;
+  },
 };
 
-module.exports = usuarioService;
+module.exports = UsuarioService;

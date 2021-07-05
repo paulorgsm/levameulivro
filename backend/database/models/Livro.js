@@ -57,7 +57,19 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(500),
         allowNull: false,
       },
-      foto_livro: {
+      foto_livro1: {
+        type: DataTypes.STRING(80),
+      },
+      foto_livro2: {
+        type: DataTypes.STRING(80),
+      },
+      foto_livro3: {
+        type: DataTypes.STRING(80),
+      },
+      foto_livro4: {
+        type: DataTypes.STRING(80),
+      },
+      foto_livro5: {
         type: DataTypes.STRING(80),
       },
     },

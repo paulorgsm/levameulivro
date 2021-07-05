@@ -25,21 +25,6 @@ const trocaService = {
       where: { id: id },
     });
   },
-  getAll: async () => {
-    return await db.Troca.findAll();
-  },
-  getById: async (id) => {
-    return await db.Troca.findByPk(id);
-  },
-  getBookBySwapId: async (id) => {
-    return await db.Troca.findByPk(id, { include: "livros" });
-  },
-  getUserBySwapId: async (id) => {
-    return await db.Troca.findByPk(id, { include: "usuarios" });
-  },
-  getByIdAndAttribute: async (id, attribute) => {
-    return await db.Troca.findByPk(id, { attributes: [attribute] });
-  },
 };
 
 module.exports = trocaService;

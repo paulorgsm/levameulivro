@@ -1,32 +1,7 @@
-const livroService = require("../services/LivroService");
+require("dotenv").config();
+const LivroService = require("../services/LivroService");
 
 const LivroController = {
-  indexAll: async (req, res) => {
-    const livroList = await livroService.getAll();
-
-    return res.json(livroList);
-  },
-  indexById: async (req, res) => {
-    const { id } = req.params;
-
-    const livro = await livroService.getById(id);
-
-    return res.json(livro);
-  },
-  indexByIdAndAttribute: async (req, res) => {
-    const { id, attribute } = req.params;
-
-    const livro = await livroService.getByIdAndAttribute(id, attribute);
-
-    return res.json(livro);
-  },
-  indexUserByBookId: async (req, res) => {
-    const { id } = req.params;
-
-    const livro = await livroService.getUserByBookId(id);
-
-    return res.json(livro);
-  },
   create: async (req, res) => {
     const {
       autor,
@@ -44,13 +19,23 @@ const LivroController = {
       sinopse,
     } = req.body;
 
-    const { filename } = req.file;
+    const foto_array = req.files;
 
-    const foto_livro = `http://localhost:3000/uploads/livros/${filename}`;
+    const foto_filename_array = [];
 
-    console.log(req.body);
+    for (element of foto_array) {
+      foto_filename_array.push(
+        `${process.env.HOST_URL}/uploads/livros/${element.filename}`
+      );
+    }
 
-    const livro = await livroService.createLivro(
+    const foto_livro1 = foto_filename_array[0] || null;
+    const foto_livro2 = foto_filename_array[1] || null;
+    const foto_livro3 = foto_filename_array[2] || null;
+    const foto_livro4 = foto_filename_array[3] || null;
+    const foto_livro5 = foto_filename_array[4] || null;
+
+    const livro = await LivroService.createLivro(
       autor,
       nome_livro,
       editora,
@@ -64,7 +49,11 @@ const LivroController = {
       parseInt(id_usuario),
       parseInt(isbn),
       sinopse,
-      foto_livro
+      foto_livro1,
+      foto_livro2,
+      foto_livro3,
+      foto_livro4,
+      foto_livro5
     );
 
     return res.json(livro);
@@ -88,7 +77,7 @@ const LivroController = {
       sinopse,
     } = req.body;
 
-    const livro = await livroService.updateLivro(
+    const livro = await LivroService.updateLivro(
       id,
       autor,
       nome_livro,
@@ -110,7 +99,7 @@ const LivroController = {
   destroy: async (req, res) => {
     const { id } = req.params;
 
-    const livro = await livroService.destroyLivro(id);
+    const livro = await LivroService.destroyLivro(id);
 
     return res.json(livro);
   },

@@ -76,7 +76,23 @@ module.exports = {
         allowNull: false,
       },
 
-      foto_livro: {
+      foto_livro1: {
+        type: Sequelize.STRING(80),
+      },
+
+      foto_livro2: {
+        type: Sequelize.STRING(80),
+      },
+
+      foto_livro3: {
+        type: Sequelize.STRING(80),
+      },
+
+      foto_livro4: {
+        type: Sequelize.STRING(80),
+      },
+
+      foto_livro5: {
         type: Sequelize.STRING(80),
       },
 

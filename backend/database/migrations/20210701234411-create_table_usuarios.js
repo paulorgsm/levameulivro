@@ -41,7 +41,7 @@ module.exports = {
       },
 
       sexo: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING(10),
       },
 
       saldo: {

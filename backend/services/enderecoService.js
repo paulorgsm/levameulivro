@@ -50,18 +50,6 @@ const enderecoService = {
   destroyEndereco: async (id) => {
     return await db.Endereco.destroy({ where: { id: id } });
   },
-  getById: async (id) => {
-    return await db.Endereco.findByPk(id);
-  },
-  getAll: async () => {
-    return await db.Endereco.findAll();
-  },
-  getByIdAndAttribute: async (id, attribute) => {
-    return await db.Endereco.findByPk(id, { attributes: [attribute] });
-  },
-  getUserByAddressId: async (id) => {
-    return await db.Endereco.findByPk(id, { include: "usuarios" });
-  },
 };
 
 module.exports = enderecoService;

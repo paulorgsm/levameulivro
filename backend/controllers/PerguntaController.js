@@ -1,11 +1,11 @@
-const perguntaService = require("../services/PerguntaService");
+const PerguntaService = require("../services/PerguntaService");
 
-const perguntaController = {
+const PerguntaController = {
   create: async (req, res) => {
     const { pergunta, resposta, id_usuario, id_livro } = req.body;
 
     return res.json(
-      await perguntaService.createPergunta(
+      await PerguntaService.createPergunta(
         pergunta,
         resposta,
         id_usuario,
@@ -17,37 +17,14 @@ const perguntaController = {
     const { resposta, id_usuario, id_livro } = req.body;
 
     return res.json(
-      await perguntaService.createResposta(resposta, id_usuario, id_livro)
+      await PerguntaService.createResposta(resposta, id_usuario, id_livro)
     );
   },
   destroy: async (req, res) => {
     const { id } = req.params;
 
-    return res.json(await perguntaService.destroyPergunta(id));
-  },
-  indexAll: async (req, res) => {
-    return res.json(await perguntaService.getAll());
-  },
-  indexById: async (req, res) => {
-    const { id } = req.params;
-
-    return res.json(await perguntaService.getById(id));
-  },
-  indexBookByQuestionId: async (req, res) => {
-    const { id } = req.params;
-
-    return res.json(await perguntaService.getBookByQuestionId(id));
-  },
-  indexUserByQuestionId: async (req, res) => {
-    const { id } = req.params;
-
-    return res.json(await perguntaService.getUserByQuestionId(id));
-  },
-  indexByIdAndAttribute: async (req, res) => {
-    const { id, attribute } = req.params;
-
-    return res.json(await perguntaService.getByIdAndAttribute(id, attribute));
+    return res.json(await PerguntaService.destroyPergunta(id));
   },
 };
 
-module.exports = perguntaController;
+module.exports = PerguntaController;

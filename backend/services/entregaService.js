@@ -23,18 +23,6 @@ const entregaService = {
   destroyEntrega: async (id) => {
     return await db.Entrega.destroy({ where: { id: id } });
   },
-  getAll: async () => {
-    return await db.Entrega.findAll();
-  },
-  getById: async (id) => {
-    return await db.Entrega.findByPk(id);
-  },
-  getSwapByDeliveryId: async (id) => {
-    return await db.Entrega.findByPk(id, { include: "trocas" });
-  },
-  getByIdAndAttribute: async (id, attribute) => {
-    return await db.Entrega.findByPk(id, { attributes: [attribute] });
-  },
 };
 
 module.exports = entregaService;

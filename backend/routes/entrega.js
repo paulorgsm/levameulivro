@@ -5,9 +5,5 @@ const controller = require("../controllers/EntregaController");
 router.post("/", controller.create);
 router.put("/:id", controller.update);
 router.delete("/:id", controller.destroy);
-router.get("/", controller.indexAll);
-router.get("/:id", controller.indexById);
-router.get("/:id/trocas", controller.indexSwapByDeliveryId);
-router.get("/:id/:attribute", controller.indexByIdAndAttribute);
 
 module.exports = router;

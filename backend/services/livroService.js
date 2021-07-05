@@ -15,7 +15,11 @@ const livroService = {
     id_usuario,
     isbn,
     sinopse,
-    foto_livro
+    foto_livro1,
+    foto_livro2,
+    foto_livro3,
+    foto_livro4,
+    foto_livro5
   ) => {
     return await db.Livro.create({
       autor,
@@ -31,7 +35,11 @@ const livroService = {
       id_usuario,
       isbn,
       sinopse,
-      foto_livro,
+      foto_livro1,
+      foto_livro2,
+      foto_livro3,
+      foto_livro4,
+      foto_livro5,
     });
   },
   updateLivro: async (
@@ -49,7 +57,11 @@ const livroService = {
     id_usuario,
     isbn,
     sinopse,
-    foto_livro
+    foto_livro1,
+    foto_livro2,
+    foto_livro3,
+    foto_livro4,
+    foto_livro5
   ) => {
     return await db.Livro.update(
       {
@@ -66,7 +78,11 @@ const livroService = {
         id_usuario,
         isbn,
         sinopse,
-        foto_livro,
+        foto_livro1,
+        foto_livro2,
+        foto_livro3,
+        foto_livro4,
+        foto_livro5,
       },
       {
         where: { id: id },
@@ -75,18 +91,6 @@ const livroService = {
   },
   destroyLivro: async (id) => {
     return await db.Livro.destroy({ where: { id: id } });
-  },
-  getAll: async () => {
-    return await db.Livro.findAll();
-  },
-  getById: async (id) => {
-    return await db.Livro.findByPk(id);
-  },
-  getByIdAndAttribute: async (id, attribute) => {
-    return await db.Livro.findByPk(id, { attributes: [attribute] });
-  },
-  getUserByBookId: async (id) => {
-    return await db.Livro.findByPk(id, { include: "usuarios" });
   },
 };
 
