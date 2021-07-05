@@ -77,7 +77,7 @@ const UsuarioService = {
       where: { email: email },
     });
 
-    const boolean = await bcrypt.compare(senha, usuario.dataValues.senha);
+    const boolean = bcrypt.compare(senha, usuario.dataValues.senha);
 
     if (boolean) {
       return jwt.sign({ id: usuario.dataValues.id }, process.env.JWT_KEY, {
