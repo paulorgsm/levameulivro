@@ -19,9 +19,6 @@ const perguntaService = {
       }
     );
   },
-  destroyPergunta: async (id) => {
-    return await db.Pergunta.destroy(id);
-  },
 };
 
 module.exports = perguntaService;

@@ -9,27 +9,27 @@ module.exports = {
         primaryKey: true,
       },
       autor: {
-        type: Sequelize.STRING(400),
+        type: Sequelize.STRING(100),
         allowNull: false,
       },
 
       nome_livro: {
-        type: Sequelize.STRING(300),
+        type: Sequelize.STRING(40),
         allowNull: false,
       },
 
       editora: {
-        type: Sequelize.STRING(200),
+        type: Sequelize.STRING(20),
         allowNull: false,
       },
 
       ano_pub: {
-        type: Sequelize.INTEGER(10),
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
 
       idioma: {
-        type: Sequelize.STRING(200),
+        type: Sequelize.STRING(15),
         allowNull: false,
       },
 
@@ -39,17 +39,17 @@ module.exports = {
       },
 
       estado_livro: {
-        type: Sequelize.STRING(300),
+        type: Sequelize.STRING(30),
         allowNull: false,
       },
 
       conservacao: {
-        type: Sequelize.STRING(500),
+        type: Sequelize.STRING(100),
         allowNull: false,
       },
 
       materia: {
-        type: Sequelize.STRING(200),
+        type: Sequelize.STRING(30),
       },
 
       nivel: {
@@ -57,22 +57,13 @@ module.exports = {
         allowNull: false,
       },
 
-      id_usuario: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: "usuarios",
-          key: "id",
-        },
-      },
-
       isbn: {
-        type: Sequelize.INTEGER(13),
+        type: Sequelize.STRING(13),
         allowNull: false,
       },
 
       sinopse: {
-        type: Sequelize.STRING(500),
+        type: Sequelize.TEXT,
         allowNull: false,
       },
 
@@ -94,6 +85,15 @@ module.exports = {
 
       foto_livro5: {
         type: Sequelize.STRING(80),
+      },
+
+      id_usuario: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "usuarios",
+          key: "id",
+        },
       },
 
       createdAt: {

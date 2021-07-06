@@ -8,69 +8,86 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       autor: {
-        type: DataTypes.STRING(400),
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
+
       nome_livro: {
-        type: DataTypes.STRING(300),
+        type: DataTypes.STRING(40),
         allowNull: false,
       },
+
       editora: {
-        type: DataTypes.STRING(200),
+        type: DataTypes.STRING(20),
         allowNull: false,
       },
+
       ano_pub: {
-        type: DataTypes.INTEGER(10),
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
+
       idioma: {
-        type: DataTypes.STRING(200),
+        type: DataTypes.STRING(15),
         allowNull: false,
       },
+
       num_paginas: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+
       estado_livro: {
-        type: DataTypes.STRING(300),
+        type: DataTypes.STRING(30),
         allowNull: false,
       },
+
       conservacao: {
-        type: DataTypes.STRING(500),
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
+
       materia: {
-        type: DataTypes.STRING(200),
+        type: DataTypes.STRING(30),
       },
+
       nivel: {
         type: DataTypes.STRING(200),
         allowNull: false,
       },
-      id_usuario: {
-        type: DataTypes.INTEGER,
-      },
+
       isbn: {
-        type: DataTypes.INTEGER(13),
+        type: DataTypes.STRING(13),
         allowNull: false,
       },
+
       sinopse: {
-        type: DataTypes.STRING(500),
+        type: DataTypes.TEXT,
         allowNull: false,
       },
+
       foto_livro1: {
         type: DataTypes.STRING(80),
       },
+
       foto_livro2: {
         type: DataTypes.STRING(80),
       },
+
       foto_livro3: {
         type: DataTypes.STRING(80),
       },
+
       foto_livro4: {
         type: DataTypes.STRING(80),
       },
+
       foto_livro5: {
         type: DataTypes.STRING(80),
+      },
+
+      id_usuario: {
+        type: DataTypes.INTEGER,
       },
     },
     {

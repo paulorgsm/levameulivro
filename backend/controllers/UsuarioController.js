@@ -29,7 +29,7 @@ const UsuarioController = {
       token,
       process.env.JWT_KEY,
       function (err, decoded) {
-        if (err != null) {
+        if (err) {
           return res
             .status(401)
             .send({ mensagem: "Sessão expirada, por favor logue novamente" });
@@ -64,7 +64,7 @@ const UsuarioController = {
       token,
       process.env.JWT_KEY,
       function (err, decoded) {
-        if (err != null) {
+        if (err) {
           return res
             .status(401)
             .send({ mensagem: "Sessão expirada, por favor logue novamente" });
@@ -110,7 +110,7 @@ const UsuarioController = {
       token,
       process.env.JWT_KEY,
       function (err, decoded) {
-        if (err != null) {
+        if (err) {
           return res
             .status(401)
             .send({ mensagem: "Sessão expirada, por favor logue novamente" });

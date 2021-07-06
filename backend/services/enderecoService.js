@@ -47,8 +47,13 @@ const enderecoService = {
       { where: { id: id } }
     );
   },
-  destroyEndereco: async (id) => {
-    return await db.Endereco.destroy({ where: { id: id } });
+  existEndereco: async (cep) => {
+    const exist = await db.Endereco.findOne({ where: { cep: cep } });
+
+    if (exist === null) {
+      return false;
+    }
+    return true;
   },
 };
 

@@ -1,5 +1,6 @@
 require("dotenv").config();
 const LivroService = require("../services/LivroService");
+const jwt = require("jsonwebtoken");
 
 const LivroController = {
   create: async (req, res) => {
@@ -14,10 +15,26 @@ const LivroController = {
       conservacao,
       materia,
       nivel,
-      id_usuario,
       isbn,
       sinopse,
     } = req.body;
+
+    const token = req.headers.authorization.split(" ")[1];
+
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_KEY,
+      function (err, decoded) {
+        if (err) {
+          return res
+            .status(401)
+            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
+        }
+        return decoded;
+      }
+    );
+
+    const id_usuario = decoded.id;
 
     const foto_array = req.files;
 
@@ -45,10 +62,10 @@ const LivroController = {
       estado_livro,
       conservacao,
       materia,
-      parseInt(nivel),
-      parseInt(id_usuario),
-      parseInt(isbn),
+      nivel,
+      isbn,
       sinopse,
+      id_usuario,
       foto_livro1,
       foto_livro2,
       foto_livro3,
@@ -56,52 +73,10 @@ const LivroController = {
       foto_livro5
     );
 
-    return res.json(livro);
-  },
-  update: async (req, res) => {
-    const { id } = req.params;
-
-    const {
-      autor,
-      nome_livro,
-      editora,
-      ano_pub,
-      idioma,
-      num_paginas,
-      estado_livro,
-      conservacao,
-      materia,
-      nivel,
-      id_usuario,
-      isbn,
-      sinopse,
-    } = req.body;
-
-    const livro = await LivroService.updateLivro(
-      id,
-      autor,
-      nome_livro,
-      editora,
-      ano_pub,
-      idioma,
-      num_paginas,
-      estado_livro,
-      conservacao,
-      materia,
-      nivel,
-      id_usuario,
-      isbn,
-      sinopse
-    );
-
-    return res.json(livro);
-  },
-  destroy: async (req, res) => {
-    const { id } = req.params;
-
-    const livro = await LivroService.destroyLivro(id);
-
-    return res.json(livro);
+    if (livro != null) {
+      return res.status(200).send({ mensagem: "Livro cadastrado com sucesso" });
+    }
+    return res.status(400).send({ mensagem: "Dados inválidos" });
   },
 };
 
