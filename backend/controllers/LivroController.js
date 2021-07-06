@@ -1,6 +1,7 @@
 require("dotenv").config();
 const LivroService = require("../services/LivroService");
 const jwt = require("jsonwebtoken");
+const livroService = require("../services/LivroService");
 
 const LivroController = {
   create: async (req, res) => {
@@ -77,6 +78,21 @@ const LivroController = {
       return res.status(200).send({ mensagem: "Livro cadastrado com sucesso" });
     }
     return res.status(400).send({ mensagem: "Dados inválidos" });
+  },
+  indexAll: async (req, res) => {
+    return res.status(200).send(await livroService.getAll());
+  },
+  indexById: async (req, res) => {
+    const { id } = req.params;
+
+    return res.status(200).send(await livroService.getById(id));
+  },
+  indexByNameOrAutorOrTag: async (req, res) => {
+    const { nome, autor, tag } = req.query;
+
+    return res
+      .status(200)
+      .send(await livroService.getByNameOrAutorOrTag(nome, autor, tag));
   },
 };
 
