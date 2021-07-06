@@ -1,6 +1,5 @@
 require("dotenv").config();
 const UsuarioService = require("../services/UsuarioService");
-const jwt = require("jsonwebtoken");
 
 const UsuarioController = {
   criarConta: async (req, res) => {
@@ -23,20 +22,7 @@ const UsuarioController = {
   addDadosPessoais: async (req, res) => {
     const { sobrenome, cpf, celular, data_nasc, sexo } = req.body;
 
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
+    const decoded = req.headers.authorization;
 
     const id_usuario = decoded.id;
 
@@ -58,27 +44,13 @@ const UsuarioController = {
     return res.status(401).send({ mensagem: "Erro na autenticação" });
   },
   atualizarDados: async (req, res) => {
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
-
-    const id_usuario = decoded.id;
+    const { nome, senha, email, sobrenome, cpf, celular, data_nasc, sexo } =
+      req.body;
+    const decoded = req.headers.authorization;
 
     const { filename } = req.file;
 
-    const { nome, senha, email, sobrenome, cpf, celular, data_nasc, sexo } =
-      req.body;
+    const id_usuario = decoded.id;
 
     const foto_usuario = `${process.env.HOST_URL}/uploads/usuarios/${filename}`;
 
@@ -104,20 +76,7 @@ const UsuarioController = {
     return res.status(401).send({ mensagem: "Erro na autenticação" });
   },
   deletarConta: async (req, res) => {
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
+    const decoded = req.headers.authorization;
 
     const id_usuario = decoded.id;
 

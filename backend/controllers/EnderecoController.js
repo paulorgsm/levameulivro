@@ -1,5 +1,4 @@
 const EnderecoService = require("../services/EnderecoService");
-const jwt = require("jsonwebtoken");
 
 const EnderecoController = {
   create: async (req, res) => {
@@ -14,20 +13,7 @@ const EnderecoController = {
         .send({ mensagem: "O endereço já está cadastrado no banco de dados" });
     }
 
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
+    const decoded = req.headers.authorization;
 
     const id_usuario = decoded.id;
 
@@ -56,20 +42,7 @@ const EnderecoController = {
 
     const { id } = req.params;
 
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
+    const decoded = req.headers.authorization;
 
     const id_usuario = decoded.id;
 

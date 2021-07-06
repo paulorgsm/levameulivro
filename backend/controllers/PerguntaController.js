@@ -1,25 +1,11 @@
 require("dotenv").config();
 const PerguntaService = require("../services/PerguntaService");
-const jwt = require("jsonwebtoken");
 
 const PerguntaController = {
   create: async (req, res) => {
     const { pergunta, id_livro } = req.body;
 
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
+    const decoded = req.headers.authorization;
 
     const id_usuario = decoded.id;
 
@@ -37,20 +23,7 @@ const PerguntaController = {
   addResposta: async (req, res) => {
     const { resposta, id_livro } = req.body;
 
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
+    const decoded = req.headers.authorization;
 
     const id_usuario = decoded.id;
 

@@ -1,8 +1,9 @@
+const controller = require("../controllers/EnderecoController");
+const autorizacao = require("../middlewares/Autorizacao");
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/EnderecoController");
 
-router.post("/", controller.create);
-router.put("/:id", controller.update);
+router.post("/", autorizacao, controller.create);
+router.put("/:id", autorizacao, controller.update);
 
 module.exports = router;

@@ -20,24 +20,11 @@ const LivroController = {
       sinopse,
     } = req.body;
 
-    const token = req.headers.authorization.split(" ")[1];
-
-    const decoded = jwt.verify(
-      token,
-      process.env.JWT_KEY,
-      function (err, decoded) {
-        if (err) {
-          return res
-            .status(401)
-            .send({ mensagem: "Sessão expirada, por favor logue novamente" });
-        }
-        return decoded;
-      }
-    );
-
-    const id_usuario = decoded.id;
+    const decoded = req.headers.authorization;
 
     const foto_array = req.files;
+
+    const id_usuario = decoded.id;
 
     const foto_filename_array = [];
 
