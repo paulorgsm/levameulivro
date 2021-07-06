@@ -1,4 +1,6 @@
+require("dotenv").config();
 const PerguntaService = require("../services/PerguntaService");
+const jwt = require("jsonwebtoken");
 
 const PerguntaController = {
   create: async (req, res) => {

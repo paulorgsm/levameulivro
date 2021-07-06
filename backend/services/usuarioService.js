@@ -83,8 +83,6 @@ const UsuarioService = {
 
     const boolean = await bcrypt.compare(senha, usuario.dataValues.senha);
 
-    console.log(boolean);
-
     if (boolean) {
       return jwt.sign({ id: usuario.dataValues.id }, process.env.JWT_KEY, {
         expiresIn: "1h",

@@ -42,7 +42,7 @@ const EnderecoController = {
       id_usuario
     );
 
-    if (endereco == 1) {
+    if (endereco != null) {
       return res
         .status(200)
         .send({ mensagem: "Endereço cadastrado com sucesso" });

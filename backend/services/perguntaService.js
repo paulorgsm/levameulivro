@@ -1,10 +1,9 @@
 const db = require("../database/models");
 
 const perguntaService = {
-  createPergunta: async (pergunta, resposta, id_usuario, id_livro) => {
+  createPergunta: async (pergunta, id_usuario, id_livro) => {
     return await db.Pergunta.create({
       pergunta,
-      resposta,
       id_usuario,
       id_livro,
     });
