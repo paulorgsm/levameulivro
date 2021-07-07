@@ -7,123 +7,123 @@ import './busca.css';
 function App() {
   return (
   <main>   
-  <section class="section-principal">
+  <section className ="section-principal">
             
             <article>
                 <p>matéria / curso</p>
             </article>
 
-            <section class="container-checkbox">
-                <div class="div-checkbox">
+            <section className ="container-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
 
-                    <div class="div-checkbox">
+                    <div className ="div-checkbox">
                         <input type="checkbox" id="container"/>
                         <label for="container">testando..</label>
                     </div>
 
-                    <div class="div-checkbox">
+                    <div className ="div-checkbox">
                         <input type="checkbox" id="container"/>
                         <label for="container">testando..</label>
                     </div>
 
-                    <div class="div-checkbox">
+                    <div className ="div-checkbox">
                         <input type="checkbox" id="container"/>
                         <label for="container">testando..</label>
                         <p>ver todos</p>
                     </div>
                 </div>    
-                    <hr class="hr-linha"/>
+                    <hr className ="hr-linha"/>
             </section>
 
-            <section class="container-ensino">
+            <section className ="container-ensino">
                 <article>
                     <p>nível de ensino</p>
                 </article>
 
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
 
-                <div class="div-checkbox">
+                <div className ="div-checkbox">
                     <input type="checkbox" id="container"/>
                     <label for="container">testando..</label>
                 </div>
             </section>
         </section>
         
-        <div class="div-card">
+        <div className ="div-card">
 
-        <div class="div-card1">
+        <div className ="div-card1">
             <img src="../assets/img/card1.svg" alt=""/>
 
-            <div class="texto">
-                <p class="mat">MATÉRIA</p>
+            <div className ="texto">
+                <p className ="mat">MATÉRIA</p>
                 <p>NOME DO LIVRO</p>
                 <p>COM ATÉ 3 LINHAS</p>
                 <p>DE CARACTERES</p>
             </div>
 
-            <div class="btn">
-                <input class="btn1" type="button" value="QUERO ESTE!"/>
-                <input class="btn2" type="button" value="+DETALHES"/>
+            <div className ="btn">
+                <input className ="btn1" type="button" value="QUERO ESTE!"/>
+                <input className ="btn2" type="button" value="+DETALHES"/>
             </div>
 
-            <div class="img-assets">
+            <div className ="img-assets">
                 <p>DISPONÍVEL</p>
                 <img src="../assets/img/salvar.svg" alt=""/>
                 <img src="../assets/img/relarUmPro.svg" alt=""/>
             </div>
 
-            <div class="div-login">
+            <div className ="div-login">
                 <img src="../assets/img/login.svg"/>
 
                 <div>
@@ -133,28 +133,28 @@ function App() {
             </div>
         </div>
 
-        <div class="div-card1">
+        <div className ="div-card1">
             <img src="../assets/img/card1.svg" alt=""/>
 
-            <div class="texto">
-                <p class="mat">MATÉRIA</p>
+            <div className ="texto">
+                <p className ="mat">MATÉRIA</p>
                 <p>NOME DO LIVRO</p>
                 <p>COM ATÉ 3 LINHAS</p>
                 <p>DE CARACTERES</p>
             </div>
 
-            <div class="btn">
-                <input class="btn1" type="button" value="QUERO ESTE!"/>
-                <input class="btn2" type="button" value="+DETALHES"/>
+            <div className ="btn">
+                <input className ="btn1" type="button" value="QUERO ESTE!"/>
+                <input className ="btn2" type="button" value="+DETALHES"/>
             </div>
 
-            <div class="img-assets">
+            <div className ="img-assets">
                 <p>DISPONÍVEL</p>
                 <img src="../assets/img/salvar.svg" alt=""/>
                 <img src="../assets/img/relarUmPro.svg" alt=""/>
             </div>
 
-            <div class="div-login">
+            <div className ="div-login">
                 <img src="../assets/img/login.svg"/>
 
                 <div>
@@ -164,28 +164,28 @@ function App() {
             </div>
         </div>
 
-        <div class="div-card1">
+        <div className ="div-card1">
             <img src="../assets//img/card1.svg" alt=""/>
 
-            <div class="texto">
-                <p class="mat">MATÉRIA</p>
+            <div className ="texto">
+                <p className ="mat">MATÉRIA</p>
                 <p>NOME DO LIVRO</p>
                 <p>COM ATÉ 3 LINHAS</p>
                 <p>DE CARACTERES</p>
             </div>
 
-            <div class="btn">
-                <input class="btn1" type="button" value="QUERO ESTE!"/>
-                <input class="btn2" type="button" value="+DETALHES"/>
+            <div className ="btn">
+                <input className ="btn1" type="button" value="QUERO ESTE!"/>
+                <input className ="btn2" type="button" value="+DETALHES"/>
             </div>
 
-            <div class="img-assets">
+            <div className ="img-assets">
                 <p>DISPONÍVEL</p>
                 <img src="../assets//img/salvar.svg" alt=""/>
                 <img src="../assets//img/relarUmPro.svg" alt=""/>
             </div>
 
-            <div class="div-login">
+            <div className ="div-login">
                 <img src="../assets//img/login.svg"/>
 
                 <div>
@@ -194,28 +194,28 @@ function App() {
                 </div>
             </div>
         </div>
-        <div class="div-card1">
+        <div className ="div-card1">
              <img src="../assets//img/card1.svg" alt=""/>
 
-                <div class="texto">
-                    <p class="mat">MATÉRIA</p>
+                <div className ="texto">
+                    <p className ="mat">MATÉRIA</p>
                     <p>NOME DO LIVRO</p>
                     <p>COM ATÉ 3 LINHAS</p>
                     <p>DE CARACTERES</p>
                 </div>
 
-                <div class="btn">
-                    <input class="btn1" type="button" value="QUERO ESTE!"/>
-                    <input class="btn2" type="button" value="+DETALHES"/>
+                <div className ="btn">
+                    <input className ="btn1" type="button" value="QUERO ESTE!"/>
+                    <input className ="btn2" type="button" value="+DETALHES"/>
                 </div>
 
-                <div class="img-assets">
+                <div className ="img-assets">
                     <p>DISPONÍVEL</p>
                     <img src="../assets//img/salvar.svg" alt=""/>
                     <img src="../assets//img/relarUmPro.svg" alt=""/>
                 </div>
 
-                <div class="div-login">
+                <div className ="div-login">
                     <img src="../assets//img/login.svg"/>
 
                     <div>
@@ -225,28 +225,28 @@ function App() {
                 </div>
         </div>
 
-            <div class="div-card1">
+            <div className ="div-card1">
                 <img src="../assets//img/card1.svg" alt=""/>
 
-                <div class="texto">
-                    <p class="mat">MATÉRIA</p>
+                <div className ="texto">
+                    <p className ="mat">MATÉRIA</p>
                     <p>NOME DO LIVRO</p>
                     <p>COM ATÉ 3 LINHAS</p>
                     <p>DE CARACTERES</p>
                 </div>
 
-                <div class="btn">
-                    <input class="btn1" type="button" value="QUERO ESTE!"/>
-                    <input class="btn2" type="button" value="+DETALHES"/>
+                <div className ="btn">
+                    <input className ="btn1" type="button" value="QUERO ESTE!"/>
+                    <input className ="btn2" type="button" value="+DETALHES"/>
                 </div>
 
-                <div class="img-assets">
+                <div className ="img-assets">
                     <p>DISPONÍVEL</p>
                     <img src="../assets//img/salvar.svg" alt=""/>
                     <img src="../assets//img/relarUmPro.svg" alt=""/>
                 </div>
 
-                <div class="div-login">
+                <div className ="div-login">
                     <img src="../assets//img/login.svg"/>
 
                     <div>
@@ -256,28 +256,28 @@ function App() {
                 </div>
             </div>
 
-            <div class="div-card1">
+            <div className ="div-card1">
                 <img src="../assets//img/card1.svg" alt=""/>
 
-                <div class="texto">
-                    <p class="mat">MATÉRIA</p>
+                <div className ="texto">
+                    <p className ="mat">MATÉRIA</p>
                     <p>NOME DO LIVRO</p>
                     <p>COM ATÉ 3 LINHAS</p>
                     <p>DE CARACTERES</p>
                 </div>
 
-                <div class="btn">
-                    <input class="btn1" type="button" value="QUERO ESTE!"/>
-                    <input class="btn2" type="button" value="+DETALHES"/>
+                <div className ="btn">
+                    <input className ="btn1" type="button" value="QUERO ESTE!"/>
+                    <input className ="btn2" type="button" value="+DETALHES"/>
                 </div>
 
-                <div class="img-assets">
+                <div className ="img-assets">
                     <p>DISPONÍVEL</p>
                     <img src="../assets//img/salvar.svg" alt=""/>
                     <img src="../assets//img/relarUmPro.svg" alt=""/>
                 </div>
 
-                <div class="div-login">
+                <div className ="div-login">
                     <img src="../assets//img/login.svg"/>
 
                     <div>
@@ -287,8 +287,8 @@ function App() {
                 </div>
             </div>
 
-            <div class="mover">
-                <div class="button">
+            <div className ="mover">
+                <div className ="button">
                     <p>Mais Antigos </p>
                     <div>
                         <img src="../assets//img/seta-baico.svg" alt=""/>
