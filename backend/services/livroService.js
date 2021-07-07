@@ -90,7 +90,23 @@ const livroService = {
         "foto_livro4",
         "foto_livro4",
       ],
-      include: "perguntas",
+      include: {
+        model: db.Pergunta,
+        as: "perguntas",
+        include: [
+          {
+            model: db.Usuario,
+            as: "usuarios",
+            attributes: ["nome", "sobrenome"],
+          },
+          {
+            model: db.Resposta,
+            as: "respostas",
+            attributes: ["resposta"],
+          },
+        ],
+        attributes: ["pergunta"],
+      },
     });
   },
   getByNameOrAutorOrTag: async (nome, autor, tag) => {

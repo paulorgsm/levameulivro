@@ -20,24 +20,6 @@ const PerguntaController = {
     }
     return res.status(400).send({ mensagem: "Dados inválidos" });
   },
-  addResposta: async (req, res) => {
-    const { resposta, id_livro } = req.body;
-
-    const decoded = req.headers.authorization;
-
-    const id_usuario = decoded.id;
-
-    const status = await PerguntaService.createResposta(
-      resposta,
-      id_usuario,
-      id_livro
-    );
-
-    if (status != null) {
-      return res.status(200).send({ mensagem: "Resposta enviada com sucesso" });
-    }
-    return res.status(400).send({ mensagem: "Dados inválidos" });
-  },
 };
 
 module.exports = PerguntaController;

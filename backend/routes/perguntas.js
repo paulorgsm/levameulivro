@@ -3,7 +3,6 @@ const autorizacao = require("../middlewares/Autorizacao");
 const express = require("express");
 const router = express.Router();
 
-router.post("/criar-pergunta", autorizacao, controller.create);
-router.post("/adicionar-resposta", autorizacao, controller.addResposta);
+router.post("/", autorizacao, controller.create);
 
 module.exports = router;

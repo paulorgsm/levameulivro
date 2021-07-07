@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-  const Pergunta = sequelize.define(
-    "Pergunta",
+  const Resposta = sequelize.define(
+    "Resposta",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -8,9 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
 
-      pergunta: {
+      resposta: {
         type: DataTypes.STRING(300),
-        allowNull: false,
       },
 
       id_usuario: {
@@ -18,30 +17,26 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
 
-      id_livro: {
+      id_pergunta: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
     {
-      tableName: "perguntas",
+      tableName: "respostas",
     }
   );
 
-  Pergunta.associate = function (models) {
-    Pergunta.belongsTo(models.Livro, {
-      foreignKey: "id_livro",
-      as: "livros",
-    });
-    Pergunta.belongsTo(models.Usuario, {
+  Resposta.associate = function (models) {
+    Resposta.belongsTo(models.Usuario, {
       foreignKey: "id_usuario",
       as: "usuarios",
     });
-    Pergunta.hasMany(models.Resposta, {
+    Resposta.belongsTo(models.Pergunta, {
       foreignKey: "id_pergunta",
-      as: "respostas",
+      as: "perguntas",
     });
   };
 
-  return Pergunta;
+  return Resposta;
 };

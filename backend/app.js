@@ -4,12 +4,13 @@ const logger = require("morgan");
 const path = require("path");
 const app = express();
 
-const enderecoRouter = require("./routes/endereco");
-const entregaRouter = require("./routes/entrega");
-const livroRouter = require("./routes/livro");
-const perguntaRouter = require("./routes/pergunta");
-const trocaRouter = require("./routes/troca");
-const usuarioRouter = require("./routes/usuario");
+const enderecoRouter = require("./routes/enderecos");
+const entregaRouter = require("./routes/entregas");
+const livroRouter = require("./routes/livros");
+const perguntaRouter = require("./routes/perguntas");
+const trocaRouter = require("./routes/trocas");
+const usuarioRouter = require("./routes/usuarios");
+const respostaRouter = require("./routes/respostas");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use("/enderecos", enderecoRouter);
 app.use("/entregas", entregaRouter);
 app.use("/livros", livroRouter);
 app.use("/perguntas", perguntaRouter);
+app.use("/respostas", respostaRouter);
 app.use("/trocas", trocaRouter);
 app.use("/usuarios", usuarioRouter);
 
