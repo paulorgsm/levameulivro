@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './pedidod-de-troca.css';
 
-function App() {
+function PedidosTroca() {
   return (
     <main>
       <div className ="welcome">
@@ -260,4 +260,4 @@ function App() {
   );
 }
 
-export default App;
+export default PedidosTroca;

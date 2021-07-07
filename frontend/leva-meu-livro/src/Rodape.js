@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function Rodape() {
   return (
     <footer className ="footer">
         <div className ="descricaoSobre">
@@ -29,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default Rodape;

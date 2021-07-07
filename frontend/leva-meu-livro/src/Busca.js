@@ -4,7 +4,7 @@ import './reset.css';
 import './busca.css';
 
 
-function App() {
+function Busca() {
   return (
   <main>   
   <section className ="section-principal">
@@ -304,4 +304,4 @@ function App() {
 );
 }
 
-export default App;
+export default Busca;

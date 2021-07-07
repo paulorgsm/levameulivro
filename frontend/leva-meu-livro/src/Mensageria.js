@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './mensageria.css';
 
-function App() {
+function Mensageria() {
   return (
     <main>
         <div className ="saudacao">
@@ -106,3 +106,4 @@ function App() {
     </main>
   );
 }
+export default Mensageria;

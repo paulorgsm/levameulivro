@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './troca-de-livro.css';
 
-function App() {
+function TrocaDeLivro() {
   return (
     <main>
       <div className="prosseguir-pedido">PROSSEGUIR COM O PEDIDO:</div>
@@ -95,4 +95,4 @@ function App() {
   );
 }
 
-export default App;
+export default TrocaDeLivro;

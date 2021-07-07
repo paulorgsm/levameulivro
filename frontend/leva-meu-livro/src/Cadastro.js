@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './cadastro.css';
 
-function App() {
+function Cadastro() {
   return (
     <main>
         <section className ="cadChamada">
@@ -120,4 +120,4 @@ function App() {
   );
 }
 
-export default App;
+export default Cadastro;

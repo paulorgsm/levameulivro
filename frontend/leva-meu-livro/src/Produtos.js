@@ -4,7 +4,7 @@ import './reset.css';
 import './produtos.css';
 
 
-function App() {
+function Produtos() {
   return (
     <main>
        <section  className ="sessao">
@@ -134,4 +134,4 @@ function App() {
   );
 }
 
-export default App;
+export default Produtos;

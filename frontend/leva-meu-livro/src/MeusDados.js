@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './meusDados.css';
 
-function App() {
+function meusDados() {
   return (
   <main>
       <section className ="secao">
@@ -105,4 +105,4 @@ function App() {
   );
 }
 
-export default App;
+export default meusDados;

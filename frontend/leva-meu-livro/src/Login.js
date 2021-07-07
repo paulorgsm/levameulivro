@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './login.css';
 
-function App() {
+function Login() {
   return (
  
     <main>
@@ -69,3 +69,4 @@ function App() {
     </main>
   );
 }
+export default Login;

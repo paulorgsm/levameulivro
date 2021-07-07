@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './reset.css';
 import './meusaldo.css';
 
-function App() {
+function MeuSaldo() {
   return (
     <main>
         <div className="saudacao">
@@ -43,3 +43,5 @@ function App() {
     </main>
   );
 }
+
+export default MeuSaldo;
