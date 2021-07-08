@@ -1,13 +1,14 @@
-import logo from "../../assets/logo.svg";
-import "./style.css";
+import logo from "../../assets/img/logo.svg";
+import imgLogin from "../../assets/img/login.svg";
 
-function Cabecalho() {
+function Header() {
   return (
     <header className="header">
       <div className="conteudoHeader">
         <div>
-          <img src={logo} className="logo" alt="logo" />
+          <img className="logo" src={logo} alt="Logo-Tipo" />
         </div>
+
         <div className="divInput">
           <input
             className="buscar"
@@ -15,22 +16,20 @@ function Cabecalho() {
             placeholder="Busque por livro, autor,tag"
           />
           <div className="container">
-            <input
-              type="checkbox"
-              className="checkmark"
-              placeholder="Apenas disponíveis"
-            />
+            <input type="checkbox" />
+            Apenas disponíveis
           </div>
-          <button type="submit" className="submit">
+          <button type="submit" class="submit">
             <i className="fa fa-search"></i>
           </button>
         </div>
         <div className="login">
           <div className="campoLogin">
             <span>Oi, Seja Bem-vindx!</span>
+
             <span>ENTRE / REGISTRE-SE</span>
           </div>
-          <img src="../assets/img/login.svg" alt=""></img>
+          <img src={imgLogin} alt="" />
         </div>
       </div>
       <div className="infoHeader">
@@ -63,4 +62,4 @@ function Cabecalho() {
   );
 }
 
-export default Cabecalho;
+export default Header;
