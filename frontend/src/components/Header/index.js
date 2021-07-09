@@ -15,11 +15,11 @@ function Header() {
             type="text"
             placeholder="Busque por livro, autor,tag"
           />
-          <div className="container">
+          <div className="containerHeader">
             <input type="checkbox" />
             Apenas disponíveis
           </div>
-          <button type="submit" class="submit">
+          <button type="submit" className="submit">
             <i className="fa fa-search"></i>
           </button>
         </div>
