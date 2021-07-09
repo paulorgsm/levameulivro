@@ -1,5 +1,6 @@
 import facebook from "../../assets/img/facebook.svg";
 import redesSociais from "../../assets/img/redesSociais.svg";
+import "./styleFooter.css";
 
 function Footer() {
   return (
@@ -17,7 +18,7 @@ function Footer() {
             pose.
           </span>
           <span>
-            <a className="leiaMais" href="#">
+            <a className="leiaMais" href="">
               LEIA MAIS
             </a>
           </span>

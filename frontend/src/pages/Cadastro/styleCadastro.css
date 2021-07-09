@@ -1,0 +1,194 @@
+strong {
+  font-weight: bold;
+  color: #feee08;
+}
+#comprarLi {
+  color: #feee08;
+}
+.cadChamada {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 68px;
+}
+
+.cadastroChamada {
+  width: 960px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cadastroChamada p {
+  font-family: sans-serif;
+  font-weight: 500;
+  color: #4285f4;
+}
+.cads {
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.finalizeCad {
+  width: 478px;
+  height: 192px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.finalizeCad h2 {
+  height: 56px;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 56px;
+  color: #eb4335;
+  margin: 5px 0px;
+}
+.finalizeCad p {
+  font-family: sans-serif;
+  size: 18px;
+  line-height: 26px;
+  text-align: center;
+  margin: 5px auto;
+}
+
+.finalizeCad button {
+  border-radius: 10px;
+  width: 216px;
+  height: 46px;
+  background: #eb4335;
+  border-color: #eb4335;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: white;
+  margin: auto;
+}
+
+.finalizeDepois {
+  width: 382px;
+  height: 192px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 100px;
+}
+.finalizeDepois h2 {
+  font-family: sans-serif;
+  font-weight: 700;
+  line-height: 56px;
+  font-size: 44px;
+  text-align: center;
+  color: #3146de;
+}
+.finalizeDepois button {
+  border-radius: 10px;
+  width: 216px;
+  height: 46px;
+  background: #2f80ed;
+  border-color: #2f80ed;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: white;
+  margin: auto;
+}
+.formsCadastros {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border-top: 1px solid #000000;
+  text-align: center;
+  margin: 0 auto;
+  /* max-width: 578px; */
+}
+.forms {
+  height: 750px;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0 auto;
+  padding-left: 140px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.forms p {
+  padding-bottom: 23px;
+  text-align: justify;
+  font-weight: bolder;
+}
+
+.formsCadastros h2 {
+  font-family: sans-serif;
+  height: 55px;
+  color: #f62cbc;
+  text-align: center;
+  margin: 48px auto;
+  font-size: 48px;
+  font-weight: 700;
+}
+.form1 {
+  width: 473px;
+  margin: 0 136px 0 0;
+}
+.forms form {
+  display: flex;
+  flex-direction: column;
+  width: 471px;
+  height: 370px;
+  align-items: baseline;
+  text-align: start;
+}
+.forms form input {
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  width: 200px;
+  height: 40px;
+  border: none;
+  margin: 7px 28px 21px auto;
+}
+
+.form1 form select {
+  border-radius: 10px;
+  background-color: #e0e0e0;
+}
+.agregadorInput {
+  width: 468px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.agregadorLabelInput {
+  display: flex;
+  flex-direction: column;
+}
+input ::placeholder {
+  padding-right: 17px;
+}
+
+.forms button {
+  width: 216px;
+  height: 46px;
+  background: #f62cbc;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  margin-right: 600px;
+}
+
+.form2 {
+  width: 474px;
+  height: 595px;
+}
+
+.form2 form input {
+  width: 428px;
+}

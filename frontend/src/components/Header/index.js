@@ -1,5 +1,6 @@
 import logo from "../../assets/img/logo.svg";
 import imgLogin from "../../assets/img/login.svg";
+import "./styleHeader.css";
 
 function Header() {
   return (
