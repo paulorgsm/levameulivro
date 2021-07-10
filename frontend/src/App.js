@@ -1,14 +1,15 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./routes";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Home />
+      <Routes />
       <Footer />
-    </>
+    </Router>
   );
 }
 
