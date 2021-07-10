@@ -1,4 +1,4 @@
-import "./styleHome.css";
+import { StyledHome } from "./StyledHome";
 import img1 from "../../assets/img/img1.svg";
 import img2 from "../../assets/img/img2.svg";
 import img3 from "../../assets/img/img3.svg";
@@ -11,7 +11,7 @@ import vector from "../../assets/img/vector.svg";
 
 function Home() {
   return (
-    <>
+    <StyledHome>
       <section className="carousel" aria-label="Gallery">
         <ol className="carousel__viewport">
           <li id="carousel__slide1" tabindex="0" className="carousel__slide">
@@ -457,7 +457,7 @@ function Home() {
           </div>
         </div>
       </section>
-    </>
+    </StyledHome>
   );
 }
 

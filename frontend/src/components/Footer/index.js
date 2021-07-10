@@ -1,10 +1,10 @@
 import facebook from "../../assets/img/facebook.svg";
 import redesSociais from "../../assets/img/redesSociais.svg";
-import "./styleFooter.css";
+import { StyledFooter } from "./StyledFooter";
 
 function Footer() {
   return (
-    <>
+    <StyledFooter>
       <footer className="footer">
         <div className="descricaoSobre">
           <h2>
@@ -40,7 +40,7 @@ function Footer() {
           LEVA MEU LIVRO © | 2021 - Todos os direitos reservados{" "}
         </div>
       </footer>
-    </>
+    </StyledFooter>
   );
 }
 
