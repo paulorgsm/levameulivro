@@ -372,7 +372,27 @@ span {
     margin: auto 10px;
 }
 
-.cadTabela, tr, td{
+.cadTabela{
+    width: 1120px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-bottom: 40px;
+}
+
+.cadTabela tr{
+    width: 1120px;
+    margin: 0 auto;
+    border:  1px solid #4285F4;
+    font-family: sans-serif;
+    padding: 12px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-bottom: 40px;
+}
+
+.cadTabela td{
     width: 1120px;
     margin: 0 auto;
     border:  1px solid #4285F4;
@@ -398,21 +418,20 @@ span {
     border-radius: 10px;
     background: #E5E5E5;
     width: 200px;
-    height: 40px;
+    max-height: 40px;
     margin: 0 auto;
     display: flex;
     font-weight: normal;
 }
 
 .bg-acao img{
-    height: 17px;
-    padding-top: 10px;
     padding-left: 15px;
 }
 
 .bg-acao p{
     padding-top: 10px;
     padding-left: 15px;
+    padding-bottom: 10px;
 }
 
 .link-msg{
@@ -502,6 +521,7 @@ span {
     margin-right: 10px;
     font-family: sans-serif;
     color: #4F4F4F;
+    padding: 10px;
 }
 
 .titulo {
@@ -665,22 +685,27 @@ span {
 .sinopse textarea {
     margin-top: 15px;
     width: 550px;
-    height: 240px;
+    height: 250px;
     border-radius: 10px;
     background: #E0E0E0;
     border: 1px none;
     margin-right: 10px;
     font-family: sans-serif;
     color: #4F4F4F;
+    padding: 10px;
+}
+
+.parte1{
+    display: flex;
 }
 
 .parte2{
-    margin-top: 56px;
+    margin-top: 40px;
 }
 
 .enviaImg label{
     display: block;
-    margin-top: 22px;
+    margin-top: 24px;
 }
 
 .enviaImg input {
@@ -704,10 +729,18 @@ span {
     border: none;
     justify-content: center;
     font-weight: bolder;
-    margin-top: 55px;
+    margin-top: 58px;
 }
 
-label, h2{
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 1120px;
+
+}
+
+label {
     font-size: 1.2em;
     font-weight: bold;
 }
@@ -761,6 +794,10 @@ label, h2{
 .divEstado{
     width: 250px;
     margin-right: 45px;
+}
+
+input{
+    padding-left: 10px;
 }
 
 `;
