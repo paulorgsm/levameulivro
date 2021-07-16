@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 
 export const StyledFooter = styled.div`
   .footer {
-    margin-top: 70px;
     width: auto;
     height: 250px;
     background: #61b52f;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
   }
 
   strong {
@@ -17,9 +18,9 @@ export const StyledFooter = styled.div`
   }
 
   .descricaoSobre {
-    margin-left: 150px;
+    margin-right: 100px;
     padding-top: 30px;
-    width: 554px;
+    width: 500px;
     color: white;
     line-height: 1.3;
     display: flex;
@@ -41,10 +42,18 @@ export const StyledFooter = styled.div`
 
   .redesSociais {
     padding-top: 30px;
-    margin-left: 150px;
+    margin-left: 100px;
     width: 400px;
     color: white;
     line-height: 1.3;
+    display: flex;
+
+/*     display: flex;
+    flex-direction: column;
+    /* align-items: end; */
+    align-self: baseline;
+    text-align: left;
+    flex-wrap: wrap; */
   }
 
   .redesSociais h2 {
@@ -64,15 +73,32 @@ export const StyledFooter = styled.div`
     width: auto;
     height: 64px;
     background: #34a853;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 
   .direitos {
-    margin-left: 150px;
     padding-top: 25px;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
+    width: 1120px;
+    margin: 0 auto;
+    padding-left: 10px;
   }
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.icon{
+  margin: 10px;
+}
+
+.linkto{
+  color: white;
+}
+
+.social-icons a{
+  color: white;
+}
 `;
