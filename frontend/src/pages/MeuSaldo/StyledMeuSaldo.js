@@ -23,7 +23,54 @@ export const StyledMeuSaldo = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
+  .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.botoes {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+margin-bottom: 57px;
 
+}
+
+.botaoVerde {
+    background-color: #34A853;
+    border-radius: 10px;
+    border: #34A853 2px solid;
+    width: 250px;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.botaoRosa {
+    margin-left: 5px;
+    background-color: #F62CBC;
+    border-radius: 10px;
+    border: #F62CBC 2px solid;
+    width: 240px;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+}
   .infobox {
     margin-left: 210px;
     margin-bottom: 40px;

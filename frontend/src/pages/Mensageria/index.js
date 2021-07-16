@@ -21,8 +21,6 @@ function Mensageria() {
           <img
             src={imgMensageria1}
             alt=""
-            width="60px"
-            style="margin-right: 5px"
           />
           <p>Mensageria</p>
         </div>
@@ -30,8 +28,6 @@ function Mensageria() {
           <img
             src={imgMensageria2}
             alt=""
-            width="40px"
-            style="margin-right: 5px"
           />
           <p>Quem está perguntando?</p>
         </div>
@@ -96,8 +92,7 @@ function Mensageria() {
                 ENVIAR MENSAGEM
               </button>
             </p>
-          </div>
-          <div className="perguntasRespostas">
+            <div className="perguntasRespostas">
             PERGUNTAS E RESPOSTAS JÁ REALIZADAS
           </div>
           <div className="conversa">
@@ -109,12 +104,13 @@ function Mensageria() {
               Pergunta de: Didi Mocó dos Santos | Data 12/03/2021 às 13:45:19
             </p>
             <div className="conversaResposta">
-              <img src={imgHook} width="30px" />
-              <h2>Sua Resposta: Se pedir até o meio-dia, consigo sim! </h2> |
-              Data: 12/03/2021 às 13:50:55{" "}
+              <img src={imgHook} width="20px" />
+              <h2>Sua Resposta: Se pedir até o meio-dia, consigo sim! </h2> 
+              <p> | Data: 12/03/2021 às 13:50:55 </p>
             </div>
           </div>
         </div>
+          </div>
         <div className="paginas">
           <div className="box">
             <div className="botaoPag">
@@ -128,8 +124,6 @@ function Mensageria() {
           <img
             src={imgMensageria3}
             alt=""
-            width="40px"
-            style="margin-right: 5px"
           />{" "}
           <p>Perguntas que fiz:</p>
         </div>

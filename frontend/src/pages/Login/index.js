@@ -10,13 +10,13 @@ function Login() {
           </h2>
         </div>
         <section className="form">
-          <div>
+         
+            
+            <div>
             <div className="login">
               <h1>Faça Seu Login</h1>
               <h2>se já tiver se cadastro antes</h2>
             </div>
-
-            <div>
               <form action="/login" method="POST">
                 <input
                   type="email"
@@ -99,7 +99,7 @@ function Login() {
                 </form>
               </div>
             </div>
-          </div>
+         
         </section>
       </main>
     </StyledLogin>

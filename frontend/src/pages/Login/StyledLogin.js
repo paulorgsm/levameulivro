@@ -1,11 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const StyledLogin = styled.div`
-  strong {
-    font-weight: bold;
-    color: #feee08;
-  }
-
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
   section {
     display: flex;
     flex-wrap: wrap;
