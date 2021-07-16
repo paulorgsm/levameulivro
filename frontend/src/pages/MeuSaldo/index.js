@@ -9,11 +9,7 @@ function MeuSaldo() {
           <p>Aeee! Seja Bem-vindx ao nosso clube!</p>
         </div>
         <div className="meuSaldo">
-<<<<<<< HEAD
           <img src={imgSaldo} alt=""  />
-=======
-          <img src={imgSaldo} alt="" width="50px" style="margin-right: 5px" />
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
           Meu Saldo
         </div>
         <div className="info">

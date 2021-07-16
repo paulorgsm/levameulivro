@@ -10,22 +10,13 @@ function Login() {
           </h2>
         </div>
         <section className="form">
-<<<<<<< HEAD
          
             
             <div>
-=======
-          <div>
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
             <div className="login">
               <h1>Faça Seu Login</h1>
               <h2>se já tiver se cadastro antes</h2>
             </div>
-<<<<<<< HEAD
-=======
-
-            <div>
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
               <form action="/login" method="POST">
                 <input
                   type="email"
@@ -108,14 +99,11 @@ function Login() {
                 </form>
               </div>
             </div>
-<<<<<<< HEAD
          
-=======
-          </div>
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
         </section>
       </main>
     </StyledLogin>
   );
 }
 export default Login;
+

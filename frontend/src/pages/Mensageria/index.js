@@ -21,11 +21,6 @@ function Mensageria() {
           <img
             src={imgMensageria1}
             alt=""
-<<<<<<< HEAD
-=======
-            width="60px"
-            style="margin-right: 5px"
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
           />
           <p>Mensageria</p>
         </div>
@@ -33,11 +28,6 @@ function Mensageria() {
           <img
             src={imgMensageria2}
             alt=""
-<<<<<<< HEAD
-=======
-            width="40px"
-            style="margin-right: 5px"
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
           />
           <p>Quem está perguntando?</p>
         </div>
@@ -102,12 +92,7 @@ function Mensageria() {
                 ENVIAR MENSAGEM
               </button>
             </p>
-<<<<<<< HEAD
             <div className="perguntasRespostas">
-=======
-          </div>
-          <div className="perguntasRespostas">
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
             PERGUNTAS E RESPOSTAS JÁ REALIZADAS
           </div>
           <div className="conversa">
@@ -119,7 +104,6 @@ function Mensageria() {
               Pergunta de: Didi Mocó dos Santos | Data 12/03/2021 às 13:45:19
             </p>
             <div className="conversaResposta">
-<<<<<<< HEAD
               <img src={imgHook} width="20px" />
               <h2>Sua Resposta: Se pedir até o meio-dia, consigo sim! </h2> 
               <p> | Data: 12/03/2021 às 13:50:55 </p>
@@ -127,14 +111,6 @@ function Mensageria() {
           </div>
         </div>
           </div>
-=======
-              <img src={imgHook} width="30px" />
-              <h2>Sua Resposta: Se pedir até o meio-dia, consigo sim! </h2> |
-              Data: 12/03/2021 às 13:50:55{" "}
-            </div>
-          </div>
-        </div>
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
         <div className="paginas">
           <div className="box">
             <div className="botaoPag">
@@ -148,11 +124,6 @@ function Mensageria() {
           <img
             src={imgMensageria3}
             alt=""
-<<<<<<< HEAD
-=======
-            width="40px"
-            style="margin-right: 5px"
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
           />{" "}
           <p>Perguntas que fiz:</p>
         </div>
