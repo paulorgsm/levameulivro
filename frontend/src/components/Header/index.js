@@ -1,10 +1,6 @@
 import logo from "../../assets/img/logo.svg";
 import imgLogin from "../../assets/img/login.svg";
 import { StyledHeader } from "./StyledHeader";
-<<<<<<< HEAD
-=======
-import {Link} from "react-router-dom";
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
 
 function Header() {
   return (
@@ -12,11 +8,7 @@ function Header() {
       <header className="header">
         <div className="conteudoHeader">
           <div>
-<<<<<<< HEAD
             <img className="logo" src={logo} alt="Logo-Tipo" />
-=======
-            <Link to="/"><img className="logo" src={logo} alt="Logo-Tipo" /></Link>
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
           </div>
 
           <div className="divInput">
@@ -37,11 +29,7 @@ function Header() {
             <div className="campoLogin">
               <span>Oi, Seja Bem-vindx!</span>
 
-<<<<<<< HEAD
               <span>ENTRE / REGISTRE-SE</span>
-=======
-              <Link to="/login"><span>ENTRE / REGISTRE-SE</span></Link>
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
             </div>
             <img src={imgLogin} alt="" />
           </div>
@@ -50,17 +38,10 @@ function Header() {
           <nav>
             <ul>
               <li>
-<<<<<<< HEAD
                 <a href="/">HOME</a>
               </li>
               <li>
                 <a href="">QUEM SOMOS</a>
-=======
-                <Link to="/">HOME</Link>
-              </li>
-              <li>
-                <a href="">COMO FUNCIONA</a>
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
               </li>
               <li>
                 <a id="comprarLi" href="">

@@ -10,11 +10,6 @@ import Trocas from "../pages/Trocas";
 import Pedidos from "../pages/Pedidos";
 import Saldo from "../pages/MeuSaldo";
 import MeusDados from "../pages/MeusDados";
-<<<<<<< HEAD
-=======
-import MeuPerfil from "../pages/MeuPerfil";
-import CadastroLivros from "../pages/CadastroLivros";
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
 
 export default function Routes() {
   return (
@@ -29,11 +24,6 @@ export default function Routes() {
       <Route path="/pedidos" component={Pedidos} />
       <Route path="/saldo" component={Saldo} />
       <Route path="/meus-dados" component={MeusDados} />
-<<<<<<< HEAD
-=======
-      <Route path="/meu-perfil" component={MeuPerfil} />
-      <Route path="/cadastrar-livro" component={CadastroLivros} />
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
     </Switch>
   );
 }
