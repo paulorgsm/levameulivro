@@ -23,6 +23,7 @@ export const StyledMeuSaldo = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
+<<<<<<< HEAD
   .info {
     display: flex;
     flex-direction: row;
@@ -71,6 +72,9 @@ margin-bottom: 57px;
     cursor: pointer;
 
 }
+=======
+
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   .infobox {
     margin-left: 210px;
     margin-bottom: 40px;

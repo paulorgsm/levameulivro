@@ -284,9 +284,12 @@ export const StyledMensageria = styled.div`
     cursor: pointer;
   }
 
+<<<<<<< HEAD
 
   
 
+=======
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   .perguntasRespostas {
     margin-top: 50px;
     margin-left: 250px;
@@ -330,6 +333,7 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 2px;
+<<<<<<< HEAD
 
   }
   .conversaResposta > h2{
@@ -339,6 +343,8 @@ export const StyledMensageria = styled.div`
   .conversaResposta > p {
     margin-top: 25px;
 
+=======
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   }
 
   .box {

@@ -9,6 +9,10 @@
     "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
+=======
+    "react-icons": "^4.2.0",
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.0",

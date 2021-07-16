@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const StyledHeader = styled.div`
+<<<<<<< HEAD
   * {
     margin: 0 auto;
     padding: 0;
@@ -8,6 +9,8 @@ export const StyledHeader = styled.div`
     box-sizing: border-box;
   }
 
+=======
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   .header {
     width: 100%;
     height: 223px;
@@ -76,12 +79,31 @@ export const StyledHeader = styled.div`
     background-color: white;
   }
 
+<<<<<<< HEAD
   .login span {
     text-align: center;
     margin: 10px;
     font-family: sans-serif;
     color: #eb4335;
     font-weight: bold;
+=======
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .login span {
+    text-align: center;
+    /* margin: 10px; */
+    font-family: sans-serif;
+    color: #eb4335;
+    font-weight: bold;
+    display: inline-block;
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   }
 
   .login img {

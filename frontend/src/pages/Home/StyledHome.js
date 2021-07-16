@@ -133,6 +133,13 @@ export const StyledHome = styled.div`
     align-items: center;
     color: white;
     font-weight: 700;
+<<<<<<< HEAD
+=======
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   }
 
   .trocas-livros > p > a {
@@ -297,7 +304,10 @@ export const StyledHome = styled.div`
   }
 
   .desejados {
+<<<<<<< HEAD
     display: flex;
+=======
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
     background: #4285f4;
     margin-top: 30px;
     padding: 20px;
@@ -305,6 +315,16 @@ export const StyledHome = styled.div`
     font-weight: bold;
   }
 
+<<<<<<< HEAD
+=======
+
+  .desejados p{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   /* Daqui para baixo temos o carrossel */
 
   @keyframes tonext {
@@ -352,6 +372,7 @@ export const StyledHome = styled.div`
     }
   }
 
+<<<<<<< HEAD
   /*   body {
     max-width: 37.5rem;
     margin: 0 auto;
@@ -359,6 +380,8 @@ export const StyledHome = styled.div`
     font-family: 'Lato', sans-serif;
   } */
 
+=======
+>>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent; /* thumb and track color */
