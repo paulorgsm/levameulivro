@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const StyledLogin = styled.div`
-<<<<<<< HEAD
 *{
   margin: 0;
   padding: 0;
@@ -10,13 +9,6 @@ export const StyledLogin = styled.div`
   list-style: none;
   box-sizing: border-box;
 }
-=======
-  strong {
-    font-weight: bold;
-    color: #feee08;
-  }
-
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   section {
     display: flex;
     flex-wrap: wrap;
