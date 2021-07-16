@@ -133,6 +133,10 @@ export const StyledHome = styled.div`
     align-items: center;
     color: white;
     font-weight: 700;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+
   }
 
   .trocas-livros > p > a {
@@ -297,12 +301,18 @@ export const StyledHome = styled.div`
   }
 
   .desejados {
-    display: flex;
     background: #4285f4;
     margin-top: 30px;
     padding: 20px;
     color: white;
     font-weight: bold;
+  }
+
+
+  .desejados p{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   /* Daqui para baixo temos o carrossel */
