@@ -685,7 +685,7 @@ span {
 .sinopse textarea {
     margin-top: 15px;
     width: 550px;
-    height: 250px;
+    height: 245px;
     border-radius: 10px;
     background: #E0E0E0;
     border: 1px none;
