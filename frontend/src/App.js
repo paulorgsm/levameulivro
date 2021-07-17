@@ -6,9 +6,9 @@ import Routes from "./routes";
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes />
-      <Footer />
+        <Header />
+        <Routes />
+        <Footer />
     </Router>
   );
 }

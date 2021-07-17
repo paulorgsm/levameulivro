@@ -1,6 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const StyledTroca = styled.div`
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box
+}
+
   body {
     height: 100vh;
     background-color: #fff;

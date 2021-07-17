@@ -97,9 +97,9 @@ function meusDados() {
                     >
                       {" "}
                       <option value="fem">Mulher cisgênero</option>
-                      <option value="masc">Homen cisgênero</option>
+                      <option value="masc">Homem cisgênero</option>
                       <option value="mulherTrans">Mulher Transgênero</option>
-                      <option value="homenTrans">Homen Transgênero</option>
+                      <option value="homenTrans">Homem Transgênero</option>
                       <option value="naoResponder">
                         Prefiro não responder
                       </option>

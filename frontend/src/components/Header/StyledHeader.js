@@ -1,13 +1,6 @@
 import styled, { css } from "styled-components";
 
 export const StyledHeader = styled.div`
-  * {
-    margin: 0 auto;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    box-sizing: border-box;
-  }
-
   .header {
     width: 100%;
     height: 223px;
@@ -65,7 +58,7 @@ export const StyledHeader = styled.div`
   }
 
   .submit {
-    height: 47px;
+    height: 55px;
     width: 47px;
     border-left-color: green;
     border-top-right-radius: 9px;
@@ -76,12 +69,22 @@ export const StyledHeader = styled.div`
     background-color: white;
   }
 
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   .login span {
     text-align: center;
-    margin: 10px;
+    /* margin: 10px; */
     font-family: sans-serif;
     color: #eb4335;
     font-weight: bold;
+    display: inline-block;
   }
 
   .login img {

@@ -2,6 +2,13 @@ import styled, { css } from "styled-components";
 
 export const StyledCadastroLivro = styled.div`
 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box
+  }
+
 .header{
     width: 100%;
     height: 223px;
@@ -685,7 +692,7 @@ span {
 .sinopse textarea {
     margin-top: 15px;
     width: 550px;
-    height: 250px;
+    height: 245px;
     border-radius: 10px;
     background: #E0E0E0;
     border: 1px none;

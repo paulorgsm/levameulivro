@@ -1,6 +1,7 @@
 import logo from "../../assets/img/logo.svg";
 import imgLogin from "../../assets/img/login.svg";
 import { StyledHeader } from "./StyledHeader";
+import {Link} from "react-router-dom";
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
       <header className="header">
         <div className="conteudoHeader">
           <div>
-            <img className="logo" src={logo} alt="Logo-Tipo" />
+            <Link to="/"><img className="logo" src={logo} alt="Logo-Tipo" /></Link>
           </div>
 
           <div className="divInput">
@@ -29,7 +30,7 @@ function Header() {
             <div className="campoLogin">
               <span>Oi, Seja Bem-vindx!</span>
 
-              <span>ENTRE / REGISTRE-SE</span>
+              <Link to="/login"><span>ENTRE / REGISTRE-SE</span></Link>
             </div>
             <img src={imgLogin} alt="" />
           </div>
@@ -38,10 +39,10 @@ function Header() {
           <nav>
             <ul>
               <li>
-                <a href="/">HOME</a>
+                <Link to="/">HOME</Link>
               </li>
               <li>
-                <a href="">QUEM SOMOS</a>
+                <a href="">COMO FUNCIONA</a>
               </li>
               <li>
                 <a id="comprarLi" href="">

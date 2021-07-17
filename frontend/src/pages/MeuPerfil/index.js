@@ -21,7 +21,7 @@ function MeuPerfil(){
                             </div>
                             <h2>Meus Dados</h2>
                             <p>Aqui é o Seu Espaço Para Alterar Suas Informações Pessoais Previamente Cadastradas.</p>
-                            <button type="button">Acessar</button>
+                            <button type="button"><Link className="btn-saldo" to="/meus-dados">Acessar</Link></button>
                         </div>
         
                         <div className="meuSaldo">
@@ -40,7 +40,7 @@ function MeuPerfil(){
                             <h2>Cadastrar </h2>
                             <h2>Meus Livros</h2>
                             <p>Cadastre os livros que está disposto a trocar para receber créditos. Responda dúvidas de outros usuários.</p>
-                            <button type="button">Acessar</button>
+                            <button type="button"><Link className="btn-saldo" to="/livros">Acessar</Link></button>
                         </div>
         
                         <div className="pedidoTroca">
@@ -50,7 +50,7 @@ function MeuPerfil(){
                             <h2>Pedidos </h2>
                             <h2>de Troca</h2>
                             <p>Visualize aqui quem pediu os livros que você cadastrou e também acompanhe os seus pedidos de troca.</p>
-                            <button type="button">Acessar</button>
+                            <button type="button"><Link className="btn-saldo" to="/pedidos">Acessar</Link></button>
                         </div>
         
                     </div>

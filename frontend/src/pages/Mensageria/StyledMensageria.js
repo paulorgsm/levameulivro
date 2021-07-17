@@ -9,7 +9,6 @@ export const StyledMensageria = styled.div`
     font-size: 20px;
     font-weight: bold;
   }
-
   .mensageria {
     margin-left: 210px;
     margin-top: 30px;
@@ -23,7 +22,6 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
-
   .perguntaTitulo {
     margin-left: 210px;
     margin-top: 30px;
@@ -37,7 +35,6 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
-
   .perguntaBox {
     margin-left: 210px;
     margin-top: 30px;
@@ -49,7 +46,6 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
-
   .tituloImagem {
     padding-left: 10px;
     background-color: #4285f4;
@@ -61,7 +57,6 @@ export const StyledMensageria = styled.div`
     width: 120px;
     height: 50px;
   }
-
   .tituloLivro {
     padding-left: 9px;
     background-color: #4285f4;
@@ -73,7 +68,6 @@ export const StyledMensageria = styled.div`
     width: 260px;
     height: 50px;
   }
-
   .tituloSolicitante {
     padding-left: 9px;
     background-color: #4285f4;
@@ -85,7 +79,6 @@ export const StyledMensageria = styled.div`
     width: 260px;
     height: 50px;
   }
-
   .tituloPedido {
     padding-left: 9px;
     background-color: #4285f4;
@@ -97,7 +90,6 @@ export const StyledMensageria = styled.div`
     width: 200px;
     height: 50px;
   }
-
   .tituloMensagens {
     padding-left: 5px;
     background-color: #4285f4;
@@ -109,7 +101,6 @@ export const StyledMensageria = styled.div`
     width: 198px;
     height: 50px;
   }
-
   .conteudoImagem {
     padding-top: 15px;
     background-color: #f6f6f6;
@@ -121,7 +112,6 @@ export const StyledMensageria = styled.div`
     border-right: #4285f4 2px solid;
     border-bottom: #4285f4 2px solid;
   }
-
   .conteudoLivro {
     padding-top: 15px;
     padding-left: 10px;
@@ -138,7 +128,6 @@ export const StyledMensageria = styled.div`
     border-right: #4285f4 2px solid;
     border-bottom: #4285f4 2px solid;
   }
-
   .conteudoSolicitante {
     padding-top: 15px;
     padding-left: 10px;
@@ -156,7 +145,6 @@ export const StyledMensageria = styled.div`
     border-right: #4285f4 2px solid;
     border-bottom: #4285f4 2px solid;
   }
-
   .nomeSolicitante {
     padding-top: 15px;
     padding-left: 3px;
@@ -170,7 +158,6 @@ export const StyledMensageria = styled.div`
     width: auto;
     height: 30px;
   }
-
   .fotoSolicitante {
     padding-top: 15px;
     color: black;
@@ -182,7 +169,6 @@ export const StyledMensageria = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     height: 30px;
   }
-
   .conteudoPedido {
     padding-top: 15px;
     padding-left: 10px;
@@ -198,11 +184,9 @@ export const StyledMensageria = styled.div`
     border-right: #4285f4 2px solid;
     border-bottom: #4285f4 2px solid;
   }
-
   .conteudoPedido2 {
     padding-left: 30px;
   }
-
   .conteudoMensagens {
     padding-top: 15px;
     padding-left: 10px;
@@ -218,14 +202,12 @@ export const StyledMensageria = styled.div`
     border-right: #4285f4 2px solid;
     border-bottom: #4285f4 2px solid;
   }
-
   .center {
     display: block;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
   }
-
   .center2 {
     display: block;
     justify-content: center;
@@ -233,7 +215,6 @@ export const StyledMensageria = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
-
   .mensagens {
     padding-bottom: 20px;
     background-color: #e5e5e5;
@@ -246,14 +227,12 @@ export const StyledMensageria = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
   }
-
   .faleSolicitante {
     color: #4285f4;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
   }
-
   .input {
     padding: 2px;
     background-color: #f2f2f2;
@@ -267,7 +246,6 @@ export const StyledMensageria = styled.div`
     font-size: 15px;
     line-height: 30px;
   }
-
   .botao {
     background-color: #4285f4;
     border-radius: 10px;
@@ -283,13 +261,7 @@ export const StyledMensageria = styled.div`
     font-weight: bold;
     cursor: pointer;
   }
-
-<<<<<<< HEAD
-
   
-
-=======
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   .perguntasRespostas {
     margin-top: 50px;
     margin-left: 250px;
@@ -308,7 +280,6 @@ export const StyledMensageria = styled.div`
     font-size: 20px;
     line-height: 6rem;
   }
-
   .conversa {
     margin-left: 85px;
     background-color: #f2f2f2;
@@ -323,36 +294,26 @@ export const StyledMensageria = styled.div`
     font-size: 15px;
     line-height: 30px;
   }
-
   h2 {
     font-weight: bold;
   }
-
   .conversaResposta {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 2px;
-<<<<<<< HEAD
-
   }
   .conversaResposta > h2{
     margin-top: 25px;
   }
-
   .conversaResposta > p {
     margin-top: 25px;
-
-=======
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   }
-
   .box {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
   }
-
   .paginas {
     margin-bottom: 40px;
     margin-top: 40px;
@@ -363,7 +324,6 @@ export const StyledMensageria = styled.div`
     text-align: center;
     align-items: center;
   }
-
   .botaoPag {
     padding-top: 4px;
     border: #4285f4 1px solid;
@@ -374,7 +334,6 @@ export const StyledMensageria = styled.div`
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
   }
-
   .perguntaFeitas {
     margin-left: 210px;
     margin-top: 30px;
@@ -388,7 +347,6 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
-
   .perguntasRespostasVerde {
     margin-top: 50px;
     margin-left: 250px;
@@ -407,7 +365,6 @@ export const StyledMensageria = styled.div`
     font-size: 20px;
     line-height: 6rem;
   }
-
   .conversaVerde {
     margin-left: 85px;
     background-color: #f2f2f2;
