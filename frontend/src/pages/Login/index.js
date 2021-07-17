@@ -10,6 +10,116 @@ function Login() {
           </h2>
         </div>
         <section className="form">
+         
+            
+            <div>
+            <div className="login">
+              <h1>Faça Seu Login</h1>
+              <h2>se já tiver se cadastro antes</h2>
+            </div>
+              <form action="/login" method="POST">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Digite seu e-mail..."
+                />
+                <input
+                  type="password"
+                  name="senha"
+                  id="senha"
+                  placeholder="Digite sua senha..."
+                />
+                <div className="opcoes">
+                  <div className="lembrarsenha">
+                      <input id="checkbox" type="checkbox" name="lembrar login" />
+                    <div>
+                      <label for="lembrar login">Lembrar de mim</label>
+                      <a href="#">Esqueci minha senha</a>
+                    </div>
+                  </div>
+                </div>
+                <div className="entrar">
+                  <button type="submit">ENTRAR</button>
+                </div>
+              </form>
+            </div>
+            <div className="ou">
+              <h2>ou</h2>
+            </div>
+            <div>
+              <div className="cadastro">
+                <h1>Crie Sua Conta</h1>
+                <h2>se ainda não tiver cadastro</h2>
+              </div>
+              <div>
+                <form action="/login" method="POST">
+                  <input
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    placeholder="Digite seu primeiro nome..."
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Digite seu e-mail..."
+                  />
+                  <input
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    placeholder="Agora crie uma senha..."
+                  />
+                  <input
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    placeholder="Confirme sua senha..."
+                  />
+                  <div className="opcoes">
+                    <div className="opcoes-termos">
+                      <div className="termosite">
+                        <input
+                          className="inputQuadrado"
+                          type="checkbox"
+                          name="termos do site"
+                        />
+                        <label for="termos do site">Li e concordo com os</label>
+                        <a href="#">Termos do Site</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="cadastrar">
+                    <button type="submit">CADASTRAR</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+         
+        </section>
+      </main>
+    </StyledLogin>
+  );
+}
+export default Login;
+
+
+
+/* 
+import { StyledLogin } from "./StyledLogin";
+
+function Login() {
+  return (
+    <StyledLogin>
+      <main>
+        <div>
+          <h2 className="entrar-no-time">
+            Pronto para entrar no time? Então...
+          </h2>
+        </div>
+        <section className="form">
           <div>
             <div className="login">
               <h1>Faça Seu Login</h1>
@@ -106,3 +216,4 @@ function Login() {
   );
 }
 export default Login;
+ */

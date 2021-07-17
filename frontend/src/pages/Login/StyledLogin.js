@@ -1,11 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const StyledLogin = styled.div`
-  strong {
-    font-weight: bold;
-    color: #feee08;
-  }
-
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
   section {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +21,6 @@ export const StyledLogin = styled.div`
     align-content: center;
     padding: 2px;
   }
-
   .entrar-no-time {
     display: flex;
     align-items: center;
@@ -31,14 +33,12 @@ export const StyledLogin = styled.div`
     top: 259px;
     color: #4285f4;
   }
-
   .login {
     display: block;
     width: 100%;
     padding: 10px;
     margin: 30px;
   }
-
   .login h1 {
     width: 329px;
     height: 55px;
@@ -51,7 +51,6 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #eb4335;
   }
-
   .login h2 {
     width: 329px;
     height: 30px;
@@ -65,14 +64,12 @@ export const StyledLogin = styled.div`
     color: #000000;
     margin: 3px;
   }
-
   .cadastro {
     display: block;
     width: 100%;
     padding: 10px;
     margin: 30px;
   }
-
   .cadastro h1 {
     width: 329px;
     height: 55px;
@@ -85,7 +82,6 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #34a853;
   }
-
   .cadastro h2 {
     width: 329px;
     height: 30px;
@@ -98,7 +94,6 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #000000;
   }
-
   form input {
     display: block;
     align-items: center;
@@ -110,7 +105,6 @@ export const StyledLogin = styled.div`
     background-color: #e0e0e0;
     border: none;
   }
-
   .opcoes {
     font-style: normal;
     font-weight: normal;
@@ -120,7 +114,6 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #000000;
   }
-
   button {
     display: block;
     margin: 25px auto;
@@ -140,13 +133,53 @@ export const StyledLogin = styled.div`
   .inputQuadrado {
     width: 18px;
     height: 18px;
-    margin-right: 0px;
+    margin: 5px;
   }
   .entrar button {
     background-color: #eb4335;
   }
-
   .cadastrar button {
     background-color: #34a853;
   }
+
+  .termosite{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .termosite label{
+    margin: 5px;
+  }
+
+  .lembrarsenha{
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    align-items: center;
+    margin: -14px 0;
+  }
+
+  .lembrarsenha input{
+    width: 20px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    border: none;
+  }
+
+  .lembrarsenha label{
+    margin-left: -15px;
+  }
+
+  .lembrarsenha a{
+    margin-left: 130px;
+  }
+
+ #checkbox{
+    width: 20px;
+  }
+
 `;
