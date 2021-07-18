@@ -11,12 +11,12 @@ export const StyledFooter = styled.div`
 
 .footer {
     width: auto;
-    height: 250px;
+    height: 240px;
     background: #61b52f;
     display: flex;
     margin: 0 auto;
     justify-content: center;
-    align-items: center;
+/*     align-items: center; */
     margin-top: 60px;
   }
 

@@ -1,6 +1,13 @@
 import styled, { css } from "styled-components";
 
 export const StyledMeuSaldo = styled.div`
+
+main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+
   .saudacao {
     margin: 20px;
     text-align: center;
@@ -11,7 +18,7 @@ export const StyledMeuSaldo = styled.div`
   }
 
   .meuSaldo {
-    margin-left: 210px;
+    margin-left: 76px;
     margin-top: 30px;
     line-height: 55px;
     text-align: left;
@@ -23,19 +30,23 @@ export const StyledMeuSaldo = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
-<<<<<<< HEAD
+  
+    .meuSaldo > p {
+      padding-left: 10px;
+    }
+    
   .info {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+
+    justify-content: center;
 }
+
 .botoes {
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
 margin-bottom: 57px;
-
 }
 
 .botaoVerde {
@@ -52,7 +63,6 @@ margin-bottom: 57px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-
 }
 
 .botaoRosa {
@@ -70,38 +80,28 @@ margin-bottom: 57px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-
 }
-=======
-
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   .infobox {
-    margin-left: 210px;
-    margin-bottom: 40px;
+    margin-right: 30px;
+
     line-height: 55px;
-    text-align: left;
-    width: auto;
+
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+
   }
 
   .infobox2 {
-    margin-top: 40px;
-    margin-left: 60px;
+    margin-top: 65px;
+
     margin-bottom: 40px;
     line-height: 55px;
-    text-align: left;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
 
+  }
   .titulo {
-    margin-top: 30px;
+    margin-top: 25px;
     padding-left: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     background-color: #4285f4;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -114,11 +114,10 @@ margin-bottom: 57px;
     width: 500px;
     height: 35px;
   }
-
   .conteudo {
     display: flex;
     flex-direction: row;
-    padding-top: 10px;
+
     padding-left: 10px;
     justify-content: left;
     text-align: left;
@@ -132,7 +131,6 @@ margin-bottom: 57px;
     border-bottom: #4285f4 2px solid;
     border-left: #4285f4 2px solid;
   }
-
   .conteudo strong {
     color: red;
     font-size: 15px;
@@ -147,19 +145,41 @@ margin-bottom: 57px;
     flex-direction: column;
     padding-top: 10px;
     padding-left: 10px;
+    padding-bottom: 10px;
     justify-content: left;
     text-align: left;
     width: 496px;
-    height: auto;
+
     color: black;
     font-size: 15px;
     font-weight: bold;
-    line-height: 2em;
+    line-height: 0.2em;
     font-family: Arial, Helvetica, sans-serif;
     border-right: #4285f4 2px solid;
     border-bottom: #4285f4 2px solid;
     border-left: #4285f4 2px solid;
   }
+
+  .conteudoPedidos2 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    justify-content: left;
+    text-align: left;
+    width: 496px;
+
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 0.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    border-right: #4285f4 2px solid;
+    border-bottom: #4285f4 2px solid;
+    border-left: #4285f4 2px solid;
+  }
+
 
   .total {
     padding-left: 10px;
@@ -174,12 +194,18 @@ margin-bottom: 57px;
     justify-content: center;
     text-align: left;
     width: 500px;
-    height: 35px;
+    height: 45px;
   }
-
   .total strong {
     color: yellow;
     font-size: 15px;
     font-weight: bold;
   }
+
+.titles {
+    display: flex;
+    margin-top: -5px;
+  }
+
 `;
+
