@@ -23,7 +23,10 @@ export const StyledMeuSaldo = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
-<<<<<<< HEAD
+  
+    .meuSaldo > p {
+      padding-left: 10px;
+    }
   .info {
     display: flex;
     flex-direction: row;
@@ -72,9 +75,7 @@ margin-bottom: 57px;
     cursor: pointer;
 
 }
-=======
 
->>>>>>> 36f82578ed1694b7182749c6a1b847ee042c6c66
   .infobox {
     margin-left: 210px;
     margin-bottom: 40px;
@@ -150,11 +151,11 @@ margin-bottom: 57px;
     justify-content: left;
     text-align: left;
     width: 496px;
-    height: auto;
+    height: 203px;
     color: black;
     font-size: 15px;
     font-weight: bold;
-    line-height: 2em;
+    line-height: 0.2em;
     font-family: Arial, Helvetica, sans-serif;
     border-right: #4285f4 2px solid;
     border-bottom: #4285f4 2px solid;

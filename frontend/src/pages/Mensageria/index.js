@@ -2,11 +2,13 @@ import imgMensageria1 from "../../assets/img/mensageria1.svg";
 import imgMensageria2 from "../../assets/img/mensageria2.svg";
 import imgMensageria3 from "../../assets/img/mensageria3.svg";
 import imgLivro from "../../assets/img/livro.svg";
+import imgLivro2 from "../../assets/img/livro2.svg";
 import imgIcon from "../../assets/img/icon.svg";
 import imgVerpedido from "../../assets/img/verpedido.svg";
 import imgMensagem from "../../assets/img/mensagens.svg";
 import imgHook from "../../assets/img/hook.svg";
 import setaLado from "../../assets/img/setaLado.svg";
+import setaLadoDir from "../../assets/img/setaLadoDireito.svg";
 import mensagemVerde from "../../assets/img/mensagensVerde.svg";
 import { StyledMensageria } from "./StyledMensageria";
 
@@ -20,14 +22,14 @@ function Mensageria() {
         <div className="mensageria">
           <img
             src={imgMensageria1}
-            alt=""
+            alt="" width="60px"
           />
           <p>Mensageria</p>
         </div>
         <div className="perguntaTitulo">
           <img
             src={imgMensageria2}
-            alt=""
+            alt="" width="40px" 
           />
           <p>Quem está perguntando?</p>
         </div>
@@ -117,13 +119,14 @@ function Mensageria() {
               <img src={setaLado} />
             </div>
             <div className="botaoPag">1</div>
-            <div className="botaoPag"> </div>
+            <div className="botaoPag"><img src={setaLadoDir} />
+            </div>
           </div>
         </div>
-        <div className="perguntaFeitas">
+        <div className="perguntasFeitas">
           <img
             src={imgMensageria3}
-            alt=""
+            alt="" width="40px"
           />{" "}
           <p>Perguntas que fiz:</p>
         </div>
@@ -134,7 +137,7 @@ function Mensageria() {
           <div className="tituloPedido">Pedido?</div>
           <div className="tituloMensagens">Mensagens:</div>
           <div className="conteudoImagem">
-            <img src="../assets/img/livro2.svg" alt="" width="80px" />
+            <img src= {imgLivro2} alt="" width="80px" />
           </div>
           <div className="conteudoLivro">
             Pensamento Crítico: O poder da Lógica e da argumentação
@@ -154,7 +157,7 @@ function Mensageria() {
             <p>
               <a href="">
                 <img
-                  src="../assets/img/mensagensVerde.svg"
+                  src={mensagemVerde}
                   alt=""
                   width="170px"
                   href=""
@@ -179,9 +182,7 @@ function Mensageria() {
                 ENVIAR MENSAGEM
               </button>
             </p>
-            <div className={mensagemVerde}>
-              PERGUNTAS E RESPOSTAS JÁ REALIZADAS
-            </div>
+              <div class="perguntasRespostasVerde">PERGUNTAS E RESPOSTAS JÁ REALIZADAS</div>
             <div className="conversaVerde">
               <h2>
                 Você consegue postar o livro nos Correios ainda hoje se eu
@@ -189,11 +190,11 @@ function Mensageria() {
               </h2>
               <p>Pergunta de: Você | Data 12/03/2021 às 13:45:19</p>
               <div className="conversaResposta">
-                <img src={imgHook} width="30px" />
+                <img src={imgHook} width="20px" />
                 <h2>
                   Resposta de Zacarias: Se pedir até o meio-dia, consigo sim!{" "}
                 </h2>{" "}
-                | Data: 12/03/2021 às 13:50:55
+                <p>| Data: 12/03/2021 às 13:50:55</p>
               </div>
             </div>
           </div>
@@ -204,7 +205,8 @@ function Mensageria() {
               <img src={setaLado} />
             </div>
             <div className="botaoPag">1</div>
-            <div className="botaoPag"> </div>
+            <div className="botaoPag"><img src={setaLadoDir} />
+            </div>
           </div>
         </div>
       </main>

@@ -12,7 +12,7 @@ export const StyledMensageria = styled.div`
   .mensageria {
     margin-left: 210px;
     margin-top: 30px;
-    line-height: 55px;
+    line-height: 30px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     color: #4285f4;
@@ -22,10 +22,15 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
+  
+  .mensageria > p {
+    padding-left: 5px;
+  }
+
   .perguntaTitulo {
     margin-left: 210px;
-    margin-top: 30px;
-    line-height: 55px;
+    margin-top: 10px;
+    line-height: 30px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     color: #eb4335;
@@ -35,6 +40,11 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
+
+  .perguntaTitulo > p {
+    padding-left: 5px;
+  }  
+
   .perguntaBox {
     margin-left: 210px;
     margin-top: 30px;
@@ -308,6 +318,7 @@ export const StyledMensageria = styled.div`
   }
   .conversaResposta > p {
     margin-top: 25px;
+    margin-left: 5px;
   }
   .box {
     display: flex;
@@ -334,10 +345,10 @@ export const StyledMensageria = styled.div`
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
   }
-  .perguntaFeitas {
+  .perguntasFeitas {
     margin-left: 210px;
     margin-top: 30px;
-    line-height: 55px;
+    line-height: 30px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     color: #34a853;
@@ -347,6 +358,11 @@ export const StyledMensageria = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
+
+  .perguntasFeitas > p {
+    padding-left: 5px;
+  }
+  
   .perguntasRespostasVerde {
     margin-top: 50px;
     margin-left: 250px;

@@ -9,8 +9,8 @@ function MeuSaldo() {
           <p>Aeee! Seja Bem-vindx ao nosso clube!</p>
         </div>
         <div className="meuSaldo">
-          <img src={imgSaldo} alt=""  />
-          Meu Saldo
+          <img src={imgSaldo} alt="" width="50px"  />
+          <p>Meu Saldo</p>
         </div>
         <div className="info">
           <div className="infobox">
@@ -21,7 +21,7 @@ function MeuSaldo() {
 
             <div className="titulo">PEDIDOS DE TROCA QUE ATENDI:</div>
             <div className="conteudoPedidos">
-              #1111 - Didi Mocó | Em: 07/07/2020
+              <p>#1111 - Didi Mocó | Em: 07/07/2020</p>
               <p>#1121 - Didi Mocó | Em: 08/08/2020</p>
               <p>#1131 - Didi Mocó | Em: 09/09/2020</p>
               <p>#21918 - Compra Aprovada | Em: 10/10/2020</p>
@@ -44,7 +44,7 @@ function MeuSaldo() {
             </div>
             <div className="titulo">PEDIDOS DE TROCA QUE FIZ:</div>
             <div className="conteudoPedidos">
-              #1211 - Dedé | Em: 09/07/2020
+              <p>#1211 - Dedé | Em: 09/07/2020</p>
               <p>#1221 - Zacarias | Em: 10/08/2020</p>
               <p>#1231 - Didi Mocó | Em: 11/09/2020</p>
               <p>1241 - Zacarias | Em: 12/10/2020</p>
