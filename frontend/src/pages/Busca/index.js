@@ -8,7 +8,7 @@ import { StyledBusca } from "./StyledBusca";
 function Busca() {
   return (
     <StyledBusca>
-      <main>
+      <main id="main-container">
         <section className="section-principal">
           <article>
             <p>matéria / curso</p>

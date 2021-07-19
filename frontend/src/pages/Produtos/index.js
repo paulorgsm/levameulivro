@@ -1,5 +1,10 @@
 import livroProduto from "../../assets/img/livroProduto.svg";
 import imgMostruarioLivro from "../../assets/img/imgMostruarioLivro.svg";
+import coracao from "../../assets/img/coracao.svg";
+import problema from "../../assets/img/problema.svg";
+import login1 from "../../assets/img/login.svg";
+import estrela from "../../assets/img/estrela.svg";
+import perguntas from "../../assets/img/perguntas.svg";
 import { StyledProdutos } from "./StyledProdutos";
 
 function Produtos() {
@@ -15,8 +20,8 @@ function Produtos() {
               <img className="produtoFoto" src={livroProduto}></img>
               <div className="fotosMostruario">
                 <img src={imgMostruarioLivro} alt=""></img>
-                <img src="../assets/img/imgMostruarioLivro.svg" alt=""></img>
-                <img src="../assets/img/imgMostruarioLivro.svg" alt=""></img>
+                <img src={imgMostruarioLivro}  alt=""></img>
+                <img src= {imgMostruarioLivro}  alt=""></img>
               </div>
             </div>
             <div className="informacoesLivro">
@@ -28,7 +33,7 @@ function Produtos() {
                 <div className="infosLivros">
                   <img
                     className="imgsIcones"
-                    src="../assets/img/coracao.svg"
+                    src= {coracao}
                     alt=""
                   ></img>
                   <p id="alinhaSalvar">salvar</p>
@@ -36,7 +41,7 @@ function Produtos() {
                 <div className="infosLivros">
                   <img
                     className="imgsIcones"
-                    src="../assets/img/problema.svg"
+                    src={problema}
                     alt=""
                   ></img>
                   <div className="txtInfoDono">
@@ -47,7 +52,7 @@ function Produtos() {
                 <div className="infosLivros">
                   <img
                     className="imgsIcones"
-                    src="../assets/img/login.svg"
+                    src={login1}
                     alt=""
                   ></img>
                   <div className="txtInfoDono">
@@ -57,7 +62,7 @@ function Produtos() {
                 </div>
                 <div>
                   <p className="centralizar">reputação</p>
-                  <img src="../assets/img/estrela.svg" alt=""></img>
+                  <img src={estrela} alt=""></img>
                 </div>
               </div>
               <div className="infosLivros">
@@ -197,10 +202,13 @@ function Produtos() {
           <h2 class="centralizar txtAzul">FALE COM DONO(A) DO LIVRO</h2>
           <form class="form" action="" method="POST">
             <label for="contato"></label>
-            <textarea name="contato" id="contato">
-              {" "}
-              Escreva aqui sua pergunta para o dono(a) do livro...
-            </textarea>
+            <textarea 
+                 name="contato" 
+                 id="contato"
+                 cols="40"
+                 rows="5"
+                 placeholder="Escreva aqui sua pergunta para o dono(a) do livro...">  
+                </textarea>
           </form>
           <button class="btn btnAzul" type="submit">
             {" "}
@@ -221,7 +229,7 @@ function Produtos() {
             <div class="infosLivros">
               <img
                 class="perguntasSub"
-                src="../assets/img/perguntas.svg"
+                src={perguntas}
                 alt=""
               ></img>
               <p class="negrito resposta ">
