@@ -1,6 +1,11 @@
 import { StyledCadastro } from "./StyledCadastro";
+import React, {useState } from "react";
 
 function Cadastro() {
+ const [mustShow, setMustShow] = useState(true);
+  function onClickHide (){
+    setMustShow(!mustShow);
+  }
   return (
     <StyledCadastro>
       <main>
@@ -8,20 +13,22 @@ function Cadastro() {
           <div className="cadastroChamada">
             <p>Aeee! Seja Bem-Vindx ao Nosso Clube!</p>
           </div>
-
           <div className="cads">
             <div className="finalizeCad">
               <h2>Finalize seu Cadastro</h2>
               <p>se não quiser terminar agora, tudo bem, mas será</p>
               <p> obrigatório na hora de pegar um livro...</p>
-              <button type="submit">TERMINAR AGORA</button>
+              <button type="button" onClick ={onClickHide}>TERMINAR AGORA</button>
             </div>
             <div className="finalizeDepois">
               <h2>Prefiro fazer isso depois...</h2>
-              <button type="submit">VOLTAR PARA HOME</button>
+              <button type="button">
+                <a className = "voltarHome" href= '/'>VOLTAR PARA HOME</a>
+              </button>
             </div>
           </div>
         </section>
+        {!mustShow && (
         <section className="formsCadastros">
           <h2>Finalizando Cadastro</h2>
           <div className="forms">
@@ -190,6 +197,7 @@ function Cadastro() {
             </div>
           </div>
         </section>
+        )}
       </main>
     </StyledCadastro>
   );

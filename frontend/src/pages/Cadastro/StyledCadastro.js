@@ -126,6 +126,14 @@ export const StyledCadastro = styled.div`
     border-spacing: 0;
   }
 
+  @font-face{
+    font-family: 'Roboto', sans-serif;
+    src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+  }
+  *{
+    font-family: 'Roboto', sans-serif;
+  }
+
   .cadChamada {
     width: 100%;
     display: flex;
@@ -144,7 +152,6 @@ export const StyledCadastro = styled.div`
   }
 
   .cadastroChamada p {
-    font-family: sans-serif;
     font-weight: 500;
     color: #4285f4;
   }
@@ -165,7 +172,6 @@ export const StyledCadastro = styled.div`
 
   .finalizeCad h2 {
     height: 56px;
-    font-family: sans-serif;
     font-weight: 700;
     font-size: 44px;
     line-height: 56px;
@@ -173,7 +179,6 @@ export const StyledCadastro = styled.div`
     margin: 5px 0px;
   }
   .finalizeCad p {
-    font-family: sans-serif;
     size: 18px;
     line-height: 26px;
     text-align: center;
@@ -186,13 +191,16 @@ export const StyledCadastro = styled.div`
     height: 46px;
     background: #eb4335;
     border-color: #eb4335;
-    font-family: sans-serif;
     font-size: 18px;
     line-height: 26px;
     color: white;
     margin: auto;
   }
-
+  .voltarHome{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+  }
   .finalizeDepois {
     width: 382px;
     height: 192px;
@@ -202,7 +210,6 @@ export const StyledCadastro = styled.div`
     margin-left: 100px;
   }
   .finalizeDepois h2 {
-    font-family: sans-serif;
     font-weight: 700;
     line-height: 56px;
     font-size: 44px;
@@ -215,7 +222,6 @@ export const StyledCadastro = styled.div`
     height: 46px;
     background: #2f80ed;
     border-color: #2f80ed;
-    font-family: sans-serif;
     font-size: 18px;
     line-height: 26px;
     color: white;
@@ -239,7 +245,6 @@ export const StyledCadastro = styled.div`
     text-align: center;
     margin: 0 auto;
     padding-left: 140px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .forms p {
     padding-bottom: 23px;
@@ -248,7 +253,6 @@ export const StyledCadastro = styled.div`
   }
 
   .formsCadastros h2 {
-    font-family: sans-serif;
     height: 55px;
     color: #f62cbc;
     text-align: center;
@@ -298,7 +302,6 @@ export const StyledCadastro = styled.div`
     width: 216px;
     height: 46px;
     background: #f62cbc;
-    font-family: sans-serif;
     color: white;
     border-radius: 10px;
     border: none;
