@@ -190,7 +190,8 @@ export const StyledMeusDados = styled.div`
     display: flex;
   }
   .btn-editar {
-    width: 90px;
+    padding: 10px;
+    width: 190px;
     height: 35px;
     border: none;
     border-radius: 5px;
@@ -229,10 +230,25 @@ export const StyledMeusDados = styled.div`
   .btn-apagar span {
     margin: auto;
   }
+  .material-icons{
+    width: 95px;
+  }
   .material-icons1 {
     margin: 6px 10px;
+    
   }
   .material-icons2 {
-    margin: 13px 2px;
+    font-size: 16px;
+    margin: 6px 10px;
+    weigth: 500;
   }
+
+  button {
+    cursor: pointer;
+  
+  }
+button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
+}
 `;

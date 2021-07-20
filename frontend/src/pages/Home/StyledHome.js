@@ -558,4 +558,11 @@ export const StyledHome = styled.div`
     border-left: 2px solid white; /* Adiciona borda esquerda na div como ser fosse uma linha.*/
     margin-left: 15px;
   }
+  input {
+    cursor: pointer;
+  
+  }
+  input:hover{
+    opacity: 0.7;
+  }
 `;

@@ -181,5 +181,12 @@ export const StyledLogin = styled.div`
  #checkbox{
     width: 20px;
   }
-
+  button {
+    cursor: pointer;
+  
+  }
+  button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
 `;

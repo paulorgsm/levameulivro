@@ -195,7 +195,7 @@ nav{
     width: 216px;
     height: 46px;
     background: #EB4335;;
-    border-color: #EB4335;;
+    border:none;
     font-family: sans-serif;
     font-size: 18px;
     line-height: 26px;
@@ -208,7 +208,7 @@ nav{
     background-color: #ff1500;
     color: white;
     transition: 0.3s;
-    transform: scale(1.1);
+  
 }
 
 .meuSaldo{
@@ -251,7 +251,7 @@ nav{
     width: 216px;
     height: 46px;
     background: #34A853;
-    border-color: #34A853;
+    border: none;
     font-family: sans-serif;
     font-size: 18px;
     line-height: 26px;
@@ -263,7 +263,6 @@ nav{
     background-color: #02b130;
     color: white;
     transition: 0.3s;
-    transform: scale(1.1);
 }
 
 .imgSaldo{
@@ -508,7 +507,7 @@ span {
     width: 216px;
     height: 46px;
     background: #4285F4;
-    border-color: #4285F4;
+    border: none;
     font-family: sans-serif;
     font-size: 18px;
     line-height: 26px;
@@ -521,7 +520,6 @@ span {
     background-color: #0061fd;
     color: white;
     transition: 0.3s;
-    transform: scale(1.1);
 }
 
 /* CSS Cadastrar Pedidos de Troca*/
@@ -576,7 +574,7 @@ span {
     width: 216px;
     height: 46px;
     background: #FCBC05;
-    border-color: #FCBC05;
+    border:none;
     font-family: sans-serif;
     font-size: 18px;
     line-height: 26px;
@@ -589,7 +587,6 @@ span {
     background-color: #ffae00;
     color: white;
     transition: 0.3s;
-    transform: scale(1.1);
 }
 
 .btn-saldo {
@@ -598,5 +595,12 @@ span {
     font-family: sans-serif;
     font-size: 18px;
 }
-
+button {
+    cursor: pointer;
+  
+  }
+button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
+}
 `;

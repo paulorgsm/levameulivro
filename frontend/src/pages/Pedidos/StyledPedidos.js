@@ -636,4 +636,13 @@ export const StyledPedidos = styled.div`
     border: 1px solid #f62cbc;
     margin-left: 28px;
   }
+
+  button {
+    cursor: pointer;
+  
+  }
+button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
+}
 `;

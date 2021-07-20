@@ -16,7 +16,7 @@ function Busca() {
 
           <section className="container-checkbox">
             <div className="div-checkbox">
-              <input type="checkbox" id="container" />
+              <button type="checkbox" id="container" />
               <label for="container">testando..</label>
             </div>
 

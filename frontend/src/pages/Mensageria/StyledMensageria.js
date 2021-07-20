@@ -391,6 +391,14 @@ export const StyledMensageria = styled.div`
     font-size: 15px;
     line-height: 30px;
   }
+  button {
+    cursor: pointer;
+  
+  }
+  button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
 `;
 
 

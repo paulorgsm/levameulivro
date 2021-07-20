@@ -206,6 +206,14 @@ margin-bottom: 57px;
     display: flex;
     margin-top: -5px;
   }
+  button {
+    cursor: pointer;
+  
+  }
+button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
+}
 
 `;
 

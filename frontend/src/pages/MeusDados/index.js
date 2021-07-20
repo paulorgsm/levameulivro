@@ -1,4 +1,7 @@
 import { StyledMeusDados } from "./StyledMeuDados";
+import { FaRegEdit , FaTrash } from "react-icons/fa";
+import {  BsPlusCircleFill} from "react-icons/bs";
+
 
 function meusDados() {
   return (
@@ -134,17 +137,21 @@ function meusDados() {
                       <p> CEP: 22780-086 </p>
                       <span className="btns-endereco">
                         <button type="submit" className="btn-editar">
-                          <span className="material-icons">delete</span>
-                          <span>apagar</span>
+                          <span className="material-icons">
+                           < FaRegEdit size={20} />
+                            delete</span>
+                          <span className="material-icons">
+                          < FaTrash size={20} />
+                            apagar</span>
                         </button>
                       </span>
                     </div>
                   </div>
                   <button type="submit" className="btn-incluir">
-                    <span className="material-icons material-icons1">
-                      add_circle{" "}
+                    <span className=" material-icons1">
+                    < BsPlusCircleFill size={20} />
                     </span>
-                    <span>Incluir Novo Endereço</span>
+                    <span className=" material-icons2">Incluir Novo Endereço</span>
                   </button>
                 </div>
               </div>

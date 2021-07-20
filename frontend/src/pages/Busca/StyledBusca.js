@@ -288,6 +288,11 @@ a {
 .setaLado > img {
 }
 
-} 
+input {
+  cursor: pointer;
+}
+input:hover{
+  opacity: 0.7;
+}
 
 `;

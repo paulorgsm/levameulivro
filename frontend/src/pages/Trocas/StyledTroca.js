@@ -418,4 +418,13 @@ export const StyledTroca = styled.div`
     margin-top: 2%;
     margin-bottom: 25px;
   }
+
+  button {
+    cursor: pointer;
+  
+  }
+  button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
 `;
