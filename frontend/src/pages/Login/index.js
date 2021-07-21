@@ -22,6 +22,12 @@ function Login() {
     }
     
   }
+
+  async function Login (event){
+    event.preventDefault();
+    const {data} = await api.get('/usuarios/login', {email: logEmail, senha: logSenha})
+    sessionStorage.setItem('token', data.token)
+  }
   
   return (
     <StyledLogin>
@@ -37,7 +43,7 @@ function Login() {
               <h1>Faça Seu Login</h1>
               <h2>se já tiver se cadastro antes</h2>
             </div>
-              <form>
+              <form onSubmit ={(event)=> Login(event)}>
                 <input
                   type="email"
                   name="email"
@@ -58,7 +64,7 @@ function Login() {
                   <div className="lembrarsenha">
                       <input id="checkbox" type="checkbox" name="lembrar login" />
                     <div>
-                      <label for="lembrar login">Lembrar de mim</label>
+                      <label htmlFor="lembrar login">Lembrar de mim</label>
                       <a href="#">Esqueci minha senha</a>
                     </div>
                   </div>
@@ -118,7 +124,7 @@ function Login() {
                           type="checkbox"
                           name="termos do site"
                         />
-                        <label for="termos do site">Li e concordo com os</label>
+                        <label htmlFor="termos do site">Li e concordo com os</label>
                         <a href="#">Termos do Site</a>
                       </div>
                     </div>

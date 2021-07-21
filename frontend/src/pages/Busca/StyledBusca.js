@@ -181,7 +181,10 @@ a {
   text-align: center;
   padding:0px 0px 10px 5px;
 }
-
+button{
+  heigth: 44px;
+  width: 110px;
+}
 .btn1 {
   background: #EB4335;
   outline: none;

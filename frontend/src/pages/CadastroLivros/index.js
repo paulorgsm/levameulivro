@@ -5,10 +5,56 @@ import imgCadLivro from "../../assets/img/imgCadLivro.svg"
 import imgEditar from "../../assets/img/editar.svg"
 import imgLixeira from "../../assets/img/lixeira.svg"
 import imgSetaPag from "../../assets/img/seta-pag.svg"
+import api from "../../services/api";
+import React, { useState } from "react";
+
 //import {Link} from "react-router-dom"
 
 
 export default function CadastroLivros(){
+
+    const [ISBN, setISBN] = useState("");
+    const [titulo, setTitulo] = useState("");
+    const [autor, setAutor] = useState("");
+    const [editora, setEditora] = useState("");
+    const [anoPublicacao, setAnoPublicacao] = useState("");
+    const [numeroPaginas, setNumeroPaginas] = useState("");
+    const [sinopse, setSinopse] = useState("");
+    const [idioma, setIdioma] = useState("");
+    const [conservacao, setConservacao] = useState("");
+    const [materia, setMateria] = useState("");
+    const [nivel, setNivel] = useState("");
+    const [estadoLivro, setEstadoLivro] = useState("");
+    const [imgLivro, setImgLivro] = useState("")
+
+    const token = sessionStorage.getItem('token')
+
+    async function inserirDadosLivros(event) {
+    event.preventDefault()
+ 
+    await api.post("/livros/", { 
+        autor: autor,
+        nome_livro: titulo,
+        editora: editora,
+        ano_pub: anoPublicacao,
+        idiom: idioma,
+        num_paginas: numeroPaginas,
+        estado_livro: estadoLivro,
+        conservacao: conservacao,
+        materia: materia,
+        nivel: nivel,
+        isbn: ISBN,
+        sinopse: sinopse,
+        
+    }, 
+    
+    {files: imgLivro},
+    {
+        headers: {authorization: `Bearer ${token}`}
+    }
+    )
+  }
+
     return (
       <StyledCadastroLivro>
         <main>
@@ -27,7 +73,7 @@ export default function CadastroLivros(){
                       <img src={imgPlus} alt=""/>
                       Incluir Novo Livro</button>
 
-                  <label for="organizar"></label>
+                  <label htmlFor="organizar"></label>
                   <select name="organizar" id="organizar" className="btn-filtro">
                       <option value="mais-novos" className="btn-org">Mais Novos</option>
                       <option value="mais-antigos" className="btn-org">Mais Antigos</option>
@@ -86,30 +132,56 @@ export default function CadastroLivros(){
               <h2>PREENCHA AS INFORMAÇÕES A SEGUIR:</h2>
                 <section className="cadInfos">
                   <div className="total">
-                    <form className="parte1" action="" method="post">
+                    <form className="parte1" onSubmit={(event) => inserirDadosLivros(event)}>
                           
 
                           <div className="camposform">
                               <div className="isbn">
-                                  <label for="ISBN">Cadastrar ISBN ou ISSN:</label>
-                                  <input type="text" name="ISBN" id="ISBN" placeholder="Digite o ISBN ou ISSN..."/>
+                                  <label htmlFor="ISBN">Cadastrar ISBN ou ISSN:</label>
+                                  <input 
+                                  type="text" 
+                                  name="ISBN" 
+                                  id="ISBN" 
+                                  placeholder="Digite o ISBN ou ISSN..."
+                                  value = {ISBN}
+                                  onChange={(event) => setISBN(event.target.value)}
+                                  />
+                                  
                               </div>
 
                               <div className="titulo">
-                                  <label for="titulo">Título do Livro:</label>
-                                  <input type="text" name="titulo" id="titulo" placeholder="Digite o Nome do Livro..."/>
+                                  <label htmlFor="titulo">Título do Livro:</label>
+                                  <input 
+                                  type="text" 
+                                  name="titulo" 
+                                  id="titulo" 
+                                  placeholder="Digite o Nome do Livro..."
+                                  value = {titulo}
+                                  onChange={(event) => setTitulo(event.target.value)}
+                                  />
                               </div>
 
                               <div className="autor">
-                                  <label for="autor">Autor(a) / Autores:</label>
-                                  <input type="text" name="autor" id="autor" placeholder="Digite os Autores do Livro..."/>
+                                  <label htmlFor="autor">Autor(a) / Autores:</label>
+                                  <input 
+                                  type="text" 
+                                  name="autor" 
+                                  id="autor" 
+                                  placeholder="Digite os Autores do Livro..."
+                                  value = {autor}
+                                  onChange={(event) => setAutor(event.target.value)}/>
                               </div>
 
                               <div className="elDuplo">
 
                                   <div className="divEnsino">
-                                      <label for="ensino">Nível de Ensino</label>
-                                      <select name="ensino" className="nivelEnsino" placeholder="Selecione uma opção...">
+                                      <label htmlFor="ensino">Nível de Ensino</label>
+                                      <select 
+                                      name="ensino"
+                                      className="nivelEnsino" 
+                                      placeholder="Selecione uma opção..."
+                                      value ={nivel}
+                                      onChange={(event) => setNivel(event.target.value)}>
                                           <option value="Exemplo 1">Exemplo 1</option>
                                           <option value="Exemplo 2">Exemplo 2</option>
                                           <option value="Exemplo 3">Exemplo 3</option>
@@ -117,8 +189,12 @@ export default function CadastroLivros(){
                                   </div>
 
                                   <div className="divCurso">
-                                      <label for="curso">Matéria ou Curso:</label>
-                                      <select name="curso" className="campoCurso" placeholder="Selecione uma opção...">
+                                      <label htmlFor="curso">Matéria ou Curso:</label>
+                                      <select name="curso" 
+                                      className="campoCurso" 
+                                      placeholder="Selecione uma opção..."
+                                      value ={materia}
+                                      onChange={(event) => setMateria(event.target.value)}>
                                           <option value="Exemplo 1">Exemplo 1</option>
                                           <option value="Exemplo 2">Exemplo 2</option>
                                           <option value="Exemplo 3">Exemplo 3</option>
@@ -128,28 +204,51 @@ export default function CadastroLivros(){
                               </div>
 
                               <div className="editora">
-                                  <label for="editora">Editora:</label>
-                                  <input type="text" name="editora" id="editora" placeholder="Escreva o nome da Editora..."/>
+                                  <label htmlFor="editora">Editora:</label>
+                                  <input 
+                                  type="text" 
+                                  name="editora" 
+                                  id="editora" 
+                                  placeholder="Escreva o nome da Editora..."
+                                  value = {editora}
+                                  onChange={(event) => setEditora(event.target.value)}/>
                               </div>
 
 
                               <div className="elDuplo">
                                   <div className="ano">
-                                      <label for="ano">Ano da Publicação:</label>
-                                      <input type="text" name="ano" id="ano" placeholder="Inclua o Ano.."/>
+                                      <label htmlFor="ano">Ano da Publicação:</label>
+                                      <input 
+                                      type="text" 
+                                      name="ano" 
+                                      id="ano" 
+                                      placeholder="Inclua o Ano.."
+                                      value = {anoPublicacao}
+                                      onChange={(event) => setAnoPublicacao(event.target.value)}/>
                                   </div>
 
                                   <div className="paginas">
-                                      <label for="paginas">Nº de Páginas:</label>
-                                      <input type="text" name="paginas" id="paginas" placeholder="Digite o Nº de Páginas..."/>
+                                      <label htmlFor="paginas">Nº de Páginas:</label>
+                                      <input 
+                                      type="text" 
+                                      name="paginas" 
+                                      id="paginas" 
+                                      placeholder="Digite o Nº de Páginas..."
+                                      value = {numeroPaginas}
+                                      onChange={(event) => setNumeroPaginas(event.target.value)}/>
                                   </div>
                               </div>
 
                               <div className="elDuplo">
     
                                       <div className="divEstado">
-                                          <label for="estado">Estado do Livro:</label>
-                                          <select name="estado" className="campoEstado" placeholder="Selecione uma opção...">
+                                          <label htmlFor="estado">Estado do Livro:</label>
+                                          <select
+                                           name="estado" 
+                                           className="campoEstado" 
+                                           placeholder="Selecione uma opção..."
+                                           value ={estadoLivro}
+                                           onChange={(event) => setEstadoLivro(event.target.value)}>
                                               <option value="Exemplo 1">Exemplo 1</option>
                                               <option value="Exemplo 2">Exemplo 2</option>
                                               <option value="Exemplo 3">Exemplo 3</option>
@@ -157,8 +256,12 @@ export default function CadastroLivros(){
                                       </div>
 
                                       <div className="divIdioma">
-                                          <label for="idioma">Idioma:</label>
-                                          <select name="idioma" className="campoIdioma" placeholder="Selecione uma opção...">
+                                          <label htmlFor="idioma">Idioma:</label>
+                                          <select name="idioma" 
+                                          className="campoIdioma"
+                                           placeholder="Selecione uma opção..."
+                                           value ={idioma}
+                                           onChange={(event) => setIdioma(event.target.value)}>
                                               <option value="Exemplo 1">Exemplo 1</option>
                                               <option value="Exemplo 2">Exemplo 2</option>
                                               <option value="Exemplo 3">Exemplo 3</option>
@@ -171,18 +274,32 @@ export default function CadastroLivros(){
 
                           <div className="parte2">
                               <div className="conservacao">
-                                  <label for="conservacao">Conservação do Livro:</label>
-                                  <textarea name="conservacao" id="conservacao"> Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!</textarea>
+                                  <label htmlFor="conservacao">Conservação do Livro:</label>
+                                  <textarea 
+                                  name="conservacao" 
+                                  id="conservacao"
+                                   value ={conservacao}
+                                  onChange={(event) => setConservacao(event.target.value)}> Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!</textarea>
                               </div>
               
                               <div className="sinopse">
-                                  <label for="sinopse">Sinopse / Descrição do Livro:</label>
-                                  <textarea name="sinopse" id="sinopse">Pegue da internet, do que está no livro, ou conte com suas próprias palavras do que se trata este livro...</textarea>
+                                  <label htmlFor="sinopse">Sinopse / Descrição do Livro:</label>
+                                  <textarea 
+                                  name="sinopse" 
+                                  id="sinopse"
+                                  value ={sinopse}
+                                  onChange={(event) => setSinopse(event.target.value)}
+                                  >Pegue da internet, do que está no livro, ou conte com suas próprias palavras do que se trata este livro...</textarea>
                               </div>
               
                               <div className="enviaImg">
                                   <label>Cadastrar Imagens:</label>
-                                  <input type="file" name="imglivro" accept=".png, .jpg, .jpeg" multiple/>
+                                  <input 
+                                  type="file" 
+                                  name="imglivro" 
+                                  accept=".png, .jpg, .jpeg" multiple
+                                  value ={imgLivro}
+                                 onChange={(event) => setImgLivro(event.target.value)}/>
                               </div>
               
                               <div>
