@@ -11,16 +11,18 @@ export const StyledLogin = styled.div`
 }
   section {
     display: flex;
+    margin-top: 40px;
     flex-wrap: wrap;
     align-items: baseline;
     flex-direction: row;
     background: #fff;
-    min-height: 100vh;
+/*     min-height: 100vh; */
     margin: auto;
     justify-content: space-evenly;
     align-content: center;
     padding: 2px;
   }
+
   .entrar-no-time {
     display: flex;
     align-items: center;
@@ -33,12 +35,14 @@ export const StyledLogin = styled.div`
     top: 259px;
     color: #4285f4;
   }
+
   .login {
     display: block;
     width: 100%;
     padding: 10px;
     margin: 30px;
   }
+
   .login h1 {
     width: 329px;
     height: 55px;
@@ -51,6 +55,7 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #eb4335;
   }
+
   .login h2 {
     width: 329px;
     height: 30px;
@@ -64,12 +69,14 @@ export const StyledLogin = styled.div`
     color: #000000;
     margin: 3px;
   }
+
   .cadastro {
     display: block;
     width: 100%;
     padding: 10px;
     margin: 30px;
   }
+
   .cadastro h1 {
     width: 329px;
     height: 55px;
@@ -82,6 +89,7 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #34a853;
   }
+
   .cadastro h2 {
     width: 329px;
     height: 30px;
@@ -94,6 +102,7 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #000000;
   }
+
   form input {
     display: block;
     align-items: center;
@@ -105,6 +114,7 @@ export const StyledLogin = styled.div`
     background-color: #e0e0e0;
     border: none;
   }
+
   .opcoes {
     font-style: normal;
     font-weight: normal;
@@ -114,6 +124,7 @@ export const StyledLogin = styled.div`
     text-align: center;
     color: #000000;
   }
+
   button {
     display: block;
     margin: 25px auto;
@@ -130,14 +141,17 @@ export const StyledLogin = styled.div`
     line-height: 26px;
     border: none;
   }
+
   .inputQuadrado {
     width: 18px;
     height: 18px;
     margin: 5px;
   }
+
   .entrar button {
     background-color: #eb4335;
   }
+  
   .cadastrar button {
     background-color: #34a853;
   }

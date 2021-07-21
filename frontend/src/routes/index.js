@@ -23,8 +23,8 @@ export default function Routes() {
       <Route path="/mensageria" component={Mensageria} />
       <Route path="/livros" component={Produtos} />
       <Route path="/trocas" component={Trocas} />
-      <Route path="/pedidos" component={Pedidos} />
-      <Route path="/saldo" component={Saldo} />
+      <Route path="/meus-pedidos" component={Pedidos} />
+      <Route path="/meu-saldo" component={Saldo} />
       <Route path="/meus-dados" component={MeusDados} />
       <Route path="/meu-perfil" component={MeuPerfil} />
       <Route path="/cadastrar-livro" component={CadastroLivros} />

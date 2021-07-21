@@ -3,6 +3,7 @@ const express = require("express");
 const logger = require("morgan");
 const path = require("path");
 const app = express();
+const cors = require('cors');
 
 const enderecoRouter = require("./routes/enderecos");
 const entregaRouter = require("./routes/entregas");
@@ -16,6 +17,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 
 app.use("/enderecos", enderecoRouter);
 app.use("/entregas", entregaRouter);
