@@ -1,5 +1,6 @@
 import { StyledLogin } from "./StyledLogin";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import api from "../../services/api"
 
 function Login() {
@@ -10,11 +11,16 @@ function Login() {
   const [cadEmail, setCadEmail] = useState('');
   const [cadSenha, setCadSenha] = useState('');
   const [cadSenha2, setCadSenha2] = useState('');
+  const history = useHistory();
 
-  async function enviaCad (event) {
+  async function EnviaCad (event) {
     event.preventDefault();
-    const { data } = await api.post('/usuarios/criar-conta', {nome: nome, email: cadEmail, senha: cadSenha})
-    sessionStorage.setItem('token', data.token)
+    const { data, status } = await api.post('/usuarios/criar-conta', {nome: nome, email: cadEmail, senha: cadSenha})
+    if (status == 200) {
+      sessionStorage.setItem('token', data.token)
+      history.push("/cadastro")
+    }
+    
   }
   
   return (
@@ -31,8 +37,7 @@ function Login() {
               <h1>Faça Seu Login</h1>
               <h2>se já tiver se cadastro antes</h2>
             </div>
-              <form action="/login"
-              method="POST">
+              <form>
                 <input
                   type="email"
                   name="email"
@@ -72,7 +77,7 @@ function Login() {
                 <h2>se ainda não tiver cadastro</h2>
               </div>
               <div>
-                <form onSubmit={(event) => enviaCad(event)}>
+                <form onSubmit={(event) => EnviaCad(event)}>
                   <input
                     type="text"
                     name="nome"
