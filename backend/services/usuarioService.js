@@ -13,7 +13,7 @@ const UsuarioService = {
     });
 
     return jwt.sign({ id: usuario.id }, process.env.JWT_KEY, {
-      expiresIn: "10min",
+      expiresIn: "1h",
     });
   },
   addOutrosDados: async (id, sobrenome, cpf, celular, data_nasc, sexo) => {

@@ -1,8 +1,40 @@
 import { StyledCadastro } from "./StyledCadastro";
-import React, {useState } from "react";
+import React, { useState } from "react";
+import api from "../../services/api";
 
 function Cadastro() {
- const [mustShow, setMustShow] = useState(true);
+  const [mustShow, setMustShow] = useState(true);
+  
+  const [sobrenome, setSobrenome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [contato, setContato] = useState("");
+  const [nascimento, setNascimento] = useState("");
+  const [genero, setGenero] = useState("");
+  
+  const [cep, setCep] = useState("");
+  const [logradouro, setLogradouro] = useState("");
+  const [numero, setNumero] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [complemento, setComplemento] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [estado, setEstado] = useState("");
+
+  async function incluirDadosPessoais(event) {
+    event.preventDefault()
+    const token = sessionStorage.getItem('token')
+    await api.post("/usuarios/adicionar-dados-pessoais", { 
+      sobrenome: sobrenome, 
+      cpf: cpf, 
+      celular: contato, 
+      data_nasc: nascimento, 
+      sexo: genero
+    }, 
+    {
+      headers: { authorization: `Bearer ${token}` }
+    }
+    )
+  }
+
   function onClickHide (){
     setMustShow(!mustShow);
   }
@@ -36,7 +68,7 @@ function Cadastro() {
               <p> Passo 1: INCLUIR DADOS PESSOAIS</p>
             </div>
             <div className="form1">
-              <form action="/cadastro" method="POST">
+              <form onSubmit={(event) => incluirDadosPessoais(event)}>
                 <div className="agregadorInput">
                   <div className="agregadorLabelInput">
                     <label for="primeiroNome">Primeiro Nome</label>
@@ -45,6 +77,7 @@ function Cadastro() {
                       name="primeiroNome"
                       id="primeiroNome"
                       placeholder="Digite seu nome"
+                      disabled
                     />
                   </div>
                   <div className="agregadorLabelInput">
@@ -54,6 +87,8 @@ function Cadastro() {
                       name="sobrenome"
                       id="sobrenome"
                       placeholder="Digite seu sobrenome"
+                      value={sobrenome}
+                      onChange={(e) => setSobrenome(e.target.value)}
                     />
                   </div>
                 </div>
@@ -64,6 +99,7 @@ function Cadastro() {
                     name="email"
                     id="email"
                     placeholder="levameulivro@gmail.com"
+                    disabled
                   />
                 </div>
                 <div className="agregadorInput">
@@ -74,6 +110,8 @@ function Cadastro() {
                       name="cpf"
                       id="cpf"
                       placeholder="Digite seu cpf"
+                      value={cpf}
+                      onChange={(e) => setCpf(e.target.value)}
                     />
                   </div>
                   <div className="agregadorLabelInput">
@@ -83,6 +121,8 @@ function Cadastro() {
                       name="contato"
                       id="contato"
                       placeholder="Não esqueça do DDD"
+                      value={contato}
+                      onChange={(e) => setContato(e.target.value)}
                     />
                   </div>
                 </div>
@@ -94,6 +134,8 @@ function Cadastro() {
                       name="nascimento"
                       id="contato"
                       placeholder="DD/MM/AAAA"
+                      value={nascimento}
+                      onChange={(e) => setNascimento(e.target.value)}
                     />
                   </div>
                   <div className="agregadorLabelInput">
@@ -102,6 +144,8 @@ function Cadastro() {
                       name="genero"
                       id="genero"
                       placeholder="Escolha uma opção"
+                      value={genero}
+                      onChange={(e) => setGenero(e.target.value)}
                     >
                       {" "}
                       <option value="fem">Mulher cisgênero</option>
@@ -124,7 +168,7 @@ function Cadastro() {
               <div>
                 <p> Passo 1: INCLUIR ENDEREÇO</p>
               </div>
-              <form action="/cadastro" method="POST">
+              <form>
                 <div className="agregadorLabelInput">
                   <label for="cep">Digite seu CEP</label>
                   <input
@@ -132,6 +176,8 @@ function Cadastro() {
                     name="cep"
                     id="cep"
                     placeholder="Digite seu CEP"
+                    value={cep}
+                    onChange={(e) => setCep(e.target.value)}
                   />
                 </div>
                 <div className="agregadorLabelInput">
@@ -141,6 +187,8 @@ function Cadastro() {
                     name="logradouro"
                     id="logradouro"
                     placeholder="Por exemplo: Rua João Da Silva"
+                    value={logradouro}
+                    onChange={(e) => setLogradouro(e.target.value)}
                   />
                 </div>
                 <div className="agregadorLabelInput">
@@ -150,6 +198,8 @@ function Cadastro() {
                     name="num"
                     id="num"
                     placeholder="Digite aqui"
+                    value={numero}
+                    onChange={(e) => setNumero(e.target.value)}
                   />
                 </div>
                 <div className="agregadorLabelInput">
@@ -159,6 +209,8 @@ function Cadastro() {
                     name="bairro"
                     id="bairro"
                     placeholder="Por exemplo: Bairro Copacabana"
+                    value={bairro}
+                    onChange={(e) => setBairro(e.target.value)}
                   />
                 </div>
                 <div className="agregadorLabelInput">
@@ -168,6 +220,8 @@ function Cadastro() {
                     name="complemento"
                     id="complemento"
                     placeholder="Por exemplo: Apartamento 121 Bloco D"
+                    value={complemento}
+                    onChange={(e) => setComplemento(e.target.value)}
                   />
                 </div>
                 <div className="agregadorInput">
@@ -178,6 +232,8 @@ function Cadastro() {
                       name="cidade"
                       id="cidade"
                       placeholder="Digite sua cidade"
+                      value={cidade}
+                      onChange={(e) => setCidade(e.target.value)}
                     />
                   </div>
                   <div className="agregadorLabelInput">
@@ -187,6 +243,8 @@ function Cadastro() {
                       name="estados"
                       id="estados"
                       placeholder="Digite seu Estado"
+                      value={estado}
+                      onChange={(e) => setEstado(e.target.value)}
                     />
                   </div>
                 </div>

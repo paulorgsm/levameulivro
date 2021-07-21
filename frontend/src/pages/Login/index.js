@@ -1,62 +1,22 @@
 import { StyledLogin } from "./StyledLogin";
 import { useState } from "react";
-import axios from 'axios';
+import api from "../../services/api"
 
 function Login() {
 
-  const [logEmail, setLogEmail] = useState('');
-  const [cadEmail, setCadEmail] = useState('');
   const [nome, setNome] = useState('');
+  const [logEmail, setLogEmail] = useState('');
   const [logSenha, setLogSenha] = useState('');
+  const [cadEmail, setCadEmail] = useState('');
   const [cadSenha, setCadSenha] = useState('');
   const [cadSenha2, setCadSenha2] = useState('');
 
-  function enviaCad (event) {
-
-event.preventDefault();
-//req.headers.authorization
-//axios.post(url[, data[, config]])
-
-const config = {
-    url: 'http://localhost:3000/usuarios/criar-conta',
-    data: {
-        nome: nome,
-        email: cadEmail,
-        senha: cadSenha
-      }
-    }
-  
-    axios.post(config.url, config.data)
-
+  async function enviaCad (event) {
+    event.preventDefault();
+    const { data } = await api.post('/usuarios/criar-conta', {nome: nome, email: cadEmail, senha: cadSenha})
+    sessionStorage.setItem('token', data.token)
   }
-
-
-/*   axios.post(`http://localhost:3000/usuarios/criar-conta`, { nome: nome, email: cadEmail, senha: cadSenha }, {headers:'Access-Control-Allow-Origin'})
-  .then(res => {
-    console.log(res);
-    console.log(res.data);
-  } */
   
-
-
-/*   const config = {
-    method: 'post',
-    url: 'http://localhost:3000/usuarios/criar-conta',
-    headers: 'Access-Control-Allow-Origin: *',
-    data: {
-        nome: nome,
-        email: cadEmail,
-        senha: cadSenha
-    }
-}
-
-   axios(config).then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    })
- */
-
   return (
     <StyledLogin>
       <main>
@@ -66,8 +26,6 @@ const config = {
           </h2>
         </div>
         <section className="form">
-         
-            
             <div>
             <div className="login">
               <h1>Faça Seu Login</h1>
@@ -109,8 +67,6 @@ const config = {
               <h2>ou</h2>
             </div>
             <div>
-
-
               <div className="cadastro">
                 <h1>Crie Sua Conta</h1>
                 <h2>se ainda não tiver cadastro</h2>
@@ -149,7 +105,6 @@ const config = {
                     value={cadSenha2}
                     onChange={(e) => setCadSenha2(e.target.value)}
                   />
-
                   <div className="opcoes">
                     <div className="opcoes-termos">
                       <div className="termosite">
@@ -169,7 +124,6 @@ const config = {
                 </form>
               </div>
             </div>
-         
         </section>
       </main>
     </StyledLogin>
