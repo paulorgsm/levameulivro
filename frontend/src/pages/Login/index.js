@@ -25,8 +25,11 @@ function Login() {
 
   async function Login (event){
     event.preventDefault();
-    const {data} = await api.get('/usuarios/login', {email: logEmail, senha: logSenha})
-    sessionStorage.setItem('token', data.token)
+    const {data, status} = await api.post('/usuarios/login', {email: logEmail, senha: logSenha})
+    if (status == 200) {
+      sessionStorage.setItem('token', data.token)
+      history.push("/meu-perfil")
+    }
   }
   
   return (
