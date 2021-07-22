@@ -35,6 +35,24 @@ function Cadastro() {
     )
   }
 
+  async function incluirEndereco(event) {
+    event.preventDefault()
+    const token = sessionStorage.getItem('token')
+    await api.post("/enderecos", { 
+      cep: cep, 
+      logradouro: logradouro, 
+      numero: numero, 
+      bairro: bairro, 
+      complemento: complemento, 
+      cidade: cidade, 
+      estado: estado
+    }, 
+    {
+      headers: { authorization: `Bearer ${token}` }
+    }
+    )
+  }
+
   function onClickHide (){
     setMustShow(!mustShow);
   }
@@ -168,7 +186,7 @@ function Cadastro() {
               <div>
                 <p> Passo 1: INCLUIR ENDEREÇO</p>
               </div>
-              <form>
+              <form onSubmit={(event) => incluirEndereco(event)}>
                 <div className="agregadorLabelInput">
                   <label for="cep">Digite seu CEP</label>
                   <input
