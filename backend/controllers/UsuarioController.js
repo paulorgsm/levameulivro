@@ -13,11 +13,11 @@ const UsuarioController = {
         .send({ mensagem: "O usuario já existe no banco de dados" });
     }
 
-    const token = await UsuarioService.createUsuario(nome, email, senha);
+    const usuario = await UsuarioService.createUsuario(nome, email, senha);
 
     return res
       .status(200)
-      .send({ mensagem: "Usuario criado com sucesso", token: token });
+      .send({ mensagem: "Usuario criado com sucesso", token: token, foto: usuario.foto, nome: usuario.nome });
   },
   addDadosPessoais: async (req, res) => {
     const { sobrenome, cpf, celular, data_nasc, sexo } = req.body;
@@ -91,15 +91,15 @@ const UsuarioController = {
   fazerLogin: async (req, res) => {
     const { email, senha } = req.body;
 
-    const token = await UsuarioService.authUsuario(email, senha);
+    const usuario = await UsuarioService.authUsuario(email, senha);
 
-    if (token === null) {
+    if (usuario === null) {
       return res.status(401).send({ mensagem: "Dados inválidos" });
     }
 
     return res
       .status(200)
-      .send({ mensagem: "Usuario autenticado com sucesso", token: token });
+      .send({ mensagem: "Usuario autenticado com sucesso", token: usuario.token, foto: usuario.foto, nome: usuario.nome });
   },
 };
 

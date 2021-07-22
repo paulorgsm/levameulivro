@@ -18,17 +18,23 @@ function Login() {
     const { data, status } = await api.post('/usuarios/criar-conta', {nome: nome, email: cadEmail, senha: cadSenha})
     if (status == 200) {
       sessionStorage.setItem('token', data.token)
+      sessionStorage.setItem('foto', data.foto)
+      sessionStorage.setItem('nome', data.nome)
       history.push("/cadastro")
+      window.location.reload();
     }
     
   }
 
   async function Login (event){
     event.preventDefault();
-    const {data, status} = await api.post('/usuarios/login', {email: logEmail, senha: logSenha})
+    const { data, status } = await api.post('/usuarios/login', {email: logEmail, senha: logSenha})
     if (status == 200) {
       sessionStorage.setItem('token', data.token)
+      sessionStorage.setItem('foto', data.foto)
+      sessionStorage.setItem('nome', data.nome)
       history.push("/meu-perfil")
+      window.location.reload();
     }
   }
   

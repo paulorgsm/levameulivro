@@ -4,9 +4,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./routes";
 
 function App() {
+  const nome = sessionStorage.getItem('nome')
   return (
     <Router>
-        <Header />
+        <Header title={nome ? nome: null}/>
         <Routes />
         <Footer />
     </Router>

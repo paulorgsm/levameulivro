@@ -1,9 +1,9 @@
 import logo from "../../assets/img/logo.svg";
 import imgLogin from "../../assets/img/login.svg";
 import { StyledHeader } from "./StyledHeader";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   return (
     <StyledHeader>
       <header className="header">
@@ -28,9 +28,15 @@ function Header() {
           </div>
           <div className="login">
             <div className="campoLogin">
-              <span>Oi, Seja Bem-vindx!</span>
-
-              <Link to="/login"><span>ENTRE / REGISTRE-SE</span></Link>
+              {props.title ? (
+              <span style={{width: 150 + "px"}}>Oi, {props.title} <span>Seja Bem-vindo(a)!</span></span>
+              ): (
+                <>
+                <span>Oi, Seja Bem-vindx!</span>
+                <Link to="/login"><span>ENTRE / REGISTRE-SE</span></Link>
+                </>
+              )
+            }
             </div>
             <img src={imgLogin} alt="" />
           </div>

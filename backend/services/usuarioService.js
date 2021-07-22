@@ -12,9 +12,19 @@ const UsuarioService = {
       saldo: 0,
     });
 
-    return jwt.sign({ id: usuario.id }, process.env.JWT_KEY, {
-      expiresIn: "1h",
-    });
+    return {
+      token: jwt.sign(
+      {
+        id: usuario.id,
+      },
+      process.env.JWT_KEY,
+      {
+        expiresIn: "1h",
+      }
+    ),
+    foto: usuario.foto_usuario,
+    nome: usuario.nome
+  };
   },
   addOutrosDados: async (id, sobrenome, cpf, celular, data_nasc, sexo) => {
     return await db.Usuario.update(
@@ -84,16 +94,19 @@ const UsuarioService = {
     const boolean = await bcrypt.compare(senha, usuario.dataValues.senha);
 
     if (boolean) {
-      return jwt.sign(
+      return {
+        token: jwt.sign(
         {
           id: usuario.dataValues.id,
-          foto_usuario: usuario.dataValues.foto_usuario,
         },
         process.env.JWT_KEY,
         {
           expiresIn: "1h",
         }
-      );
+      ),
+      foto: usuario.dataValues.foto_usuario,
+      nome: usuario.dataValues.nome
+    };
     }
     return null;
   },
