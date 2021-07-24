@@ -247,8 +247,13 @@ export const StyledMeusDados = styled.div`
     cursor: pointer;
   
   }
-button:hover{
+
+  button:hover{
     opacity: 0.7;
     transform: scale(1.04);
-}
+  }
+
+  input[type='file'] {
+    display: none
+  }
 `;

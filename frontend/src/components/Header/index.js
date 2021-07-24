@@ -38,7 +38,7 @@ function Header(props) {
               )
             }
             </div>
-            <img src={imgLogin} alt="" />
+            <Link to="/meu-perfil"><img src={imgLogin} alt="" /></Link>
           </div>
         </div>
         <div className="infoHeader">

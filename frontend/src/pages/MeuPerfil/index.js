@@ -4,9 +4,27 @@ import imgMeusDados from "../../assets/img/imgMeusDados.svg"
 import imgSaldo from "../../assets/img/imgSaldo.svg"
 import imgLivros from "../../assets/img/imgLivros.svg"
 import imgTroca from "../../assets/img/imgTroca.svg"
-import {Link} from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 function MeuPerfil(){
+    const history = useHistory()
+ 
+    function irParaMeusDados() {
+        history.push("/meus-dados")
+    }
+
+    function irParaMeuSaldo() {
+        history.push("/meu-saldo")
+    }
+
+    function irParaCadastrarLivro() {
+        history.push("/cadastrar-livro")
+    }
+
+    function irParaMeusPedidos() {
+        history.push("/meus-pedidos")
+    }
+
     return(
         <StyledMeuPerfil>
             <main>
@@ -21,7 +39,7 @@ function MeuPerfil(){
                             </div>
                             <h2>Meus Dados</h2>
                             <p>Aqui é o Seu Espaço Para Alterar Suas Informações Pessoais Previamente Cadastradas.</p>
-                            <button type="button"><Link className="btn-saldo" to="/meus-dados">Acessar</Link></button>
+                            <button type="button" onClick={irParaMeusDados}>Acessar</button>
                         </div>
         
                         <div className="meuSaldo">
@@ -30,7 +48,7 @@ function MeuPerfil(){
                             </div>
                             <h2>Meu Saldo</h2>
                             <p>Veja qual é o crédito que você possui disponível para trocar por novos livros e/ou descubra como conseguir.</p>
-                            <button type="button"><Link className="btn-saldo" to="/saldo">Acessar</Link></button>
+                            <button type="button" onClick={irParaMeuSaldo}>Acessar</button>
                         </div>
         
                         <div className="cadastrarLivro">
@@ -40,7 +58,7 @@ function MeuPerfil(){
                             <h2>Cadastrar </h2>
                             <h2>Meus Livros</h2>
                             <p>Cadastre os livros que está disposto a trocar para receber créditos. Responda dúvidas de outros usuários.</p>
-                            <button type="button"><Link className="btn-saldo" to="/livros">Acessar</Link></button>
+                            <button type="button" onClick={irParaCadastrarLivro}>Acessar</button>
                         </div>
         
                         <div className="pedidoTroca">
@@ -50,7 +68,7 @@ function MeuPerfil(){
                             <h2>Pedidos </h2>
                             <h2>de Troca</h2>
                             <p>Visualize aqui quem pediu os livros que você cadastrou e também acompanhe os seus pedidos de troca.</p>
-                            <button type="button"><Link className="btn-saldo" to="/pedidos">Acessar</Link></button>
+                            <button type="button" onClick={irParaMeusPedidos}>Acessar</button>
                         </div>
         
                     </div>
