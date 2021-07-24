@@ -58,7 +58,7 @@ export const StyledHeader = styled.div`
   }
 
   .submit {
-    height: 55px;
+    height: 53px;
     width: 47px;
     border-left-color: green;
     border-top-right-radius: 9px;

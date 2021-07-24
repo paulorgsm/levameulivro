@@ -96,7 +96,7 @@ a {
 .section-principal {
   border: 1px solid #4285F4;
   width: 140px;
-  padding: 50px 50px 0px 15px;
+  padding: 30px 50px 0px 15px;
   color: #4285F4;
   height: 555px;
   font-weight: bold;
@@ -134,7 +134,6 @@ a {
 
 /* main-container */
 #main-container {
-  padding-top: 100px;
   display: flex;
   max-width: 1040px;
   margin: 0 auto;
@@ -296,6 +295,28 @@ input {
 }
 input:hover{
   opacity: 0.7;
+}
+
+.btn-filtro {
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
+  background: #34A853;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  text-align-last: center;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: row;
+  width: 975px;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-top: 40px;
+
 }
 
 `;

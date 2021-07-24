@@ -89,7 +89,7 @@ function Cadastro() {
               <form onSubmit={(event) => incluirDadosPessoais(event)}>
                 <div className="agregadorInput">
                   <div className="agregadorLabelInput">
-                    <label for="primeiroNome">Primeiro Nome</label>
+                    <label for="primeiroNome">Primeiro Nome:</label>
                     <input
                       type="text"
                       name="primeiroNome"
@@ -99,7 +99,7 @@ function Cadastro() {
                     />
                   </div>
                   <div className="agregadorLabelInput">
-                    <label for="sobrenome">Sobrenome</label>
+                    <label for="sobrenome">Sobrenome:</label>
                     <input
                       type="text"
                       name="sobrenome"
@@ -111,7 +111,7 @@ function Cadastro() {
                   </div>
                 </div>
                 <div className="agregadorLabelInput">
-                  <label for="email">E-mail</label>
+                  <label for="email">E-mail:</label>
                   <input
                     type="text"
                     name="email"
@@ -122,7 +122,7 @@ function Cadastro() {
                 </div>
                 <div className="agregadorInput">
                   <div className="agregadorLabelInput">
-                    <label for="cpf">CPF</label>
+                    <label for="cpf">CPF:</label>
                     <input
                       type="text"
                       name="cpf"
@@ -133,7 +133,7 @@ function Cadastro() {
                     />
                   </div>
                   <div className="agregadorLabelInput">
-                    <label for="contato">Celular/telefone</label>
+                    <label for="contato">Celular/telefone:</label>
                     <input
                       type="text"
                       name="contato"
@@ -146,7 +146,7 @@ function Cadastro() {
                 </div>
                 <div className="agregadorInput">
                   <div className="agregadorLabelInput">
-                    <label for="nascimento">Data de nascimento</label>
+                    <label for="nascimento">Data de nascimento:</label>
                     <input
                       type="text"
                       name="nascimento"
@@ -157,7 +157,7 @@ function Cadastro() {
                     />
                   </div>
                   <div className="agregadorLabelInput">
-                    <label for="genero">Gênero</label>
+                    <label for="genero">Gênero:</label>
                     <select
                       name="genero"
                       id="genero"
@@ -167,9 +167,9 @@ function Cadastro() {
                     >
                       {" "}
                       <option value="fem">Mulher cisgênero</option>
-                      <option value="masc">Homen cisgênero</option>
+                      <option value="masc">Homem cisgênero</option>
                       <option value="mulherTrans">Mulher Transgênero</option>
-                      <option value="homenTrans">Homen Transgênero</option>
+                      <option value="homenTrans">Homem Transgênero</option>
                       <option value="naoResponder">
                         Prefiro não responder
                       </option>
@@ -184,11 +184,11 @@ function Cadastro() {
             </div>
             <div className="form2">
               <div>
-                <p> Passo 1: INCLUIR ENDEREÇO</p>
+                <p> Passo 2: INCLUIR ENDEREÇO</p>
               </div>
               <form onSubmit={(event) => incluirEndereco(event)}>
                 <div className="agregadorLabelInput">
-                  <label for="cep">Digite seu CEP</label>
+                  <label for="cep">Digite seu CEP:</label>
                   <input
                     type="text"
                     name="cep"
@@ -199,7 +199,7 @@ function Cadastro() {
                   />
                 </div>
                 <div className="agregadorLabelInput">
-                  <label for="logradouro">Logradouro</label>
+                  <label for="logradouro">Logradouro:</label>
                   <input
                     type="text"
                     name="logradouro"
@@ -210,7 +210,7 @@ function Cadastro() {
                   />
                 </div>
                 <div className="agregadorLabelInput">
-                  <label for="num">Número</label>
+                  <label for="num">Número:</label>
                   <input
                     type="text"
                     name="num"
@@ -221,7 +221,7 @@ function Cadastro() {
                   />
                 </div>
                 <div className="agregadorLabelInput">
-                  <label for="bairro">Bairro</label>
+                  <label for="bairro">Bairro:</label>
                   <input
                     type="text"
                     name="bairro"
@@ -232,7 +232,7 @@ function Cadastro() {
                   />
                 </div>
                 <div className="agregadorLabelInput">
-                  <label for="complemento">Complemento</label>
+                  <label for="complemento">Complemento:</label>
                   <input
                     type="text"
                     name="complemento"
@@ -244,7 +244,7 @@ function Cadastro() {
                 </div>
                 <div className="agregadorInput">
                   <div className="agregadorLabelInput">
-                    <label for="cidade">Cidade</label>
+                    <label for="cidade">Cidade:</label>
                     <input
                       type="text"
                       name="cidade"
@@ -255,7 +255,7 @@ function Cadastro() {
                     />
                   </div>
                   <div className="agregadorLabelInput">
-                    <label for="estados">Estados</label>
+                    <label for="estados">Estado:</label>
                     <input
                       type="text"
                       name="estados"

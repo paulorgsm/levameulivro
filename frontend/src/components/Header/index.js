@@ -16,7 +16,7 @@ function Header(props) {
             <input
               className="buscar"
               type="text"
-              placeholder="Busque por livro, autor,tag"
+              placeholder="Busque por livro, autor, matéria, curso e etc..."
             />
             <div className="containerHeader">
               <input type="checkbox" />

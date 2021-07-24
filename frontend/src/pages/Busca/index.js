@@ -4,10 +4,23 @@ import card1 from "../../assets/img/card1.svg";
 import imgLogin from "../../assets/img/login.svg";
 import setaBaico from "../../assets/img/seta-baico.svg";
 import { StyledBusca } from "./StyledBusca";
+import {Link} from "react-router-dom";
 
 function Busca() {
   return (
     <StyledBusca>
+
+<div className="botoes">
+
+<label htmlFor="organizar"></label>
+<select name="organizar" id="organizar" className="btn-filtro">
+    <option value="mais-novos" className="btn-org">Mais Novos</option>
+    <option value="mais-antigos" className="btn-org">Mais Antigos</option>
+    <option value="livros-novos" className="btn-org">Livros Novos</option>
+    <option value="livros-usados" className="btn-org">Livros Usados</option>
+</select>
+</div>
+
       <main id="main-container">
         <section className="section-principal">
           <article>
@@ -15,10 +28,6 @@ function Busca() {
           </article>
 
           <section className="container-checkbox">
-            <div className="div-checkbox">
-              <button type="checkbox" id="container" />
-              <label for="container">testando..</label>
-            </div>
 
             <div className="div-checkbox">
               <input type="checkbox" id="container" />
@@ -43,23 +52,13 @@ function Busca() {
             <div className="div-checkbox">
               <input type="checkbox" id="container" />
               <label for="container">testando..</label>
+            </div>
 
               <div className="div-checkbox">
                 <input type="checkbox" id="container" />
                 <label for="container">testando..</label>
+                <p><Link to="#">ver todos</Link></p>
               </div>
-
-              <div className="div-checkbox">
-                <input type="checkbox" id="container" />
-                <label for="container">testando..</label>
-              </div>
-
-              <div className="div-checkbox">
-                <input type="checkbox" id="container" />
-                <label for="container">testando..</label>
-                <p>ver todos</p>
-              </div>
-            </div>
             <hr className="hr-linha" />
           </section>
 
@@ -215,7 +214,7 @@ function Busca() {
             </div>
 
             <div className="div-login">
-              <img src="../assets//img/login.svg" />
+              <img src={imgLogin} />
 
               <div>
                 <p>Dono(a): Mussum da Silva</p>
@@ -277,7 +276,7 @@ function Busca() {
             </div>
 
             <div className="div-login">
-              <img src="../assets//img/login.svg" />
+              <img src={imgLogin} />
 
               <div>
                 <p>Dono(a): Mussum da Silva</p>
@@ -286,15 +285,11 @@ function Busca() {
             </div>
           </div>
 
-          <div className="mover">
-            <div className="button">
-              <p>Mais Antigos </p>
               <div>
                 <img src={setaBaico} alt="" />
               </div>
             </div>
-          </div>
-        </div>
+
       </main>
     </StyledBusca>
   );

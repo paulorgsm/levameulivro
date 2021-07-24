@@ -130,8 +130,11 @@ export const StyledCadastro = styled.div`
     font-family: 'Roboto', sans-serif;
     src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
   }
+
   *{
-    font-family: 'Roboto', sans-serif;
+        
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
   }
 
   .cadChamada {
@@ -152,9 +155,11 @@ export const StyledCadastro = styled.div`
   }
 
   .cadastroChamada p {
-    font-weight: 500;
+    font-weight: bold;
     color: #4285f4;
+    font-size: 24px;
   }
+
   .cads {
     width: 960px;
     display: flex;
@@ -180,7 +185,7 @@ export const StyledCadastro = styled.div`
   }
   .finalizeCad p {
     size: 18px;
-    line-height: 26px;
+    line-height: 10px;
     text-align: center;
     margin: 5px auto;
   }
@@ -306,6 +311,7 @@ export const StyledCadastro = styled.div`
     border-radius: 10px;
     border: none;
     margin-right: 600px;
+    font-weight: bold;
   }
 
   .form2 {

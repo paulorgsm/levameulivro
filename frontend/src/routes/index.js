@@ -22,10 +22,10 @@ export default function Routes() {
       <Route path="/login" component={Login} />
       <Route path="/mensageria" component={Mensageria} />
       <Route path="/livros" component={Produtos} />
-      <Route path="/trocas" component={Trocas} />
-      <Route path="/meus-pedidos" component={Pedidos} />
+      <Route path="/trocas" component={Trocas} /> {/* Página Quebrada */}
+      <Route path="/meus-pedidos" component={Pedidos} /> {/* Página Quebrada */}
       <Route path="/meu-saldo" component={Saldo} />
-      <Route path="/meus-dados" component={MeusDados} />
+      <Route path="/meus-dados" component={MeusDados} /> {/* Precisa melhorar */}
       <Route path="/meu-perfil" component={MeuPerfil} />
       <Route path="/cadastrar-livro" component={CadastroLivros} />
     </Switch>
