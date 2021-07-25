@@ -427,8 +427,15 @@ span {
     width: 200px;
     max-height: 40px;
     margin: 0 auto;
-    display: flex;
     font-weight: normal;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px;
+}
+
+.bg-acao button{
+    border: none;
+    background-color: #E5E5E5;
 }
 
 .bg-acao img{

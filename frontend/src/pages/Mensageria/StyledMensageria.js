@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
 export const StyledMensageria = styled.div`
+
+#main{
+  width: 1120px;
+  margin: 0 auto;
+}
   .saudacao {
     margin: 20px;
     text-align: center;
@@ -10,7 +15,7 @@ export const StyledMensageria = styled.div`
     font-weight: bold;
   }
   .mensageria {
-    margin-left: 210px;
+    /* margin-left: 210px; */
     margin-top: 30px;
     line-height: 30px;
     text-align: left;
@@ -27,7 +32,7 @@ export const StyledMensageria = styled.div`
     padding-left: 5px;
   }
   .perguntaTitulo {
-    margin-left: 210px;
+/*     margin-left: 210px; */
     margin-top: 10px;
     line-height: 30px;
     text-align: left;
@@ -43,7 +48,7 @@ export const StyledMensageria = styled.div`
     padding-left: 5px;
   }  
   .perguntaBox {
-    margin-left: 210px;
+/*     margin-left: 210px; */
     margin-top: 30px;
     margin-bottom: 40px;
     line-height: 55px;
@@ -343,7 +348,7 @@ export const StyledMensageria = styled.div`
     font-family: Arial, Helvetica, sans-serif;
   }
   .perguntasFeitas {
-    margin-left: 210px;
+/*     margin-left: 210px; */
     margin-top: 30px;
     line-height: 30px;
     text-align: left;

@@ -47,14 +47,18 @@ export const StyledHeader = styled.div`
     color: #4285f4;
   }
 
+  .buscar::placeholder {
+    color: #4285f4;
+  }
+
   .containerHeader {
     height: 48px;
     width: 100px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    border: #fcbc05;
-    border-style: solid;
+    border: 3px solid #fcbc05;
     color: #eb4335;
     border-right: none;
+    font-size: 14px;
   }
 
   .submit {

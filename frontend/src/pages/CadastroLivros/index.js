@@ -7,6 +7,7 @@ import imgLixeira from "../../assets/img/lixeira.svg"
 import imgSetaPag from "../../assets/img/seta-pag.svg"
 import api from "../../services/api";
 import React, { useState } from "react";
+import {Link} from "react-router-dom";
 
 //import {Link} from "react-router-dom"
 
@@ -103,13 +104,19 @@ export default function CadastroLivros(){
                           <td>Harry Potter e a Pedra Filosofal</td>
                           <td>J.K. Rowling</td>
                           <td>2000</td>
-                          <td><a className="link-msg" href="#">02 para responder</a></td>
+                          <td><Link to="/mensageria" className="link-msg">02 para responder</Link></td>
                           <td>
                               <div className="bg-acao">
-                              <img src={imgEditar} alt=""/>
-                              <p>editar</p>
-                              <img src={imgLixeira} alt=""/>
-                              <p>apagar</p>
+                                <button>
+                                    <img src={imgEditar} alt=""/>
+                                    <span>editar</span>
+                                </button>
+
+                                <button>
+                                    <img src={imgLixeira} alt=""/>
+                                    <span>apagar</span>
+                                </button>
+
                               </div>
                           
                           </td>
@@ -181,9 +188,10 @@ export default function CadastroLivros(){
                                       placeholder="Selecione uma opção..."
                                       value ={nivel}
                                       onChange={(event) => setNivel(event.target.value)}>
-                                          <option value="Exemplo 1">Exemplo 1</option>
-                                          <option value="Exemplo 2">Exemplo 2</option>
-                                          <option value="Exemplo 3">Exemplo 3</option>
+                                          <option value="ensinofund1">Ensino Fundamental I</option>
+                                          <option value="ensinofund2">Ensino Fundamental II</option>
+                                          <option value="ensinomedio">Ensino Médio</option>
+                                          <option value="ensinosup">Ensino Superior</option>
                                       </select>
                                   </div>
 
@@ -194,9 +202,32 @@ export default function CadastroLivros(){
                                       placeholder="Selecione uma opção..."
                                       value ={materia}
                                       onChange={(event) => setMateria(event.target.value)}>
-                                          <option value="Exemplo 1">Exemplo 1</option>
-                                          <option value="Exemplo 2">Exemplo 2</option>
-                                          <option value="Exemplo 3">Exemplo 3</option>
+                                          <option value="portugues">Português</option>
+                                          <option value="redacao">Redação</option>
+                                          <option value="matematica">Matemática</option>
+                                          <option value="historia">História</option>
+                                          <option value="geografia">Geografia</option>
+                                          <option value="quimica">Química</option>
+                                          <option value="fisica">Física</option>
+                                          <option value="ciencias">Ciências</option>
+                                          <option value="artes">Artes</option>
+                                          <option value="ingles">Inglês</option>
+                                          <option value="admin">Administração</option>
+                                          <option value="agronomia">Agronomia</option>
+                                          <option value="arqueologia">Arqueologia</option>
+                                          <option value="arquitetura">Arquitetura e Urbanismo</option>
+                                          <option value="artes">Artes Visuais</option>
+                                          <option value="biblio">Biblioteconomia</option>
+                                          <option value="biomedicina">Biomedicina</option>
+                                          <option value="computacao">Ciência da Computação</option>
+                                          <option value="biologicas">Ciências Biológicas</option>
+                                          <option value="contabilidade">Contabiliddade</option>
+                                          <option value="cinema">Cinema e Audiovisual</option>
+                                          <option value="danca">Dança</option>
+                                          <option value="design">Design</option>
+                                          <option value="direito">Direito</option>
+                                          <option value="edufisica">Educação Física</option>
+                                          <option value="enfermagem">Enfermagem</option>
                                       </select>
                                   </div>
 
@@ -248,9 +279,9 @@ export default function CadastroLivros(){
                                            placeholder="Selecione uma opção..."
                                            value ={estadoLivro}
                                            onChange={(event) => setEstadoLivro(event.target.value)}>
-                                              <option value="Exemplo 1">Exemplo 1</option>
-                                              <option value="Exemplo 2">Exemplo 2</option>
-                                              <option value="Exemplo 3">Exemplo 3</option>
+                                              <option value="novo">Novo</option>
+                                              <option value="semi">Semi-Novo</option>
+                                              <option value="usado">Usado</option>
                                           </select>
                                       </div>
 
@@ -261,9 +292,19 @@ export default function CadastroLivros(){
                                            placeholder="Selecione uma opção..."
                                            value ={idioma}
                                            onChange={(event) => setIdioma(event.target.value)}>
-                                              <option value="Exemplo 1">Exemplo 1</option>
-                                              <option value="Exemplo 2">Exemplo 2</option>
-                                              <option value="Exemplo 3">Exemplo 3</option>
+                                              <option value="portuguesbr">Português Brasil</option>
+                                              <option value="ingles">Inglês</option>
+                                              <option value="espanhol">Espanhol</option>
+                                              <option value="mandarim">Mandarim Chinês</option>
+                                              <option value="portuguespt">Português Portugal</option>
+                                              <option value="russo">Russo</option>
+                                              <option value="japones">Japonês</option>
+                                              <option value="alemao">Alemão</option>
+                                              <option value="frances">Francês</option>
+                                              <option value="coreano">Coreano</option>
+                                              <option value="italiano">Italiano</option>
+                                              <option value="grego">Grego</option>
+                                              <option value="hindi">Hindi</option>
                                           </select>
                                       </div>
                               </div>
@@ -276,7 +317,9 @@ export default function CadastroLivros(){
                                   name="conservacao" 
                                   id="conservacao"
                                    value ={conservacao}
-                                  onChange={(event) => setConservacao(event.target.value)}> Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!</textarea>
+                                  onChange={(event) => setConservacao(event.target.value)}
+                                  placeholder={"Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!"}>
+                                  </textarea>
                               </div>
               
                               <div className="sinopse">
@@ -286,7 +329,9 @@ export default function CadastroLivros(){
                                   id="sinopse"
                                   value ={sinopse}
                                   onChange={(event) => setSinopse(event.target.value)}
-                                  >Pegue da internet, do que está no livro, ou conte com suas próprias palavras do que se trata este livro...</textarea>
+                                  placeholder={"Pegue da internet, do que está no livro, ou conte com suas próprias palavras do que se trata este livro..."}
+                                  >
+                                  </textarea>
                               </div>
               
                               <div className="enviaImg">
