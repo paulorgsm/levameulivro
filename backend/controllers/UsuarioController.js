@@ -17,7 +17,7 @@ const UsuarioController = {
 
     return res
       .status(200)
-      .send({ mensagem: "Usuario criado com sucesso", token: token, foto: usuario.foto, nome: usuario.nome });
+      .send({ mensagem: "Usuario criado com sucesso", token: usuario.token, foto: usuario.foto, nome: usuario.nome });
   },
   addDadosPessoais: async (req, res) => {
     const { sobrenome, cpf, celular, data_nasc, sexo } = req.body;
