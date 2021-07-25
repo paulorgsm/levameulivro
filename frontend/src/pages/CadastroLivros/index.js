@@ -27,28 +27,27 @@ export default function CadastroLivros(){
     const [estadoLivro, setEstadoLivro] = useState("");
     const [imgLivro, setImgLivro] = useState("")
 
+    var data = new FormData();
+    data.append('autor', autor)
+    data.append('nome_livro', titulo)
+    data.append('editora', editora)
+    data.append('ano_pub', anoPublicacao)
+    data.append('idioma', idioma)
+    data.append('num_paginas', numeroPaginas)
+    data.append('estado_livro', estadoLivro)
+    data.append('conservacao', conservacao)
+    data.append('nivel', nivel)
+    data.append('isbn', ISBN)
+    data.append('sinopse', sinopse)
+    data.append('foto_livro', imgLivro)
+
     const token = sessionStorage.getItem('token')
 
     async function inserirDadosLivros(event) {
     event.preventDefault()
  
-    await api.post("/livros/", { 
-        autor: autor,
-        nome_livro: titulo,
-        editora: editora,
-        ano_pub: anoPublicacao,
-        idiom: idioma,
-        num_paginas: numeroPaginas,
-        estado_livro: estadoLivro,
-        conservacao: conservacao,
-        materia: materia,
-        nivel: nivel,
-        isbn: ISBN,
-        sinopse: sinopse,
-        
-    }, 
-    
-    {files: imgLivro},
+    await api.post("/livros/", 
+    data,
     {
         headers: {authorization: `Bearer ${token}`}
     }
@@ -270,8 +269,6 @@ export default function CadastroLivros(){
                               </div>
                           </div>
 
-                          {/* </div> */} {/* </div> exclusão de div aqui */}
-
                           <div className="parte2">
                               <div className="conservacao">
                                   <label htmlFor="conservacao">Conservação do Livro:</label>
@@ -298,8 +295,7 @@ export default function CadastroLivros(){
                                   type="file" 
                                   name="imglivro" 
                                   accept=".png, .jpg, .jpeg" multiple
-                                  value ={imgLivro}
-                                 onChange={(event) => setImgLivro(event.target.value)}/>
+                                 onChange={(event) => setImgLivro(event.target.files[0])}/>
                               </div>
               
                               <div>

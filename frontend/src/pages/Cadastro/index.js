@@ -168,9 +168,9 @@ function Cadastro() {
                       {" "}
                       <option value="fem">Mulher cisgênero</option>
                       <option value="masc">Homem cisgênero</option>
-                      <option value="mulherTrans">Mulher Transgênero</option>
-                      <option value="homenTrans">Homem Transgênero</option>
-                      <option value="naoResponder">
+                      <option value="femt">Mulher Transgênero</option>
+                      <option value="masct">Homem Transgênero</option>
+                      <option value="null">
                         Prefiro não responder
                       </option>
                       <option value="outros">Outros</option>
