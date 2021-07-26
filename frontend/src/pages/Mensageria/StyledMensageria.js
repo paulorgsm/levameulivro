@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const StyledMensageria = styled.div`
 
-#main{
+.centralizacao {
   width: 1120px;
   margin: 0 auto;
 }

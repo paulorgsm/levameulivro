@@ -56,6 +56,7 @@ function Cadastro() {
   function onClickHide (){
     setMustShow(!mustShow);
   }
+  
   return (
     <StyledCadastro>
       <main>

@@ -15,7 +15,7 @@ import { StyledMensageria } from "./StyledMensageria";
 function Mensageria() {
   return (
     <StyledMensageria>
-      <main>
+      <main className="centralizacao">
         <div className="saudacao">
           <p>Aeee! Seja Bem-vindx ao nosso clube!</p>
         </div>

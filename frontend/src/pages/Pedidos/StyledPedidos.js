@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
 export const StyledPedidos = styled.div`
+
+ .centralizar {
+    width: 1120px;
+    margin: 0 auto;
+  }
+
   * {
     padding: 0;
     margin: 0;
@@ -20,9 +26,10 @@ export const StyledPedidos = styled.div`
   b {
     max-width: 981px;
   }
-  .new-order {
+
+/*   .new-order {
     margin: 0 120px;
-  }
+  } */
 
   .order-header {
     display: flex;
@@ -45,6 +52,7 @@ export const StyledPedidos = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 35px 0;
+    font-weight: bold;
   }
 
   .include-see-orders button {
@@ -60,6 +68,28 @@ export const StyledPedidos = styled.div`
     color: #2f80ed;
     cursor: pointer;
   }
+
+  .include-see-orders a{
+    text-decoration: none;
+  }
+
+  .include-see-orders img {
+    padding-right: 10px;
+  }
+
+
+  .btn-incluir {
+    width: 230px;
+    height: 40px;
+    border-radius: 10px;
+    background: #F6F6F6;
+    border-color: #4285F4;
+    font-family: sans-serif;
+    color: #4285F4;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
 
   .select-btn-green {
     width: 130px;
@@ -84,7 +114,7 @@ export const StyledPedidos = styled.div`
 
   .orders {
     display: block;
-    margin: 0 120px;
+/*     margin: 0 120px; */
   }
 
   .orders .order-header h1 {
@@ -102,28 +132,29 @@ export const StyledPedidos = styled.div`
   .full-table {
     margin: 36px 0 0 0;
     width: 1122px;
-    height: 635px;
+/*     height: 635px; */
   }
 
-  table {
-    width: 1122px;
-    height: 182px;
+/*   table {
+    padding-bottom: 40px;
+  } */
+
+  .table td {
     border: 1px solid #4285f4;
   }
 
   .header-table {
-    height: 42px;
+/*     height: 42px; */
     font-size: 18px;
-    font-weight: 500;
-    line-height: 26px;
+/*     font-weight: 500;
+    line-height: 26px; */
     background-color: #4285f4;
     color: #ffffff;
   }
 
   .header-table th {
-    text-align: start;
-    padding: 8px 0 8px 22px;
-    font-weight: normal;
+/*     text-align: start; */
+    padding: 10px;
   }
 
   .image {
@@ -181,14 +212,10 @@ export const StyledPedidos = styled.div`
   }
 
   .table td {
-    font-size: 18px;
-    line-height: 26px;
     color: #000000;
     background-color: #f6f6f6;
-    border-left: 1px solid #4285f4;
-    font-weight: normal;
-    text-align: start;
-    padding: 0 0 0 16px;
+    padding: 10px;
+    font-weight: bold;
   }
 
   .table .capa-livro {
@@ -228,6 +255,7 @@ export const StyledPedidos = styled.div`
     border-radius: 10px;
     border: 1px solid #34a853;
     cursor: pointer;
+    margin-top: 10px;
   }
 
   td .btn-green {
@@ -307,6 +335,11 @@ export const StyledPedidos = styled.div`
     color: #eb4335;
   }
 
+  .details p span {
+    color: #eb4335;
+    font-weight: bold;
+  }
+
   .order-historic {
     width: 573px;
     height: 280px;
@@ -322,6 +355,10 @@ export const StyledPedidos = styled.div`
     margin-bottom: 17px;
   }
 
+  .order-historic-one h4 {
+    padding-bottom: 10px;
+  }
+
   .order-historic-one h4 p {
     font-weight: 500;
     font-style: normal;
@@ -332,6 +369,7 @@ export const StyledPedidos = styled.div`
 
   .order-historic-one p {
     margin-bottom: 8px;
+    font-weight: bold;
   }
 
   .order-historic .btn-green {
@@ -356,8 +394,9 @@ export const StyledPedidos = styled.div`
   }
 
   .order-historic-two label {
+    display: flex;
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14px;
     line-height: 26px;
     color: #000000;
@@ -391,11 +430,19 @@ export const StyledPedidos = styled.div`
     cursor: pointer;
   }
 
+  .order-historic-two .btn-edit img {
+    margin-right: 5px;
+  }
+
+  .order-details span{
+    margin-top: 0px;
+  }
+  
+
   /* SEÇÃO: LIVROS QUE EU PEDI */
 
   .wishes {
     display: block;
-    margin: 0 120px;
   }
 
   .wishes .wishes-header {
@@ -406,7 +453,6 @@ export const StyledPedidos = styled.div`
     margin: 0 0 0 20px;
     font-weight: bold;
     font-size: 48px;
-    line-height: 56px;
     color: #f62cbc;
   }
 
@@ -645,4 +691,81 @@ button:hover{
     opacity: 0.7;
     transform: scale(1.04);
 }
+
+.paginacao {
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  font-family: sans-serif;
+  color: #4285F4;
+  text-align: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.pag-nav {
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #4285F4;
+  /* box-sizing: border-box; */    
+}
+
+.pag-nav-numb {
+  width: 40px;
+  height: 40px;
+  background: #F6F6F6;
+  border: 1px solid #4285F4;
+  /* box-sizing: border-box; */  
+}
+
+.pag-nav-numb p{
+  padding-top: 10px;
+}
+
+.pag-nav img {
+  padding-top: 10px;
+}
+
+.btn-detalhes {
+  width: 185px;
+  height: 40px;
+  border-radius: 10px;
+  background: #F6F6F6;
+  border-color: #4285F4;
+  font-family: sans-serif;
+  color: #4285F4;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  margin: 10px 0px;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.btn-detalhes img{
+  padding: 5px;
+}
+
+.user-icon{
+  max-width: 30px;
+  margin-right: 5px;
+}
+
+#details-orders {
+  display: flex;
+/*   display: none; */
+}
+
+#details-wishes {
+  display: flex;
+  /* display: none; */
+}
+
+#rastreio {
+  color: black;
+}
+
 `;

@@ -1,21 +1,52 @@
 import { StyledPedidos } from "./StyledPedidos";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import imgIconTroca from "../../assets/img/icon-troca.svg"
+import imgPlus from "../../assets/img/imgPlus.svg"
+import imgBookRed from "../../assets/img/imgBookRed.svg"
+import imgBookPink from "../../assets/img/imgBookPink.svg"
+import imgCadLivro from "../../assets/img/imgCadLivro.svg"
+import imgUserLivro from "../../assets/img/imgUserLivro.svg"
+import imgSetaPag from "../../assets/img/seta-pag.svg"
+import imgLogin from "../../assets/img/login.svg";
+import imgEditar from "../../assets/img/editar.svg"
+
+
 
 function PedidosTroca() {
+  const [mustShow1, setMustShow1] = useState(true);
+  const [mustShow, setMustShow] = useState(true);
+
+  function onClickHide1 (){
+    setMustShow1(!mustShow1);
+  }
+
+  function onClickHide (){
+    setMustShow(!mustShow);
+  }
+
   return (
     <StyledPedidos>
-      <main>
+      <main className="centralizar">
         <div className="welcome">
           <h3>Aeee! Seja Bem-Vindx ao Nosso Clube!</h3>
         </div>
         <section className="new-order">
           <div className="order-header">
             <i className="fas fa-exchange-alt fa-4x"></i>
+            <img src={imgIconTroca} alt="Ícone Livro"/>
             <h1>Pedidos De Troca</h1>
           </div>
           <div className="include-see-orders">
-            <button type="submit">
-              <i className="fas fa-plus-circle"></i> Incluir Novo Livro
-            </button>
+            
+            <Link to="/cadastrar-livro">  
+              <button type="submit" className="btn-incluir">
+              <img src={imgPlus} alt="Ícone Livro"/>
+              Incluir Novo Livro
+              </button>
+            </Link>
+
             <select
               name="pedidos-antigos"
               id="pedidos-antigos"
@@ -24,18 +55,17 @@ function PedidosTroca() {
               <option value="" selected disabled>
                 Mais Antigos
               </option>
-              <option value="essa-semana">Essa semana</option>
-              <option value="esse-mes">Esse mês</option>
-              <option value="ultimos-seis-meses">Últimos seis meses</option>
-              <option value="esse-ano">Esse ano</option>
-              <option value="ano-passado">Ano passado</option>
+              <option value="mais-novos">Mais Novos</option>
+              <option value="mais-antigos">Mais Antigos</option>
+              <option value="livros-novos">Livros Novos</option>
+              <option value="livros-usados">Livros Usados</option>
             </select>
           </div>
         </section>
 
         <section className="orders">
           <div className="order-header">
-            <i className="fas fa-book fa-4x"></i>
+            <img src={imgBookRed} alt="Ícone Livro"></img>
             <h1>Quem pediu meus livros:</h1>
           </div>
           <div className="full-table">
@@ -51,15 +81,18 @@ function PedidosTroca() {
               </tr>
               <tr className="table">
                 <td>
-                  <a href="#" className="capa-livro"></a>
+                <img src={imgCadLivro} alt=""></img>
                 </td>
                 <td>Harry Potter e a Pedra Filosofal</td>
                 <td>
-                  <i className="fas fa-user-circle fa-2x"></i> Didi Mocó da
-                  Silva José Gardenal
-                  <button className="more-details">
-                    <i className="fas fa-plus-circle"></i> Mais Detalhes
+                <img src={imgLogin} className="user-icon"/>
+                <span>Didi Mocó da Silva José Gardenal</span>
+                  
+                  <button type="submit" className="btn-detalhes" onClick ={onClickHide1}>
+                  <img src={imgPlus} alt="Ícone Mais"/>
+                     Ver Detalhes
                   </button>
+
                 </td>
                 <td>16/05/2021</td>
                 <td>Aguardando Sua Análise</td>
@@ -70,12 +103,14 @@ function PedidosTroca() {
                 </td>
               </tr>
             </table>
-
+  
+            {!mustShow1 && (
             <div id="details-orders" className="details">
               <div className="order-details">
                 <h3>Detalhes do Pedido:</h3>
                 <p>
-                  <b>Solicitante:</b> Didi Mocó da Silva José Gardenal
+                  <b>Solicitante:</b>
+                  <span>Didi Mocó da Silva José Gardenal</span>
                 </p>
                 <p>
                   <b>Endereço do Solicitante:</b> Estr. dos Bandeirantes, 6700
@@ -90,11 +125,15 @@ function PedidosTroca() {
                 </p>
                 <p>
                   <b>Status do Pedido:</b>{" "}
-                  <a href="#">Aguardando Sua Análise</a>
+                  <span>Aguardando Sua Análise</span>
                 </p>
                 <p>
-                  <b>Mensagens:</b>{" "}
-                  <a href="#">02 para Responder (Clique Aqui)</a>
+                  <b>Código de Rastreio:</b>{" "}
+                  <span> - </span>
+                </p>
+                <p>
+                <b>Mensagens:</b>{" "}
+                  <Link to="/mensageria"><span> XX para responder (Clique Aqui)</span></Link>
                 </p>
               </div>
               <div className="order-historic">
@@ -111,22 +150,33 @@ function PedidosTroca() {
                   <label for="">Código de Rastreio:</label>
                   <input type="text" placeholder="Digite o código aqui..." />
                   <button className="btn-green">INSERIR</button>
-                  <button className="btn-edit">
+{/*                   <button className="btn-edit">
                     <i className="fas fa-edit"></i>editar
+                  </button> */}
+                  <button className="btn-edit">
+                    <img src={imgEditar} alt=""/>
+                    <span>editar</span>
                   </button>
                 </div>
               </div>
             </div>
-            <div className="btn-change-page">
-              <button></button>
-              <button>1</button>
-              <button> </button>
-            </div>
+            )}
+
+            <div className="paginacao">
+                  <div className="pag-nav">
+                      <img src={imgSetaPag} alt=""/>
+                  </div>
+                  <div className="pag-nav-numb">
+                      <p>1</p>
+                  </div>
+                  <div className="pag-nav"></div>
+              </div>
+
           </div>
         </section>
         <section className="wishes">
           <div className="wishes-header">
-            <i className="fas fa-book fa-4x"></i>
+          <img src={imgBookPink} alt="Ícone Livro"></img>
             <h1>Livros que eu pedi:</h1>
           </div>
           <div className="full-table">
@@ -142,20 +192,27 @@ function PedidosTroca() {
               </tr>
               <tr className="table">
                 <td>
-                  <a href="#" className="capa-livro"></a>
+                <img src={imgUserLivro} alt=""></img>
                 </td>
                 <td>Pensamento Crítico: O Poder da Lógica e da Argumentação</td>
                 <td>
-                  <i className="fas fa-user-circle fa-2x"></i> Zacarias dos
-                  Trapalhões e Companhia
-                  <button className="more-details">
+                  {/* <i className="fas fa-user-circle fa-2x"></i> */}
+                  <img src={imgLogin} className="user-icon"/> 
+                   Zacarias da Turma do Didi
+{/*                   <button className="more-details">
                     <i className="fas fa-plus-circle"></i>Mais Detalhes
                   </button>
+ */}
+                  <button type="submit" className="btn-detalhes" onClick ={onClickHide}>
+                  <img src={imgPlus} alt="Ícone Mais"/>
+                     Ver Detalhes
+                  </button>
+
                 </td>
                 <td>11/01/2021</td>
                 <td>Ag. Sua Confirmação</td>
                 <td>
-                  <a href="#">OM699999611BR</a>
+                  <a href="https://www2.correios.com.br/sistemas/rastreamento/default.cfm" target="_blank">OM699999611BR</a>
                 </td>
                 <td>
                   <button className="btn-green">LIVRO CHEGOU</button>
@@ -164,6 +221,7 @@ function PedidosTroca() {
               </tr>
             </table>
 
+            {!mustShow && (
             <div id="details-wishes" className="details">
               <div className="order-details">
                 <h3>Detalhes do Pedido:</h3>
@@ -182,14 +240,14 @@ function PedidosTroca() {
                 </p>
                 <p>
                   <b>Status do Pedido:</b>
-                  <a href="#"> Aguardando Sua Confirmação</a>
+                  <span> Aguardando Sua Confirmação</span>
                 </p>
                 <p>
-                  <b>Código de Rastreio:</b> OM699999611BR
+                  <b>Código de Rastreio:</b> <span className="rastreio"> OM699999611BR </span>
                 </p>
                 <p>
                   <b>Mensagens:</b>{" "}
-                  <a href="#">Sem mensagens para responder (Clique Aqui)</a>
+                  <Link to="/mensageria"><span> XX para responder (Clique Aqui)</span></Link>
                 </p>
               </div>
               <div className="order-historic">
@@ -208,11 +266,18 @@ function PedidosTroca() {
                 </div>
               </div>
             </div>
-            <div className="btn-change-page">
-              <button></button>
-              <button>1</button>
-              <button> </button>
-            </div>
+            )}
+
+            <div className="paginacao">
+                  <div className="pag-nav">
+                      <img src={imgSetaPag} alt=""/>
+                  </div>
+                  <div className="pag-nav-numb">
+                      <p>1</p>
+                  </div>
+                  <div className="pag-nav"></div>
+              </div>
+
           </div>
         </section>
 
