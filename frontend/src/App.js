@@ -1,16 +1,17 @@
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./routes";
+import { getName } from "./services/auth";
 
 function App() {
-  const nome = sessionStorage.getItem('nome')
+  const nome = getName()
   return (
-    <Router>
+    <BrowserRouter>
         <Header title={nome ? nome: null}/>
         <Routes />
         <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import Cadastro from "../pages/Cadastro";
@@ -12,22 +11,27 @@ import Saldo from "../pages/MeuSaldo";
 import MeusDados from "../pages/MeusDados";
 import MeuPerfil from "../pages/MeuPerfil";
 import CadastroLivros from "../pages/CadastroLivros";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
-export default function Routes() {
+
+function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/busca" component={Busca} />
-      <Route path="/cadastro" component={Cadastro} />
-      <Route path="/login" component={Login} />
-      <Route path="/mensageria" component={Mensageria} />
-      <Route path="/livros" component={Produtos} />
-      <Route path="/trocas" component={Trocas} /> {/* Página Quebrada */}
-      <Route path="/meus-pedidos" component={Pedidos} /> {/* Página Quebrada */}
-      <Route path="/meu-saldo" component={Saldo} />
-      <Route path="/meus-dados" component={MeusDados} /> {/* Precisa melhorar */}
-      <Route path="/meu-perfil" component={MeuPerfil} />
-      <Route path="/cadastrar-livro" component={CadastroLivros} />
+      <PublicRoute path="/busca" component={Busca} />
+      <PublicRoute path="/cadastro" component={Cadastro} />
+      <PublicRoute path="/login" component={Login} />
+      <PrivateRoute path="/mensageria" component={Mensageria} />
+      <PublicRoute path="/livros" component={Produtos} />
+      <PublicRoute path="/trocas" component={Trocas} /> {/* Página Quebrada */}
+      <PrivateRoute path="/meus-pedidos" component={Pedidos} /> {/* Página Quebrada */}
+      <PrivateRoute path="/meu-saldo" component={Saldo} />
+      <PrivateRoute path="/meus-dados" component={MeusDados} /> {/* Precisa melhorar */}
+      <PrivateRoute path="/meu-perfil" component={MeuPerfil} />
+      <PrivateRoute path="/cadastrar-livro" component={CadastroLivros} />
+      <PublicRoute path="/" component={Home} />
     </Switch>
   );
 }
+
+export default Routes;

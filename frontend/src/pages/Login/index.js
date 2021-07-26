@@ -2,6 +2,7 @@ import { StyledLogin } from "./StyledLogin";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../../services/api"
+import { login } from "../../services/auth"
 
 function Login() {
 
@@ -17,9 +18,7 @@ function Login() {
     event.preventDefault();
     const { data, status } = await api.post('/usuarios/criar-conta', {nome: nome, email: cadEmail, senha: cadSenha})
     if (status == 200) {
-      sessionStorage.setItem('token', data.token)
-      sessionStorage.setItem('foto', data.foto)
-      sessionStorage.setItem('nome', data.nome)
+      login(data)
       history.push("/cadastro")
       window.location.reload();
     }
@@ -30,9 +29,7 @@ function Login() {
     event.preventDefault();
     const { data, status } = await api.post('/usuarios/login', {email: logEmail, senha: logSenha})
     if (status == 200) {
-      sessionStorage.setItem('token', data.token)
-      sessionStorage.setItem('foto', data.foto)
-      sessionStorage.setItem('nome', data.nome)
+      login(data)
       history.push("/meu-perfil")
       window.location.reload();
     }
