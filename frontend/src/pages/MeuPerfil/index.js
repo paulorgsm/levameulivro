@@ -4,7 +4,7 @@ import imgMeusDados from "../../assets/img/imgMeusDados.svg"
 import imgSaldo from "../../assets/img/imgSaldo.svg"
 import imgLivros from "../../assets/img/imgLivros.svg"
 import imgTroca from "../../assets/img/imgTroca.svg"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 function MeuPerfil(){
     const history = useHistory()
