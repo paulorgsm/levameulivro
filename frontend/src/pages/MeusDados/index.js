@@ -5,6 +5,7 @@ import meusDadosImg from "../../assets/img/meusDados.svg"
 import carregarFotoImg from "../../assets/img/carregarFoto.svg"
 import { useState } from 'react'
 import api from "../../services/api"
+import { getToken } from "../../services/auth"
 
 function MeusDados() {
   const [ nome, setNome ] = useState("")
@@ -16,15 +17,20 @@ function MeusDados() {
   const [ cpf, setCpf ] = useState("")
   const [ genero, setGenero ] = useState("")
   const [ foto, setFoto ] = useState([])
-  const token = sessionStorage.getItem('token')
+  const token = getToken()
   var data = new FormData();
+  
+  function formatarData(data_nasc) {
+    return data_nasc.split("/")[2] + "/" + data_nasc.split("/")[1] + "/" + data_nasc.split("/")[0]
+  }
+
   data.append('nome', nome)
   data.append('senha', senha)
   data.append('email', email)
   data.append('sobrenome', sobrenome)
   data.append('cpf', cpf)
   data.append('celular', contato)
-  data.append('data_nac', nascimento)
+  data.append('data_nac', formatarData(nascimento))
   data.append('sexo', genero)
   data.append('foto_usuario', foto)
   

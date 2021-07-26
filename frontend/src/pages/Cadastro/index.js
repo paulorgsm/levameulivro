@@ -1,6 +1,8 @@
 import { StyledCadastro } from "./StyledCadastro";
 import React, { useState } from "react";
 import api from "../../services/api";
+import { getToken } from "../../services/auth"
+import { useHistory } from "react-router-dom"
 
 function Cadastro() {
   const [mustShow, setMustShow] = useState(true);
@@ -19,14 +21,20 @@ function Cadastro() {
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
 
+  const history = useHistory()
+
+  function formatarData(data_nasc) {
+    return data_nasc.split("/")[2] + "/" + data_nasc.split("/")[1] + "/" + data_nasc.split("/")[0]
+  }
+
   async function incluirDadosPessoais(event) {
     event.preventDefault()
-    const token = sessionStorage.getItem('token')
+    const token = getToken()
     await api.post("/usuarios/adicionar-dados-pessoais", { 
       sobrenome: sobrenome, 
       cpf: cpf, 
       celular: contato, 
-      data_nasc: nascimento, 
+      data_nasc: formatarData(nascimento),
       sexo: genero
     }, 
     {
@@ -56,7 +64,12 @@ function Cadastro() {
   function onClickHide (){
     setMustShow(!mustShow);
   }
-  
+
+  function voltarParaHome() {
+    history.push("/")
+  }
+
+
   return (
     <StyledCadastro>
       <main>
@@ -73,8 +86,8 @@ function Cadastro() {
             </div>
             <div className="finalizeDepois">
               <h2>Prefiro fazer isso depois...</h2>
-              <button type="button">
-                <a className = "voltarHome" href= '/'>VOLTAR PARA HOME</a>
+              <button type="button" onClick={voltarParaHome}>
+                <a className = "voltarHome">VOLTAR PARA HOME</a>
               </button>
             </div>
           </div>
