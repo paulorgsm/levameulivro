@@ -45,7 +45,7 @@ function Cadastro() {
 
   async function incluirEndereco(event) {
     event.preventDefault()
-    const token = sessionStorage.getItem('token')
+    const token = getToken()
     await api.post("/enderecos", { 
       cep: cep, 
       logradouro: logradouro, 
@@ -68,7 +68,6 @@ function Cadastro() {
   function voltarParaHome() {
     history.push("/")
   }
-
 
   return (
     <StyledCadastro>
