@@ -19,7 +19,7 @@ const UsuarioService = {
       },
       process.env.JWT_KEY,
       {
-        expiresIn: "1h",
+        expiresIn: "6h",
       }
     ),
     foto: usuario.foto_usuario,
@@ -101,7 +101,7 @@ const UsuarioService = {
         },
         process.env.JWT_KEY,
         {
-          expiresIn: "1h",
+          expiresIn: "6h",
         }
       ),
       foto: usuario.dataValues.foto_usuario,
