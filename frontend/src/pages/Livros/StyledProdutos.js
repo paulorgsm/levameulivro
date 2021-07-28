@@ -98,7 +98,7 @@ body{
 }
 
 .informacoesLivro h1{
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   align-items: center;
 }
@@ -133,9 +133,7 @@ body{
 #alinhaSalvar{
   align-self: center;
 }
-.centralizar{
-text-align: center;
-}
+
 .marginInfoLivro{
   margin-top: 38px;
 }

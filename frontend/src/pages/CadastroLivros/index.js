@@ -41,6 +41,7 @@ export default function CadastroLivros(){
     data.append('isbn', ISBN)
     data.append('sinopse', sinopse)
     data.append('foto_livro', imgLivro)
+    data.append('materia', materia)
 
     const token = sessionStorage.getItem('token')
 

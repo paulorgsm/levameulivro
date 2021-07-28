@@ -4,7 +4,7 @@ import Cadastro from "../pages/Cadastro";
 import Login from "../pages/Login";
 import Busca from "../pages/Busca";
 import Mensageria from "../pages/Mensageria";
-import Produtos from "../pages/Produtos"; /* levando para o lugar errado */
+import Livros from "../pages/Livros"; 
 import Trocas from "../pages/Trocas";
 import Pedidos from "../pages/Pedidos";
 import Saldo from "../pages/MeuSaldo";
@@ -22,7 +22,7 @@ function Routes() {
       <PublicRoute path="/cadastro" component={Cadastro} />
       <PublicRoute path="/login" component={Login} />
       <PrivateRoute path="/mensageria" component={Mensageria} />
-      <PublicRoute path="/livros" component={Produtos} />
+      <PublicRoute path="/livros/:id" component={Livros} />
       <PublicRoute path="/trocas" component={Trocas} /> {/* Página Quebrada */}
       <PrivateRoute path="/meus-pedidos" component={Pedidos} /> {/* Página Quebrada */}
       <PrivateRoute path="/meu-saldo" component={Saldo} />

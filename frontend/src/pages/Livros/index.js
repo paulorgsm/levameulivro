@@ -6,18 +6,65 @@ import login1 from "../../assets/img/login.svg";
 import estrela from "../../assets/img/estrela.svg";
 import perguntas from "../../assets/img/perguntas.svg";
 import { StyledProdutos } from "./StyledProdutos";
+import {useParams} from "react-router-dom"
+import { useState , useEffect} from "react";
+import api from "../../services/api";
+
 
 function Produtos() {
+  const [materia, setMateria] = useState("");
+  const [autor, setAutor] = useState("");
+  const [ nome_livro, setNome_livro] = useState("");
+  const [ editora, setEditora] = useState("");
+  const [ ano_pub, setAno_pub] = useState("");
+  const [ idioma, setIdioma] = useState("");
+  const [ estado_livro , setEstado_livro] = useState("");
+  const [ conservacao, setConservacao] = useState("");
+  const [ isbn, setIsbn] = useState("");
+  const [ nivel, setNivel] = useState("");
+  const [sinopse, setSinopse] = useState("");
+  const [foto_livro, setFoto_livro] = useState("");
+  const [id_livro , setId_livro] = useState("");
+  const[ pergunta, setPergunta]= useState("");
+ 
+  const [num_paginas, setNum_paginas] = useState("");
+
+
+  const {id } = useParams();
+  async function BuscarLivroById(){
+    const {data} = await api.get(`/livros/${id}`)
+    setAutor(data.autor);
+    setNome_livro(data.nome_livro);
+    setIdioma(data.idioma);
+    setEditora(data.editora)
+    setAno_pub(data.ano_pub)
+    setEstado_livro(data.estado_livro);
+    setConservacao(data.conservacao);
+    setIsbn(data.isbn);
+    setNivel(data.nivel);
+    setSinopse(data.sinopse);
+    setFoto_livro(data.foto_livro1);
+    setMateria(data.materia);
+    setNum_paginas(data.num_paginas);
+    setId_livro(data.id_livro);
+    setPergunta(data.pergunta)
+  }
+
+  useEffect(() => 
+    BuscarLivroById()
+  )
+
   return (
     <StyledProdutos>
+
       <main>
         <section className="sessao">
           <a className="negrito" href="">
-            Matéria - Nível de Ensino - Ano do Ensino
+            {materia} - {nivel} 
           </a>
           <div className="mostrarInfoLivro">
             <div>
-              <img className="produtoFoto" src={livroProduto}></img>
+              <img className="produtoFoto" src={foto_livro}></img>
               <div className="fotosMostruario">
                 <img src={imgMostruarioLivro} alt=""></img>
                 <img src={imgMostruarioLivro}  alt=""></img>
@@ -26,8 +73,7 @@ function Produtos() {
             </div>
             <div className="informacoesLivro">
               <h1 className="centralizar negrito">
-                NOME DO LIVRO COM ATÉ 2 LINHAS DE CARACTERES NOME DO LIVRO COM
-                ATÉ 2 LINHAS DE CARACTERES NOME DO{" "}
+              {nome_livro}
               </h1>
               <div className="infosIcones">
                 <div className="infosLivros">
@@ -68,20 +114,18 @@ function Produtos() {
               <div className="infosLivros">
                 <p className="negrito"> Autor/Autores:</p>{" "}
                 <p>
-                  {" "}
-                  Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois
-                  divoltis porris
+                  {autor}
+                  
                 </p>
               </div>
 
               <div className="infosLivros">
-                <p className="negrito">Ano de Publicação: </p> <p>2020</p>
+                <p className="negrito">Ano de Publicação: </p> <p>{ano_pub}</p>
               </div>
               <div className="infosLivros">
                 <p className="negrito">Editora:</p>{" "}
                 <p>
-                  Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois
-                  divoltis porris
+                  {editora}
                 </p>
               </div>
 
@@ -94,21 +138,19 @@ function Produtos() {
               </div>
 
               <div className="infosLivros">
-                <p className="negrito">Nº de Páginas:</p> <p> 300</p>
+                <p className="negrito">Nº de Páginas:</p> <p> {num_paginas}</p>
               </div>
               <div className="infosLivros">
                 <p className="negrito">Estado do Livro:</p>
                 <p>
-                  {" "}
-                  Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois
-                  divoltis porris
+                  {estado_livro}
+                  
                 </p>
               </div>
               <div className="infosLivros">
                 <p className="negrito">Conservação: </p>
                 <p>
-                  Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois
-                  divoltis porris
+                  {conservacao}
                 </p>
               </div>
               <div className="infosLivros marginInfoLivro ">
@@ -118,7 +160,7 @@ function Produtos() {
                 </div>
                 <div className="infosLivros ">
                   <p className="negrito ">ISBN:</p>
-                  <p>109283092183982</p>
+                  <p>{isbn}</p>
                 </div>
               </div>
               <div className="infosLivros">
@@ -141,13 +183,9 @@ function Produtos() {
           <h2 class="centralizar txtAzul">DESCRIÇÃO / RESUMO DO LIVRO</h2>
           <div>
             <p class="txt">
-              Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris,
-              leite de mula manquis sem cabeça. Diuretics paradis num copo é
-              motivis de denguis. Nullam volutpat risus nec leo commodo, ut
-              interdum diam laoreet. Sed non consequat odio. A ordem dos
-              tratores não altera o pão duris.
+             {sinopse}
             </p>
-            <p class="txt">
+            {/* <p class="txt">
               {" "}
               Quem num gosta di mim que vai caçá sua turmis! Si u mundo tá muito
               paradis? Toma um mé que o mundo vai girarzis! Copo furadis é
@@ -194,7 +232,7 @@ function Produtos() {
               aguis e fermentis. Vehicula non. Ut sed ex eros. Vivamus sit amet
               nibh non tellus tristique interdum. Aenean aliquam molestie leo,
               vitae iaculis nisl.
-            </p>
+            </p> */}
           </div>
           <div class="border"></div>
         </section>
@@ -222,8 +260,7 @@ function Produtos() {
           </h2>
           <div id="contato">
             <p class="negrito perguntas">
-              Você consegue postar o livro nos Correios ainda hoje se eu
-              solicitar a troca?
+              {pergunta}
             </p>
             <p class="perguntasSub">Pergunta de: Didi Mocó dos Santos</p>
             <div class="infosLivros">
