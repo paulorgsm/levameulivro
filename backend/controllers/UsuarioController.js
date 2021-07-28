@@ -46,11 +46,19 @@ const UsuarioController = {
   atualizarDados: async (req, res) => {
     const { nome, senha, email, sobrenome, cpf, celular, data_nasc, sexo } =
       req.body;
+      
     const decoded = req.headers.authorization;
+    
+    const id_usuario = decoded.id;
+    
+    const exist = await UsuarioService.existAnotherUserWithTheSameEmail(id_usuario, email);
+    
+    if (exist) {
+      return res.status(401).send({ mensagem: "Email já cadastrado" });
+    }
 
     const { filename } = req.file;
 
-    const id_usuario = decoded.id;
 
     const foto_usuario = `${process.env.HOST_URL}/uploads/usuarios/${filename}`;
 
@@ -101,6 +109,15 @@ const UsuarioController = {
       .status(200)
       .send({ mensagem: "Usuario autenticado com sucesso", token: usuario.token, foto: usuario.foto, nome: usuario.nome });
   },
+  indexUsuario: async (req, res) => {
+    const decoded = req.headers.authorization;
+
+    const id_usuario = decoded.id;
+
+    const usuario = await UsuarioService.getUsuario(id_usuario)
+
+    return res.send(usuario)
+  }
 };
 
 module.exports = UsuarioController;

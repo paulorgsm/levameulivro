@@ -12,27 +12,24 @@ import api from "../../services/api";
 
 
 function Produtos() {
-  const [materia, setMateria] = useState("");
-  const [autor, setAutor] = useState("");
-  const [ nome_livro, setNome_livro] = useState("");
-  const [ editora, setEditora] = useState("");
-  const [ ano_pub, setAno_pub] = useState("");
-  const [ idioma, setIdioma] = useState("");
-  const [ estado_livro , setEstado_livro] = useState("");
-  const [ conservacao, setConservacao] = useState("");
-  const [ isbn, setIsbn] = useState("");
-  const [ nivel, setNivel] = useState("");
-  const [sinopse, setSinopse] = useState("");
-  const [foto_livro, setFoto_livro] = useState("");
-  const [id_livro , setId_livro] = useState("");
-  const[ pergunta, setPergunta]= useState("");
+  const [ materia, setMateria ] = useState("");
+  const [ autor, setAutor ] = useState("");
+  const [ nome_livro, setNome_livro ] = useState("");
+  const [ editora, setEditora ] = useState("");
+  const [ ano_pub, setAno_pub ] = useState("");
+  const [ idioma, setIdioma ] = useState("");
+  const [ estado_livro , setEstado_livro ] = useState("");
+  const [ conservacao, setConservacao ] = useState("");
+  const [ isbn, setIsbn ] = useState("");
+  const [ nivel, setNivel ] = useState("");
+  const [ sinopse, setSinopse ] = useState("");
+  const [ foto_livro, setFoto_livro ] = useState("");
+  const [ num_paginas, setNum_paginas ] = useState("");
+  const [ pergunta, setPergunta ]= useState("");
+  const { id } = useParams();
  
-  const [num_paginas, setNum_paginas] = useState("");
-
-
-  const {id } = useParams();
   async function BuscarLivroById(){
-    const {data} = await api.get(`/livros/${id}`)
+    const { data } = await api.get(`/livros/${id}`)
     setAutor(data.autor);
     setNome_livro(data.nome_livro);
     setIdioma(data.idioma);
@@ -46,17 +43,15 @@ function Produtos() {
     setFoto_livro(data.foto_livro1);
     setMateria(data.materia);
     setNum_paginas(data.num_paginas);
-    setId_livro(data.id_livro);
     setPergunta(data.pergunta)
   }
 
-  useEffect(() => 
+  useEffect(() => {
     BuscarLivroById()
-  )
+  }, [])
 
   return (
     <StyledProdutos>
-
       <main>
         <section className="sessao">
           <a className="negrito" href="">
@@ -115,10 +110,8 @@ function Produtos() {
                 <p className="negrito"> Autor/Autores:</p>{" "}
                 <p>
                   {autor}
-                  
                 </p>
               </div>
-
               <div className="infosLivros">
                 <p className="negrito">Ano de Publicação: </p> <p>{ano_pub}</p>
               </div>
@@ -128,7 +121,6 @@ function Produtos() {
                   {editora}
                 </p>
               </div>
-
               <div className="infosLivros">
                 <p className="negrito">Coleção:</p>{" "}
                 <p>
@@ -136,7 +128,6 @@ function Produtos() {
                   divoltis porris
                 </p>
               </div>
-
               <div className="infosLivros">
                 <p className="negrito">Nº de Páginas:</p> <p> {num_paginas}</p>
               </div>
@@ -144,7 +135,6 @@ function Produtos() {
                 <p className="negrito">Estado do Livro:</p>
                 <p>
                   {estado_livro}
-                  
                 </p>
               </div>
               <div className="infosLivros">
@@ -185,54 +175,6 @@ function Produtos() {
             <p class="txt">
              {sinopse}
             </p>
-            {/* <p class="txt">
-              {" "}
-              Quem num gosta di mim que vai caçá sua turmis! Si u mundo tá muito
-              paradis? Toma um mé que o mundo vai girarzis! Copo furadis é
-              disculpa de bebadis, arcu quam euismod magna. Em pé sem cair,
-              deitado sem dormir, sentado sem cochilar e fazendo pose.
-            </p>
-            <p class="txt">
-              Quem num gosta di mim que vai caçá sua turmis! Si u mundo tá muito
-              paradis? Toma um mé que o mundo vai girarzis! Copo furadis é
-              disculpa de bebadis, arcu quam euismod magna. Em pé sem cair,
-              deitado sem dormir, sentado sem cochilar e fazendo pose.{" "}
-            </p>
-            <p class="txt">
-              {" "}
-              num gosta di mim que vai caçá sua turmis! Si u mundo tá muito
-              paradis? Toma um mé que o mundo vai girarzis! Copo furadis é
-              disculpa de bebadis, arcu quam euismod magna. Em pé sem cair,
-              deitado sem dormir, sentado sem cochilar e fazendo pose.
-            </p>
-            <p class="txt">
-              {" "}
-              libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit
-              amet nisi. Mauris nec dolor in eros commodo tempor. Aenean aliquam
-              molestie leo, vitae iaculis nisl. Quem manda na minha terra sou
-              euzis! Mais vale um bebadis conhecidiss, que um alcoolatra
-              anonimis.
-            </p>
-            <p class="txt">
-              {" "}
-              faiz malandris se pirulitá. Detraxit consequat et quo num tendi
-              nada. Interessantiss quisso pudia ce receita de bolis, mais bolis
-              eu num gostis. Viva Forevis aptent taciti sociosqu ad litora
-              torquent.
-            </p>
-            <p class="txt">
-              Manduma pindureta quium dia nois paga. Mé faiz elementum girarzis,
-              nisi eros vermeio. Não sou faixa preta cumpadi, sou preto
-              inteiris, inteiris. Suco de cevadiss deixa as pessoas mais
-              interessantis.
-            </p>
-            <p class="txt">
-              Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.
-              Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis,
-              aguis e fermentis. Vehicula non. Ut sed ex eros. Vivamus sit amet
-              nibh non tellus tristique interdum. Aenean aliquam molestie leo,
-              vitae iaculis nisl.
-            </p> */}
           </div>
           <div class="border"></div>
         </section>

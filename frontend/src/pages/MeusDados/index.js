@@ -1,41 +1,62 @@
 import { StyledMeusDados } from "./StyledMeuDados";
 import { FaRegEdit , FaTrash } from "react-icons/fa";
 import {  BsPlusCircleFill} from "react-icons/bs";
+import { getPhoto, getToken } from "../../services/auth"
+import { useEffect, useState } from 'react'
 import meusDadosImg from "../../assets/img/meusDados.svg"
 import carregarFotoImg from "../../assets/img/carregarFoto.svg"
-import { useState } from 'react'
 import api from "../../services/api"
-import { getToken } from "../../services/auth"
 
 function MeusDados() {
   const [ nome, setNome ] = useState("")
-  const [ sobrenome, setSobrenome ] = useState("")
   const [ email, setEmail ] = useState("")
   const [ contato, setContato ] = useState("")
   const [ senha, setSenha ] = useState("")
   const [ nascimento, setNascimento ] = useState("")
   const [ cpf, setCpf ] = useState("")
   const [ genero, setGenero ] = useState("")
-  const [ foto, setFoto ] = useState([])
-  const token = getToken()
-  var data = new FormData();
+  const [ foto, setFoto ] = useState(getPhoto())
+  const [ sobrenome, setSobrenome ] = useState("")
+  
+  useEffect(() => {
+    trazerDadosPredefinidos()
+  }, [])
+  
+  async function trazerDadosPredefinidos() {
+    const token = getToken()
+    const { data } = await api.get("/usuarios", {
+      headers: { authorization: `Bearer ${token}` }
+    })
+    setNome(data.nome)
+    setEmail(data.email)
+    setSobrenome(data.sobrenome)
+    setCpf(data.cpf)
+    setNascimento(converterData(data.data_nasc))
+    setContato(data.celular)
+    setGenero(data.sexo)
+  }
   
   function formatarData(data_nasc) {
     return data_nasc.split("/")[2] + "/" + data_nasc.split("/")[1] + "/" + data_nasc.split("/")[0]
   }
 
-  data.append('nome', nome)
-  data.append('senha', senha)
-  data.append('email', email)
-  data.append('sobrenome', sobrenome)
-  data.append('cpf', cpf)
-  data.append('celular', contato)
-  data.append('data_nac', formatarData(nascimento))
-  data.append('sexo', genero)
-  data.append('foto_usuario', foto)
+  function converterData(data_nasc) {
+    return data_nasc.split("-")[2] + "/" + data_nasc.split("-")[1] + "/" + data_nasc.split("-")[0]
+  }
   
   async function alterarDados(event){
     event.preventDefault()
+    var data = new FormData();
+    const token = getToken()
+    data.append('nome', nome)
+    data.append('email', email)
+    data.append('sobrenome', sobrenome)
+    data.append('cpf', cpf)
+    data.append('celular', contato)
+    data.append('data_nasc', formatarData(nascimento))
+    data.append('sexo', genero)
+    data.append('foto_usuario', foto)
+    data.append('senha', senha)
     await api.put("/usuarios", data, 
     {
       headers: { authorization: `Bearer ${token}`}
@@ -102,7 +123,7 @@ function MeusDados() {
                       type="password"
                       name="senha"
                       id="senha"
-                      placeholder="********"
+                      placeholder="Digite uma nova senha..."
                       value={senha}
                       onChange={(e) => setSenha(e.target.value)}
                     />

@@ -1,5 +1,5 @@
 import { StyledCadastro } from "./StyledCadastro";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 import { getToken } from "../../services/auth"
 import { useHistory } from "react-router-dom"
@@ -7,12 +7,17 @@ import { useHistory } from "react-router-dom"
 function Cadastro() {
   const [mustShow, setMustShow] = useState(true);
   
+  // dados pessoais
+  const [ nome, setNome ] = useState("")
+  const [ email, setEmail ] = useState("")
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
   const [contato, setContato] = useState("");
   const [nascimento, setNascimento] = useState("");
   const [genero, setGenero] = useState("");
   
+
+  //endereço
   const [cep, setCep] = useState("");
   const [logradouro, setLogradouro] = useState("");
   const [numero, setNumero] = useState("");
@@ -25,6 +30,15 @@ function Cadastro() {
 
   function formatarData(data_nasc) {
     return data_nasc.split("/")[2] + "/" + data_nasc.split("/")[1] + "/" + data_nasc.split("/")[0]
+  }
+
+  async function trazerDadosDoCadastro() {
+    const token = getToken()
+    const { data } = await api.get("/usuarios", {
+      headers: { authorization: `Bearer ${token}` }
+    })
+    setNome(data.nome)
+    setEmail(data.email)
   }
 
   async function incluirDadosPessoais(event) {
@@ -69,6 +83,8 @@ function Cadastro() {
     history.push("/")
   }
 
+  useEffect(() => trazerDadosDoCadastro(), [])
+
   return (
     <StyledCadastro>
       <main>
@@ -107,7 +123,7 @@ function Cadastro() {
                       type="text"
                       name="primeiroNome"
                       id="primeiroNome"
-                      placeholder="Digite seu nome"
+                      value={nome}
                       disabled
                     />
                   </div>
@@ -129,7 +145,7 @@ function Cadastro() {
                     type="text"
                     name="email"
                     id="email"
-                    placeholder="levameulivro@gmail.com"
+                    value={email}
                     disabled
                   />
                 </div>

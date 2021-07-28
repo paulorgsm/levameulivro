@@ -2,6 +2,7 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const db = require("../database/models");
 const jwt = require("jsonwebtoken");
+const { Op } = require("sequelize");
 
 const UsuarioService = {
   createUsuario: async (nome, email, senha) => {
@@ -82,6 +83,15 @@ const UsuarioService = {
     }
     return true;
   },
+  existAnotherUserWithTheSameEmail: async (id, email) => {
+    const exist = await db.Usuario.findOne({ where: { id: {[Op.ne]: id}, email: email } });
+
+
+    if (exist === null) {
+      return false;
+    }
+    return true;
+  },
   authUsuario: async (email, senha) => {
     const usuario = await db.Usuario.findOne({
       where: { email: email },
@@ -110,6 +120,9 @@ const UsuarioService = {
     }
     return null;
   },
+  getUsuario: async (id) => {
+    return await db.Usuario.findByPk(id, { attributes: [ "nome", "sobrenome", "email", "cpf", "celular", "data_nasc", "sexo" ] })
+  }
 };
 
 module.exports = UsuarioService;

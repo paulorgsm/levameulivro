@@ -44,70 +44,10 @@ const livroService = {
     });
   },
   getAll: async () => {
-    const livros = await db.Livro.findAll({
-      attributes: [
-        "autor",
-        "nome_livro",
-        "editora",
-        "ano_pub",
-        "idioma",
-        "num_paginas",
-        "estado_livro",
-        "conservacao",
-        "materia",
-        "nivel",
-        "isbn",
-        "sinopse",
-        "foto_livro1",
-        "foto_livro2",
-        "foto_livro3",
-        "foto_livro4",
-        "foto_livro4",
-      ],
-    });
-
-    return livros;
+    return await db.Livro.findAll();
   },
   getById: async (id) => {
-    return await db.Livro.findByPk(id, {
-      attributes: [
-        "id",
-        "autor",
-        "nome_livro",
-        "editora",
-        "ano_pub",
-        "idioma",
-        "num_paginas",
-        "estado_livro",
-        "conservacao",
-        "materia",
-        "nivel",
-        "isbn",
-        "sinopse",
-        "foto_livro1",
-        "foto_livro2",
-        "foto_livro3",
-        "foto_livro4",
-        "foto_livro4",
-      ],
-      include: {
-        model: db.Pergunta,
-        as: "perguntas",
-        include: [
-          {
-            model: db.Usuario,
-            as: "usuarios",
-            attributes: ["nome", "sobrenome"],
-          },
-          {
-            model: db.Resposta,
-            as: "respostas",
-            attributes: ["resposta"],
-          },
-        ],
-        attributes: ["pergunta"],
-      },
-    });
+    return await db.Livro.findByPk(id);
   },
   getByNameOrAutorOrTag: async (nome, autor, tag) => {
     return await db.Livro.findAndCountAll({

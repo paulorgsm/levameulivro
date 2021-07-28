@@ -1,5 +1,6 @@
 export const isAuthenticated = () => sessionStorage.getItem('token') !== null;
 export const getToken = () => sessionStorage.getItem('token');
+export const getPhoto = () => sessionStorage.getItem('foto')
 export const getName = () => sessionStorage.getItem('nome');
 export const login = (data) => {
     sessionStorage.setItem('token', data.token)

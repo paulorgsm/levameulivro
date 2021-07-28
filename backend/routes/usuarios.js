@@ -17,6 +17,7 @@ router.put(
   upload.single("foto_usuario"),
   controller.atualizarDados
 );
+router.get("/", autorizacao, controller.indexUsuario)
 router.delete("/", autorizacao, controller.deletarConta);
 
 module.exports = router;
