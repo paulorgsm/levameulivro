@@ -31,7 +31,7 @@ function MeusDados() {
     setEmail(data.email)
     setSobrenome(data.sobrenome)
     setCpf(data.cpf)
-    setNascimento(converterData(data.data_nasc))
+    data.data_nasc ? setNascimento(converterData(data.data_nasc)): setNascimento("")
     setContato(data.celular)
     setGenero(data.sexo)
   }
