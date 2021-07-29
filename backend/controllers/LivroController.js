@@ -81,6 +81,11 @@ const LivroController = {
       .status(200)
       .send(await livroService.getByNameOrAutorOrTag(nome, autor, tag));
   },
+  indexUserAndAddressById: async (req, res) => {
+    const { id } = req.params;
+
+    return res.status(200).send(await livroService.getUserAndAddressById(id))
+  }
 };
 
 module.exports = LivroController;

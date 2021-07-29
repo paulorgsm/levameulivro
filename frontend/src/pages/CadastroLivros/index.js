@@ -9,11 +9,7 @@ import api from "../../services/api";
 import React, { useState } from "react";
 import {Link} from "react-router-dom";
 
-//import {Link} from "react-router-dom"
-
-
 export default function CadastroLivros(){
-
     const [ISBN, setISBN] = useState("");
     const [titulo, setTitulo] = useState("");
     const [autor, setAutor] = useState("");
@@ -28,33 +24,29 @@ export default function CadastroLivros(){
     const [estadoLivro, setEstadoLivro] = useState("");
     const [imgLivro, setImgLivro] = useState("")
 
-    var data = new FormData();
-    data.append('autor', autor)
-    data.append('nome_livro', titulo)
-    data.append('editora', editora)
-    data.append('ano_pub', anoPublicacao)
-    data.append('idioma', idioma)
-    data.append('num_paginas', numeroPaginas)
-    data.append('estado_livro', estadoLivro)
-    data.append('conservacao', conservacao)
-    data.append('nivel', nivel)
-    data.append('isbn', ISBN)
-    data.append('sinopse', sinopse)
-    data.append('foto_livro', imgLivro)
-    data.append('materia', materia)
-
-    const token = sessionStorage.getItem('token')
-
     async function inserirDadosLivros(event) {
-    event.preventDefault()
- 
-    await api.post("/livros/", 
-    data,
+        event.preventDefault()
+        var data = new FormData();
+        const token = sessionStorage.getItem('token')
+        data.append('autor', autor)
+        data.append('nome_livro', titulo)
+        data.append('editora', editora)
+        data.append('ano_pub', anoPublicacao)
+        data.append('idioma', idioma)
+        data.append('num_paginas', numeroPaginas)
+        data.append('estado_livro', estadoLivro)
+        data.append('conservacao', conservacao)
+        data.append('nivel', nivel)
+        data.append('isbn', ISBN)
+        data.append('sinopse', sinopse)
+        data.append('foto_livro', imgLivro)
+        data.append('materia', materia)
+        await api.post("/livros/", data,
     {
         headers: {authorization: `Bearer ${token}`}
     }
     )
-  }
+    }
 
     return (
       <StyledCadastroLivro>
@@ -68,12 +60,10 @@ export default function CadastroLivros(){
                   <img src={imgIconLivro} alt="Ícone Livro"/>
                   <h1>Cadastrar Meus Livros</h1>
               </div>
-
               <div className="botoes">
                   <button type="submit" className="btn-incluir">
                       <img src={imgPlus} alt=""/>
                       Incluir Novo Livro</button>
-
                   <label htmlFor="organizar"></label>
                   <select name="organizar" id="organizar" className="btn-filtro">
                       <option value="mais-novos" className="btn-org">Mais Novos</option>
@@ -81,11 +71,8 @@ export default function CadastroLivros(){
                       <option value="livros-novos" className="btn-org">Livros Novos</option>
                       <option value="livros-usados" className="btn-org">Livros Usados</option>
                   </select>
-
               </div>
-
               <table className="cadTabela">
-                  
                   <thead>
                       <tr>
                           <th>Imagem:</th>
@@ -96,7 +83,6 @@ export default function CadastroLivros(){
                           <th>Ação:</th>
                       </tr>
                   </thead>
-
                   <tbody>
                       <tr>
                           <td>
@@ -117,15 +103,11 @@ export default function CadastroLivros(){
                                     <img src={imgLixeira} alt=""/>
                                     <span>apagar</span>
                                 </button>
-
                               </div>
-                          
                           </td>
                       </tr>
                   </tbody>
-
               </table>
-
               <div className="paginacao">
                   <div className="pag-nav">
                       <img src={imgSetaPag} alt=""/>
@@ -135,13 +117,10 @@ export default function CadastroLivros(){
                   </div>
                   <div className="pag-nav"></div>
               </div>
-    
               <h2>PREENCHA AS INFORMAÇÕES A SEGUIR:</h2>
                 <section className="cadInfos">
                   <div className="total">
                     <form className="parte1" onSubmit={(event) => inserirDadosLivros(event)}>
-                          
-
                           <div className="camposform">
                               <div className="isbn">
                                   <label htmlFor="ISBN">Cadastrar ISBN ou ISSN:</label>
@@ -153,9 +132,7 @@ export default function CadastroLivros(){
                                   value = {ISBN}
                                   onChange={(event) => setISBN(event.target.value)}
                                   />
-                                  
                               </div>
-
                               <div className="titulo">
                                   <label htmlFor="titulo">Título do Livro:</label>
                                   <input 
@@ -167,7 +144,6 @@ export default function CadastroLivros(){
                                   onChange={(event) => setTitulo(event.target.value)}
                                   />
                               </div>
-
                               <div className="autor">
                                   <label htmlFor="autor">Autor(a) / Autores:</label>
                                   <input 
@@ -178,9 +154,7 @@ export default function CadastroLivros(){
                                   value = {autor}
                                   onChange={(event) => setAutor(event.target.value)}/>
                               </div>
-
                               <div className="elDuplo">
-
                                   <div className="divEnsino">
                                       <label htmlFor="ensino">Nível de Ensino</label>
                                       <select 
@@ -195,7 +169,6 @@ export default function CadastroLivros(){
                                           <option value="ensinosup">Ensino Superior</option>
                                       </select>
                                   </div>
-
                                   <div className="divCurso">
                                       <label htmlFor="curso">Matéria ou Curso:</label>
                                       <select name="curso" 
@@ -231,9 +204,7 @@ export default function CadastroLivros(){
                                           <option value="enfermagem">Enfermagem</option>
                                       </select>
                                   </div>
-
                               </div>
-
                               <div className="editora">
                                   <label htmlFor="editora">Editora:</label>
                                   <input 
@@ -244,8 +215,6 @@ export default function CadastroLivros(){
                                   value = {editora}
                                   onChange={(event) => setEditora(event.target.value)}/>
                               </div>
-
-
                               <div className="elDuplo">
                                   <div className="ano">
                                       <label htmlFor="ano">Ano da Publicação:</label>
@@ -257,7 +226,6 @@ export default function CadastroLivros(){
                                       value = {anoPublicacao}
                                       onChange={(event) => setAnoPublicacao(event.target.value)}/>
                                   </div>
-
                                   <div className="paginas">
                                       <label htmlFor="paginas">Nº de Páginas:</label>
                                       <input 
@@ -269,9 +237,7 @@ export default function CadastroLivros(){
                                       onChange={(event) => setNumeroPaginas(event.target.value)}/>
                                   </div>
                               </div>
-
                               <div className="elDuplo">
-    
                                       <div className="divEstado">
                                           <label htmlFor="estado">Estado do Livro:</label>
                                           <select
@@ -285,14 +251,13 @@ export default function CadastroLivros(){
                                               <option value="usado">Usado</option>
                                           </select>
                                       </div>
-
                                       <div className="divIdioma">
                                           <label htmlFor="idioma">Idioma:</label>
                                           <select name="idioma" 
-                                          className="campoIdioma"
-                                           placeholder="Selecione uma opção..."
-                                           value ={idioma}
-                                           onChange={(event) => setIdioma(event.target.value)}>
+                                            className="campoIdioma"
+                                            placeholder="Selecione uma opção..."
+                                            value = {idioma}
+                                            onChange={(event) => setIdioma(event.target.value)}>
                                               <option value="portuguesbr">Português Brasil</option>
                                               <option value="ingles">Inglês</option>
                                               <option value="espanhol">Espanhol</option>
@@ -310,7 +275,6 @@ export default function CadastroLivros(){
                                       </div>
                               </div>
                           </div>
-
                           <div className="parte2">
                               <div className="conservacao">
                                   <label htmlFor="conservacao">Conservação do Livro:</label>
@@ -322,7 +286,6 @@ export default function CadastroLivros(){
                                   placeholder={"Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!"}>
                                   </textarea>
                               </div>
-              
                               <div className="sinopse">
                                   <label htmlFor="sinopse">Sinopse / Descrição do Livro:</label>
                                   <textarea 
@@ -334,7 +297,6 @@ export default function CadastroLivros(){
                                   >
                                   </textarea>
                               </div>
-              
                               <div className="enviaImg">
                                   <label>Cadastrar Imagens:</label>
                                   <input 
@@ -343,17 +305,14 @@ export default function CadastroLivros(){
                                   accept=".png, .jpg, .jpeg" multiple
                                  onChange={(event) => setImgLivro(event.target.files[0])}/>
                               </div>
-              
                               <div>
                                   <button type="submit" className="btn-enviar">SALVAR DADOS</button>
                               </div>
                           </div>
                     </form>
-                    </div>{/* inclusão de div aqui */}
+                    </div>
                 </section>
-      
           </section>
-
         </main>
       </StyledCadastroLivro>
     );

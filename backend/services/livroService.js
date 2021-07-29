@@ -71,6 +71,22 @@ const livroService = {
       },
     });
   },
+  getUserAndAddressById: async (id) => {
+    return await db.Livro.findByPk(id, 
+        { 
+          include: {
+            model: db.Usuario,
+            as: "usuarios",
+            attributes: ["nome", "foto_usuario"],
+            include: {
+              model: db.Endereco,
+              as: "enderecos",
+              attributes: ["cidade", "estado"],
+            }
+          }
+        }
+    )
+  }
 };
 
 module.exports = livroService;

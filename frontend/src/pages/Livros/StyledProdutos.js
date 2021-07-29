@@ -67,7 +67,6 @@ body{
   margin: 40px auto;
 }
 
-
 .negrito{
   color: #000;
   font-weight: 700;
@@ -107,6 +106,7 @@ body{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .infosIcones{
@@ -181,12 +181,13 @@ body{
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 40px;
+  text-align: center
 }
 
 .txt{
   font-size: 16px;
   line-height: 22px;
-  margin-bottom:30px ;
+  margin: 34px 64px 98px 64px;
 }
 
 .form{
@@ -234,6 +235,12 @@ button {
 button:hover{
   opacity: 0.7;
   transform: scale(1.04);
+}
+
+.foto {
+  max-width: 50px;
+  max-heigh: 50px;
+  border-radius: 50%;
 }
 
 `;

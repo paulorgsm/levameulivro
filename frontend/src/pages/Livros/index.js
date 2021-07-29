@@ -26,10 +26,14 @@ function Produtos() {
   const [ foto_livro, setFoto_livro ] = useState("");
   const [ num_paginas, setNum_paginas ] = useState("");
   const [ pergunta, setPergunta ]= useState("");
+  const [ usuario, setUsuario ] = useState("")
+  const [ cidade, setCidade ] = useState("")
+  const [ estado, setEstado ] = useState("")
+  const [ foto_usuario, setFoto_usuario] = useState("")
   const { id } = useParams();
  
   async function BuscarLivroById(){
-    const { data } = await api.get(`/livros/${id}`)
+    const { data } = await api.get(`/livros/${id}/usuarios/enderecos`)
     setAutor(data.autor);
     setNome_livro(data.nome_livro);
     setIdioma(data.idioma);
@@ -44,6 +48,10 @@ function Produtos() {
     setMateria(data.materia);
     setNum_paginas(data.num_paginas);
     setPergunta(data.pergunta)
+    setUsuario(data.usuarios.nome)
+    setCidade(data.usuarios.enderecos[0].cidade)
+    setEstado(data.usuarios.enderecos[0].estado)
+    setFoto_usuario(data.usuarios.foto_usuario)
   }
 
   useEffect(() => {
@@ -54,9 +62,9 @@ function Produtos() {
     <StyledProdutos>
       <main>
         <section className="sessao">
-          <a className="negrito" href="">
+          <h1 className="negrito" href="">
             {materia} - {nivel} 
-          </a>
+          </h1>
           <div className="mostrarInfoLivro">
             <div>
               <img className="produtoFoto" src={foto_livro}></img>
@@ -92,13 +100,13 @@ function Produtos() {
                 </div>
                 <div className="infosLivros">
                   <img
-                    className="imgsIcones"
-                    src={login1}
+                    className="foto"
+                    src={foto_usuario ? foto_usuario: login1}
                     alt=""
                   ></img>
                   <div className="txtInfoDono">
-                    <p>Dono(a): Mussum da Silva</p>
-                    <p>Cidade: São Paulo | Estado: SP</p>
+                    <p>Dono(a): {usuario}</p>
+                    <p>Cidade: {cidade} | Estado: {estado}</p>
                   </div>
                 </div>
                 <div>
@@ -107,7 +115,7 @@ function Produtos() {
                 </div>
               </div>
               <div className="infosLivros">
-                <p className="negrito"> Autor/Autores:</p>{" "}
+                <p className="negrito"> Autor/Autores:</p>
                 <p>
                   {autor}
                 </p>
@@ -116,16 +124,15 @@ function Produtos() {
                 <p className="negrito">Ano de Publicação: </p> <p>{ano_pub}</p>
               </div>
               <div className="infosLivros">
-                <p className="negrito">Editora:</p>{" "}
+                <p className="negrito">Editora:</p>
                 <p>
                   {editora}
                 </p>
               </div>
               <div className="infosLivros">
-                <p className="negrito">Coleção:</p>{" "}
+                <p className="negrito">Idioma:</p>
                 <p>
-                  Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois
-                  divoltis porris
+                  {idioma}
                 </p>
               </div>
               <div className="infosLivros">
@@ -168,50 +175,49 @@ function Produtos() {
             </div>
           </div>
         </section>
-        <div class="border"></div>
-        <section class="sessao">
-          <h2 class="centralizar txtAzul">DESCRIÇÃO / RESUMO DO LIVRO</h2>
+        <div className="border"></div>
+        <section className="sessao">
+          <h2 className="txtAzul">DESCRIÇÃO / RESUMO DO LIVRO</h2>
           <div>
-            <p class="txt">
+            <p className="txt">
              {sinopse}
             </p>
           </div>
-          <div class="border"></div>
+          <div className="border"></div>
         </section>
-        <section class="sessao">
-          <h2 class="centralizar txtAzul">FALE COM DONO(A) DO LIVRO</h2>
-          <form class="form" action="" method="POST">
+        <section className="sessao">
+          <h2 className="txtAzul">FALE COM DONO(A) DO LIVRO</h2>
+          <form className="form">
             <label for="contato"></label>
             <textarea 
                  name="contato" 
                  id="contato"
                  cols="40"
                  rows="5"
-                 placeholder="    Escreva aqui sua pergunta para o dono(a) do livro...">  
+                 placeholder="Escreva aqui sua pergunta para o dono(a) do livro...">  
                 </textarea>
           </form>
-          <button class="btn btnAzul" type="submit">
-            {" "}
+          <button className="btn btnAzul" type="submit">
             ENVIAR MENSAGEM!
           </button>
         </section>
-        <div class="border"></div>
-        <section class="sessao">
-          <h2 class="centralizar txtAzul">
+        <div className="border"></div>
+        <section className="sessao">
+          <h2 className="txtAzul">
             PERGUNTAS E RESPOSTAS JÁ REALIZADAS
           </h2>
           <div id="contato">
-            <p class="negrito perguntas">
+            <p className="negrito perguntas">
               {pergunta}
             </p>
-            <p class="perguntasSub">Pergunta de: Didi Mocó dos Santos</p>
-            <div class="infosLivros">
+            <p className="perguntasSub">Pergunta de: Didi Mocó dos Santos</p>
+            <div className="infosLivros">
               <img
-                class="perguntasSub"
+                className="perguntasSub"
                 src={perguntas}
                 alt=""
               ></img>
-              <p class="negrito resposta ">
+              <p className="negrito resposta">
                 Resposta: Se pedir até o meio-dia, consigo sim!
               </p>
             </div>
