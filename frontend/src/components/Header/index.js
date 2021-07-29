@@ -37,7 +37,7 @@ function Header(props) {
               )
             }
             </div>
-            <Link to="/meu-perfil">{props.foto ? (<img style={{borderRadius: 50 + "%", maxWidth: 50 + "px", maxHeight: 50 + "px"}} src={props.foto} alt="" />): (<img src={imgLogin} alt="" />)}</Link>
+            <Link to="/meu-perfil"> <img src={imgLogin} alt="" /></Link>
           </div>
         </div>
         <div className="infoHeader">
