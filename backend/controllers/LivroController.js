@@ -85,6 +85,16 @@ const LivroController = {
     const { id } = req.params;
 
     return res.status(200).send(await livroService.getUserAndAddressById(id))
+  },
+  deletarLivro: async (req, res) => {
+    const { id } = req.params;
+
+    const numero =  await livroService.deletar(id)
+    
+    if(numero == 1) {
+      return res.status(200).send("Livro deletado com sucesso")
+    }
+    return res.status(400)
   }
 };
 

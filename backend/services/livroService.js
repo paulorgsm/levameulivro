@@ -86,6 +86,9 @@ const livroService = {
           }
         }
     )
+  },
+  deletar: async (id) => {
+    return await db.Livro.destroy({ where: { id: id }})
   }
 };
 

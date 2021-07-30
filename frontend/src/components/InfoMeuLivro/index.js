@@ -1,11 +1,16 @@
-import imgCadLivro from "../../assets/img/imgCadLivro.svg"
 import imgEditar from "../../assets/img/editar.svg"
 import imgLixeira from "../../assets/img/lixeira.svg"
 import { StyledInfoMeuLivro } from "./StyledInfoMeuLivro";
 import { Link } from "react-router-dom";
+import api from "../../services/api"
+import { getToken } from "../../services/auth"
 
 
 function InfoMeuLivro(props) {
+    async function deletarLivro(id) {
+        const token = getToken()
+        await api.delete(`/livros/${id}`, { headers: { authorization: `Bearer ${token}` }})
+    }
     
     return (
         <StyledInfoMeuLivro>
@@ -23,7 +28,7 @@ function InfoMeuLivro(props) {
         <tbody>
             <tr>
                 <td>
-                    <img src={props.imagem} alt=""/>
+                    <img src={props.imagem} className="imagem-livro" alt=""/>
                 </td>
                 <td>{props.titulo}</td>
                 <td>{props.autor}</td>
@@ -35,8 +40,7 @@ function InfoMeuLivro(props) {
                           <img src={imgEditar} alt=""/>
                           <span>editar</span>
                       </button>
-
-                      <button>
+                      <button onClick={deletarLivro(props.id)}>
                           <img src={imgLixeira} alt=""/>
                           <span>apagar</span>
                       </button>

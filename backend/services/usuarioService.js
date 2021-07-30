@@ -125,7 +125,7 @@ const UsuarioService = {
   },
   getLivroByUsuario : async (id) => {
 
-    return await db.Usuario.findByPk(id,{include: "livros"})
+    return await db.Usuario.findByPk(id, { attributes: ["nome", "email"], include: "livros" } )
   }
 };
 

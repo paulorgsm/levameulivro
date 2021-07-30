@@ -1,122 +1,18 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledCadastroLivro = styled.div`
-
 *{
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
     box-sizing: border-box
-  }
-
-.header{
-    width: 100%;
-    height: 223px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
-.conteudoHeader{
-    width: 1122px;
-    margin: 10px auto;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
- 
-}
-
-.divInput{
-/*     height: 100px;
-    margin: 20px auto ; */
-    width: 680px;
-}
-
-.buscar{
-    height: 100px;
-    margin: 30px auto;
-    width: 500px;
-    height: 20px;
-    border-radius: 20px;
-    border-color: #4285F4;
-    padding: 20px;
-}
-
-::placeholder {
-    color: #4285F4;
-}
-
-.login{
-    display: flex;
-    width: 250px;
-    height: 52px;
-    margin-top: 30px;
-}
-.campoLogin{
-    margin-top: 10px;
-    display: block;
-    flex-wrap: wrap;
-}
-
-.login span{
-    text-align: center;
-    margin: 10px;
-    font-family: sans-serif;
-    color: #EB4335;
-    font-weight: bold;
-}
-
-.login img{
-    width: 50px;
-}
-
-.infoHeader{
-    width: 100%;
-    height: 60px;
-    background: #4285F4;
-}
-nav{
-    width: 1120px;
-    margin: 0 auto;
-}
-
-.infoHeader ul{
-    width: 1120px;
-    font-family: sans-serif;
-    color: white;
-    margin-top: 18px;
-    display: flex;
-    justify-content: space-between;
-       
-}
-
-.infoHeader li{
-    display: inline;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.infoHeader li a{
-    font-family: sans-serif;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    list-style: none;
-    text-decoration-line: none;
-}
-#comprarLi{
-    color:#FEEE08 ;
-}
 .meuPerfil{
     width: 100%;
-    /* display: flex; */
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-/*     padding-bottom: 68px;
-    margin-bottom: 40px; */
-    height: 1300px;
 }
 
 .meuPerfilGeral{

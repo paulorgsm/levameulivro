@@ -9,5 +9,6 @@ router.get("/", controller.indexAll);
 router.get("/search", controller.indexByNameOrAutorOrTag);
 router.get("/:id", controller.indexById);
 router.get("/:id/usuarios/enderecos", controller.indexUserAndAddressById)
+router.delete("/:id", autorizacao, controller.deletarLivro)
 
 module.exports = router;

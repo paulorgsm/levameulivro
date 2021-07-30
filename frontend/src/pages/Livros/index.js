@@ -6,12 +6,12 @@ import login1 from "../../assets/img/login.svg";
 import estrela from "../../assets/img/estrela.svg";
 import perguntas from "../../assets/img/perguntas.svg";
 import { StyledProdutos } from "./StyledProdutos";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useState , useEffect} from "react";
 import api from "../../services/api";
 
 
-function Produtos() {
+function Livros() {
   const [ materia, setMateria ] = useState("");
   const [ autor, setAutor ] = useState("");
   const [ nome_livro, setNome_livro ] = useState("");
@@ -67,7 +67,7 @@ function Produtos() {
           </h1>
           <div className="mostrarInfoLivro">
             <div>
-              <img className="produtoFoto" src={foto_livro}></img>
+              <img className="produtoFoto" src={foto_livro ? foto_livro: livroProduto}></img>
               <div className="fotosMostruario">
                 <img src={imgMostruarioLivro} alt=""></img>
                 <img src={imgMostruarioLivro}  alt=""></img>
@@ -228,4 +228,4 @@ function Produtos() {
   );
 }
 
-export default Produtos;
+export default Livros;
