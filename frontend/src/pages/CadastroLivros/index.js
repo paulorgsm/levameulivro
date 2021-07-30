@@ -172,12 +172,11 @@ export default function CadastroLivros(){
                           <div className="parte2">
                               <div className="conservacao">
                                   <label for="conservacao">Conservação do Livro:</label>
-                                  <textarea name="conservacao" id="conservacao"> Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!</textarea>
-                              </div>
-              
+                                  <textarea placeholder="Escreva como está o livro: conte se há rasuras, rabiscos, marcas, se falta alguma página, se está com marca-texto... sinta-se livre para descrever, e seja sincero!" name="conservacao" id="conservacao">
+                                  </textarea> </div>
                               <div className="sinopse">
                                   <label for="sinopse">Sinopse / Descrição do Livro:</label>
-                                  <textarea name="sinopse" id="sinopse">Pegue da internet, do que está no livro, ou conte com suas próprias palavras do que se trata este livro...</textarea>
+                                  <textarea placeholder="Pegue da internet, do que está no livro, ou conte com suas próprias palavras do que se trata este livro..." name="sinopse" id="sinopse"></textarea>
                               </div>
               
                               <div className="enviaImg">
