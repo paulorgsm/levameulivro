@@ -122,6 +122,10 @@ const UsuarioService = {
   },
   getUsuario: async (id) => {
     return await db.Usuario.findByPk(id, { attributes: [ "nome", "sobrenome", "email", "cpf", "celular", "data_nasc", "sexo" ] })
+  },
+  getLivroByUsuario : async (id) => {
+
+    return await db.Usuario.findByPk(id,{include: "livros"})
   }
 };
 

@@ -117,6 +117,15 @@ const UsuarioController = {
     const usuario = await UsuarioService.getUsuario(id_usuario)
 
     return res.send(usuario)
+  },
+  indexLivroByUsuario : async (req, res) => {
+    const decoded = req.headers.authorization;
+
+    const id_usuario = decoded.id;
+
+    const livro = await UsuarioService.getLivroByUsuario(id_usuario)
+
+    return res.send(livro)
   }
 };
 
