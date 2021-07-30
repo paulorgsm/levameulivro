@@ -1,4 +1,5 @@
-import facebook from "../../assets/img/facebook.svg";
+import facebook from "../../assets/img/pic-rodape-face-levameulivro.png";
+
 import redesSociais from "../../assets/img/redesSociais.svg";
 import { StyledFooter } from "./StyledFooter";
 import { FaInstagramSquare } from "react-icons/fa";
@@ -18,11 +19,7 @@ function Footer() {
               SOBRE O <strong>LEVA MEU LIVRO</strong>
             </h2>
             <span>
-              Mussum Ipsum, cacilds vidis litro abertis. Pra lá , depois divoltis
-              porris, paradis. Per aumento de cachacis, eu reclamis. Vehicula non.
-              Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.
-              Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo
-              pose.
+              O projeto Leva Meu Livro tem por objetivo fomentar a educação nacional. Entendemos que enquanto houver pessoas com livros acadêmicos, ainda que usados, estes podem ser reaproveitados por outras pessoas sem condições de compra. Queremos montar uma corrente do bem em que quem possui um livro acadêmico pode compartilhar com outra pessoa que não tem, e ainda, conseguir um outro livro acadêmico em troca da ajuda.
             </span>
             <span>
               <a className="leiaMais" href="">
