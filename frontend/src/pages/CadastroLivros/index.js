@@ -7,6 +7,7 @@ import imgLixeira from "../../assets/img/lixeira.svg"
 import imgSetaPag from "../../assets/img/seta-pag.svg"
 import api from "../../services/api";
 import React, { useState } from "react";
+import InfoMeuLivro from "../../components/InfoMeuLivro";
 import {Link} from "react-router-dom";
 
 export default function CadastroLivros(){
@@ -23,6 +24,17 @@ export default function CadastroLivros(){
     const [nivel, setNivel] = useState("");
     const [estadoLivro, setEstadoLivro] = useState("");
     const [imgLivro, setImgLivro] = useState("")
+    const [fotoLivro, setFotLivro] = useState("")
+    const [tituloLivro, setTituloLivro] = useState("")
+    const [anoLivro, setAnoLivro] = useState("")
+    const [autorLivro, setAutorLivro] = useState("")
+
+    async function buscarMeuLivro (){
+        const token = sessionStorage.getItem('token')
+        const {data} = api.get('/livros', {headers: {authorization: `Bearer ${token}`}})
+
+  
+    }
 
     async function inserirDadosLivros(event) {
         event.preventDefault()
@@ -72,42 +84,7 @@ export default function CadastroLivros(){
                       <option value="livros-usados" className="btn-org">Livros Usados</option>
                   </select>
               </div>
-              <table className="cadTabela">
-                  <thead>
-                      <tr>
-                          <th>Imagem:</th>
-                          <th>Título:</th>
-                          <th>Autor:</th>
-                          <th>Ano:</th>
-                          <th>Mensagens:</th>
-                          <th>Ação:</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>
-                              <img src={imgCadLivro} alt=""/>
-                          </td>
-                          <td>Harry Potter e a Pedra Filosofal</td>
-                          <td>J.K. Rowling</td>
-                          <td>2000</td>
-                          <td><Link to="/mensageria" className="link-msg">02 para responder</Link></td>
-                          <td>
-                              <div className="bg-acao">
-                                <button>
-                                    <img src={imgEditar} alt=""/>
-                                    <span>editar</span>
-                                </button>
-
-                                <button>
-                                    <img src={imgLixeira} alt=""/>
-                                    <span>apagar</span>
-                                </button>
-                              </div>
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
+             <InfoMeuLivro/>
               <div className="paginacao">
                   <div className="pag-nav">
                       <img src={imgSetaPag} alt=""/>

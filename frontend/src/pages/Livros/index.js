@@ -49,8 +49,8 @@ function Produtos() {
     setNum_paginas(data.num_paginas);
     setPergunta(data.pergunta)
     setUsuario(data.usuarios.nome)
-    setCidade(data.usuarios.enderecos[0].cidade)
-    setEstado(data.usuarios.enderecos[0].estado)
+    setCidade(data.usuarios.enderecos[0]?.cidade)
+    setEstado(data.usuarios.enderecos[0]?.estado)
     setFoto_usuario(data.usuarios.foto_usuario)
   }
 
