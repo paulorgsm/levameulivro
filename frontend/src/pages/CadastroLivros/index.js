@@ -5,6 +5,7 @@ import imgSetaPag from "../../assets/img/seta-pag.svg"
 import api from "../../services/api";
 import { useEffect, useState } from "react";
 import InfoMeuLivro from "../../components/InfoMeuLivro";
+import Paginacao from "../../components/Paginacao/paginacao";
 
 
 export default function CadastroLivros(){
@@ -20,9 +21,10 @@ export default function CadastroLivros(){
     const [ materia, setMateria ] = useState("");
     const [ nivel, setNivel ] = useState("");
     const [ estadoLivro, setEstadoLivro]  = useState("");
-    const [ imgLivro, setImgLivro ] = useState("")
-    const [ livros, setLivros ] = useState([])
+    const [ imgLivro, setImgLivro ] = useState("");
+    const [ livros, setLivros ] = useState([]);
     const [ mustShow, setMustShow ] = useState(true);
+    const [ page, setPage ] = useState(1);
 
     async function buscarMeuLivro (){
         const token = sessionStorage.getItem('token')
@@ -97,15 +99,12 @@ export default function CadastroLivros(){
                     onDeleteLivro = {onDeleteLivro}
                 />
               ))}
-              <div className="paginacao">
-                  <div className="pag-nav">
-                      <img src={imgSetaPag} alt=""/>
-                  </div>
-                  <div className="pag-nav-numb">
-                      <p>1</p>
-                  </div>
-                  <div className="pag-nav"></div>
-              </div>
+              <Paginacao
+              page = {page}
+              onPageChange={(newPage) => setPage(newPage)}
+              />
+
+              
               {!mustShow && (
                   <>
                   <h2>PREENCHA AS INFORMAÇÕES A SEGUIR:</h2>
