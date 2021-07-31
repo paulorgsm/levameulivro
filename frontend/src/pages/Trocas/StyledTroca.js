@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const StyledTroca = styled.div`
+export const StyledTroca = styled.body`
 
 *{
   margin: 0;
@@ -20,6 +20,300 @@ export const StyledTroca = styled.div`
     cursor: pointer;
   }
 
+  /* PARTE UM */
+
+  .header-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.confirmar-informacoes {
+    line-height: 48px;
+    text-align: center;
+    color: #4285f4;
+    margin: 0 auto;
+    margin: 42px 0;
+}
+
+.confirmar-informacoes h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    color: #4285F4;
+}
+
+.confirmar-informacoes h3 {
+    color: #000000;
+}
+
+.resumo-pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    background-color: #4285f4;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.pedido button:hover {
+  opacity: 0.7;
+  transform: scale(1.04);
+}
+
+.pedido {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 1120px;
+    margin: 0 auto;
+}
+
+.img {
+    display: inline-block;
+    width: 189px;
+    height: 358px;
+}
+
+.img img {
+    width: 188.57px;
+    height: 279.08px;
+    left: 147px;
+    top: 563px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 188.57px;
+    left: 163px;
+    top: 863px;
+    margin-top: 20px;
+    margin-bottom: 31px;
+}
+
+.icons button {
+    border: none;
+    background: #fff;
+    cursor: pointer;
+}
+
+.icons button .salvar {
+    width: 55px;
+    height: 21.12px;
+    left: 163px;
+    top: 864px;
+    color: #000000;
+}
+
+.icons button .problema {
+    width: 10px;
+    height: 25.44px;
+    left: 242px;
+    top: 863px;
+}
+
+.icons button .heart, .ban{
+    color: red;
+}
+
+.img p {
+    width: 189px;
+    height: 12px;
+    left: 150px;
+    top: 919px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 12px;
+    color: #333333;
+}
+
+.img span {
+    color: #219653;
+}
+
+.dados-pedido {
+    display: inline-block;
+    margin: 0 40px;
+    width: 452px;
+    height: 358px;
+    left: 376px;
+    top: 619px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.dados-pedido h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.dados-pedido p {
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.dados-dono-livro {
+    display: inline-block;
+    width: 452px;
+    left: 376px;
+    top: 619px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.dados-dono-livro h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.dados-dono {
+    display: flex;
+    width: 359px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.dono {
+    width: 250px;
+    left: 869px;
+    top: 619px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000000;
+    align-self: flex-end;
+}
+
+.icons-dados {
+    width: 150px;
+    left: 1101px;
+    top: 622px;
+    align-self: flex-end;
+}
+
+.icon-user .user {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 55px;
+    color: #4285F4;
+    margin-left: 30px;
+}
+
+.icon-star .star {
+    display: inline;
+    height: 20px;
+    left: 1101px;
+    top: 687px;
+    color: #FCBC05;
+    margin-right: 5px;
+}
+
+.saldo {
+    width: 452px;
+    height: 100px;
+    left: 869px;
+    top: 748px;
+    background: #4285F4;
+}
+
+table {
+    display: table;
+    justify-content: flex-start;
+}
+
+tr {
+    width: 452px;
+    height: 40px;
+}
+
+th, td {
+    text-align: start;
+    padding-left: 10px;
+}
+
+th {
+    width: 452px;
+    height: 25px;
+    left: 13px;
+    top: 7px;
+    color: #FEEE08;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+td {
+    width: 452px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    color: #FFFFFF;;
+}
+
+td span {
+    color: #FEEE08;
+}
+
+.button-pontos {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-pontos button {
+    border: none;
+    width: 218px;
+    height: 46px;
+    cursor: pointer;
+}
+
+.obter-pontos {
+    border: none;
+    width: 227.23px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    background: #34A853;
+    color: #FFFFFF;
+}
+
+.comprar-pontos {
+    border: none;
+    width: 227.23px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    background: #f62cbc;
+    color: #FFFFFF;
+    }
+
+    /* PARTE DOIS */
+
   .prosseguir-pedido {
     display: flex;
     justify-content: center;
@@ -31,7 +325,7 @@ export const StyledTroca = styled.div`
     font-size: 18px;
     line-height: 24px;
     color: #ffffff;
-    margin-top: 20px;
+    margin: 40px 0;
   }
 
   .passos {
@@ -46,6 +340,7 @@ export const StyledTroca = styled.div`
 
   .passo-um {
     flex-basis: 50%;
+    margin-left: -35px;
   }
 
   .passo-um h1 {
@@ -78,7 +373,7 @@ export const StyledTroca = styled.div`
 
   .passo-um button {
     border-radius: 10px;
-    background: #e0e0e0;
+    background: #F6F6F6;
   }
 
   .btn-editar {
@@ -86,7 +381,7 @@ export const StyledTroca = styled.div`
     height: 35px;
     border: none;
     margin-right: none;
-    border: none;
+    font: bolder;
   }
 
   .btn-apagar {
@@ -95,18 +390,30 @@ export const StyledTroca = styled.div`
     border: none;
     margin-left: none;
     margin-left: -3%;
-    border: none;
   }
 
   .btn-incluir {
     border: none;
-    width: 227.23px;
+    width: 190px;
     font-size: 14px;
     line-height: 24px;
     height: 35px;
-    border-color: #4285f4;
+    border: 1px solid #4285f4;
     color: #4285f4;
     margin-left: 5%;
+  }
+
+  .btn-incluir span{
+    margin-left: 5px;
+  }
+
+  .passo-dois {
+    margin-left: -150px;
+  }
+
+  .passo-dois span {
+    display: block;
+    margin-bottom: 25px;
   }
 
   .passo-dois h1 {
@@ -142,12 +449,17 @@ export const StyledTroca = styled.div`
     border-radius: 10px;
   }
 
+  .btn-solicitar-troca:hover {
+    opacity: 0.7;
+  transform: scale(1.04);
+  }
+
   /* BOTÃO OPÇÃO LIGA E DESLIGA */
 
   .pessoalmente {
     display: flex;
     margin-left: 5.1%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
   }
 
   .btn-pessoalmente input[type="checkbox"] {
@@ -181,7 +493,7 @@ export const StyledTroca = styled.div`
   }
 
   .btn-pessoalmente input:checked[type="checkbox"] {
-    background-color: #34a853;
+    background-color: #008800;
   }
 
   .pessoalmente label {
@@ -206,6 +518,10 @@ export const StyledTroca = styled.div`
     height: 35px;
   }
 
+  .container.hide {
+    display: none;
+  }
+
   .container {
     display: inline-block;
     flex-direction: row;
@@ -226,7 +542,7 @@ export const StyledTroca = styled.div`
     background: #e0e0e0;
   }
 
-  .container input:placeholder-shown {
+  .container select, input:placeholder-shown {
     font-size: 14px;
     line-height: 26px;
     color: #4f4f4f;
@@ -273,6 +589,7 @@ export const StyledTroca = styled.div`
   .checkbox label {
     width: 97.76px;
     font-size: 12px;
+    margin-left: 5px;
   }
 
   /* LOGRADOURO E NUMERO */
@@ -302,13 +619,13 @@ export const StyledTroca = styled.div`
 
   .numero label {
     width: 69.54px;
-    margin-left: -20%;
+    margin-left: -18%;
   }
 
   .numero input {
     display: block;
     width: 201.57px;
-    margin-left: -20%;
+    margin-left: -18%;
   }
 
   .checkbox-dois {
@@ -324,6 +641,7 @@ export const StyledTroca = styled.div`
   .checkbox-dois label {
     width: 97.76px;
     font-size: 12px;
+    margin-left: 5px;
   }
 
   /* COMPLEMENTO E BAIRRO */
@@ -395,7 +713,7 @@ export const StyledTroca = styled.div`
     height: 35px;
     background: #e0e0e0;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     color: #4f4f4f;
     border: none;
@@ -416,15 +734,70 @@ export const StyledTroca = styled.div`
     border-radius: 10px;
     margin-left: 6%;
     margin-top: 2%;
-    margin-bottom: 25px;
   }
 
-  button {
-    cursor: pointer;
-  
-  }
-  button:hover{
+  .btn-salvar-endereco:hover {
     opacity: 0.7;
     transform: scale(1.04);
+    margin-left: 2%;
   }
+
+  .modal.hide {
+    display: none;
+  }
+
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .modal-orders {
+    background: #ffffff;
+    border-radius: 20px;
+    width: 60%;
+    min-width: 300px;
+  }
+
+  .exchange-completed {
+    width: 853px;
+    height: 449px;
+  }
+
+  .check {
+    color: #34a853;
+    width: 132px;
+    height: 133px;
+    padding: 69px 363px 22px 363px;
+  }
+
+  .modal-orders h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #000000;
+    padding-top: 22px;
+  }
+
+  .modal-orders p {
+    padding-top: 22px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+  }
+
+
+.container button:hover {
+  opacity: 0.7;
+}
 `;
