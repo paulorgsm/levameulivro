@@ -10,6 +10,7 @@ function InfoMeuLivro(props) {
     async function deletarLivro(id) {
         const token = getToken()
         await api.delete(`/livros/${id}`, { headers: { authorization: `Bearer ${token}` }})
+        props.onDeleteLivro()
     }
     
     return (
@@ -40,7 +41,7 @@ function InfoMeuLivro(props) {
                           <img src={imgEditar} alt=""/>
                           <span>editar</span>
                       </button>
-                      <button onClick={deletarLivro(props.id)}>
+                      <button onClick={() => deletarLivro(props.id)}>
                           <img src={imgLixeira} alt=""/>
                           <span>apagar</span>
                       </button>

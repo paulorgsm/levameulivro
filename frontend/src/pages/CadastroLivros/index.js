@@ -48,10 +48,16 @@ export default function CadastroLivros(){
         data.append('foto_livro', imgLivro)
         data.append('materia', materia)
         await api.post("/livros/", data, { headers: { authorization: `Bearer ${token}` } })
+        onClickHide()
+        await buscarMeuLivro()
     }
 
     function onClickHide() {
         setMustShow(!mustShow);
+    }
+
+    async function onDeleteLivro() {
+        await buscarMeuLivro()
     }
 
     useEffect(() => {
@@ -88,6 +94,7 @@ export default function CadastroLivros(){
                     titulo={ livro.nome_livro } 
                     autor={ livro.autor }
                     ano={ livro.ano_pub }
+                    onDeleteLivro = {onDeleteLivro}
                 />
               ))}
               <div className="paginacao">
