@@ -50,11 +50,15 @@ const UsuarioController = {
     const decoded = req.headers.authorization;
     
     const id_usuario = decoded.id;
-    
+    console.log(id_usuario)
     const exist = await UsuarioService.existAnotherUserWithTheSameEmail(id_usuario, email);
     
     if (exist) {
       return res.status(401).send({ mensagem: "Email já cadastrado" });
+    }
+    if (!email) {
+      return res.status(401).send({ mensagem: "Email não informado" });
+
     }
 
     const { filename } = req.file;

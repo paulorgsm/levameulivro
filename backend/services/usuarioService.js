@@ -101,8 +101,8 @@ const UsuarioService = {
       return null;
     }
 
-    const boolean = await bcrypt.compare(senha, usuario.dataValues.senha);
-
+    const boolean = await bcrypt.compare(senha, usuario.senha);
+console.log(boolean)
     if (boolean) {
       return {
         token: jwt.sign(
