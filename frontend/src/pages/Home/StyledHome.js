@@ -116,6 +116,7 @@ export const StyledHome = styled.div`
     margin-left: 2px;
   }
 
+
   .img_4 {
     background: white;
     min-width: 100px;
@@ -157,6 +158,7 @@ export const StyledHome = styled.div`
     max-width: 100%;
     display: block;
     width: 200px;
+    height: 296px;
   }
 
   .img-assets {

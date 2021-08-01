@@ -7,7 +7,23 @@ import imgSalvar from "../../assets/img/salvar.svg";
 import imgRelatar from "../../assets/img/relarUmPro.svg";
 import card1 from "../../assets/img/card1.svg";
 import card2 from "../../assets/img/card2.svg";
+import card3 from "../../assets/img/card3.jpg";
+import card4 from "../../assets/img/card4.jpg";
+import card5 from "../../assets/img/card5.jpg";
+import card6 from "../../assets/img/card6.jpg";
+import card7 from "../../assets/img/card7.jpg";
+import card8 from "../../assets/img/card8.jpg";
+import card9 from "../../assets/img/card9.jpg";
+import card10 from "../../assets/img/card10.jpg";
+import card11 from "../../assets/img/card11.jpg";
+import card12 from "../../assets/img/card12.jpg";
+
+
+
+
+
 import vector from "../../assets/img/vector.svg";
+
 
 function Home() {
   return (
@@ -128,14 +144,12 @@ function Home() {
       </div>
 
       <section className="section1">
-        <div>
+      <div>
           <img src={card1} alt="" />
 
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">GERAL</p>
+            <p>EU GOSTO MAIS</p>
           </div>
 
           <div className="btn">
@@ -148,15 +162,13 @@ function Home() {
             <img src={imgSalvar} alt="" />
             <img src={imgRelatar} alt="" />
           </div>
-        </div>
+        </div> 
 
         <div>
-          <img src={card2} alt="" />
+          <img src={card3} alt="" />
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">REDAÇÃO</p>
+            <p>TORTO ARADO</p> 
           </div>
           <div className="btn">
             <input className="btn1" type="button" value="QUERO ESTE!" />
@@ -174,13 +186,11 @@ function Home() {
         </div>
 
         <div>
-          <img src={card1} alt="" />
+          <img src={card4} alt="" />
 
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">COMPUTAÇÃO</p>
+            <p>ALGORITMOS</p>
           </div>
 
           <div className="btn">
@@ -198,10 +208,9 @@ function Home() {
         <div>
           <img src={card2} alt="" />
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">DIREITO</p>
+            <p>VADE MECUM</p>
+            
           </div>
           <div className="btn">
             <input className="btn1" type="button" value="QUERO ESTE!" />
@@ -219,12 +228,11 @@ function Home() {
         </div>
 
         <div>
-          <img src={card2} alt="" />
+          <img src={card5} alt="" />
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">MATEMÁTICA</p>
+            <p>MARCHA CRIANÇA 4º ANO</p>
+            
           </div>
           <div className="btn">
             <input className="btn1" type="button" value="QUERO ESTE!" />
@@ -242,13 +250,11 @@ function Home() {
         </div>
 
         <div>
-          <img src={card1} alt="" />
+          <img src={card6} alt="" />
 
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">LITERARTURA</p>
+            <p>LITERARTURA BRASILEIRA</p>
           </div>
 
           <div className="btn">
@@ -264,12 +270,10 @@ function Home() {
         </div>
 
         <div>
-          <img src={card2} alt="" />
+          <img src={card7} alt="" />
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">GEOGRAFIA</p>
+            <p>APRENDER JUNTOS</p>
           </div>
           <div className="btn">
             <input className="btn1" type="button" value="QUERO ESTE!" />
@@ -287,13 +291,11 @@ function Home() {
         </div>
 
         <div>
-          <img src={card1} alt="" />
+          <img src={card8} alt="" />
 
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">GEOGRAFIA</p>
+            <p>CIDADES INVISÍVEIS</p>
           </div>
 
           <div className="btn">
@@ -368,13 +370,13 @@ function Home() {
 
       <section className="section1">
         <div>
-          <img src={card1} alt="" />
+          <img src={card9} alt="" />
 
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">FICÇÃO</p>
+            <p>FRANK PAYNE:</p>
+            <p>E A CARVERNA</p>
+            <p>MISTERIOSA</p>
           </div>
 
           <div className="btn">
@@ -390,12 +392,12 @@ function Home() {
         </div>
 
         <div>
-          <img src={card2} alt="" />
+          <img src={card10} alt="" />
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">CIÊNCIA</p>
+            <p>IDEIAS PARA</p>
+            <p>ADIAR O FIM</p>
+            <p>DO MUNDO</p>
           </div>
           <div className="btn">
             <input className="btn1" type="button" value="QUERO ESTE!" />
@@ -413,13 +415,13 @@ function Home() {
         </div>
 
         <div>
-          <img src={card1} alt="" />
+          <img src={card11} alt="" />
 
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">MEDICINA</p>
+            <p>A MORTE É</p>
+            <p>UM DIA QUE VALE</p>
+            <p>A PENA VIVER</p>
           </div>
 
           <div className="btn">
@@ -435,12 +437,12 @@ function Home() {
         </div>
 
         <div>
-          <img src={card2} alt="" />
+          <img src={card12} alt="" />
           <div className="texto">
-            <p className="mat">MATÉRIA</p>
-            <p>NOME DO LIVRO</p>
-            <p>COM ATÉ 3 LINHAS</p>
-            <p>DE CARACTERES</p>
+            <p className="mat">MATEMÁTICA</p>
+            <p>FUDAMENTOS DA</p>
+            <p>MATEMÁTICA ELEMENTAR</p>
+            <p>TRIGONOMETRIA</p>
           </div>
           <div className="btn">
             <input className="btn1" type="button" value="QUERO ESTE!" />
