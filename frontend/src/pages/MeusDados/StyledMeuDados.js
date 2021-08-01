@@ -9,7 +9,8 @@ export const StyledMeusDados = styled.div`
   box-sizing: border-box
 }
   .secao {
-    width: 100%;
+    width: 1120px;
+    margin: 0 auto;
   }
   .paragrafo {
     width: 960px;
@@ -21,13 +22,14 @@ export const StyledMeusDados = styled.div`
 
   .paragrafo p {
     font-family: sans-serif;
-    font-weight: 500;
+    font-weight: bolder;
     color: #4285f4;
+    font-size: 28px;
   }
 
   .meusDados {
     width: 600px;
-    height: 192px;
+    height: 140px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -42,14 +44,14 @@ export const StyledMeusDados = styled.div`
     margin: auto 30px;
     text-align: center;
   }
-  .meusDados img {
+/*   .meusDados img {
     margin-left: 150px;
-  }
+  } */
 
   .meusDadosPrincipal {
     width: 530px;
-    margin-left: 150px;
-    display: flex;
+/*     margin-left: 150px;
+ */    display: flex;
     flex-direction: column;
   }
 
@@ -63,7 +65,7 @@ export const StyledMeusDados = styled.div`
     /* max-width: 578px; */
   }
   .forms {
-    height: 750px;
+    height: 500px;
     width: 530px;
     display: flex;
     flex-direction: column;
@@ -162,8 +164,9 @@ export const StyledMeusDados = styled.div`
     width: 45px;
   }
   .check > input {
-    width: 27px;
-    height: 29px;
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
   }
   .input:checked {
     background-color: #fcbc05;
