@@ -1,4 +1,3 @@
-import livroProduto from "../../assets/img/livroProduto.svg";
 import imgMostruarioLivro from "../../assets/img/imgMostruarioLivro.svg";
 import coracao from "../../assets/img/coracao.svg";
 import problema from "../../assets/img/problema.svg";
@@ -10,7 +9,6 @@ import { useParams } from "react-router-dom"
 import { useState , useEffect} from "react";
 import api from "../../services/api";
 import { Link } from "react-router-dom";
-
 
 
 function Livros() {
@@ -69,7 +67,7 @@ function Livros() {
           </h1>
           <div className="mostrarInfoLivro">
             <div>
-              <img className="produtoFoto" src={foto_livro ? foto_livro: livroProduto}></img>
+              <img className="produtoFoto" src={foto_livro ? foto_livro: imgMostruarioLivro}></img>
               <div className="fotosMostruario">
                 <img src={imgMostruarioLivro} alt=""></img>
                 <img src={imgMostruarioLivro}  alt=""></img>
