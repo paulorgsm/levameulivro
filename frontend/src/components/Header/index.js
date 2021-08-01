@@ -2,8 +2,24 @@ import logo from "../../assets/img/logo.svg";
 import imgLogin from "../../assets/img/login.svg";
 import { StyledHeader } from "./StyledHeader";
 import { Link } from "react-router-dom";
+import { getName, getPhoto, logout } from "../../services/auth"
+import { useEffect, useState } from "react";
 
-function Header(props) {
+function Header() {
+  const [ nome, setNome ] = useState(null)
+  const [ foto, setFoto ] = useState(null)
+
+  function handleSession() {
+    logout()
+    setNome(null)
+    setFoto(null)
+  }
+
+  useEffect(() => {
+    setNome(getName())
+    setFoto(getPhoto())
+  },[])
+
   return (
     <StyledHeader>
       <header className="header">
@@ -27,21 +43,37 @@ function Header(props) {
           </div>
           <div className="login">
             <div className="campoLogin">
-              {props.title ? (
-              <span style={{width: 150 + "px"}}>Oi, {props.title} <span>Seja Bem-vindo(a)!</span> <button className = ".sair">Sair</button> </span>
-              ): (
-                
-                <>
-                <span>Oi, Seja Bem-vindx!</span>
-                <Link to="/login"><span>ENTRE / REGISTRE-SE</span></Link>
-                </>
-              )
-            }
+              {nome ? 
+                (
+                  <span style={{width: 150 + "px"}}>Oi, {nome} <span>Seja Bem-vindo(a)!</span> <button className = ".sair" onClick={() => handleSession()}>Sair</button></span>
+                ): 
+                (
+                  <>
+                    <span>Oi, Seja Bem-vindx!</span>
+                    <Link to="/login"><span>ENTRE / REGISTRE-SE</span></Link>
+                  </>
+                )
+              }
             </div>
-{/* <Link to="/meu-perfil"> <img src={imgLogin} alt="" /></Link> */}
- 
-<Link to="/meu-perfil">{props.foto ? (<img style={{borderRadius: 50 + "%", maxWidth: 50 + "px", maxHeight: 50 + "px"}} src={props.foto} alt="" />): (<img src={imgLogin} alt="" />)}</Link>
-
+            {foto ? 
+              (
+                <Link to="/meu-perfil">
+                  <img 
+                    style={{borderRadius: 50 + "%", maxWidth: 50 + "px", maxHeight: 50 + "px"}} 
+                    src={foto} 
+                    alt="" 
+                />
+                </Link>
+              ): 
+              ( 
+                <Link to="/login">
+                  <img 
+                    src={imgLogin} 
+                    alt=""
+                  />
+                </Link>
+              ) 
+            }
           </div>
         </div>
         <div className="infoHeader">

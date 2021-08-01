@@ -19,9 +19,8 @@ function Login() {
     if (status == 200) {
       login(data)
       history.push("/cadastro")
-      window.location.reload();
+      window.location.reload()
     }
-    
   }
 
   async function Login (event){
@@ -30,7 +29,7 @@ function Login() {
     if (status == 200) {
       login(data)
       history.push("/meu-perfil")
-      window.location.reload();
+      window.location.reload()
     }
   }
   

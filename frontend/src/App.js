@@ -10,7 +10,7 @@ function App() {
   
   return (
     <BrowserRouter>
-        <Header title={nome} foto={foto}/>
+        <Header/>
         <Routes />
         <Footer />
     </BrowserRouter>
