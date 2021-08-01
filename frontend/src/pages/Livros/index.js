@@ -9,6 +9,8 @@ import { StyledProdutos } from "./StyledProdutos";
 import { useParams } from "react-router-dom"
 import { useState , useEffect} from "react";
 import api from "../../services/api";
+import { Link } from "react-router-dom";
+
 
 
 function Livros() {
@@ -162,8 +164,9 @@ function Livros() {
               </div>
               <div className="infosLivros">
                 <div className="infosLivros">
-                  <button className="btn btnLaranja" type="submit">
-                    QUERO TROCAR!
+                  <button className="btn btnLaranja" type="submit" >
+                  <Link  className="btn btnLaranja" to="/trocas">QUERO TROCAR!</Link>
+                    
                   </button>
                 </div>
                 <div className="infosLivros">

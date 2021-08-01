@@ -28,7 +28,7 @@ function Header(props) {
           <div className="login">
             <div className="campoLogin">
               {props.title ? (
-              <span style={{width: 150 + "px"}}>Oi, {props.title} <span>Seja Bem-vindo(a)!</span></span>
+              <span style={{width: 150 + "px"}}>Oi, {props.title} <span>Seja Bem-vindo(a)!</span> <button className = ".sair">Sair</button> </span>
               ): (
                 
                 <>

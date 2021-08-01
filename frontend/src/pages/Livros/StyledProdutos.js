@@ -161,6 +161,7 @@ body{
 .btnLaranja{
   background-color: #EB4335;
   width: 216px;
+  text-decoration-line: none;
 }
 
 .btnRosa{
