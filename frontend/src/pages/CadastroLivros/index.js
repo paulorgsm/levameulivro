@@ -15,11 +15,11 @@ export default function CadastroLivros(){
     const [ anoPublicacao, setAnoPublicacao ] = useState("");
     const [ numeroPaginas, setNumeroPaginas ] = useState("");
     const [ sinopse, setSinopse ] = useState("");
-    const [ idioma, setIdioma ] = useState("");
+    const [ idioma, setIdioma ] = useState("ingles");
     const [ conservacao, setConservacao ] = useState("");
-    const [ materia, setMateria ] = useState("");
-    const [ nivel, setNivel ] = useState("");
-    const [ estadoLivro, setEstadoLivro]  = useState("");
+    const [ materia, setMateria ] = useState("computacao");
+    const [ nivel, setNivel ] = useState("ensinosup");
+    const [ estadoLivro, setEstadoLivro]  = useState("novo");
     const [ imgLivro, setImgLivro ] = useState("");
     const [ livros, setLivros ] = useState([]);
     const [ mustShow, setMustShow ] = useState(true);

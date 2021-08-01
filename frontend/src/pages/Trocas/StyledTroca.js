@@ -336,6 +336,8 @@ td span {
     justify-content: space-around;
     align-content: center;
     margin: 20px;
+    width: 1120px;
+    margin: 0 auto;
   }
 
   .passo-um {
@@ -457,9 +459,13 @@ td span {
   /* BOTÃO OPÇÃO LIGA E DESLIGA */
 
   .pessoalmente {
-    display: flex;
-    margin-left: 5.1%;
-    margin-bottom: 4%;
+    margin: 0 auto;
+    width: 1120px;
+  }
+
+  .btn-pessoalmente {
+    margin-left: 15px;
+    margin-top: 15px;
   }
 
   .btn-pessoalmente input[type="checkbox"] {
@@ -509,9 +515,8 @@ td span {
   }
 
   form {
-    margin-top: -1%;
-    /* position: absolute; */
-    width: 130ex;
+    width: 1120px;
+    margin: 0 auto;
   }
 
   input {
@@ -523,11 +528,8 @@ td span {
   }
 
   .container {
-    display: inline-block;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    margin-top: 40px;
+    margin-left: -110px;
   }
 
   .container label {
