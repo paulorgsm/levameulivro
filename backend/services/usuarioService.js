@@ -2,7 +2,8 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const db = require("../database/models");
 const jwt = require("jsonwebtoken");
-const { Op } = require("sequelize");
+const { Op, QueryTypes } = require("sequelize");
+const { sequelize } = require("../database/models");
 
 const UsuarioService = {
   createUsuario: async (nome, email, senha) => {
@@ -102,7 +103,7 @@ const UsuarioService = {
     }
 
     const boolean = await bcrypt.compare(senha, usuario.senha);
-console.log(boolean)
+
     if (boolean) {
       return {
         token: jwt.sign(
@@ -121,12 +122,21 @@ console.log(boolean)
     return null;
   },
   getUsuario: async (id) => {
-    return await db.Usuario.findByPk(id, { attributes: [ "nome", "sobrenome", "email", "cpf", "celular", "data_nasc", "sexo" ] })
+    return await db.Usuario.findByPk(id, 
+      { 
+        attributes: [ "nome", "sobrenome", "email", "cpf", "celular", "data_nasc", "sexo" ] 
+      }
+    )
   },
-  getLivroByUsuario : async (id) => {
-
-    return await db.Usuario.findByPk(id, { attributes: ["nome", "email"], include: "livros" } )
+  getLivroByUsuario: async (id, limit, offset) => {
+    return await sequelize.query(
+      `SELECT L.id, L.autor, L.nome_livro, L.editora, L.ano_pub, L.idioma, L.num_paginas, L.estado_livro, L.conservacao, L.materia, L.nivel, L.isbn, L.sinopse, L.foto_livro1, L.foto_livro2, L.foto_livro3, L.foto_livro4, L.foto_livro5 FROM livros AS L INNER JOIN USUARIOS WHERE USUARIOS.ID = ? LIMIT ? OFFSET ?`,
+      {
+        replacements: [id, limit, offset],
+        type: QueryTypes.SELECT
+      }
+    )
   }
-};
+}
 
 module.exports = UsuarioService;

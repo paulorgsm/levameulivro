@@ -1,7 +1,6 @@
 import { StyledCadastroLivro } from "./StyledCadastroLivro";
 import imgIconLivro from "../../assets/img/icon-livro.svg"
 import imgPlus from "../../assets/img/imgPlus.svg"
-import imgSetaPag from "../../assets/img/seta-pag.svg"
 import api from "../../services/api";
 import { useEffect, useState } from "react";
 import InfoMeuLivro from "../../components/InfoMeuLivro";
@@ -28,8 +27,13 @@ export default function CadastroLivros(){
 
     async function buscarMeuLivro (){
         const token = sessionStorage.getItem('token')
-        const { data } = await api.get('/usuarios/livros', { headers: { authorization: `Bearer ${token}` } })
-        setLivros(data.livros)
+        const { data } = await api.get(`/usuarios/livros`, 
+            { 
+                headers: { authorization: `Bearer ${token}` },
+                params: { page, count: 2}
+            },
+        )
+        setLivros( data.livros )
     }
 
     async function inserirDadosLivros(event) {
@@ -62,9 +66,9 @@ export default function CadastroLivros(){
         await buscarMeuLivro()
     }
 
-    useEffect(() => {
-        buscarMeuLivro()
-    }, [])
+    useEffect(async () => {
+        await buscarMeuLivro()
+    }, [page])
 
     return (
       <StyledCadastroLivro>
@@ -100,11 +104,9 @@ export default function CadastroLivros(){
                 />
               ))}
               <Paginacao
-              page = {page}
-              onPageChange={(newPage) => setPage(newPage)}
+                page = {page}
+                onPageChange={(newPage) => setPage(newPage)}
               />
-
-              
               {!mustShow && (
                   <>
                   <h2>PREENCHA AS INFORMAÇÕES A SEGUIR:</h2>

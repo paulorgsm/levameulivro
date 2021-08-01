@@ -127,9 +127,17 @@ const UsuarioController = {
 
     const id_usuario = decoded.id;
 
-    const livro = await UsuarioService.getLivroByUsuario(id_usuario)
+    let offset = 0;
 
-    return res.send(livro)
+    if (req.query.count && req.query.page) {
+      offset = req.query.count * req.query.page - req.query.count;
+    }
+
+    const limit = Number(req.query.count)
+
+    const livros = await UsuarioService.getLivroByUsuario(id_usuario, limit, offset)
+
+    return res.json({ livros: livros })
   }
 };
 

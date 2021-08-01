@@ -1,6 +1,5 @@
 require("dotenv").config();
 const LivroService = require("../services/LivroService");
-const jwt = require("jsonwebtoken");
 const livroService = require("../services/LivroService");
 
 const LivroController = {
