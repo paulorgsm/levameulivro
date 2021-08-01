@@ -6,7 +6,6 @@ export function logout (){
     sessionStorage.removeItem('token')
     sessionStorage.removeItem('foto')
     sessionStorage.removeItem('nome')
-    window.location.reload()
 };
 
 export function login(data){
