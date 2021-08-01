@@ -36,7 +36,15 @@ export const StyledHeader = styled.div`
     display: block;
     flex-wrap: wrap;
   }
-
+  .login button{
+   background-color: #EB4335;
+   border-radius: 2px;
+   border-style: none;
+   font-family: 'Roboto',sans-serif;
+   color: white;
+   margin-top: 5px;
+   width: 30 px
+  }
   .buscar {
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
@@ -134,5 +142,13 @@ export const StyledHeader = styled.div`
   }
   #comprarLi {
     color: #feee08;
+  }
+  button {
+    cursor: pointer;
+  
+  }
+  button:hover{
+    opacity: 0.7;
+    transform: scale(1.04);
   }
 `;
