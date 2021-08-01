@@ -18,6 +18,7 @@ router.put(
   controller.atualizarDados
 );
 router.get("/", autorizacao, controller.indexUsuario)
+router.get("/enderecos", autorizacao, controller.indexEnderecoByUsuario)
 router.get("/livros", autorizacao, controller.indexLivroByUsuario)
 router.delete("/", autorizacao, controller.deletarConta);
 

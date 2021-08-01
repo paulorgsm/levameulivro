@@ -1,17 +1,87 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyledTroca } from "./StyledTroca";
 import card from "../../assets/img/card1.svg";
 import flexaVermelha from "../../assets/img/flexa-vermelha.svg";
 import flexaVerde from "../../assets/img/flexa-verde.svg";
 import { FaHeart, FaBan, FaUserCircle, FaStar, FaRegEdit, FaTrashAlt, FaPlusCircle, FaRegCheckCircle } from 'react-icons/fa';
+import api from '../../services/api';
+import { useParams } from "react-router-dom"
+import { getToken } from '../../services/auth';
 
 function TrocaDeLivro() {
+  //dados do livro
+  const [ autor, setAutor ] = useState("");
+  const [ nome_livro, setNome_livro ] = useState("");
+  const [ editora, setEditora ] = useState("");
+  const [ ano_pub, setAno_pub ] = useState("");
+  const [ idioma, setIdioma ] = useState("");
+  const [ estado_livro , setEstado_livro ] = useState("");
+  const [ conservacao, setConservacao ] = useState("");
+  const [ isbn, setIsbn ] = useState("");
+  const [ foto_livro, setFoto_livro ] = useState("");
+  const [ num_paginas, setNum_paginas ] = useState("");
+  const { id } = useParams()
+  
+  
+  // dados do dono livro
+  const [ usuario, setUsuario ] = useState("")
+  const [ cidade, setCidade ] = useState("")
+  const [ estado, setEstado ] = useState("")
+  const [ foto_usuario, setFoto_usuario] = useState("")
+
+  //endereco do usuario
+  const [ meuCep, setMeuCep ] = useState("")
+  const [ minhaCidade, setMinhaCidade] = useState("")
+  const [ meuEstado, setMeuEstado ] = useState("")
+  const [ meuLogradouro, setMeuLogradouro ] = useState("")
+  const [ meuNumero, setMeuNumero ] = useState("")
+  const [ meuBairro, setMeuBairro ] = useState("")
+  const [ meuComplemento, setMeuComplemento ] = useState("")
+
+  async function buscarLivroById(){
+    const { data } = await api.get(`/livros/${id}/usuarios/enderecos`)
+    setAutor(data.autor);
+    setNome_livro(data.nome_livro);
+    setIdioma(data.idioma);
+    setEditora(data.editora)
+    setAno_pub(data.ano_pub)
+    setEstado_livro(data.estado_livro);
+    setConservacao(data.conservacao);
+    setIsbn(data.isbn);
+    setFoto_livro(data.foto_livro1);
+    setNum_paginas(data.num_paginas);
+    setUsuario(data.usuarios.nome)
+    setCidade(data.usuarios.enderecos[0]?.cidade)
+    setEstado(data.usuarios.enderecos[0]?.estado)
+    setFoto_usuario(data.usuarios.foto_usuario)
+  }
+
+  async function buscarMeuEndereco(){
+    const token = getToken()
+    const { data } = await api.get("/usuarios/enderecos", 
+      {
+        headers: { authorization: `Bearer ${token}` }
+      }
+    )
+    setMeuCep(data.enderecos[0].cep)
+    setMeuNumero(data.enderecos[0].numero)
+    setMeuLogradouro(data.enderecos[0].logradouro)
+    setMeuBairro(data.enderecos[0].bairro)
+    setMinhaCidade(data.enderecos[0].cidade)
+    setMeuEstado(data.enderecos[0].estado)
+    setMeuComplemento(data.enderecos[0].complemento)
+  }
+
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
 
-  return (
+  useEffect(() => {
+    buscarLivroById()
+    buscarMeuEndereco()
+  }, [])
 
+  return (
     <StyledTroca>
       <main>
         <div className="header-page">
@@ -31,7 +101,7 @@ function TrocaDeLivro() {
         </div>
         <div className="pedido">
           <div className="img">
-            <img src={card} />
+            <img src={foto_livro} />
             <div className="icons">
               <button className="salvar"><FaHeart className="heart" /> salvar</button>
               <button className="problema"><FaBan className="ban" /> relatar problema</button>
@@ -40,33 +110,32 @@ function TrocaDeLivro() {
           </div>
           <div className="dados-pedido">
             <h3>DADOS DO LIVRO:</h3>
-            <p><strong>Livro:</strong> Mussum Ipsum, cacilds vidis litro abertis. Pra lá, depois divoltis porris <br />
-              <strong>Autores:</strong> Mussum Ipsum, cacilds vidis litro abertis. Pra lá, depois divoltis porris
+            <p><strong>Livro:</strong> {nome_livro} <br />
+              <strong>Autores:</strong> {autor}
               <br />
-              <strong>Ano de Publicação:</strong> 2020 <br />
-              <strong>Editora:</strong> Mussum Ipsum, cacilds vidis litro abertis. Pra lá, depois divoltis porris
+              <strong>Ano de Publicação:</strong> {ano_pub}<br />
+              <strong>Editora:</strong> {editora}
               <br />
-              <strong>Idioma:</strong> Mussum Ipsum, cacilds vidis litro abertis. Pra lá, depois divoltis porris
+              <strong>Idioma:</strong> {idioma}
               <br />
-              <strong>Nº de Páginas:</strong> 300 <br />
-              <strong>ISBN:</strong> 109283092183982 <br />
-              <strong>Estado do Livro:</strong> Usado <br />
-              <strong>Conservação:</strong> Há marcas de lápis, mesmo após as páginas estarem apagadas. Mas o livro
-              está completo, não falta nenhuma página.
+              <strong>Nº de Páginas:</strong> {num_paginas}<br />
+              <strong>ISBN:</strong> {isbn}<br />
+              <strong>Estado do Livro:</strong>{estado_livro}<br />
+              <strong>Conservação:</strong> {conservacao}
             </p>
           </div>
           <div className="dados-dono-livro">
             <h3>DE QUEM É O LIVRO?</h3>
             <div className="dados-dono">
               <div className="dono">
-                <p><strong>Dono(a):</strong> Mussum da Silva <br />
-                  <strong>Cidade:</strong> São Paulo<br />
-                  <strong>Estado:</strong> SP<br />
+                <p><strong>Dono(a):</strong> {usuario} <br />
+                  <strong>Cidade:</strong> {cidade}<br />
+                  <strong>Estado:</strong> {estado}<br />
                   <strong>Reputação do Dono(a):</strong></p>
               </div>
               <div className="icons-dados">
                 <div className="icon-user">
-                  <FaUserCircle className="user" />
+                  { foto_usuario ? (<img src={foto_usuario} className="foto_dono"/>): (<FaUserCircle className="user" />)}
                 </div>
                 <div className="icon-star">
                   <FaStar className="star" />
@@ -100,12 +169,9 @@ function TrocaDeLivro() {
             <h1>Passo 1: CONFIRME SEU ENDEREÇO DE ENTREGA:</h1>
             <input type="checkbox" id="endereco-padrao" name="endereco-padrao" checked />
             <label for="endereco-padrao">
-              <strong> Endereço: </strong>Estr. dos Bandeirantes, 6700, Bairro
-              Jacarepaguá. Rio de Janeiro - RJ. CEP: 22780-086
+              <strong> Endereço: </strong> {meuLogradouro}, {meuNumero}, 
+              Bairro: {meuBairro}. {minhaCidade} - {meuEstado}. CEP: {meuCep}
             </label>
-
-
-
             <span className="btns-endereco">
               <button type="submit" className="btn-editar"><FaRegEdit /> editar </button>
               <button type="reset" className="btn-apagar"><FaTrashAlt /> apagar </button>
@@ -128,7 +194,6 @@ function TrocaDeLivro() {
             <label for="">Combinei para receber o livro pessoalmente</label>
           </div>
         </div>
-
         <section className="container" className={click ? 'container' : 'container hide'}>
           <form action="">
             <fieldset className="cep-checkbox">
