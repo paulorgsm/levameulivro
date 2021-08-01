@@ -138,6 +138,15 @@ const UsuarioController = {
     const livros = await UsuarioService.getLivroByUsuario(id_usuario, limit, offset)
 
     return res.json({ livros: livros })
+  },
+  indexEnderecoByUsuario: async (req, res) => {
+    const decoded = req.headers.authorization;
+
+    const id_usuario = decoded.id;
+
+    const enderecos = await UsuarioService.getEnderecoByUsuario(id_usuario)
+
+    return res.status(200).json(enderecos)
   }
 };
 

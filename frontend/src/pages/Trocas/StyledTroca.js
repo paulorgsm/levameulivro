@@ -796,8 +796,13 @@ td span {
     color: #000000;
   }
 
+  .container button:hover {
+    opacity: 0.7;
+  }
 
-.container button:hover {
-  opacity: 0.7;
-}
+  .foto_dono {
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 30px;
+  }
 `;

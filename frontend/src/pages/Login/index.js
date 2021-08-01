@@ -5,7 +5,6 @@ import api from "../../services/api"
 import { login } from "../../services/auth"
 
 function Login() {
-
   const [nome, setNome] = useState('');
   const [logEmail, setLogEmail] = useState('');
   const [logSenha, setLogSenha] = useState('');

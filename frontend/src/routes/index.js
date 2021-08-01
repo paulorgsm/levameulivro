@@ -23,7 +23,7 @@ function Routes() {
       <PublicRoute path="/login" component={Login} />
       <PrivateRoute path="/mensageria" component={Mensageria} />
       <PublicRoute path="/livros/:id" component={Livros} />
-      <PublicRoute path="/trocas" component={Trocas} /> {/* Página Quebrada */}
+      <PublicRoute path="/trocas/:id" component={Trocas} /> {/* Página Quebrada */}
       <PrivateRoute path="/meus-pedidos" component={Pedidos} /> {/* Página Quebrada */}
       <PrivateRoute path="/meu-saldo" component={Saldo} />
       <PrivateRoute path="/meus-dados" component={MeusDados} /> {/* Precisa melhorar */}

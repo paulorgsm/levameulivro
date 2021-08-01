@@ -136,6 +136,14 @@ const UsuarioService = {
         type: QueryTypes.SELECT
       }
     )
+  },
+  getEnderecoByUsuario: async (id) => {
+    return await db.Usuario.findByPk(id, 
+      {
+        attributes: [],
+        include: "enderecos"
+      }
+    )
   }
 }
 

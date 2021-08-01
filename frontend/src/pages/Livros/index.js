@@ -6,7 +6,7 @@ import login1 from "../../assets/img/login.svg";
 import estrela from "../../assets/img/estrela.svg";
 import perguntas from "../../assets/img/perguntas.svg";
 import { StyledProdutos } from "./StyledProdutos";
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { useState , useEffect} from "react";
 import api from "../../services/api";
 
@@ -30,9 +30,10 @@ function Livros() {
   const [ cidade, setCidade ] = useState("")
   const [ estado, setEstado ] = useState("")
   const [ foto_usuario, setFoto_usuario] = useState("")
+  const history = useHistory()
   const { id } = useParams();
  
-  async function BuscarLivroById(){
+  async function buscarLivroById(){
     const { data } = await api.get(`/livros/${id}/usuarios/enderecos`)
     setAutor(data.autor);
     setNome_livro(data.nome_livro);
@@ -54,8 +55,12 @@ function Livros() {
     setFoto_usuario(data.usuarios.foto_usuario)
   }
 
+  function pegarLivro() {
+    history.push(`/trocas/${id}`)
+  }
+
   useEffect(() => {
-    BuscarLivroById()
+    buscarLivroById()
   }, [])
 
   return (
@@ -162,7 +167,7 @@ function Livros() {
               </div>
               <div className="infosLivros">
                 <div className="infosLivros">
-                  <button className="btn btnLaranja" type="submit">
+                  <button className="btn btnLaranja" type="submit" onClick={() => pegarLivro()}>
                     QUERO TROCAR!
                   </button>
                 </div>
