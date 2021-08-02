@@ -32,13 +32,13 @@ function Home() {
         <ol className="carousel__viewport">
           <li id="carousel__slide1" tabindex="0" className="carousel__slide">
             <div className="carousel__snapper">
-              <a href="#carousel__slide4" className="carousel__prev">
-                Go to last slide
-              </a>
+                <a href="#carousel__slide4" className="carousel__prev">
+                Go to last slide</a>
               <a href="#carousel__slide2" className="carousel__next">
                 Go to next slide
               </a>
             </div>
+
           </li>
           <li id="carousel__slide2" tabindex="0" className="carousel__slide">
             <div className="carousel__snapper"></div>
@@ -91,7 +91,7 @@ function Home() {
                 href="#carousel__slide3"
                 className="carousel__navigation-button"
               >
-                Go to slide 3
+                Go to slide 3 
               </a>
             </li>
             <li className="carousel__navigation-item">
@@ -110,29 +110,25 @@ function Home() {
         <div className="card-1">
           <img className="img_1" src={img1} alt="" />
           <p>
-            Mussum Ipsum, cacilds vidis litro abertis. Manduma pindureta quium
-            dia nois paga.
+            Encontre livros acadêmicos e troque com alguém sem utilizar dinheiro!
           </p>
         </div>
         <div className="card-2">
           <img className="img_2" src={img2} alt="" />
           <p>
-            Mussum Ipsum, cacilds vidis litro abertis. Manduma pindureta quium
-            dia nois paga.
+            É de graça se você trocar com alguém, ou compre a um preço módico.
           </p>
         </div>
         <div className="card-3">
           <img className="img_3" src={img3} alt="" />
           <p>
-            Mussum Ipsum, cacilds vidis litro abertis. Manduma pindureta quium
-            dia nois paga.
+            Cada livro cadastrado e enviado à alguém você recebe 1 ponto.
           </p>
         </div>
         <div className="card-4">
           <img className="img_4" src={img4} alt="" />
           <p>
-            Mussum Ipsum, cacilds vidis litro abertis. Manduma pindureta quium
-            dia nois paga.
+            Navegue no site e utilize seus pontos para trocar por outro livro.
           </p>
         </div>
       </section>

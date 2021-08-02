@@ -407,7 +407,7 @@ export const StyledHome = styled.div`
     padding-top: 25%;
     filter: drop-shadow(0 0 10px #0003);
     perspective: 100px;
-    max-height: 450px;
+    max-height: 450px; 
   }
 
   .carousel__viewport {

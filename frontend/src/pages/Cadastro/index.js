@@ -97,7 +97,7 @@ function Cadastro() {
       estado: estado
     }, 
     {
-      headers: { authorization: `Bearer ${token}` }
+      headers: { authorization: `Bearer ${token}` } 
     }
     )
 
