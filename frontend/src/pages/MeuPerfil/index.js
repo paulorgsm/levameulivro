@@ -38,7 +38,7 @@ function MeuPerfil(){
                                 <img src={imgMeusDados} alt="Ícone Identidade"/>
                             </div>
                             <h2>Meus Dados</h2>
-                            <p>Aqui é o Seu Espaço Para Alterar Suas Informações Pessoais Previamente Cadastradas.</p>
+                            <p>Aqui é o Seu Espaço Para Alterar Suas Informações Previamente Cadastradas. Edite sua senha e cadastre uma imagem. </p>
                             <button type="button" onClick={irParaMeusDados}>Acessar</button>
                         </div>
         

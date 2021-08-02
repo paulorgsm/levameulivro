@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
 export const StyledCadastro = styled.div`
+
+body{
+  font-family: "Roboto", sans-serif;
+}
+
   html,
   body,
   div,
@@ -330,4 +335,14 @@ export const StyledCadastro = styled.div`
     opacity: 0.7;
     transform: scale(1.04);
   }
+
+  .swal2-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+  }
+
+  .swal2-container swal2-center swal2-backdrop-show {
+    background-color: rgba(66, 133, 244, 0.45);
+}
+
 `;

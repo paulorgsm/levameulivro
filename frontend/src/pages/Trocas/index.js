@@ -5,7 +5,7 @@ import flexaVermelha from "../../assets/img/flexa-vermelha.svg";
 import flexaVerde from "../../assets/img/flexa-verde.svg";
 import { FaHeart, FaBan, FaUserCircle, FaStar, FaRegEdit, FaTrashAlt, FaPlusCircle, FaRegCheckCircle } from 'react-icons/fa';
 import api from '../../services/api';
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { getToken } from '../../services/auth';
 
 function TrocaDeLivro() {
@@ -20,9 +20,14 @@ function TrocaDeLivro() {
   const [ isbn, setIsbn ] = useState("");
   const [ foto_livro, setFoto_livro ] = useState("");
   const [ num_paginas, setNum_paginas ] = useState("");
+  const history = useHistory()
   const { id } = useParams()
   
-  
+  function irParaMeusPedidos () {
+    history.push("/meus-pedidos")
+  }
+
+
   // dados do dono livro
   const [ usuario, setUsuario ] = useState("")
   const [ cidade, setCidade ] = useState("")
@@ -63,13 +68,13 @@ function TrocaDeLivro() {
         headers: { authorization: `Bearer ${token}` }
       }
     )
-    setMeuCep(data.enderecos[0].cep)
-    setMeuNumero(data.enderecos[0].numero)
-    setMeuLogradouro(data.enderecos[0].logradouro)
-    setMeuBairro(data.enderecos[0].bairro)
-    setMinhaCidade(data.enderecos[0].cidade)
-    setMeuEstado(data.enderecos[0].estado)
-    setMeuComplemento(data.enderecos[0].complemento)
+    setMeuCep(data.enderecos[0]?.cep)
+    setMeuNumero(data.enderecos[0]?.numero)
+    setMeuLogradouro(data.enderecos[0]?.logradouro)
+    setMeuBairro(data.enderecos[0]?.bairro)
+    setMinhaCidade(data.enderecos[0]?.cidade)
+    setMeuEstado(data.enderecos[0]?.estado)
+    setMeuComplemento(data.enderecos[0]?.complemento)
   }
 
   const [click, setClick] = useState(false);
@@ -183,7 +188,7 @@ function TrocaDeLivro() {
           <div className="passo-dois">
             <h1>Passo 2: FINALIZAR:</h1>
             <span>Está tudo certo? Agora é só trocar!</span>
-            <button type="submit" className="btn-solicitar-troca">
+            <button type="submit" className="btn-solicitar-troca" onClick={() => irParaMeusPedidos()}>
               SOLICITAR TROCA
             </button>
           </div>

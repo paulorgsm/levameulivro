@@ -1,8 +1,10 @@
 import { StyledCadastro } from "./StyledCadastro";
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
-import { getToken } from "../../services/auth"
-import { useHistory } from "react-router-dom"
+import { getToken } from "../../services/auth";
+import { useHistory } from "react-router-dom";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
 
 function Cadastro() {
   const [mustShow, setMustShow] = useState(true);
@@ -27,6 +29,7 @@ function Cadastro() {
   const [estado, setEstado] = useState("");
 
   const history = useHistory()
+  const MySwal = withReactContent(Swal);
 
   function formatarData(data_nasc) {
     return data_nasc.split("/")[2] + "/" + data_nasc.split("/")[1] + "/" + data_nasc.split("/")[0]
@@ -44,7 +47,7 @@ function Cadastro() {
   async function incluirDadosPessoais(event) {
     event.preventDefault()
     const token = getToken()
-    await api.post("/usuarios/adicionar-dados-pessoais", { 
+    const {status} = await api.post("/usuarios/adicionar-dados-pessoais", { 
       sobrenome: sobrenome, 
       cpf: cpf, 
       celular: contato, 
@@ -53,14 +56,36 @@ function Cadastro() {
     }, 
     {
       headers: { authorization: `Bearer ${token}` }
-    }
+    },
     )
+
+    if(status == null){
+      MySwal.fire({
+        icon: "error",
+        title: "Ops, deu ruim...",
+        text: 'Ocorreu um erro. Verifique os dados.',
+      })
+    } else if (status != 200) {
+      MySwal.fire({
+        icon: "error",
+        title: "Ops, deu ruim...",
+        text: 'Ocorreu um erro. Verifique os dados.',
+      })
+    } else {
+      MySwal.fire({
+        icon: "success",
+        title: '<span style="font-family: sans-serif;"> Aí sim! </span>',
+        text: 'Dados enviados com sucesso.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    }
+    
   }
 
   async function incluirEndereco(event) {
     event.preventDefault()
     const token = getToken()
-    await api.post("/enderecos", { 
+    const {status} = await api.post("/enderecos", { 
       cep: cep, 
       logradouro: logradouro, 
       numero: numero, 
@@ -73,6 +98,28 @@ function Cadastro() {
       headers: { authorization: `Bearer ${token}` }
     }
     )
+
+    if(status == null){
+      MySwal.fire({
+        icon: "error",
+        title: "Ops, deu ruim...",
+        text: 'Ocorreu um erro. Verifique os dados.',
+      })
+    } else if (status != 200) {
+      MySwal.fire({
+        icon: "error",
+        title: "Ops, deu ruim...",
+        text: 'Ocorreu um erro. Verifique os dados.',
+      })
+    } else {
+      MySwal.fire({
+        icon: "success",
+        title: '<span style="font-family: sans-serif;"> Aí sim! </span>',
+        text: 'Dados enviados com sucesso.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    }
+
   }
 
   function onClickHide (){
