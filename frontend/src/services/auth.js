@@ -9,7 +9,7 @@ export function logout (){
 };
 
 export function login(data){
-    sessionStorage.setItem('token', data.token)
+    sessionStorage.setItem('token', data?.token)
     sessionStorage.setItem('foto', data.foto)
     sessionStorage.setItem('nome', data.nome)
 };

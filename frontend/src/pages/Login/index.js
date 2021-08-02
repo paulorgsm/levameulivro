@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../../services/api"
 import { login } from "../../services/auth"
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
 
 function Login() {
   const [nome, setNome] = useState('');
@@ -12,12 +14,20 @@ function Login() {
   const [cadSenha, setCadSenha] = useState('');
   const [cadSenha2, setCadSenha2] = useState('');
   const history = useHistory();
+  const MySwal = withReactContent(Swal);
 
   async function EnviaCad (event) {
     event.preventDefault();
-    const { data, status } = await api.post('/usuarios/criar-conta', {nome: nome, email: cadEmail, senha: cadSenha})
-    if (status == 200) {
-      login(data)
+    const response = await api.post('/usuarios/criar-conta', {nome: nome, email: cadEmail, senha: cadSenha})
+    if(response?.status == null){
+      MySwal.fire({
+        icon: "error",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
+        text: 'A conta já existe.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    } else {
+      login(response.data)
       history.push("/cadastro")
       window.location.reload()
     }
@@ -25,10 +35,30 @@ function Login() {
 
   async function Login (event){
     event.preventDefault();
-    const { data, status } = await api.post('/usuarios/login', {email: logEmail, senha: logSenha})
-    if (status == 200) {
+    const { data, status } = await api.post('/usuarios/login', { email: logEmail, senha: logSenha })
+    if(status == null){
+      MySwal.fire({
+        icon: "error",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
+        text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    } else if (status != 200) {
+      MySwal.fire({
+        icon: "error",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
+        text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    } else {
       login(data)
       history.push("/meu-perfil")
+      MySwal.fire({
+        icon: "success",
+        title: '<span style="font-family: sans-serif;"> Aí sim! </span>',
+        text: 'Bem-vindo de volta!',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
       window.location.reload()
     }
   }

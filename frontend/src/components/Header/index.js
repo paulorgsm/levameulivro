@@ -2,7 +2,7 @@ import logo from "../../assets/img/logo.svg";
 import imgLogin from "../../assets/img/login.svg";
 import { StyledHeader } from "./StyledHeader";
 import { Link } from "react-router-dom";
-import { getName, getPhoto, logout } from "../../services/auth"
+import { getName, getPhoto, logout, isAuthenticated} from "../../services/auth"
 import { useEffect, useState } from "react";
 
 function Header() {
@@ -13,6 +13,7 @@ function Header() {
     logout()
     setNome(null)
     setFoto(null)
+    window.location.href = "/login"
   }
 
   useEffect(() => {
@@ -43,7 +44,7 @@ function Header() {
           </div>
           <div className="login">
             <div className="campoLogin">
-              {nome ? 
+              {isAuthenticated() ? 
                 (
                   <span style={{width: 150 + "px"}}>Oi, {nome} <span>Seja Bem-vindo(a)!</span> <button className = ".sair" onClick={() => handleSession()}>Sair</button></span>
                 ): 
@@ -55,12 +56,12 @@ function Header() {
                 )
               }
             </div>
-            {foto ? 
+            {isAuthenticated() ? 
               (
                 <Link to="/meu-perfil">
                   <img 
                     style={{borderRadius: 50 + "%", maxWidth: 50 + "px", maxHeight: 50 + "px"}} 
-                    src={foto} 
+                    src={foto ? foto: imgLogin} 
                     alt="" 
                 />
                 </Link>

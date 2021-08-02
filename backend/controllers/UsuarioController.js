@@ -50,7 +50,7 @@ const UsuarioController = {
     const decoded = req.headers.authorization;
     
     const id_usuario = decoded.id;
-    console.log(id_usuario)
+
     const exist = await UsuarioService.existAnotherUserWithTheSameEmail(id_usuario, email);
     
     if (exist) {
@@ -61,10 +61,9 @@ const UsuarioController = {
 
     }
 
-    const { filename } = req.file;
+    const filename = req.file?.filename;
 
-
-    const foto_usuario = `${process.env.HOST_URL}/uploads/usuarios/${filename}`;
+    filename ? foto_usuario = `${process.env.HOST_URL}/uploads/usuarios/${filename}`: null
 
     const numero = await UsuarioService.updateUsuario(
       id_usuario,

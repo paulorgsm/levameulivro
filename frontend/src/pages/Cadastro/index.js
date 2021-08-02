@@ -12,11 +12,11 @@ function Cadastro() {
   // dados pessoais
   const [ nome, setNome ] = useState("")
   const [ email, setEmail ] = useState("")
-  const [sobrenome, setSobrenome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [contato, setContato] = useState("");
-  const [nascimento, setNascimento] = useState("");
-  const [genero, setGenero] = useState("");
+  const [ sobrenome, setSobrenome ] = useState("");
+  const [ cpf, setCpf ] = useState("");
+  const [ contato, setContato ] = useState("");
+  const [ nascimento, setNascimento ] = useState("");
+  const [ genero, setGenero ] = useState("fem");
   
 
   //endereço
@@ -47,7 +47,7 @@ function Cadastro() {
   async function incluirDadosPessoais(event) {
     event.preventDefault()
     const token = getToken()
-    const {status} = await api.post("/usuarios/adicionar-dados-pessoais", { 
+    const response = await api.post("/usuarios/adicionar-dados-pessoais", { 
       sobrenome: sobrenome, 
       cpf: cpf, 
       celular: contato, 
@@ -59,14 +59,14 @@ function Cadastro() {
     },
     )
 
-    if(status == null){
+    if(response?.status == null){
       MySwal.fire({
         icon: "error",
         title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
         text: 'Ocorreu um erro. Verifique os dados.',
         backdrop: "rgba(66, 133, 244, 0.45)",
       })
-    } else if (status != 200) {
+    } else if (response.status != 200) {
       MySwal.fire({
         icon: "error",
         title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
@@ -87,7 +87,7 @@ function Cadastro() {
   async function incluirEndereco(event) {
     event.preventDefault()
     const token = getToken()
-    const {status} = await api.post("/enderecos", { 
+    const response = await api.post("/enderecos", { 
       cep: cep, 
       logradouro: logradouro, 
       numero: numero, 
@@ -101,14 +101,14 @@ function Cadastro() {
     }
     )
 
-    if(status == null){
+    if(response?.status == null){
       MySwal.fire({
         icon: "error",
         title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
         text: 'Ocorreu um erro. Verifique os dados.',
         backdrop: "rgba(66, 133, 244, 0.45)",
       })
-    } else if (status != 200) {
+    } else if (response?.status != 200) {
       MySwal.fire({
         icon: "error",
         title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',

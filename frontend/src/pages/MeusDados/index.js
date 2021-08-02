@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react'
 import meusDadosImg from "../../assets/img/meusDados.svg"
 import carregarFotoImg from "../../assets/img/carregarFoto.svg"
 import api from "../../services/api"
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content'
 
 function MeusDados() {
   const [ nome, setNome ] = useState("")
@@ -17,6 +19,7 @@ function MeusDados() {
   const [ genero, setGenero ] = useState("")
   const [ foto, setFoto ] = useState(getPhoto())
   const [ sobrenome, setSobrenome ] = useState("")
+  const MySwal = withReactContent(Swal);
   
   useEffect(() => {
     trazerDadosPredefinidos()
@@ -57,11 +60,34 @@ function MeusDados() {
     data.append('sexo', genero)
     data.append('foto_usuario', foto)
     data.append('senha', senha)
-    await api.put("/usuarios", data, 
+    const response = await api.put("/usuarios", data, 
     {
       headers: { authorization: `Bearer ${token}`}
     }
     )
+
+    if(response?.status == null){
+      MySwal.fire({
+        icon: "error",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
+        text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    } else if (response.status != 200) {
+      MySwal.fire({
+        icon: "error",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
+        text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    } else {
+      MySwal.fire({
+        icon: "success",
+        title: '<span style="font-family: sans-serif;"> Aí sim! </span>',
+        text: 'Dados enviados com sucesso.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
+      })
+    }
   }
 
   return (
@@ -109,7 +135,7 @@ function MeusDados() {
                   <div className="agregadorLabelInput">
                     <label for="email">E-mail</label>
                     <input
-                      type="text"
+                      type="email"
                       name="email"
                       id="email"
                       placeholder="levameulivro@gmail.com"
