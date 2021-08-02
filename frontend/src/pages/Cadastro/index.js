@@ -62,14 +62,16 @@ function Cadastro() {
     if(status == null){
       MySwal.fire({
         icon: "error",
-        title: "Ops, deu ruim...",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
         text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
       })
     } else if (status != 200) {
       MySwal.fire({
         icon: "error",
-        title: "Ops, deu ruim...",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
         text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
       })
     } else {
       MySwal.fire({
@@ -102,14 +104,16 @@ function Cadastro() {
     if(status == null){
       MySwal.fire({
         icon: "error",
-        title: "Ops, deu ruim...",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
         text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
       })
     } else if (status != 200) {
       MySwal.fire({
         icon: "error",
-        title: "Ops, deu ruim...",
+        title: '<span style="font-family: sans-serif;"> Ops, deu ruim... </span>',
         text: 'Ocorreu um erro. Verifique os dados.',
+        backdrop: "rgba(66, 133, 244, 0.45)",
       })
     } else {
       MySwal.fire({
