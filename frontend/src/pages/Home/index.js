@@ -17,11 +17,10 @@ import card9 from "../../assets/img/card9.jpg";
 import card10 from "../../assets/img/card10.jpg";
 import card11 from "../../assets/img/card11.jpg";
 import card12 from "../../assets/img/card12.jpg";
-
-
-
-
-
+import capa1 from "../../assets/img/capa1.png"
+import capa2 from "../../assets/img/capa2.png"
+import capa3 from "../../assets/img/capa3.png"
+import capa4 from "../../assets/img/capa4.png"
 import vector from "../../assets/img/vector.svg";
 
 
@@ -32,19 +31,21 @@ function Home() {
         <ol className="carousel__viewport">
           <li id="carousel__slide1" tabindex="0" className="carousel__slide">
             <div className="carousel__snapper">
-                <a href="#carousel__slide4" className="carousel__prev">
-                Go to last slide</a>
+              <a href="#carousel__slide4" className="carousel__prev">
+                Go to last slide
+              </a>
+              <img src={capa1} className="capa1"/>
               <a href="#carousel__slide2" className="carousel__next">
                 Go to next slide
               </a>
             </div>
-
           </li>
           <li id="carousel__slide2" tabindex="0" className="carousel__slide">
             <div className="carousel__snapper"></div>
             <a href="#carousel__slide1" className="carousel__prev">
               Go to previous slide
             </a>
+            <img src={capa2} className="capa2"/>
             <a href="#carousel__slide3" className="carousel__next">
               Go to next slide
             </a>
@@ -54,6 +55,7 @@ function Home() {
             <a href="#carousel__slide2" className="carousel__prev">
               Go to previous slide
             </a>
+            <img src={capa3} className="capa3"/>
             <a href="#carousel__slide4" className="carousel__next">
               Go to next slide
             </a>
@@ -63,6 +65,7 @@ function Home() {
             <a href="#carousel__slide3" className="carousel__prev">
               Go to previous slide
             </a>
+            <img src={capa4} className="capa4"/>
             <a href="#carousel__slide1" className="carousel__next">
               Go to first slide
             </a>

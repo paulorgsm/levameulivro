@@ -1,13 +1,12 @@
 import styled, { css } from "styled-components";
 
 export const StyledHome = styled.div`
-
-*{
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  box-sizing: border-box
-}
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box
+  }
 
   .strong {
     font-weight: bold;
@@ -25,6 +24,7 @@ export const StyledHome = styled.div`
   .carousel-tamanho {
     max-width: 1040px;
   }
+  
   .nav-carrosel > ul {
     display: flex;
     flex-direction: row;
@@ -436,7 +436,6 @@ export const StyledHome = styled.div`
   }
 
   .carousel__slide:before {
-    content: counter(item);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -567,4 +566,21 @@ export const StyledHome = styled.div`
   input:hover{
     opacity: 0.7;
   }
+  
+  .capa1 {
+    width: 1349px;
+  }
+
+  .capa2 {
+    width: 1349px;
+  }
+
+  .capa3 {
+    width: 1349px;
+  }
+
+  .capa4 {
+    width: 1349px;
+  }
+
 `;
