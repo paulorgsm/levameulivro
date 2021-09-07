@@ -182,7 +182,7 @@ function Mensageria() {
                 ENVIAR MENSAGEM
               </button>
             </p>
-              <div class="perguntasRespostasVerde">PERGUNTAS E RESPOSTAS JÁ REALIZADAS</div>
+              <div className="perguntasRespostasVerde">PERGUNTAS E RESPOSTAS JÁ REALIZADAS</div>
             <div className="conversaVerde">
               <h2>
                 Você consegue postar o livro nos Correios ainda hoje se eu
